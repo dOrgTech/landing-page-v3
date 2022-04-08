@@ -1,8 +1,16 @@
 import React from "react";
-import { Header } from "./components/header/Header";
+import { Route, Routes } from "react-router-dom";
+import { Navbar } from "./layout/Navbar";
+import { HomeView } from "./views/home/Home";
 
 const App: React.FC = () => {
-  return <Header />;
+  return (
+    <Navbar>
+      <Routes>
+        <Route path='/' element={<HomeView />} />
+      </Routes>
+    </Navbar>
+  );
 };
 
 export default App;

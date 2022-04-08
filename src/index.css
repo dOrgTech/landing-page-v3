@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Trispace:wght@100;200;300;400;500;600;700&display=swap");
 html {
   height: 100%;
   overflow: hidden;
@@ -6,7 +5,6 @@ html {
 }
 
 body {
-  font-family: "Trispace", sans-serif;
   margin: 0;
   height: 100%;
   overflow: auto;
