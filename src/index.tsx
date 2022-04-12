@@ -12,7 +12,7 @@ ReactGA.initialize(GA_ID);
 
 ReactDOM.render(
   <React.StrictMode>
-    <HashRouter basename='/'>
+    <HashRouter>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <App />
