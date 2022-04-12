@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "repository": "https://github.com/dOrgTech/landing-page-v3.git",
   "author": "dorg.tech",
-  "homepage": ".",
   "license": "MIT",
   "dependencies": {
     "@emotion/react": "^11.8.2",
