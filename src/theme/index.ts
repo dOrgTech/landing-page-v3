@@ -135,6 +135,9 @@ let theme = createTheme({
       img {
        width: 100%;
       }
+      span {
+        color: ${colors.green}
+      }
     `,
     },
   },
