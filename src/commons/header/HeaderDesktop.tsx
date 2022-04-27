@@ -14,12 +14,13 @@ const StyledLogo = styled("img")({
 
 const MenuItemButton = styled(Typography)({
   cursor: "pointer",
+  fontSize: 17,
 });
 const HeaderDesktop: React.FC = () => {
   return (
-    <Grid container justifyContent={"space-between"} alignItems={"center"} px={10} py={6.25}>
+    <Grid container justifyContent={"space-between"} alignItems={"center"} px={10} pt={3.5} pb={3} >
       <Grid item>
-        <StyledLogo src={Logo} alt='dOrg Logo' />
+        <StyledLogo src={Logo} alt='dOrg White Logo' />
       </Grid>
       <Grid item>
         <Grid container justifyContent={"center"} alignItems={"center"} gap={4}>
