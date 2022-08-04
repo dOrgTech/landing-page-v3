@@ -169,18 +169,20 @@ theme = createTheme(theme, {
     MuiButton: {
       styleOverrides: {
         root: {
-          backgroundColor: colors.green,
-          borderRadius: 0,
+          border: "4px solid #E5E5E5",
+          borderRadius: "15px",
+          color: "white",
           padding: "14px 37.5px",
-          color: colors.black,
-          fontSize: "1rem",
-          fontWeight: 700,
+          textTransform: "uppercase",
+          fontSize: "16px",
+          lineHeight: "20px",
+          letterSpacing: "0.29em",
           position: "relative",
-          textTransform: "none",
-          "&:hover": {
-            backgroundColor: "rgb(143, 244, 127)",
-            color: colors.black,
-          },
+          // "&:hover": {
+          //   backgroundColor: "#222222",
+          //   color: "white",
+          //   boxShadow: "8px 7px 0 0 #73F260",
+          // },
         },
         sizeSmall: {
           fontSize: "0.75rem",
