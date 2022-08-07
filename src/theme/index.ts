@@ -174,15 +174,15 @@ theme = createTheme(theme, {
           color: "white",
           padding: "14px 37.5px",
           textTransform: "uppercase",
-          fontSize: "16px",
           lineHeight: "20px",
           letterSpacing: "0.29em",
           position: "relative",
-          // "&:hover": {
-          //   backgroundColor: "#222222",
-          //   color: "white",
-          //   boxShadow: "8px 7px 0 0 #73F260",
-          // },
+          [`${theme.breakpoints.up("md")}`]: {
+            fontSize: "16px",
+          },
+          [`${theme.breakpoints.down("md")}`]: {
+            fontSize: "12px",
+          },
         },
         sizeSmall: {
           fontSize: "0.75rem",

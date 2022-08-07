@@ -1,40 +1,41 @@
-import { Button as MuiButton, ButtonProps } from "@mui/material";
-import { makeStyles } from "@mui/styles";
+import { Button as MuiButton, ButtonProps, styled } from "@mui/material";
 import React from "react";
 
-const useStyles = makeStyles(() => ({
-  outlined: {
-    "&:hover": {
-      backgroundColor: "#222222",
-      boxShadow: "8px 7px 0 0 #73F260",
-    },
+const OutlinedButton = styled(MuiButton)({
+  width: "100%",
+  "&:hover": {
+    border: "4px solid #E5E5E5",
+    backgroundColor: "#222222",
+    boxShadow: "8px 7px 0 0 #73F260",
   },
-  contained: {
-    background: "#E5E5E5",
-    color: "#000",
-    "&:hover": {
-      backgroundColor: "#222222",
-      color: "#E5E5E5",
-      boxShadow: "8px 7px 0 0 #73F260",
-    },
+});
+
+const ContainedButton = styled(MuiButton)({
+  width: "100%",
+  background: "#E5E5E5",
+  color: "#000",
+  "&:hover": {
+    backgroundColor: "#222222",
+    color: "#E5E5E5",
+    boxShadow: "8px 7px 0 0 #73F260",
   },
-}));
+});
 
 export const Button: React.FC<ButtonProps> = (props) => {
-  const classes = useStyles();
-
-  const handleVariant = (): string => {
-    switch (props.variant) {
-    case "outlined":
-      return classes.outlined;
-    case "contained":
-      return classes.contained;
-      // case "outlined":
-      //   return classes.outlined;
-    }
-    return "";
-  };
   return (
-    <MuiButton className={`${handleVariant()}`}>{props.children}</MuiButton>
+    <>
+      {props.variant === "outlined" && (
+        <OutlinedButton {...props}>{props.children}</OutlinedButton>
+      )}
+      {props.variant === "contained" && (
+        <ContainedButton {...props}>{props.children}</ContainedButton>
+      )}
+      {props.variant === "text" && (
+        <OutlinedButton {...props}>{props.children}</OutlinedButton>
+      )}
+      {!props.variant && (
+        <OutlinedButton {...props}>{props.children}</OutlinedButton>
+      )}
+    </>
   );
 };
