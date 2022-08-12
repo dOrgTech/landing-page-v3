@@ -11,3 +11,13 @@ body {
   position: relative;
   background: #000;
 }
+
+.react-multi-carousel-track {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.react-multi-carousel-item {
+  text-align: center;
+}

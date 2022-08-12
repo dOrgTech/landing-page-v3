@@ -2,12 +2,16 @@ import DiscordLogo from "../assets/imgs/discord.svg";
 import GithubLogo from "../assets/imgs/github.svg";
 import TwitterLogo from "../assets/imgs/twitter.svg";
 import EmailLogo from "../assets/imgs/mail.svg";
-import TimeLogo from "../assets/imgs/time.svg";
-import MITLogo from "../assets/imgs/mit.svg";
-import HackernoonLogo from "../assets/imgs/hackernoon.svg";
-import CoinDeskLogo from "../assets/imgs/coinDesk.svg";
-import CoinTelegraphLogo from "../assets/imgs/cointelegraph.svg";
 
+import GnosisLogo from "../assets/imgs/clients/gnosis.svg";
+import OpolisLogo from "../assets/imgs/clients/opolis.svg";
+import StarkwareLogo from "../assets/imgs/clients/starkware.svg";
+import BalancerLogo from "../assets/imgs/clients/balancer.svg";
+import ParaswapLogo from "../assets/imgs/clients/paraswap.svg";
+import EtoroLogo from "../assets/imgs/clients/etoro.svg";
+import DoingudLogo from "../assets/imgs/clients/doingud.svg";
+import DiversifiLogo from "../assets/imgs/clients/diversifi.svg";
+import CompoundLogo from "../assets/imgs/clients/compound.svg";
 export interface IconLink {
   path: string;
   icon: string;
@@ -20,12 +24,16 @@ export interface SocialIconLinks {
   email: Readonly<IconLink>;
 }
 
-export interface IconLinks {
-  time: Readonly<IconLink>;
-  coinDesk: Readonly<IconLink>;
-  hackernoon: Readonly<IconLink>;
-  mit: Readonly<IconLink>;
-  coinTelegraph: Readonly<IconLink>;
+export interface ClientIconLinks {
+  gnosis: Readonly<IconLink>;
+  opolis: Readonly<IconLink>;
+  starkware: Readonly<IconLink>;
+  balancer: Readonly<IconLink>;
+  paraswap: Readonly<IconLink>;
+  etoro: Readonly<IconLink>;
+  doingud: Readonly<IconLink>;
+  diversifi: Readonly<IconLink>;
+  compound: Readonly<IconLink>;
 }
 
 export const socialIconLinks: SocialIconLinks = {
@@ -47,25 +55,41 @@ export const socialIconLinks: SocialIconLinks = {
   },
 };
 
-export const iconLinks: IconLinks = {
-  time: {
-    path: "",
-    icon: TimeLogo,
+export const clientIconLinks: ClientIconLinks = {
+  gnosis: {
+    path: "https://gnosis.io/",
+    icon: GnosisLogo,
   },
-  coinDesk: {
-    path: "",
-    icon: CoinDeskLogo,
+  opolis: {
+    path: "https://opolis.co/",
+    icon: OpolisLogo,
   },
-  hackernoon: {
-    path: "",
-    icon: HackernoonLogo,
+  starkware: {
+    path: "https://starkware.co/",
+    icon: StarkwareLogo,
   },
-  mit: {
-    path: "",
-    icon: MITLogo,
+  balancer: {
+    path: "https://balancer.fi/",
+    icon: BalancerLogo,
   },
-  coinTelegraph: {
-    path: "",
-    icon: CoinTelegraphLogo,
+  paraswap: {
+    path: "https://www.paraswap.io/",
+    icon: ParaswapLogo,
+  },
+  etoro: {
+    path: "https://www.etoro.com/",
+    icon: EtoroLogo,
+  },
+  doingud: {
+    path: "https://doingud.com/",
+    icon: DoingudLogo,
+  },
+  diversifi: {
+    path: "https://diversificrypto.com/",
+    icon: DiversifiLogo,
+  },
+  compound: {
+    path: "https://compound.finance/",
+    icon: CompoundLogo,
   },
 };
