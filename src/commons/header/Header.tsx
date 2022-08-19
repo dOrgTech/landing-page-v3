@@ -8,8 +8,6 @@ type MenuItem = {
 };
 
 export const MENU_ITEMS: MenuItem[] = [
-  { name: "About us" },
-  { name: "Our Work" },
   { name: "Hire us" },
   { name: "Join us" },
   { name: "Our Handbook" },
