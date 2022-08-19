@@ -6,6 +6,7 @@ import useIsDesktop from "../../../hooks/useIsDesktop";
 import { Button } from "../../../commons/button/Button";
 import { clientIconLinks, IconLink } from "../../../constants/routes";
 import Carousel from "../../../commons/carousel/Carousel";
+import GameOfLifeAnimation from "./GameOfLifeAnimation";
 
 const StyledLogo = styled("img")({
   height: "auto",
@@ -14,12 +15,17 @@ const StyledLogo = styled("img")({
   width: 100,
 });
 
+const StyledGameOfLifeAnimation = styled(GameOfLifeAnimation)({
+  height: "100%",
+  position: "absolute",
+  width: "100%",
+  zIndex: -1,
+})
+
 const PresentationSectionContainer = styled(Box)({
   width: "100vw",
   height: "calc(100vh - 100px)",
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "cover",
-  backgroundImage: `url(${PixelAnimation})`,
+  position: "relative",
   opacity: 1,
 });
 
@@ -28,6 +34,7 @@ export const PresentationSection: React.FC = () => {
   const clientIcons = Object.values(clientIconLinks);
   return (
     <PresentationSectionContainer>
+      <StyledGameOfLifeAnimation />
       <Grid
         container
         height='90%'
