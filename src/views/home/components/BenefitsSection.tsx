@@ -40,8 +40,8 @@ const benefits = [
 
 export const BenefitsSection: React.FC = () => {
   return (
-    <Box my={16} px={4}>
-      <Container maxWidth="lg" disableGutters>
+    <Box my={16}>
+      <Container maxWidth="lg">
         <Typography
           variant="h6"
           component="h2"
@@ -69,6 +69,7 @@ export const BenefitsSection: React.FC = () => {
                   border={`6px solid ${benefit.color}`}
                   borderRadius="24px"
                   sx={{
+                    height: "100%",
                     "&:hover": {
                       background: `linear-gradient(transparent 40%, ${benefit.color})`
                     }
