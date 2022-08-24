@@ -3,7 +3,7 @@ import useIsDesktop from "../../hooks/useIsDesktop";
 import HeaderDesktop from "./HeaderDesktop";
 import HeaderMobile from "./HeaderMobile";
 
-type MenuItem = {
+export type MenuItem = {
   name: string;
 };
 
