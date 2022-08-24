@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Dialog, Grid, Link, Typography } from "@mui/material";
+import { Box, Dialog, Grid, Link, Typography } from "@mui/material";
 import { styled } from "@material-ui/styles";
 import { colors } from "../../theme";
 import CloseIcon from "@mui/icons-material/Close";
@@ -9,6 +9,13 @@ import Logo from "../../assets/imgs/dOrg-logo.white.svg";
 import { useState } from "react";
 import { MENU_ITEMS } from "./Header";
 import { IconLink, socialIconLinks } from "../../constants/routes";
+
+const Navbar = styled(Box)({
+  backgroundColor: colors.black,
+  position: "sticky",
+  top: 0,
+  zIndex: 99,
+})
 
 const HeaderMobileContainer = styled(Grid)({
   background: `linear-gradient(180deg, ${colors.purple} 0%, ${colors.magenta} 100%)`,
@@ -50,7 +57,7 @@ const HeaderMobile: React.FC = () => {
   const socialIcons = Object.values(socialIconLinks);
 
   return (
-    <Fragment>
+    <Navbar>
       <Grid container justifyContent={"space-between"} alignItems={"center"} px={3.5} pt={3.5} pb={3}>
         <StyledLogo src={LogoColor} alt='dOrg Color Logo' />
         <MenuButton onClick={handleOpen} />
@@ -85,7 +92,7 @@ const HeaderMobile: React.FC = () => {
           </Grid>
         </HeaderMobileContainer>
       </Dialog>
-    </Fragment>
+    </Navbar>
   );
 };
 
