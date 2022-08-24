@@ -9,7 +9,17 @@ export const colors = {
   orange: "#FF7B22",
   magenta: "#E65688",
   purple: "#5F6EEF",
-  gray: "#373B3D",
+  grays: {
+    100: "#E5E5E5",
+    200: "#CBCBCB",
+    300: "#888",
+    400: "#777",
+    500: "#6D6D6D",
+    600: "#4C4C4C",
+    700: "#373B3D",
+    800: "#222",
+    900: "#111",
+  },
   white: "#fff",
   black: "#000",
 };
@@ -38,7 +48,7 @@ let theme = createTheme({
       main: colors.orange,
     },
     info: {
-      main: colors.gray,
+      main: colors.grays[700],
     },
   },
   typography: {
