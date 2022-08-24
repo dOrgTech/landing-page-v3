@@ -1,0 +1,14 @@
+.react-multi-carousel-dot button {
+  background-color: #373B3D;
+  border: none;
+  border-radius: 0;
+  margin-right: 12px;
+}
+
+.react-multi-carousel-dot--active button {
+  background-color: white;
+}
+
+.react-multi-carousel-item {
+  align-self: stretch;
+}
