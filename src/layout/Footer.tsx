@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Grid, InputAdornment, Link, Stack, styled, TextField, Typography } from "@mui/material";
+import { Box, Container, Grid, InputAdornment, Link, Stack, styled, TextField, Typography, useTheme } from "@mui/material";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import Logo from "../assets/imgs/dOrg-logo.svg";
 import { IconLink, socialIconLinks } from "../constants/routes"
@@ -20,6 +20,7 @@ const FooterTitle = styled(Typography)({
   color: colors.grays[400],
   fontSize: "1rem",
   letterSpacing: "3px",
+  textTransform: "uppercase",
 })
 
 const FooterLink = styled(Stack)({
@@ -58,14 +59,19 @@ const NewsletterInput = styled(TextField)({
 
 export const Footer: React.FC = () => {
 
+  const theme = useTheme();
+
   const socialLinks = Object.values(socialIconLinks);
 
   return (
-    <Box sx={{
-      bgcolor: colors.grays[900],
-      py: 6,
-      px: 4,
-    }}>
+    <Box 
+      component="footer"
+      sx={{
+        bgcolor: colors.grays[900],
+        py: 6,
+        px: 4,
+      }}
+    >
       <Container maxWidth="lg">
         <Grid container spacing={6}>
           <Grid item xs={12} lg={4}>
@@ -73,19 +79,23 @@ export const Footer: React.FC = () => {
               <StyledLogo src={Logo} alt='dOrg White Logo'/>
             </Link>
           </Grid>
-          <Grid item xs={12} lg={4}>
+          <Grid item xs={12} md={6} lg={4}>
             <Grid container flexDirection="row-reverse" spacing={4}>
               <Grid item xs={6}>
                 <FooterTitle variant="h6">
                   DORG
                 </FooterTitle>
                 <Stack spacing={3} mt={4}>
-                  {MENU_ITEMS.map((menu: MenuItem) => {
+                  {MENU_ITEMS.map((item: MenuItem, index) => {
                     return (
-                      <Link href="#" key={menu.name}>
+                      <Link
+                        href={item.path}
+                        target={item.external ? "_blank" : undefined}
+                        key={index}
+                      >
                         <FooterLink>
                           <Typography variant="body1" lineHeight={1} color={colors.white}>
-                            {menu.name}
+                            {item.name}
                           </Typography>
                         </FooterLink>
                       </Link>
@@ -98,7 +108,7 @@ export const Footer: React.FC = () => {
                   SOCIAL
                 </FooterTitle>
                 <Stack spacing={3} mt={4}>
-                  {socialLinks.map((social: IconLink) => {
+                  {socialLinks.map((social: IconLink, index) => {
                     return (
                       <Link
                         color={colors.white}
@@ -127,8 +137,26 @@ export const Footer: React.FC = () => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={12} lg={4} display="flex" justifyContent="flex-end">
-            <Stack display="inline-flex" spacing={3}>
+          <Grid
+            item
+            xs={12}
+            md={6}
+            lg={4}
+            sx={{
+              display: "flex",
+              justifyContent: "stretch",
+              [theme.breakpoints.up('md')]: {
+                justifyContent: "flex-end",
+              }
+            }}
+          >
+            <Stack 
+              spacing={3}
+              sx={{
+                display: "inline-flex",
+                [theme.breakpoints.down('lg')]: { width: "100%" }
+              }}
+            >
               <FooterTitle variant="h6">
                 OUR NEWSLETTER
               </FooterTitle>
