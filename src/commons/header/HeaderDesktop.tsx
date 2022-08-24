@@ -47,19 +47,24 @@ const HeaderDesktop: React.FC = () => {
           <Grid item>
             <Grid container justifyContent={"center"} alignItems={"center"} gap={4}>
               {MENU_ITEMS.map((item, index) => (
-                <MenuItemButton
-                  variant='h6'
-                  color={colors.white}
+                <Link
+                  href={item.path}
+                  target={item.external ? "_blank" : undefined}
                   key={index}
-                  sx={{
-                    transition: "color 0.25s ease-in-out",
-                    "&:hover": {
-                      color: colors.green,
-                    }
-                  }}
                 >
-                  {item.name}
-                </MenuItemButton>
+                  <MenuItemButton
+                    variant='h6'
+                    color={colors.white}
+                    sx={{
+                      transition: "color 0.25s ease-in-out",
+                      "&:hover": {
+                        color: colors.green,
+                      }
+                    }}
+                  >
+                    {item.name}
+                  </MenuItemButton>
+                </Link>
               ))}
             </Grid>
           </Grid>
