@@ -16,12 +16,12 @@ const AnimationContainer = styled(Box)(
 
 const Animation = styled(Box)(
   sx({
-      backgroundRepeat: "no-repeat",
-      backgroundSize: "130%",
-      backgroundImage: `url(${PixelAnimation})`,
-      inset: 0,
-      position: "absolute",
-      zIndex: -1,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "130%",
+    backgroundImage: `url(${PixelAnimation})`,
+    inset: 0,
+    position: "absolute",
+    zIndex: -1,
   })
 )
 
@@ -35,7 +35,7 @@ export const FormPage: React.FC<FormPageProps> = ({ title, description, children
     <>
       <AnimationContainer>
         <Animation />
-        <Container maxWidth="xs">
+        <Container maxWidth="sm">
           <Stack spacing={3}>
             <Typography variant="h2" component="h1">
               {title}
@@ -47,10 +47,11 @@ export const FormPage: React.FC<FormPageProps> = ({ title, description, children
         </Container>
       </AnimationContainer>
       <Box sx={{
-        bgcolor: colors.grays[800],
+        bgcolor: colors.grays[100],
+        color: colors.black,
         py: 8,
       }}>
-        <Container maxWidth="xs">
+        <Container maxWidth="sm">
           {children}
         </Container>
       </Box>

@@ -208,6 +208,13 @@ theme = createTheme(theme, {
         },
       },
     },
+    MuiFormLabel: {
+      styleOverrides: {
+        asterisk: {
+          color: colors.magenta,
+        }
+      }
+    },
     MuiTypography: {
       styleOverrides: {
         root: {
