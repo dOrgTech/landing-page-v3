@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Grid, Link, styled, Stack,  Typography } from "@mui/material";
+import { Box, Container, Grid, Stack,  Typography } from "@mui/material";
 import { Button } from "../../../commons/button/Button";
 import { colors } from "../../../theme"
 import SwarmBenefit from "../../../assets/imgs/benefits/swarm.svg";
