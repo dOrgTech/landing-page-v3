@@ -1,6 +1,5 @@
 import React from "react";
 import { StatProps } from ".";
-import { colors } from "../../../../theme";
 
 interface Props {
   hovering: boolean;
@@ -116,10 +115,10 @@ const ChartGraphic: React.FC<Props> = ({hovering, color, activeColors}) => {
       <defs>
         <linearGradient id="gradient" x1="148.281" y1="-0.356313" x2="148.281" y2="181.424" gradientUnits="userSpaceOnUse">
           {activeColors && (
-            <stop offset={hovering ? 0 : 0.85} stopColor={activeColors[1]} stopOpacity={hovering ? 1 : 0}/>
+            <stop offset={hovering ? 0 : 0.853} stopColor={activeColors[1]} stopOpacity={hovering ? 1 : 0}/>
           )}
-          <stop offset="0.85" stopColor={baseColor} stopOpacity={!activeColors || !hovering ? 0 : 1}/>
-          <stop offset="0.85" stopColor={baseColor}/>
+          <stop offset="0.853" stopColor={baseColor} stopOpacity={!activeColors || !hovering ? 0 : 1}/>
+          <stop offset="0.853" stopColor={baseColor}/>
           <stop offset="1" stopColor={baseColor} />
         </linearGradient>
       </defs>

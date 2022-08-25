@@ -32,7 +32,7 @@ const StatCard: React.FC<Stat> = ({stat}) => {
       onMouseOut={handleStatCardOut}
       sx={{
         backgroundColor: hovering? "#222" : "transparent",
-        border: `6px solid ${hovering ? "#E5E5E5" : colors.gray}`,
+        border: `6px solid ${hovering ? "#E5E5E5" : colors.grays[700]}`,
       }}
     >
       <Box position="relative">

@@ -40,7 +40,7 @@ export const StatsSection: React.FC = () => {
     {
       title: "Funding Raised",
       statNumber: "$0",
-      color: colors.gray,
+      color: colors.grays[700]
     },
   ]
 
