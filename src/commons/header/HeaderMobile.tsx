@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import { Dialog, Grid, Link, Typography } from "@mui/material";
+import React from "react";
+import { Box, Dialog, Grid, Link, Typography } from "@mui/material";
 import { styled } from "@material-ui/styles";
 import { colors } from "../../theme";
 import CloseIcon from "@mui/icons-material/Close";
@@ -7,8 +7,15 @@ import MenuIcon from "@mui/icons-material/Menu";
 import LogoColor from "../../assets/imgs/dOrg-logo.svg";
 import Logo from "../../assets/imgs/dOrg-logo.white.svg";
 import { useState } from "react";
-import { MENU_ITEMS } from "./Header";
+import { MENU_ITEMS, MenuItem } from "./Header";
 import { IconLink, socialIconLinks } from "../../constants/routes";
+
+const Navbar = styled(Box)({
+  backgroundColor: colors.black,
+  position: "sticky",
+  top: 0,
+  zIndex: 99,
+})
 
 const HeaderMobileContainer = styled(Grid)({
   background: `linear-gradient(180deg, ${colors.purple} 0%, ${colors.magenta} 100%)`,
@@ -50,7 +57,7 @@ const HeaderMobile: React.FC = () => {
   const socialIcons = Object.values(socialIconLinks);
 
   return (
-    <Fragment>
+    <Navbar>
       <Grid container justifyContent={"space-between"} alignItems={"center"} px={3.5} pt={3.5} pb={3}>
         <StyledLogo src={LogoColor} alt='dOrg Color Logo' />
         <MenuButton onClick={handleOpen} />
@@ -68,10 +75,16 @@ const HeaderMobile: React.FC = () => {
             <CloseButton onClick={handleClose} />
           </Grid>
           <Grid container justifyContent={"center"} alignItems={"center"} gap={4} flexDirection={"column"}>
-            {MENU_ITEMS.map((item, index) => (
-              <MenuItemButton variant='h4' color={colors.white} fontWeight='bold' key={index}>
-                {item.name}
-              </MenuItemButton>
+            {MENU_ITEMS.map((item: MenuItem, index) => (
+              <Link
+                href={item.path}
+                target={item.external ? "_blank" : undefined}
+                key={index}
+              >
+                <MenuItemButton variant='h4' color={colors.white} fontWeight='bold'>
+                  {item.name}
+                </MenuItemButton>
+              </Link>
             ))}
           </Grid>
           <Grid container justifyContent={"center"} alignItems='center' gap={7}>
@@ -85,7 +98,7 @@ const HeaderMobile: React.FC = () => {
           </Grid>
         </HeaderMobileContainer>
       </Dialog>
-    </Fragment>
+    </Navbar>
   );
 };
 
