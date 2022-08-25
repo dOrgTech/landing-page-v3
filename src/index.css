@@ -1,15 +1,13 @@
 html {
   height: 100%;
-  overflow: hidden;
   position: relative;
+  background-color: #000;
 }
 
 body {
   margin: 0;
   height: 100%;
-  overflow: auto;
   position: relative;
-  background: #000;
 }
 
 .react-multi-carousel-track {
