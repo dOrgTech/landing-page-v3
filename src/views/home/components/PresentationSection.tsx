@@ -59,10 +59,10 @@ export const PresentationSection: React.FC = () => {
                   alignItems={"center"}
                   justifyContent={isDesktop ? "initial" : "center"}>
                   <Grid item>
-                    <Button variant='contained'>Leverage our expertise</Button>
+                    <Button href="/#/hireUs" variant='contained'>Leverage our expertise</Button>
                   </Grid>
                   <Grid item>
-                    <Button variant='outlined'>Become a member</Button>
+                    <Button href="/#/joinUs" variant='outlined'>Become a member</Button>
                   </Grid>
                 </Grid>
               </Grid>

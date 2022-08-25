@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FormPage } from "../formPage"
 import { Divider, FormLabel, MenuItem, Select, Stack, TextField, Typography } from "@mui/material";
 import { Button } from "../../../commons/button/Button"
@@ -71,7 +71,8 @@ export const HireUsView: React.FC = () => {
                 <FormLabel required sx={{color: "currentColor"}}>
                   Select the categories that best describe your project:
                 </FormLabel>
-                <Select>
+                <Select defaultValue="default">
+                  <MenuItem value="default" disabled>Please select one</MenuItem>
                   <MenuItem value="dao/governance">DAO/Governance</MenuItem>
                   <MenuItem value="deFi">DeFi</MenuItem>
                   <MenuItem value="social">Social</MenuItem>
@@ -83,7 +84,8 @@ export const HireUsView: React.FC = () => {
                 <FormLabel required sx={{color: "currentColor"}}>
                   How would you like to work together
                 </FormLabel>
-                <Select>
+                <Select defaultValue="default">
+                  <MenuItem value="default" disabled>Please select one</MenuItem>
                   <MenuItem value="fixed scope">Fixed Scope Project</MenuItem>
                   <MenuItem value="team extension">Team Extension</MenuItem>
                   <MenuItem value="consulting">Consulting &amp; Advisory</MenuItem>
@@ -111,7 +113,8 @@ export const HireUsView: React.FC = () => {
                 <FormLabel required sx={{color: "currentColor"}}>
                   What is your budget?
                 </FormLabel>
-                <Select>
+                <Select defaultValue="default">
+                  <MenuItem value="default" disabled>Please select one</MenuItem>
                   <MenuItem value="below 10k">Below $10,000</MenuItem>
                   <MenuItem value="10-50k">$10,000 - $50,000</MenuItem>
                   <MenuItem value="50-100k">$50,000 - $100,000</MenuItem>
@@ -123,7 +126,8 @@ export const HireUsView: React.FC = () => {
                 <FormLabel required sx={{color: "currentColor"}}>
                   When would you like to get started?
                 </FormLabel>
-                <Select>
+                <Select defaultValue="default">
+                  <MenuItem value="default" disabled>Please select one</MenuItem>
                   <MenuItem value="within 1 month">Within 1 month</MenuItem>
                   <MenuItem value="1-3 months">1 - 3 months from now</MenuItem>
                   <MenuItem value="not specified">Not Specified</MenuItem>
