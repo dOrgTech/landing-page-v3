@@ -14,30 +14,31 @@ export interface Stat {
 }
 
 const StatCard: React.FC<Stat> = ({stat}) => {
-  const {title, statNumber, color, activeColors} = stat;
+  const {id, title, statNumber, color, activeColors} = stat;
 
-  const [hovering, setHovering] = useState<boolean>(false)
+  const [hoverId, setHoverId] = useState<string | null>(null)
 
-  const handleStatCardOver = () => {
-    setHovering(true);
+  const handleStatCardEnter = (id: StatProps["id"]) => {
+    setHoverId(id);
   }
 
-  const handleStatCardOut = () => {
-    setHovering(false);
+  const handleStatCardLeave = () => {
+    setHoverId(null);
   }
 
   return (
     <StyledStatCard
-      onMouseOver={handleStatCardOver}
-      onMouseOut={handleStatCardOut}
+      onMouseEnter={() => handleStatCardEnter(id)}
+      onMouseLeave={() => handleStatCardLeave()}
       sx={{
-        backgroundColor: hovering? "#222" : "transparent",
-        border: `6px solid ${hovering ? "#E5E5E5" : colors.grays[700]}`,
+        backgroundColor: hoverId? "#222" : "transparent",
+        border: `6px solid ${hoverId ? "#E5E5E5" : colors.grays[700]}`,
       }}
     >
       <Box position="relative">
         <ChartGraphic
-          hovering={hovering}
+          id={id}
+          hoverId={hoverId}
           color={color}
           activeColors={activeColors}
         />
@@ -73,7 +74,7 @@ const StatCard: React.FC<Stat> = ({stat}) => {
                 fontWeight: 800,
                 lineHeight: 1,
                 transformOrigin: "bottom left",
-                transform: `scale(${hovering ? 1.4 : 1})`,
+                transform: `scale(${hoverId == id ? 1.4 : 1})`,
                 transition: "transform 0.25s ease-in-out",
               }}
             >

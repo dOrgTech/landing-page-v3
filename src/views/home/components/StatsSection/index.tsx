@@ -8,6 +8,7 @@ export interface Stats {
 }
 
 export interface StatProps {
+  id: string;
   title: string;
   statNumber: string;
   color: string;
@@ -20,24 +21,28 @@ export const StatsSection: React.FC = () => {
 
   const stats = [
     {
+      id: "active_members",
       title: "Active Members",
       statNumber: "63",
       color: colors.purple,
       activeColors: [colors.purple, colors.magenta]
     },
     {
+      id: "clients_served",
       title: "Clients Served",
       statNumber: "65+",
       color: colors.green,
       activeColors: [colors.blue, colors.green]
     },
     {
+      id: "on-chain_revenue",
       title: "On-Chain Revenue",
       statNumber: "$3M",
       color: colors.orange,
       activeColors: [colors.orange, colors.yellow]
     },
     {
+      id: "funding_raised",
       title: "Funding Raised",
       statNumber: "$0",
       color: colors.grays[700]
