@@ -91,7 +91,7 @@ export const NewsSection: React.FC = () => {
             showDots
             infinite
             shouldResetAutoplay
-            responsive={responsive}
+            // responsive={responsive}
           >
             {newsCards.map((card: NewsCard, index) => (
               <Link href={card.path} key={index} target='_blank' sx={{alignSelf: "stretch"}}>
@@ -101,7 +101,7 @@ export const NewsSection: React.FC = () => {
                   py={8}
                   direction="column"
                   spacing={3}
-                  border={`6px solid ${colors.gray}`}
+                  border={`6px solid ${colors.grays[700]}`}
                   borderRadius="24px"
                   color={colors.white}
                 >
