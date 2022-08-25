@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Box, Dialog, Grid, Link, Typography } from "@mui/material";
 import { styled } from "@material-ui/styles";
 import { colors } from "../../theme";
@@ -7,7 +7,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import LogoColor from "../../assets/imgs/dOrg-logo.svg";
 import Logo from "../../assets/imgs/dOrg-logo.white.svg";
 import { useState } from "react";
-import { MENU_ITEMS } from "./Header";
+import { MENU_ITEMS, MenuItem } from "./Header";
 import { IconLink, socialIconLinks } from "../../constants/routes";
 
 const Navbar = styled(Box)({
@@ -75,10 +75,16 @@ const HeaderMobile: React.FC = () => {
             <CloseButton onClick={handleClose} />
           </Grid>
           <Grid container justifyContent={"center"} alignItems={"center"} gap={4} flexDirection={"column"}>
-            {MENU_ITEMS.map((item, index) => (
-              <MenuItemButton variant='h4' color={colors.white} fontWeight='bold' key={index}>
-                {item.name}
-              </MenuItemButton>
+            {MENU_ITEMS.map((item: MenuItem, index) => (
+              <Link
+                href={item.path}
+                target={item.external ? "_blank" : undefined}
+                key={index}
+              >
+                <MenuItemButton variant='h4' color={colors.white} fontWeight='bold'>
+                  {item.name}
+                </MenuItemButton>
+              </Link>
             ))}
           </Grid>
           <Grid container justifyContent={"center"} alignItems='center' gap={7}>

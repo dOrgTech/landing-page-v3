@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Container, Grid, Link, Typography } from "@mui/material";
 import Logo from "../../assets/imgs/dOrg-logo.svg";
 import { styled } from "@material-ui/core";
-import { MENU_ITEMS } from "./Header";
+import { MENU_ITEMS, MenuItem } from "./Header";
 import theme, { colors } from "../../theme";
 
 const Navbar = styled(Box)({
@@ -46,7 +46,7 @@ const HeaderDesktop: React.FC = () => {
           </Grid>
           <Grid item>
             <Grid container justifyContent={"center"} alignItems={"center"} gap={4}>
-              {MENU_ITEMS.map((item, index) => (
+              {MENU_ITEMS.map((item: MenuItem, index) => (
                 <Link
                   href={item.path}
                   target={item.external ? "_blank" : undefined}
@@ -55,6 +55,7 @@ const HeaderDesktop: React.FC = () => {
                   <MenuItemButton
                     variant='h6'
                     color={colors.white}
+                    key={index}
                     sx={{
                       transition: "color 0.25s ease-in-out",
                       "&:hover": {
