@@ -1,10 +1,10 @@
 import React from "react";
-import PixelAnimation from "../../../assets/imgs/pixel-animation.gif";
-import { Box, Container, Grid, Link, styled, Typography } from "@mui/material";
+import { Box, Container, Grid, Link, Stack, styled, Typography } from "@mui/material";
 import useIsDesktop from "../../../hooks/useIsDesktop";
 import { Button } from "../../../commons/button/Button";
 import { clientIconLinks, IconLink } from "../../../constants/routes";
 import Carousel from "../../../commons/carousel/Carousel";
+import GameOfLifeAnimationCanvas from "./GameOfLifeAnimation";
 
 const StyledLogo = styled("img")({
   height: "auto",
@@ -15,19 +15,31 @@ const StyledLogo = styled("img")({
 
 const PresentationSectionContainer = styled(Box)({
   width: "100vw",
-  height: "calc(100vh - 114px)",
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "cover",
-  backgroundImage: `url(${PixelAnimation})`,
-  opacity: 1,
+  height: "100vh",
+  position: "relative",
+});
+
+const StyledGameOfLifeAnimation = styled(Box)({
+  inset: 0,
+  opacity: 0.6,
+  position: "absolute",
+  zIndex: 0,
+  "& .react-p5": {
+    height: "100%",
+    width: "100%",
+  }
 });
 
 export const PresentationSection: React.FC = () => {
   const isDesktop = useIsDesktop();
   const clientIcons = Object.values(clientIconLinks);
+
   return (
     <PresentationSectionContainer>
-      <Container maxWidth="lg" sx={{height: "90%"}}>
+      <StyledGameOfLifeAnimation>
+        <GameOfLifeAnimationCanvas />
+      </StyledGameOfLifeAnimation>
+      <Container maxWidth="lg" sx={{height: "90%", position: "relative"}}>
         <Grid
           container
           flexDirection='column'
@@ -38,35 +50,31 @@ export const PresentationSection: React.FC = () => {
           <Grid
             item
             sx={{
-              justifyContent: "center",
+              justifyContent: "flex-start",
               alignItems: "center",
               display: "flex",
             }}>
-            <Grid container>
-              <Grid item maxWidth={1000} mb={isDesktop ? 21 : 0}>
-                <Typography
-                  variant='h1'
-                  textAlign={isDesktop ? "initial" : "center"}>
-                  Building for the decentralized web.
-                </Typography>
-              </Grid>
-              <Grid item width={"100%"}>
-                <Grid
-                  container
-                  gap={5}
-                  mt={isDesktop ? 0 : 10}
-                  flexDirection={isDesktop ? "row" : "column"}
-                  alignItems={"center"}
-                  justifyContent={isDesktop ? "initial" : "center"}>
-                  <Grid item>
-                    <Button href="/#/hireUs" variant='contained'>Leverage our expertise</Button>
-                  </Grid>
-                  <Grid item>
-                    <Button href="/#/joinUs" variant='outlined'>Become a member</Button>
-                  </Grid>
+            <Stack spacing={6} maxWidth={1000}>
+              <Typography
+                variant='h1'
+                textAlign={isDesktop ? "initial" : "center"}>
+                Building for the decentralized web.
+              </Typography>
+              <Grid
+                container
+                gap={5}
+                mt={isDesktop ? 0 : 10}
+                flexDirection={isDesktop ? "row" : "column"}
+                alignItems={"center"}
+                justifyContent={isDesktop ? "initial" : "center"}>
+                <Grid item>
+                  <Button href="/#/hireUs" variant='contained'>Leverage our expertise</Button>
+                </Grid>
+                <Grid item>
+                  <Button href="/#/joinUs" variant='outlined'>Become a member</Button>
                 </Grid>
               </Grid>
-            </Grid>
+            </Stack>
           </Grid>
         </Grid>
       </Container>
