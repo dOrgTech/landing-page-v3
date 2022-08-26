@@ -40,7 +40,7 @@ const benefits = [
 
 export const BenefitsSection: React.FC = () => {
   return (
-    <Box my={16}>
+    <Box my={24}>
       <Container maxWidth="lg">
         <Typography
           variant="h6"
