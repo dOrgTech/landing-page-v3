@@ -1,7 +1,7 @@
 import React from "react";
 import PixelAnimation from "../../assets/imgs/pixel-animation.gif";
 import { experimental_sx as sx } from "@mui/system";
-import { Box, Container, Stack, styled, TextField, Typography } from "@mui/material";
+import { Box, Container, Stack, styled, Typography } from "@mui/material";
 import { colors } from "../../theme";
 
 const AnimationContainer = styled(Box)(

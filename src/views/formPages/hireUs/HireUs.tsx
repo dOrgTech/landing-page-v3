@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { FormPage } from "../formPage"
 import { Divider, FormLabel, MenuItem, Select, Stack, TextField, Typography } from "@mui/material";
 import { Button } from "../../../commons/button/Button"
@@ -152,19 +152,19 @@ export const HireUsView: React.FC = () => {
         </Stack>
 
         <Button
-            variant="outlined"
-            sx={{
-              borderColor: colors.black,
-              color: colors.black,
-              mt: 8,
-              width: "auto",
-              "&:hover": {
-                color: colors.white,
-              }
-            }}
-          >
-            Submit
-          </Button>
+          variant="outlined"
+          sx={{
+            borderColor: colors.black,
+            color: colors.black,
+            mt: 8,
+            width: "auto",
+            "&:hover": {
+              color: colors.white,
+            }
+          }}
+        >
+          Submit
+        </Button>
       </form>
     </FormPage>
   );
