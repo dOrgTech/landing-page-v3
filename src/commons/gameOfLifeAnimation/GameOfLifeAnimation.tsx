@@ -4,19 +4,17 @@ import Sketch from 'react-p5'
 import p5Types from 'p5';
 import { colors } from '../../theme';
 
-const StyledGameOfLifeAnimation = styled(Box)({
-  inset: 0,
-  opacity: 0.6,
-  position: "absolute",
-  zIndex: 0,
-  "& .react-p5": {
-    height: "100%",
-    width: "100%",
-  }
-});
-
 type ColorMapProps = {
   [K in string]: number[];
+}
+
+interface GameOfLifeProps {
+  effectRadius?: number;
+  fadeToBlack?: boolean;
+  frameRate?: number;
+  mouseTrailEffect?: boolean;
+  opacity?: number;
+  resolution?: number;
 }
 
 const colorToRgbArray = (color: string) => {
@@ -24,15 +22,22 @@ const colorToRgbArray = (color: string) => {
   return rgbArray.map((value) => parseInt(value));
 }
 
-const GameOfLifeAnimation = () => {
+const GameOfLifeAnimation = ({
+  effectRadius = 8,
+  fadeToBlack = true,
+  frameRate = 8,
+  mouseTrailEffect = true,
+  opacity = 0.4,
+  resolution = 10,
+  }: GameOfLifeProps) => {
   
+  let prefersReducedMotion: boolean | null;
   let grid: number[][];
   let cols: number;
   let rows: number;
   let r;
   let g;
   let b;
-  const resolution = 6;
   const colorMap: ColorMapProps = {};
   const palette = [
     colorToRgbArray(colors.purple),
@@ -42,11 +47,12 @@ const GameOfLifeAnimation = () => {
     colorToRgbArray(colors.green),
     colorToRgbArray(colors.blue),
   ]
-  const mouseTrailEffect = true; // pixels trail from the mouse cursor;
-  const effectRadius = 8;
+  fadeToBlack && palette.push([0,0,0])
 
   const setup = (p5: p5Types, canvasParentRef: Element) => {
-    p5.frameRate(10)
+    prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    p5.frameRate(frameRate)
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef)
 
     cols = Math.ceil(p5.width / resolution);
@@ -56,7 +62,7 @@ const GameOfLifeAnimation = () => {
 
     for (let i = 0; i < cols; i++) {
       for (let j = 0; j < rows; j++) {
-        grid[i][j] = p5.floor(p5.random(2));
+        grid[i][j] = p5.floor(p5.random(prefersReducedMotion ? 1.3 : 2));
       }
     }
   }
@@ -72,7 +78,7 @@ const GameOfLifeAnimation = () => {
       for (let j = 0; j < rows; j++) {
         const x = i * resolution;
         const y = j * resolution;
-        if (i ===0 && p5.frameCount ===1) {
+        if (i === 0 && p5.frameCount === 1) {
   
           // Determine current color based on row iteration
           incrementsPerColor = rows/palette.length;
@@ -86,14 +92,14 @@ const GameOfLifeAnimation = () => {
           colorMap[j] = [r,g,b]
   
           // Determine the new current Color for next row
-          nextColor = currentIncrement ===palette.length - 1 ? palette[0] : palette[currentIncrement+1];
+          nextColor = currentIncrement === palette.length - 1 ? fadeToBlack ? palette[palette.length-1] : palette[0] : palette[currentIncrement+1];
           currentColor[0] = (nextColor[0] - currentColor[0])/incrementsPerColor+currentColor[0]
           currentColor[1] = (nextColor[1] - currentColor[1])/incrementsPerColor+currentColor[1]
           currentColor[2] = (nextColor[2] - currentColor[2])/incrementsPerColor+currentColor[2]
         }
   
         
-        if (grid[i][j] ===1) {
+        if (grid[i][j] === 1) {
           p5.fill(colorMap[j][0],colorMap[j][1],colorMap[j][2])
           p5.stroke(0);
           p5.strokeWeight(2);
@@ -128,9 +134,9 @@ const GameOfLifeAnimation = () => {
         // Count live neighbours!
         const neighbours = countNeighbours(grid, i, j);
   
-        if(state ===0 && neighbours ===3) {
+        if(state === 0 && neighbours === 3) {
           next[i][j] = 1;
-        } else if (state ===1 && (neighbours < 2 || neighbours > 3)) {
+        } else if (state === 1 && (neighbours < 2 || neighbours > 3)) {
           next[i][j] = 0;
         } else {
           next[i][j] = state;
@@ -139,12 +145,8 @@ const GameOfLifeAnimation = () => {
       }
     }
   
+    prefersReducedMotion && p5.frameCount < 3 && p5.noLoop()
     grid = next;
-  
-    // Stop the animation after a certain number of frames.
-    // if(frameCount === 10) {
-    // 	noLoop();
-    // }
   }
 
   function make2DArray(cols: number, rows: number) {
@@ -171,9 +173,18 @@ const GameOfLifeAnimation = () => {
   }
 
   return (
-    <StyledGameOfLifeAnimation>
+    <Box sx={{
+      inset: 0,
+      opacity: opacity,
+      position: "absolute",
+      zIndex: 0,
+      "& .react-p5": {
+        height: "100%",
+        width: "100%",
+      }
+    }}>
       <Sketch setup={setup} draw={draw} />
-    </StyledGameOfLifeAnimation>
+    </Box>
   )
 }
 
