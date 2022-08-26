@@ -2,9 +2,9 @@ import React from "react";
 import { Box, Container, Grid, Link, Stack, styled, Typography } from "@mui/material";
 import useIsDesktop from "../../../hooks/useIsDesktop";
 import { Button } from "../../../commons/button/Button";
+import GameOfLifeAnimationCanvas from "../../../commons/gameOfLifeAnimation/GameOfLifeAnimation";
 import { clientIconLinks, IconLink } from "../../../constants/routes";
 import Carousel from "../../../commons/carousel/Carousel";
-import GameOfLifeAnimationCanvas from "./GameOfLifeAnimation";
 
 const StyledLogo = styled("img")({
   height: "auto",
@@ -19,26 +19,13 @@ const PresentationSectionContainer = styled(Box)({
   position: "relative",
 });
 
-const StyledGameOfLifeAnimation = styled(Box)({
-  inset: 0,
-  opacity: 0.6,
-  position: "absolute",
-  zIndex: 0,
-  "& .react-p5": {
-    height: "100%",
-    width: "100%",
-  }
-});
-
 export const PresentationSection: React.FC = () => {
   const isDesktop = useIsDesktop();
   const clientIcons = Object.values(clientIconLinks);
 
   return (
     <PresentationSectionContainer>
-      <StyledGameOfLifeAnimation>
-        <GameOfLifeAnimationCanvas />
-      </StyledGameOfLifeAnimation>
+      <GameOfLifeAnimationCanvas />
       <Container maxWidth="lg" sx={{height: "90%", position: "relative"}}>
         <Grid
           container
