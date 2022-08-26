@@ -42,7 +42,7 @@ const benefits = [
 export const BenefitsSection: React.FC = () => {
   return (
     <Box my={16} position="relative">
-      <GameOfLifeAnimation fadeFromBlack={true} />
+      <GameOfLifeAnimation fadeFromBlack />
       <Container maxWidth="lg" sx={{position: "relative"}}>
         <Typography
           variant="h6"

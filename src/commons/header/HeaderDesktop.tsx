@@ -6,7 +6,7 @@ import { MENU_ITEMS, MenuItem } from "./Header";
 import theme, { colors } from "../../theme";
 
 const Navbar = styled(Box)({
-  background: "rgba(0,0,0,.95)",
+  background: "rgba(0,0,0,0.95)",
   backdropFilter: "blur(2px)",
   paddingBottom: theme.spacing(2),
   paddingTop: theme.spacing(2),
