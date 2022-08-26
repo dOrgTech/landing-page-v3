@@ -143,7 +143,7 @@ export const ServicesSection: React.FC = () => {
               <Stack spacing={2} direction="row" alignItems="center" justifyContent={isDesktop ? "flex-end" : "center"}>
                 <AddIcon sx={{width: 12}}/>
                 <Typography variant="body1" fontWeight={800} textTransform="uppercase" letterSpacing="4px">
-                  Pacakages
+                  Packages
                 </Typography>
               </Stack>
             </Grid>

@@ -5,6 +5,7 @@ import { Button } from "../../../commons/button/Button";
 import GameOfLifeAnimationCanvas from "../../../commons/gameOfLifeAnimation/GameOfLifeAnimation";
 import { clientIconLinks, IconLink } from "../../../constants/routes";
 import Carousel from "../../../commons/carousel/Carousel";
+import { colors } from "../../../theme";
 
 const StyledLogo = styled("img")({
   height: "auto",
@@ -58,7 +59,7 @@ export const PresentationSection: React.FC = () => {
                   <Button href="/#/hireUs" variant='contained'>Leverage our expertise</Button>
                 </Grid>
                 <Grid item>
-                  <Button href="/#/joinUs" variant='outlined'>Become a member</Button>
+                  <Button href="/#/joinUs" variant='outlined' sx={{bgcolor: colors.black}}>Become a member</Button>
                 </Grid>
               </Grid>
             </Stack>
