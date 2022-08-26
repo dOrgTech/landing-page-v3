@@ -57,7 +57,7 @@ const HeaderMobile: React.FC = () => {
   const socialIcons = Object.values(socialIconLinks);
 
   return (
-    <Navbar>
+    <Navbar component="header">
       <Grid container justifyContent={"space-between"} alignItems={"center"} px={3.5} pt={3.5} pb={3}>
         <StyledLogo src={LogoColor} alt='dOrg Color Logo' />
         <MenuButton onClick={handleOpen} />

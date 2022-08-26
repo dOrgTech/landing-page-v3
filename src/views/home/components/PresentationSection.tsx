@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PixelAnimation from "../../../assets/imgs/pixel-animation.gif";
 import { Box, Container, Grid, Link, Stack, styled, Typography } from "@mui/material";
 import useIsDesktop from "../../../hooks/useIsDesktop";
@@ -16,20 +16,25 @@ const StyledLogo = styled("img")({
 
 const PresentationSectionContainer = styled(Box)({
   width: "100vw",
-  height: "calc(100vh - 114px)",
+  height: "100vh",
   position: "relative",
 });
 
 const StyledGameOfLifeAnimation = styled(Box)({
   inset: 0,
-  opacity: 0.4,
+  opacity: 0.6,
   position: "absolute",
   zIndex: 0,
+  "& .react-p5": {
+    height: "100%",
+    width: "100%",
+  }
 });
 
 export const PresentationSection: React.FC = () => {
   const isDesktop = useIsDesktop();
   const clientIcons = Object.values(clientIconLinks);
+
   return (
     <PresentationSectionContainer>
       <StyledGameOfLifeAnimation>
