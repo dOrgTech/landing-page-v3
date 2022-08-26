@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PixelAnimation from "../../../assets/imgs/pixel-animation.gif";
 import { Box, Container, Grid, Link, Stack, styled, Typography } from "@mui/material";
 import useIsDesktop from "../../../hooks/useIsDesktop";
 import { Button } from "../../../commons/button/Button";
 import { clientIconLinks, IconLink } from "../../../constants/routes";
 import Carousel from "../../../commons/carousel/Carousel";
+import GameOfLifeAnimationCanvas from "./GameOfLifeAnimation";
 
 const StyledLogo = styled("img")({
   height: "auto",
@@ -15,26 +16,30 @@ const StyledLogo = styled("img")({
 
 const PresentationSectionContainer = styled(Box)({
   width: "100vw",
-  height: "calc(100vh - 114px)",
+  height: "100vh",
   position: "relative",
 });
 
-const Animation = styled(Box)({
+const StyledGameOfLifeAnimation = styled(Box)({
   inset: 0,
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "cover",
-  backgroundImage: `url(${PixelAnimation})`,
-  opacity: 0.4,
+  opacity: 0.6,
   position: "absolute",
   zIndex: 0,
+  "& .react-p5": {
+    height: "100%",
+    width: "100%",
+  }
 });
 
 export const PresentationSection: React.FC = () => {
   const isDesktop = useIsDesktop();
   const clientIcons = Object.values(clientIconLinks);
+
   return (
     <PresentationSectionContainer>
-      <Animation/>
+      <StyledGameOfLifeAnimation>
+        <GameOfLifeAnimationCanvas />
+      </StyledGameOfLifeAnimation>
       <Container maxWidth="lg" sx={{height: "90%", position: "relative"}}>
         <Grid
           container

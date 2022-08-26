@@ -6,13 +6,15 @@ import { MENU_ITEMS, MenuItem } from "./Header";
 import theme, { colors } from "../../theme";
 
 const Navbar = styled(Box)({
-  backgroundColor: colors.black,
+  background: "linear-gradient(rgba(0,0,0,.8) 50%, rgba(0,0,0,0))",
+  backdropFilter: "blur(2px)",
   paddingBottom: theme.spacing(4),
   paddingTop: theme.spacing(4),
-  position: "sticky",
+  position: "fixed",
   top: 0,
-  zIndex: 99
-})
+  width: "100vw",
+  zIndex: 99,
+});
 
 const StyledLogo = styled("img")({
   cursor: "pointer",
@@ -31,8 +33,9 @@ const MenuItemButton = styled(Typography)({
 });
 
 const HeaderDesktop: React.FC = () => {
+
   return (
-    <Navbar>
+    <Navbar component="header">
       <Container maxWidth="lg">
         <Grid
           container
