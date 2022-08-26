@@ -45,13 +45,13 @@ export const socialIconLinks: SocialIconLinks = {
   },
   twitter: {
     path: "https://twitter.com/dOrg_tech",
-    icon: GithubLogo,
-    name: "Github",
+    icon: TwitterLogo,
+    name: "Twitter",
   },
   github: {
     path: "https://github.com/dOrgTech",
-    icon: TwitterLogo,
-    name: "Twitter",
+    icon: GithubLogo,
+    name: "Github",
   },
   email: {
     path: "mailto:contact@dorg.tech",
