@@ -29,7 +29,6 @@ const GameOfLifeAnimation = () => {
   const effectRadius = 8;
 
   const setup = (p5: p5Types, canvasParentRef: Element) => {
-    console.log("setup")
     p5.frameRate(10)
     p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef)
 
