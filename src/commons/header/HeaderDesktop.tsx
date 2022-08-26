@@ -6,10 +6,10 @@ import { MENU_ITEMS, MenuItem } from "./Header";
 import theme, { colors } from "../../theme";
 
 const Navbar = styled(Box)({
-  background: "linear-gradient(rgba(0,0,0,.8) 50%, rgba(0,0,0,0))",
+  background: "rgba(0,0,0,.95)",
   backdropFilter: "blur(2px)",
-  paddingBottom: theme.spacing(4),
-  paddingTop: theme.spacing(4),
+  paddingBottom: theme.spacing(2),
+  paddingTop: theme.spacing(2),
   position: "fixed",
   top: 0,
   width: "100vw",
