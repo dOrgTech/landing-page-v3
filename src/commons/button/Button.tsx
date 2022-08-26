@@ -3,7 +3,6 @@ import React from "react";
 import { colors } from "../../theme";
 
 const OutlinedButton = styled(MuiButton)({
-  backgroundColor: colors.black,
   width: "100%",
   "&:hover": {
     border: `4px solid ${colors.grays[100]}`,
