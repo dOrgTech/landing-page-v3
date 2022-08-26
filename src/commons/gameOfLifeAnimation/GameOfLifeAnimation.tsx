@@ -1,9 +1,27 @@
 import React from 'react'
+import { Box, hexToRgb, styled } from "@mui/material";
 import Sketch from 'react-p5'
 import p5Types from 'p5';
+import { colors } from '../../theme';
+
+const StyledGameOfLifeAnimation = styled(Box)({
+  inset: 0,
+  opacity: 0.6,
+  position: "absolute",
+  zIndex: 0,
+  "& .react-p5": {
+    height: "100%",
+    width: "100%",
+  }
+});
 
 type ColorMapProps = {
   [K in string]: number[];
+}
+
+const colorToRgbArray = (color: string) => {
+  const rgbArray = hexToRgb(color).replace(/[^\d,]/g, '').split(',');
+  return rgbArray.map((value) => parseInt(value));
 }
 
 const GameOfLifeAnimation = () => {
@@ -17,13 +35,12 @@ const GameOfLifeAnimation = () => {
   const resolution = 6;
   const colorMap: ColorMapProps = {};
   const palette = [
-    // rgb values
-    [95, 110, 239],
-    [230, 86, 136],
-    [255, 123, 34],
-    [239, 238, 2],
-    [115, 242, 95],
-    [68, 148, 248],
+    colorToRgbArray(colors.purple),
+    colorToRgbArray(colors.magenta),
+    colorToRgbArray(colors.orange),
+    colorToRgbArray(colors.yellow),
+    colorToRgbArray(colors.green),
+    colorToRgbArray(colors.blue),
   ]
   const mouseTrailEffect = true; // pixels trail from the mouse cursor;
   const effectRadius = 8;
@@ -153,7 +170,11 @@ const GameOfLifeAnimation = () => {
     return sum;
   }
 
-  return <Sketch setup={setup} draw={draw} />
+  return (
+    <StyledGameOfLifeAnimation>
+      <Sketch setup={setup} draw={draw} />
+    </StyledGameOfLifeAnimation>
+  )
 }
 
 export default GameOfLifeAnimation
