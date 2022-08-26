@@ -1,6 +1,6 @@
 import React from "react";
 import PixelAnimation from "../../../assets/imgs/pixel-animation.gif";
-import { Box, Container, Grid, Link, styled, Typography } from "@mui/material";
+import { Box, Container, Grid, Link, Stack, styled, Typography } from "@mui/material";
 import useIsDesktop from "../../../hooks/useIsDesktop";
 import { Button } from "../../../commons/button/Button";
 import { clientIconLinks, IconLink } from "../../../constants/routes";
@@ -16,10 +16,17 @@ const StyledLogo = styled("img")({
 const PresentationSectionContainer = styled(Box)({
   width: "100vw",
   height: "calc(100vh - 114px)",
+  position: "relative",
+});
+
+const Animation = styled(Box)({
+  inset: 0,
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
   backgroundImage: `url(${PixelAnimation})`,
-  opacity: 1,
+  opacity: 0.4,
+  position: "absolute",
+  zIndex: 0,
 });
 
 export const PresentationSection: React.FC = () => {
@@ -27,7 +34,8 @@ export const PresentationSection: React.FC = () => {
   const clientIcons = Object.values(clientIconLinks);
   return (
     <PresentationSectionContainer>
-      <Container maxWidth="lg" sx={{height: "90%"}}>
+      <Animation/>
+      <Container maxWidth="lg" sx={{height: "90%", position: "relative"}}>
         <Grid
           container
           flexDirection='column'
@@ -38,35 +46,31 @@ export const PresentationSection: React.FC = () => {
           <Grid
             item
             sx={{
-              justifyContent: "center",
+              justifyContent: "flex-start",
               alignItems: "center",
               display: "flex",
             }}>
-            <Grid container>
-              <Grid item maxWidth={1000} mb={isDesktop ? 21 : 0}>
-                <Typography
-                  variant='h1'
-                  textAlign={isDesktop ? "initial" : "center"}>
-                  Building for the decentralized web.
-                </Typography>
-              </Grid>
-              <Grid item width={"100%"}>
-                <Grid
-                  container
-                  gap={5}
-                  mt={isDesktop ? 0 : 10}
-                  flexDirection={isDesktop ? "row" : "column"}
-                  alignItems={"center"}
-                  justifyContent={isDesktop ? "initial" : "center"}>
-                  <Grid item>
-                    <Button variant='contained'>Leverage our expertise</Button>
-                  </Grid>
-                  <Grid item>
-                    <Button variant='outlined'>Become a member</Button>
-                  </Grid>
+            <Stack spacing={6} maxWidth={1000}>
+              <Typography
+                variant='h1'
+                textAlign={isDesktop ? "initial" : "center"}>
+                Building for the decentralized web.
+              </Typography>
+              <Grid
+                container
+                gap={5}
+                mt={isDesktop ? 0 : 10}
+                flexDirection={isDesktop ? "row" : "column"}
+                alignItems={"center"}
+                justifyContent={isDesktop ? "initial" : "center"}>
+                <Grid item>
+                  <Button variant='contained'>Leverage our expertise</Button>
+                </Grid>
+                <Grid item>
+                  <Button variant='outlined'>Become a member</Button>
                 </Grid>
               </Grid>
-            </Grid>
+            </Stack>
           </Grid>
         </Grid>
       </Container>

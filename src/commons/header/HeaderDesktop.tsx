@@ -16,12 +16,12 @@ const Navbar = styled(Box)({
 
 const StyledLogo = styled("img")({
   cursor: "pointer",
-  filter: "brightness(5)",
+  filter: "brightness(10) saturate(0%)",
   height: "auto",
   objectFit: "contain",
   width: 100,
   "&:hover": {
-    filter: "brightness(1)",
+    filter: "brightness(1) saturate(100%)",
   }
 });
 
