@@ -15,6 +15,7 @@ import CompoundLogo from "../assets/imgs/clients/compound.svg";
 export interface IconLink {
   path: string;
   icon: string;
+  name: string;
 }
 
 export interface SocialIconLinks {
@@ -40,18 +41,22 @@ export const socialIconLinks: SocialIconLinks = {
   discord: {
     path: "https://discord.com/invite/bA9ZM7WXZU",
     icon: DiscordLogo,
+    name: "Discord",
   },
   twitter: {
     path: "https://twitter.com/dOrg_tech",
     icon: GithubLogo,
+    name: "Github",
   },
   github: {
     path: "https://github.com/dOrgTech",
     icon: TwitterLogo,
+    name: "Twitter",
   },
   email: {
     path: "mailto:contact@dorg.tech",
     icon: EmailLogo,
+    name: "Email",
   },
 };
 
@@ -59,37 +64,46 @@ export const clientIconLinks: ClientIconLinks = {
   gnosis: {
     path: "https://gnosis.io/",
     icon: GnosisLogo,
+    name: "Gnosis",
   },
   opolis: {
     path: "https://opolis.co/",
     icon: OpolisLogo,
+    name: "Opolis",
   },
   starkware: {
     path: "https://starkware.co/",
     icon: StarkwareLogo,
+    name: "Starkware",
   },
   balancer: {
     path: "https://balancer.fi/",
     icon: BalancerLogo,
+    name: "Balancer",
   },
   paraswap: {
     path: "https://www.paraswap.io/",
     icon: ParaswapLogo,
+    name: "Paraswap",
   },
   etoro: {
     path: "https://www.etoro.com/",
     icon: EtoroLogo,
+    name: "Etoro",
   },
   doingud: {
     path: "https://doingud.com/",
     icon: DoingudLogo,
+    name: "Doingud",
   },
   diversifi: {
     path: "https://diversificrypto.com/",
     icon: DiversifiLogo,
+    name: "Diversifi",
   },
   compound: {
     path: "https://compound.finance/",
     icon: CompoundLogo,
+    name: "Compound",
   },
 };

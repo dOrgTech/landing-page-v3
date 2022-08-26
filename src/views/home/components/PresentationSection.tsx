@@ -1,12 +1,11 @@
 import React from "react";
 import PixelAnimation from "../../../assets/imgs/pixel-animation.gif";
-import { Box } from "@mui/system";
-import { Grid, Link, styled, Typography } from "@mui/material";
+import { Box, Container, Grid, Link, Stack, styled, Typography } from "@mui/material";
 import useIsDesktop from "../../../hooks/useIsDesktop";
 import { Button } from "../../../commons/button/Button";
 import { clientIconLinks, IconLink } from "../../../constants/routes";
 import Carousel from "../../../commons/carousel/Carousel";
-import GameOfLifeAnimation from "./GameOfLifeAnimation";
+import GameOfLifeAnimationCanvas from "./GameOfLifeAnimation";
 
 const StyledLogo = styled("img")({
   height: "auto",
@@ -15,18 +14,17 @@ const StyledLogo = styled("img")({
   width: 100,
 });
 
-const StyledGameOfLifeAnimation = styled(GameOfLifeAnimation)({
-  height: "100%",
-  position: "absolute",
-  width: "100%",
-  zIndex: -1,
-})
-
 const PresentationSectionContainer = styled(Box)({
   width: "100vw",
-  height: "calc(100vh - 100px)",
+  height: "calc(100vh - 114px)",
   position: "relative",
-  opacity: 1,
+});
+
+const StyledGameOfLifeAnimation = styled(Box)({
+  inset: 0,
+  opacity: 0.4,
+  position: "absolute",
+  zIndex: 0,
 });
 
 export const PresentationSection: React.FC = () => {
@@ -34,30 +32,30 @@ export const PresentationSection: React.FC = () => {
   const clientIcons = Object.values(clientIconLinks);
   return (
     <PresentationSectionContainer>
-      <StyledGameOfLifeAnimation />
-      <Grid
-        container
-        height='90%'
-        flexDirection='column'
-        justifyContent={"center"}
-        spacing={1}
-        px={isDesktop ? 27 : 2}>
+      <StyledGameOfLifeAnimation>
+        <GameOfLifeAnimationCanvas />
+      </StyledGameOfLifeAnimation>
+      <Container maxWidth="lg" sx={{height: "90%", position: "relative"}}>
         <Grid
-          item
-          sx={{
-            justifyContent: "center",
-            alignItems: "center",
-            display: "flex",
-          }}>
-          <Grid container>
-            <Grid item maxWidth={1000} mb={isDesktop ? 21 : 0}>
+          container
+          flexDirection='column'
+          justifyContent={"center"}
+          spacing={1}
+          height="100%"
+        >
+          <Grid
+            item
+            sx={{
+              justifyContent: "flex-start",
+              alignItems: "center",
+              display: "flex",
+            }}>
+            <Stack spacing={6} maxWidth={1000}>
               <Typography
                 variant='h1'
                 textAlign={isDesktop ? "initial" : "center"}>
                 Building for the decentralized web.
               </Typography>
-            </Grid>
-            <Grid item width={"100%"}>
               <Grid
                 container
                 gap={5}
@@ -72,10 +70,10 @@ export const PresentationSection: React.FC = () => {
                   <Button variant='outlined'>Become a member</Button>
                 </Grid>
               </Grid>
-            </Grid>
+            </Stack>
           </Grid>
         </Grid>
-      </Grid>
+      </Container>
       <Box>
         <Carousel
           swipeable={false}
@@ -93,7 +91,8 @@ export const PresentationSection: React.FC = () => {
           centerMode={false}
           pauseOnHover={true}
           customTransition='all 4s linear'
-          transitionDuration={4000}>
+          transitionDuration={4000}
+        >
           {clientIcons.map((iconLink: IconLink, index) => (
             <Link href={iconLink.path} key={index} target='_blank'>
               <StyledLogo

@@ -1,37 +1,77 @@
 import React from "react";
-import { Grid, Typography } from "@mui/material";
-import Logo from "../../assets/imgs/dOrg-logo.white.svg";
+import { Box, Container, Grid, Link, Typography } from "@mui/material";
+import Logo from "../../assets/imgs/dOrg-logo.svg";
 import { styled } from "@material-ui/core";
-import { MENU_ITEMS } from "./Header";
-import { colors } from "../../theme";
+import { MENU_ITEMS, MenuItem } from "./Header";
+import theme, { colors } from "../../theme";
+
+const Navbar = styled(Box)({
+  backgroundColor: colors.black,
+  paddingBottom: theme.spacing(4),
+  paddingTop: theme.spacing(4),
+  position: "sticky",
+  top: 0,
+  zIndex: 99
+})
 
 const StyledLogo = styled("img")({
+  cursor: "pointer",
+  filter: "brightness(10) saturate(0%)",
   height: "auto",
   objectFit: "contain",
-  cursor: "pointer",
   width: 100,
+  "&:hover": {
+    filter: "brightness(1) saturate(100%)",
+  }
 });
 
 const MenuItemButton = styled(Typography)({
   cursor: "pointer",
   fontSize: 17,
 });
+
 const HeaderDesktop: React.FC = () => {
   return (
-    <Grid container justifyContent={"space-between"} alignItems={"center"} px={10} pt={3.5} pb={3} >
-      <Grid item>
-        <StyledLogo src={Logo} alt='dOrg White Logo' />
-      </Grid>
-      <Grid item>
-        <Grid container justifyContent={"center"} alignItems={"center"} gap={4}>
-          {MENU_ITEMS.map((item, index) => (
-            <MenuItemButton variant='h6' color={colors.white} key={index}>
-              {item.name}
-            </MenuItemButton>
-          ))}
+    <Navbar>
+      <Container maxWidth="lg">
+        <Grid
+          container
+          justifyContent={"space-between"}
+          alignItems={"center"}
+        >
+          <Grid item>
+            <Link href="/">
+              <StyledLogo src={Logo} alt='dOrg White Logo' />
+            </Link>
+          </Grid>
+          <Grid item>
+            <Grid container justifyContent={"center"} alignItems={"center"} gap={4}>
+              {MENU_ITEMS.map((item: MenuItem, index) => (
+                <Link
+                  href={item.path}
+                  target={item.external ? "_blank" : undefined}
+                  key={index}
+                >
+                  <MenuItemButton
+                    variant='h6'
+                    color={colors.white}
+                    key={index}
+                    sx={{
+                      transition: "color 0.25s ease-in-out",
+                      "&:hover": {
+                        color: colors.green,
+                      }
+                    }}
+                  >
+                    {item.name}
+                  </MenuItemButton>
+                </Link>
+              ))}
+            </Grid>
+          </Grid>
         </Grid>
-      </Grid>
-    </Grid>
+      </Container>
+    </Navbar>
   );
 };
 
