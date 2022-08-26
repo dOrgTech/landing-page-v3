@@ -10,6 +10,7 @@ type ColorMapProps = {
 
 interface GameOfLifeProps {
   effectRadius?: number;
+  fadeFromBlack?: boolean;
   fadeToBlack?: boolean;
   frameRate?: number;
   mouseTrailEffect?: boolean;
@@ -24,6 +25,7 @@ const colorToRgbArray = (color: string) => {
 
 const GameOfLifeAnimation = ({
   effectRadius = 8,
+  fadeFromBlack = false,
   fadeToBlack = true,
   frameRate = 8,
   mouseTrailEffect = true,
@@ -47,13 +49,14 @@ const GameOfLifeAnimation = ({
     colorToRgbArray(colors.green),
     colorToRgbArray(colors.blue),
   ]
+  fadeFromBlack && palette.unshift([0,0,0])
   fadeToBlack && palette.push([0,0,0])
 
   const setup = (p5: p5Types, canvasParentRef: Element) => {
     prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     p5.frameRate(frameRate)
-    p5.createCanvas(p5.windowWidth, p5.windowHeight).parent(canvasParentRef)
+    p5.createCanvas(canvasParentRef.clientWidth, canvasParentRef.clientHeight).parent(canvasParentRef)
 
     cols = Math.ceil(p5.width / resolution);
     rows = Math.ceil(p5.height / resolution);
@@ -62,7 +65,7 @@ const GameOfLifeAnimation = ({
 
     for (let i = 0; i < cols; i++) {
       for (let j = 0; j < rows; j++) {
-        grid[i][j] = p5.floor(p5.random(prefersReducedMotion ? 1.3 : 2));
+        grid[i][j] = p5.floor(p5.random(1.3));
       }
     }
   }

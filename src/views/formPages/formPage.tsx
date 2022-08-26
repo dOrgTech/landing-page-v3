@@ -1,5 +1,5 @@
 import React from "react";
-import PixelAnimation from "../../assets/imgs/pixel-animation.gif";
+import GameOfLifeAnimation from "../../commons/gameOfLifeAnimation/GameOfLifeAnimation";
 import { experimental_sx as sx } from "@mui/system";
 import { Box, Container, Stack, styled, Typography } from "@mui/material";
 import { colors } from "../../theme";
@@ -14,17 +14,6 @@ const AnimationContainer = styled(Box)(
   })
 );
 
-const Animation = styled(Box)(
-  sx({
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "130%",
-    backgroundImage: `url(${PixelAnimation})`,
-    inset: 0,
-    position: "absolute",
-    zIndex: -1,
-  })
-)
-
 interface FormPageProps {
   title: string;
   description: string;
@@ -34,8 +23,8 @@ export const FormPage: React.FC<FormPageProps> = ({ title, description, children
   return (
     <>
       <AnimationContainer>
-        <Animation />
-        <Container maxWidth="sm">
+          <GameOfLifeAnimation fadeToBlack={false} opacity={0.35} />
+        <Container maxWidth="sm" sx={{position: "relative"}}>
           <Stack spacing={3}>
             <Typography variant="h2" component="h1">
               {title}
