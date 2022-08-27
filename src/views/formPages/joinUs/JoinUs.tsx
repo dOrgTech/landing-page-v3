@@ -1,5 +1,5 @@
 import React from "react";
-import { FormPage } from "../formPage"
+import { FormPage } from "../FormPage"
 import { Divider, FormLabel, Stack, TextField, Typography } from "@mui/material";
 import { colors } from "../../../theme";
 import Select from "react-select";

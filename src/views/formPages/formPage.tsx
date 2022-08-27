@@ -25,7 +25,7 @@ export const FormPage: React.FC<FormPageProps> = ({ title, description, children
       <AnimationContainer>
           <GameOfLifeAnimation fadeToBlack={false} opacity={0.35} />
         <Container maxWidth="sm" sx={{position: "relative"}}>
-          <Stack spacing={3}>
+          <Stack spacing={3} sx={{textShadow: "0 0.5rem 1rem rgba(0,0,0,1)"}}>
             <Typography variant="h2" component="h1">
               {title}
             </Typography>
