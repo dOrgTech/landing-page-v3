@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, hexToRgb, styled } from "@mui/material";
+import { Box, hexToRgb } from "@mui/material";
 import Sketch from 'react-p5'
 import p5Types from 'p5';
 import { colors } from '../../theme';
@@ -40,8 +40,9 @@ const GameOfLifeAnimation = ({
   let r;
   let g;
   let b;
+  let a;
   const colorMap: ColorMapProps = {};
-  const palette = [
+  const palette: number[][] = [
     colorToRgbArray(colors.purple),
     colorToRgbArray(colors.magenta),
     colorToRgbArray(colors.orange),
@@ -58,16 +59,9 @@ const GameOfLifeAnimation = ({
     p5.frameRate(frameRate)
     p5.createCanvas(canvasParentRef.clientWidth, canvasParentRef.clientHeight).parent(canvasParentRef)
 
-    cols = Math.ceil(p5.width / resolution);
-    rows = Math.ceil(p5.height / resolution);
-  
-    grid = make2DArray(cols,rows);
-
-    for (let i = 0; i < cols; i++) {
-      for (let j = 0; j < rows; j++) {
-        grid[i][j] = p5.floor(p5.random(1.3));
-      }
-    }
+    prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    setupGrid(p5);
   }
   
   const draw = (p5: p5Types) => {
@@ -92,7 +86,8 @@ const GameOfLifeAnimation = ({
           r = currentColor[0];
           g = currentColor[1];
           b = currentColor[2];
-          colorMap[j] = [r,g,b]
+          a = currentColor[3];
+          colorMap[j] = [r,g,b,a]
   
           // Determine the new current Color for next row
           nextColor = currentIncrement === palette.length - 1 ? fadeToBlack ? palette[palette.length-1] : palette[0] : palette[currentIncrement+1];
@@ -102,8 +97,8 @@ const GameOfLifeAnimation = ({
         }
   
         
-        if (grid[i][j] === 1) {
-          p5.fill(colorMap[j][0],colorMap[j][1],colorMap[j][2])
+        if (grid[i][j] === 1 && colorMap[j]) {
+          p5.fill(colorMap[j][0],colorMap[j][1],colorMap[j][2], colorMap[j][3])
           p5.stroke(0);
           p5.strokeWeight(2);
           p5.rect(x,y,resolution - 1,resolution - 1);
@@ -152,7 +147,7 @@ const GameOfLifeAnimation = ({
     grid = next;
   }
 
-  function make2DArray(cols: number, rows: number) {
+  const make2DArray = (cols: number, rows: number) => {
     const arr = new Array(cols);
     for (let i = 0; i < arr.length; i++) {
       arr[i] = new Array(rows);
@@ -160,7 +155,7 @@ const GameOfLifeAnimation = ({
     return arr;
   }
   
-  function countNeighbours(grid: number[][], x: number, y: number) {
+  const countNeighbours = (grid: number[][], x: number, y: number) => {
     let sum = 0;
     for (let i = -1; i < 2; i++) {
       for (let j = -1; j < 2; j++) {
@@ -175,10 +170,32 @@ const GameOfLifeAnimation = ({
     return sum;
   }
 
+  const setupGrid = (p5: p5Types) => {
+    cols = Math.ceil(p5.width / resolution);
+    rows = Math.ceil(p5.height / resolution);
+  
+    grid = make2DArray(cols,rows);
+
+    for (let i = 0; i < cols; i++) {
+      for (let j = 0; j < rows; j++) {
+        grid[i][j] = p5.floor(p5.random(1.3));
+      }
+    }
+  }
+
+  const windowResized = (p5: p5Types) => {
+    const canvasParentRef = document.querySelector(".react-p5");
+    if(p5 && canvasParentRef) {
+      p5.resizeCanvas(canvasParentRef.clientWidth, canvasParentRef.clientHeight)
+      setupGrid(p5);
+    }
+  }
+
   return (
     <Box sx={{
       inset: 0,
       opacity: opacity,
+      overflow: "hidden",
       position: "absolute",
       zIndex: 0,
       "& .react-p5": {
@@ -186,7 +203,7 @@ const GameOfLifeAnimation = ({
         width: "100%",
       }
     }}>
-      <Sketch setup={setup} draw={draw} />
+      <Sketch setup={setup} draw={draw} windowResized={windowResized} />
     </Box>
   )
 }
