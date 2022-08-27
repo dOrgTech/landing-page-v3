@@ -59,7 +59,9 @@ const HeaderMobile: React.FC = () => {
   return (
     <Navbar component="header">
       <Grid container justifyContent={"space-between"} alignItems={"center"} px={3.5} pt={3.5} pb={3}>
-        <StyledLogo src={LogoColor} alt='dOrg Color Logo' />
+        <Link href="/" display="inline-flex">
+          <StyledLogo src={LogoColor} alt='dOrg Color Logo' />
+        </Link>
         <MenuButton onClick={handleOpen} />
       </Grid>
       <Dialog fullScreen open={open} onClose={handleClose}>
@@ -71,7 +73,9 @@ const HeaderMobile: React.FC = () => {
           pt={3.5}
           pb={5}>
           <Grid container justifyContent={"space-between"} alignItems={"center"}>
-            <StyledLogo src={Logo} alt='dOrg Logo' />
+            <Link href="/" onClick={() => setOpen(false)}>
+              <StyledLogo src={Logo} alt='dOrg Logo' />
+            </Link>
             <CloseButton onClick={handleClose} />
           </Grid>
           <Grid container justifyContent={"center"} alignItems={"center"} gap={4} flexDirection={"column"}>
@@ -80,6 +84,7 @@ const HeaderMobile: React.FC = () => {
                 href={item.path}
                 target={item.external ? "_blank" : undefined}
                 key={index}
+                onClick={() => setOpen(false)}
               >
                 <MenuItemButton variant='h4' color={colors.white} fontWeight='bold'>
                   {item.name}
@@ -90,7 +95,7 @@ const HeaderMobile: React.FC = () => {
           <Grid container justifyContent={"center"} alignItems='center' gap={7}>
             {socialIcons.map((iconLink: IconLink, index) => (
               <Grid item key={index}>
-                <Link href={iconLink.path}>
+                <Link href={iconLink.path} target="_blank" onClick={() => setOpen(false)}>
                   <StyledLogo style={{ width: 24 }} src={iconLink.icon} />
                 </Link>
               </Grid>
