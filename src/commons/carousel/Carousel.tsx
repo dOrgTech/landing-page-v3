@@ -4,6 +4,7 @@ import ReactCarousel, {
   ResponsiveType,
 } from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import theme from "../../theme";
 
 interface CustomCarouselProps extends Omit<CarouselProps, "responsive"> {
   itemsPerRowLargeDesktop?: number;
@@ -27,20 +28,20 @@ const generateResponsiveBody = ({
 }: CarouseRowType): ResponsiveType => {
   return {
     superLargeDesktop: {
-      breakpoint: { max: 4000, min: 3000 },
-      items: itemsPerRowLargeDesktop ?? 5,
+      breakpoint: { max: 4000, min: theme.breakpoints.values.xl },
+      items: itemsPerRowLargeDesktop ?? 3,
     },
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: itemsPerRowDesktop ?? 5,
+      breakpoint: { max: theme.breakpoints.values.xl, min: theme.breakpoints.values.md },
+      items: itemsPerRowDesktop ?? 3,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: itemsPerRowTablet ?? 3,
+      breakpoint: { max: theme.breakpoints.values.md, min: theme.breakpoints.values.sm },
+      items: itemsPerRowTablet ?? 1,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: itemsPerRowMobile ?? 3,
+      items: itemsPerRowMobile ?? 1,
     },
   };
 };
