@@ -1,9 +1,11 @@
 import React from "react";
 import { FormPage } from "../FormPage"
-import { Divider, FormLabel, Stack, TextField, Typography } from "@mui/material";
+import { Divider, FormControl, Stack, TextField, Typography } from "@mui/material";
 import { colors } from "../../../theme";
-import Select from "react-select";
-import { CreatableSelect } from "../../../commons/creatableSelect/CreatableSelect";
+import { Label } from "../../../commons/form/Label"
+import { FormInput } from "../../../commons/form/FormInput"
+import { customStyles, CreatableSelect } from "../../../commons/form/CreatableSelect";
+import Select from "react-select/creatable"
 
 const specializations = [
   { value: "frontend", label: "Frontend Development"},
@@ -55,36 +57,34 @@ export const JoinUsView: React.FC = () => {
               <Divider sx={{border: `2px solid ${colors.black}`}}/>
             </Stack>
             <Stack spacing={4}>
-              <Stack spacing={2}>
-                <FormLabel required sx={{color: "currentColor"}}>
+              <FormControl>
+                <Label required sx={{color: "currentColor"}}>
                   What is your full name?
-                </FormLabel>
-                <TextField
+                </Label>
+                <FormInput
                   id="name"
-                  variant="filled"
                   required
                 />
-              </Stack>
-              <Stack spacing={2}>
-                <FormLabel required sx={{color: "currentColor"}}>
+              </FormControl>
+              <FormControl>
+                <Label required sx={{color: "currentColor"}}>
                   What is your email?
-                </FormLabel>
-                <TextField
+                </Label>
+                <FormInput
                   id="email"
-                  variant="filled"
                   required
                   sx={{width: "100%"}}
                 />
-              </Stack>
-              <Stack spacing={2}>
-                <FormLabel required sx={{color: "currentColor"}}>
+              </FormControl>
+              <FormControl>
+                <Label required sx={{color: "currentColor"}}>
                   What is your main specialization?
-                </FormLabel>
+                </Label>
                 <CreatableSelect
                   id="main-specialization"
                   options={specializations}
                 />
-              </Stack>
+              </FormControl>
             </Stack>
           </Stack>
 
@@ -96,52 +96,55 @@ export const JoinUsView: React.FC = () => {
               <Divider sx={{border: `2px solid ${colors.black}`}}/>
             </Stack>
             <Stack spacing={4}>
-              <Stack spacing={2}>
-                <FormLabel required sx={{color: "currentColor"}}>
+              <FormControl>
+                <Label required sx={{color: "currentColor"}}>
                 How many years have you been specializing in this professionally?
-                </FormLabel>
+                </Label>
                 <Select
+                  styles={customStyles}
                   id="years-experience"
                   isClearable={false}
                   isSearchable={false}
                   options={experienceYears}
                 />
-              </Stack>
-              <Stack spacing={2}>
-                <FormLabel required sx={{color: "currentColor"}}>
+              </FormControl>
+              <FormControl>
+                <Label required sx={{color: "currentColor"}}>
                   Do you have any other specializations?
-                </FormLabel>
+                </Label>
                 <Select
+                  styles={customStyles}
                   id="other-specializations"
                   isMulti
                   options={specializations}
                 />
-              </Stack>
-              <Stack spacing={2}>
-                <FormLabel required sx={{color: "currentColor"}}>
+              </FormControl>
+              <FormControl>
+                <Label required sx={{color: "currentColor"}}>
                   List the technologies you are proficient in:
-                </FormLabel>
+                </Label>
                 <CreatableSelect
                   id="technologies"
                   options={technologies}
                 />
-              </Stack>
-              <Stack spacing={2}>
-                <FormLabel required sx={{color: "currentColor"}}>
+              </FormControl>
+              <FormControl>
+                <Label required sx={{color: "currentColor"}}>
                   Crypto Experience
-                </FormLabel>
+                </Label>
                 <Stack spacing={1}>
                   <Typography variant="body2">
                     How would you rate your experience in the web3 space?
                   </Typography>
                   <Select
+                    styles={customStyles}
                     id="crypto-exerpeince"
                     isClearable={false}
                     isSearchable={false}
                     options={cryptoExperience}
                   />
                 </Stack>
-              </Stack>
+              </FormControl>
             </Stack>
           </Stack>
 
@@ -153,99 +156,95 @@ export const JoinUsView: React.FC = () => {
               <Divider sx={{border: `2px solid ${colors.black}`}}/>
             </Stack>
             <Stack spacing={4}>
-              <Stack spacing={2}>
-                <FormLabel required sx={{color: "currentColor"}}>
+              <FormControl>
+                <Label required sx={{color: "currentColor"}}>
                 Availability (hours per week)
-                </FormLabel>
+                </Label>
                 <Select
+                  styles={customStyles}
                   id="availability"
                   isClearable={false}
                   isSearchable={false}
                   options={availability}
                 />
-              </Stack>
-              <Stack spacing={2}>
-                <FormLabel required sx={{color: "currentColor"}}>
+              </FormControl>
+              <FormControl>
+                <Label required sx={{color: "currentColor"}}>
                   Please write a few sentences about what you&apos;d like to get out of joining dOrg
-                </FormLabel>
+                </Label>
                 <Stack spacing={1}>
                   <Typography variant="body2">
                     Include any relevant experiences or links to past work.
                   </Typography>
-                  <TextField
+                  <FormInput
                     required
-                    multiline
                     rows={5}
                     inputProps={{ sx: {resize: "vertical"} }}
                   />
                 </Stack>
-              </Stack>
-              <Stack spacing={2}>
-                <FormLabel sx={{color: "currentColor"}}>
+              </FormControl>
+              <FormControl>
+                <Label sx={{color: "currentColor"}}>
                   Github
-                </FormLabel>
-                <TextField
+                </Label>
+                <FormInput
                   id="github"
-                  variant="filled"
                   sx={{width: "100%"}}
                 />
-              </Stack>
-              <Stack spacing={2}>
-                <FormLabel sx={{color: "currentColor"}}>
+              </FormControl>
+              <FormControl>
+                <Label sx={{color: "currentColor"}}>
                   LinkedIn
-                </FormLabel>
-                <TextField
+                </Label>
+                <FormInput
                   id="linkedIn"
-                  variant="filled"
                   sx={{width: "100%"}}
                 />
-              </Stack>
-              <Stack spacing={2}>
-                <FormLabel sx={{color: "currentColor"}}>
+              </FormControl>
+              <FormControl>
+                <Label sx={{color: "currentColor"}}>
                   Twitter
-                </FormLabel>
-                <TextField
+                </Label>
+                <FormInput
                   id="twitter"
-                  variant="filled"
                   sx={{width: "100%"}}
                 />
-              </Stack>
-              <Stack spacing={2}>
-                <FormLabel sx={{color: "currentColor"}}>
+              </FormControl>
+              <FormControl>
+                <Label sx={{color: "currentColor"}}>
                   Discord
-                </FormLabel>
-                <TextField
+                </Label>
+                <FormInput
                   id="discord"
-                  variant="filled"
                   sx={{width: "100%"}}
                 />
-              </Stack>
-              <Stack spacing={2}>
-                <FormLabel sx={{color: "currentColor"}}>
+              </FormControl>
+              <FormControl>
+                <Label sx={{color: "currentColor"}}>
                   How did you hear about dOrg?
-                </FormLabel>
+                </Label>
                 <Stack spacing={1}>
                   <Typography variant="body2">
                     If someone in particular referred you, please let us know who!
                   </Typography>
-                  <TextField
+                  <FormInput
                     id="hear-about"
-                    variant="filled"
                     sx={{width: "100%"}}
                   />
                 </Stack>
-              </Stack>
-              <Stack spacing={2}>
-                <FormLabel required sx={{color: "currentColor"}}>
+              </FormControl>
+              <FormControl>
+                <Label required sx={{color: "currentColor"}}>
                   Do you have a US Tax Residency?
-                </FormLabel>
+                </Label>
                 <Select
+                  styles={customStyles}
                   id="tax-registry"
                   isClearable={false}
                   isSearchable={false}
                   options={[{value: "yes", label: "Yes"},{value: "no", label: "No"}]}
                 />
-              </Stack>
+              </FormControl>
             </Stack>
           </Stack>
 

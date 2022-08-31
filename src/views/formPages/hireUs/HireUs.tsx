@@ -1,7 +1,9 @@
 import React from "react";
 import { FormPage } from "../FormPage"
-import { Divider, FormLabel,  Stack, TextField, Typography } from "@mui/material";
+import { Box,BoxProps,  Divider, FormControl, Stack, Typography } from "@mui/material";
 import Select from "react-select";
+import { Label } from "../../../commons/form/Label"
+import { FormInput } from "../../../commons/form/FormInput"
 import { Button } from "../../../commons/button/Button"
 import { colors } from "../../../theme";
 
@@ -48,48 +50,44 @@ export const HireUsView: React.FC = () => {
               <Divider sx={{border: `2px solid ${colors.black}`}}/>
             </Stack>
             <Stack spacing={4}>
-              <Stack spacing={2}>
-                <FormLabel required sx={{color: "currentColor"}}>
+              <FormControl variant="standard">
+                <Label required component="label" htmlFor="name" sx={{color: "currentColor"}}>
                   What is your full name?
-                </FormLabel>
-                <TextField
+                </Label>
+                <FormInput
                   id="name"
-                  variant="filled"
                   required
                 />
-              </Stack>
-              <Stack spacing={2}>
-                <FormLabel required sx={{color: "currentColor"}}>
+              </FormControl>
+              <FormControl variant="standard">
+                <Label required component="label" htmlFor="email" sx={{color: "currentColor"}}>
                   What is your email?
-                </FormLabel>
-                <TextField
+                </Label>
+                <FormInput
                   id="email"
-                  variant="filled"
                   required
                   sx={{width: "100%"}}
                 />
-              </Stack>
-              <Stack spacing={2}>
-                <FormLabel required sx={{color: "currentColor"}}>
+              </FormControl>
+              <FormControl variant="standard">
+                <Label required component="label" htmlFor="organization" sx={{color: "currentColor"}}>
                   What is your organization?
-                </FormLabel>
-                <TextField
+                </Label>
+                <FormInput
                   id="organization"
-                  variant="filled"
                   required
                 />
-              </Stack>
-              <Stack spacing={2}>
-                <FormLabel required sx={{color: "currentColor"}}>
+              </FormControl>
+              <FormControl variant="standard">
+                <Label required component="label" htmlFor="website" sx={{color: "currentColor"}}>
                   Your organization’s website:
-                </FormLabel>
-                <TextField
+                </Label>
+                <FormInput
                   id="website"
-                  variant="filled"
                   required
                   sx={{width: "100%"}}
                 />
-              </Stack>
+              </FormControl>
             </Stack>
           </Stack>
 
@@ -101,73 +99,74 @@ export const HireUsView: React.FC = () => {
               <Divider sx={{border: `2px solid ${colors.black}`}}/>
             </Stack>
             <Stack spacing={4}>
-              <Stack spacing={2}>
-                <FormLabel required sx={{color: "currentColor"}}>
+              <FormControl variant="standard">
+                <Label required component="label" htmlFor="project" sx={{color: "currentColor"}}>
                   Select the categories that best describe your project:
-                </FormLabel>
+                </Label>
                 <Select
                   id="project-categories"
                   isMulti
                   options={categories}
                 />
-              </Stack>
-              <Stack spacing={2}>
-                <FormLabel required sx={{color: "currentColor"}}>
+              </FormControl>
+              <FormControl variant="standard">
+                <Label required component="label" htmlFor="approach" sx={{color: "currentColor"}}>
                   How would you like to work together
-                </FormLabel>
+                </Label>
                 <Select
                   id="approach"
                   options={approaches}
                 />
-              </Stack>
-              <Stack spacing={2}>
-                <FormLabel required sx={{color: "currentColor"}}>
+              </FormControl>
+              <FormControl variant="standard">
+                <Label required component="label" htmlFor="project" sx={{color: "currentColor"}}>
                 Project description:
-                </FormLabel>
+                </Label>
                 <Stack spacing={1}>
                   <Typography variant="body2">
                     Tell us about your project and the desired scope of work.
                   </Typography>
-                  <TextField
+                  <FormInput
+                    id="project-description"
                     required
                     multiline
                     rows={5}
                     inputProps={{ sx: {resize: "vertical"} }}
                   />
                 </Stack>
-              </Stack>
-              <Stack spacing={2}>
-                <FormLabel required sx={{color: "currentColor"}}>
+              </FormControl>
+              <FormControl variant="standard">
+                <Label required component="label" htmlFor="budget" sx={{color: "currentColor"}}>
                   What is your budget?
-                </FormLabel>
+                </Label>
                 <Select
                   id="budget"
                   options={budgets}
                 />
-              </Stack>
-              <Stack spacing={2}>
-                <FormLabel required sx={{color: "currentColor"}}>
+              </FormControl>
+              <FormControl variant="standard">
+                <Label required component="label" htmlFor="startDate" sx={{color: "currentColor"}}>
                   When would you like to get started?
-                </FormLabel>
+                </Label>
                 <Select
                   id="startDate"
                   options={startDates}
                 />
-              </Stack>
-              <Stack spacing={2}>
-                <FormLabel sx={{color: "currentColor"}}>
+              </FormControl>
+              <FormControl variant="standard">
+                <Label component="label" htmlFor="source" sx={{color: "currentColor"}}>
                   How did you hear about dOrg?
-                </FormLabel>
+                </Label>
                 <Stack spacing={1}>
                   <Typography variant="body2">
-                    Tell us about your project and the desired scope of work.
+                    Twitter, youtube, article, etc.
                   </Typography>
-                  <TextField
-                    variant="filled"
+                  <FormInput
+                    id="source"
                     sx={{width: "100%"}}
                   />
                 </Stack>
-              </Stack>
+              </FormControl>
             </Stack>
           </Stack>
         </Stack>

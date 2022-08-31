@@ -1,6 +1,4 @@
 import { createTheme } from "@mui/material/styles";
-import SpaceGroteskWoff2 from "../assets/fonts/SpaceGrotesk-Regular.woff2";
-import SpaceGroteskBoldWoff2 from "../assets/fonts/SpaceGrotesk-Bold.woff2";
 
 export const colors = {
   blue: "#4494F8",
@@ -54,7 +52,7 @@ let theme = createTheme({
   typography: {
     // Base Typography
     fontFamily: [
-      "SpaceGrotesk",
+      "Space Grotesk",
       "-apple-system",
       "BlinkMacSystemFont",
       '"Segoe UI"',
@@ -122,22 +120,6 @@ let theme = createTheme({
   components: {
     MuiCssBaseline: {
       styleOverrides: `
-      @font-face {
-        font-family: 'SpaceGrotesk';
-        font-style: normal;
-        font-display: swap;
-        font-weight: 400;
-        src: local('SpaceGrotesk'), local('SpaceGrotesk-Regular'), url(${SpaceGroteskWoff2}) format('woff2');
-        unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF;
-      }
-      @font-face {
-        font-family: 'SpaceGrotesk';
-        font-style: normal;
-        font-display: swap;
-        font-weight: 700;
-        src: local('SpaceGrotesk'), local('SpaceGrotesk-Bold'), url(${SpaceGroteskBoldWoff2}) format('woff2');
-        unicodeRange: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF;
-      }
       a {
         text-decoration: none;
         color: inherit;
