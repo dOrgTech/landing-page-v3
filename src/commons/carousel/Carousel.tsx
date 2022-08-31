@@ -7,58 +7,49 @@ import "react-multi-carousel/lib/styles.css";
 import theme from "../../theme";
 
 interface CustomCarouselProps extends Omit<CarouselProps, "responsive"> {
-  itemsPerRowLargeDesktop?: number;
-  itemsPerRowDesktop?: number;
-  itemsPerRowTablet?: number;
-  itemsPerRowMobile?: number;
+  itemsPerRow?: (null | number)[]; //from SuperLarge to mobile
 }
 
 type CarouseRowType = {
-  itemsPerRowLargeDesktop?: number;
-  itemsPerRowDesktop?: number;
-  itemsPerRowTablet?: number;
-  itemsPerRowMobile?: number;
+  itemsPerRow?: (null | number)[];
 };
 
 const generateResponsiveBody = ({
-  itemsPerRowLargeDesktop,
-  itemsPerRowDesktop,
-  itemsPerRowTablet,
-  itemsPerRowMobile,
+  itemsPerRow,
 }: CarouseRowType): ResponsiveType => {
   return {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: theme.breakpoints.values.xl },
-      items: itemsPerRowLargeDesktop ?? 3,
+      items: (itemsPerRow && itemsPerRow[0]) ?? 3,
     },
     desktop: {
-      breakpoint: { max: theme.breakpoints.values.xl, min: theme.breakpoints.values.md },
-      items: itemsPerRowDesktop ?? 3,
+      breakpoint: {
+        max: theme.breakpoints.values.xl,
+        min: theme.breakpoints.values.md,
+      },
+      items: (itemsPerRow && itemsPerRow[1]) ?? 3,
     },
     tablet: {
-      breakpoint: { max: theme.breakpoints.values.md, min: theme.breakpoints.values.sm },
-      items: itemsPerRowTablet ?? 1,
+      breakpoint: {
+        max: theme.breakpoints.values.md,
+        min: theme.breakpoints.values.sm,
+      },
+      items: (itemsPerRow && itemsPerRow[2]) ?? 1,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: itemsPerRowMobile ?? 1,
+      items: (itemsPerRow && itemsPerRow[3]) ?? 1,
     },
   };
 };
 
 const Carousel: React.FC<CustomCarouselProps> = ({
   children,
-  itemsPerRowLargeDesktop,
-  itemsPerRowDesktop,
-  itemsPerRowTablet,
-  itemsPerRowMobile,
+  itemsPerRow,
   ...props
 }) => {
   const responsive = generateResponsiveBody({
-    itemsPerRowLargeDesktop,
-    itemsPerRowDesktop,
-    itemsPerRowTablet,
-    itemsPerRowMobile,
+    itemsPerRow,
   });
 
   return (
