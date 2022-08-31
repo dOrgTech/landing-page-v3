@@ -1,5 +1,13 @@
 import React from "react";
-import { Box, Container, Grid, Link, Stack, styled, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Grid,
+  Link,
+  Stack,
+  styled,
+  Typography,
+} from "@mui/material";
 import useIsDesktop from "../../../hooks/useIsDesktop";
 import { Button } from "../../../commons/button/Button";
 import GameOfLifeAnimationCanvas from "../../../commons/gameOfLifeAnimation/GameOfLifeAnimation";
@@ -27,14 +35,13 @@ export const PresentationSection: React.FC = () => {
   return (
     <PresentationSectionContainer>
       <GameOfLifeAnimationCanvas />
-      <Container maxWidth="lg" sx={{height: "90%", position: "relative"}}>
+      <Container maxWidth='lg' sx={{ height: "90%", position: "relative" }}>
         <Grid
           container
           flexDirection='column'
           justifyContent={"center"}
           spacing={1}
-          height="100%"
-        >
+          height='100%'>
           <Grid
             item
             sx={{
@@ -59,7 +66,9 @@ export const PresentationSection: React.FC = () => {
                   <Button variant='contained'>Leverage our expertise</Button>
                 </Grid>
                 <Grid item>
-                  <Button variant='outlined' sx={{bgcolor: colors.black}}>Become a member</Button>
+                  <Button variant='outlined' sx={{ bgcolor: colors.black }}>
+                    Become a member
+                  </Button>
                 </Grid>
               </Grid>
             </Stack>
@@ -83,8 +92,7 @@ export const PresentationSection: React.FC = () => {
           centerMode={false}
           pauseOnHover={true}
           customTransition='all 4s linear'
-          transitionDuration={4000}
-        >
+          transitionDuration={4000}>
           {clientIcons.map((iconLink: IconLink, index) => (
             <Link href={iconLink.path} key={index} target='_blank'>
               <StyledLogo

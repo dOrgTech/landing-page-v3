@@ -1,30 +1,65 @@
 import React from "react";
-import ReactCarousel, { CarouselProps } from "react-multi-carousel";
+import ReactCarousel, {
+  CarouselProps,
+  ResponsiveType,
+} from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-type CustomCarouselProps = Omit<CarouselProps, "responsive">;
+interface CustomCarouselProps extends Omit<CarouselProps, "responsive"> {
+  itemsPerRowLargeDesktop?: number;
+  itemsPerRowDesktop?: number;
+  itemsPerRowTablet?: number;
+  itemsPerRowMobile?: number;
+}
 
-const responsive = {
-  superLargeDesktop: {
-    // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 3000 },
-    items: 5,
-  },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 5,
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 3,
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 3,
-  },
+type CarouseRowType = {
+  itemsPerRowLargeDesktop?: number;
+  itemsPerRowDesktop?: number;
+  itemsPerRowTablet?: number;
+  itemsPerRowMobile?: number;
 };
 
-const Carousel: React.FC<CustomCarouselProps> = ({ children, ...props }) => {
+const generateResponsiveBody = ({
+  itemsPerRowLargeDesktop,
+  itemsPerRowDesktop,
+  itemsPerRowTablet,
+  itemsPerRowMobile,
+}: CarouseRowType): ResponsiveType => {
+  return {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: itemsPerRowLargeDesktop ?? 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: itemsPerRowDesktop ?? 5,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: itemsPerRowTablet ?? 3,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: itemsPerRowMobile ?? 3,
+    },
+  };
+};
+
+const Carousel: React.FC<CustomCarouselProps> = ({
+  children,
+  itemsPerRowLargeDesktop,
+  itemsPerRowDesktop,
+  itemsPerRowTablet,
+  itemsPerRowMobile,
+  ...props
+}) => {
+  const responsive = generateResponsiveBody({
+    itemsPerRowLargeDesktop,
+    itemsPerRowDesktop,
+    itemsPerRowTablet,
+    itemsPerRowMobile,
+  });
+
   return (
     <ReactCarousel responsive={responsive} {...props}>
       {children}
