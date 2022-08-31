@@ -6,22 +6,24 @@ import { MENU_ITEMS, MenuItem } from "./Header";
 import theme, { colors } from "../../theme";
 
 const Navbar = styled(Box)({
-  backgroundColor: colors.black,
+  background: "rgba(0,0,0,0.95)",
+  backdropFilter: "blur(2px)",
   paddingBottom: theme.spacing(4),
   paddingTop: theme.spacing(4),
-  position: "sticky",
+  position: "fixed",
   top: 0,
-  zIndex: 99
-})
+  width: "100vw",
+  zIndex: 99,
+});
 
 const StyledLogo = styled("img")({
   cursor: "pointer",
-  filter: "brightness(5)",
+  filter: "brightness(10) saturate(0%)",
   height: "auto",
   objectFit: "contain",
   width: 100,
   "&:hover": {
-    filter: "brightness(1)",
+    filter: "brightness(1) saturate(100%)",
   }
 });
 
@@ -31,8 +33,9 @@ const MenuItemButton = styled(Typography)({
 });
 
 const HeaderDesktop: React.FC = () => {
+
   return (
-    <Navbar>
+    <Navbar component="header">
       <Container maxWidth="lg">
         <Grid
           container

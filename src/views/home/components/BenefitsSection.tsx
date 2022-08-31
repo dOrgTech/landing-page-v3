@@ -6,6 +6,7 @@ import SwarmBenefit from "../../../assets/imgs/benefits/swarm.svg";
 import TechBenefit from "../../../assets/imgs/benefits/tech.svg";
 import CoordinationBenefit from "../../../assets/imgs/benefits/coordination.svg";
 import AlignmentBenefit from "../../../assets/imgs/benefits/alignment.svg";
+import GameOfLifeAnimation from "../../../commons/gameOfLifeAnimation/GameOfLifeAnimation";
 
 const benefits = [
   {
@@ -40,8 +41,9 @@ const benefits = [
 
 export const BenefitsSection: React.FC = () => {
   return (
-    <Box my={16}>
-      <Container maxWidth="lg">
+    <Box my={16} position="relative">
+      <GameOfLifeAnimation fadeFromBlack />
+      <Container maxWidth="lg" sx={{position: "relative"}}>
         <Typography
           variant="h6"
           component="h2"
@@ -66,12 +68,13 @@ export const BenefitsSection: React.FC = () => {
                   py={8}
                   direction="column"
                   spacing={3}
-                  border={`6px solid ${benefit.color}`}
-                  borderRadius="24px"
                   sx={{
+                    bgcolor: "rgba(0,0,0,0.8)",
+                    border: `6px solid ${benefit.color}`,
+                    borderRadius: "24px",
                     height: "100%",
                     "&:hover": {
-                      background: `linear-gradient(transparent 40%, ${benefit.color})`
+                      background: `linear-gradient(rgba(0,0,0,0.8) 40%, ${benefit.color})`
                     }
                   }}
                 >
@@ -89,7 +92,7 @@ export const BenefitsSection: React.FC = () => {
         </Grid>
         <Grid container justifyContent="center" mt={12}>
           <Grid item>
-            <Button variant='outlined'>Let&apos;s do it</Button>
+            <Button href="/#/hireUs" variant='outlined'>Let&apos;s Talk</Button>
           </Grid>
         </Grid>
       </Container>
