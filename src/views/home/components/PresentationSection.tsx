@@ -95,7 +95,7 @@ export const PresentationSection: React.FC = () => {
           transitionDuration={4000}
           itemsPerRow={[3, 3, 5, 5]}>
           {clientIcons.map((iconLink: IconLink, index) => (
-            <Link href={iconLink.path} key={index} target='_blank'>
+            <Link href={iconLink.path} key={index} target='_blank' className="--centered">
               <StyledLogo
                 sx={{ width: isDesktop ? 150 : 100, height: 42 }}
                 src={iconLink.icon}
