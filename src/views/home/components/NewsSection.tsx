@@ -71,7 +71,7 @@ export const NewsSection: React.FC = () => {
             showDots
             infinite
             shouldResetAutoplay
-            itemsPerRowDesktop={3}
+            itemsPerRow={[1,1,3,3]}
             // responsive={responsive}
           >
             {newsCards.map((card: NewsCard, index) => (

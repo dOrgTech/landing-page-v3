@@ -92,7 +92,8 @@ export const PresentationSection: React.FC = () => {
           centerMode={false}
           pauseOnHover={true}
           customTransition='all 4s linear'
-          transitionDuration={4000}>
+          transitionDuration={4000}
+          itemsPerRow={[3, 3, 5, 5]}>
           {clientIcons.map((iconLink: IconLink, index) => (
             <Link href={iconLink.path} key={index} target='_blank'>
               <StyledLogo

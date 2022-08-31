@@ -5,60 +5,52 @@ import ReactCarousel, {
 } from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./react-multi-carousel-custom-styles.css"
+import theme from "../../theme";
 
 interface CustomCarouselProps extends Omit<CarouselProps, "responsive"> {
-  itemsPerRowLargeDesktop?: number;
-  itemsPerRowDesktop?: number;
-  itemsPerRowTablet?: number;
-  itemsPerRowMobile?: number;
+  itemsPerRow?: (null | number)[]; //from SuperLarge to mobile
 }
 
 type CarouseRowType = {
-  itemsPerRowLargeDesktop?: number;
-  itemsPerRowDesktop?: number;
-  itemsPerRowTablet?: number;
-  itemsPerRowMobile?: number;
+  itemsPerRow?: (null | number)[];
 };
 
 const generateResponsiveBody = ({
-  itemsPerRowLargeDesktop,
-  itemsPerRowDesktop,
-  itemsPerRowTablet,
-  itemsPerRowMobile,
+  itemsPerRow,
 }: CarouseRowType): ResponsiveType => {
   return {
-    superLargeDesktop: {
-      breakpoint: { max: 4000, min: 3000 },
-      items: itemsPerRowLargeDesktop ?? 5,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: itemsPerRowDesktop ?? 5,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: itemsPerRowTablet ?? 3,
-    },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: itemsPerRowMobile ?? 3,
+      items: (itemsPerRow && itemsPerRow[0]) ?? 1,
+    },
+    tablet: {
+      breakpoint: {
+        max: theme.breakpoints.values.md,
+        min: theme.breakpoints.values.sm,
+      },
+      items: (itemsPerRow && itemsPerRow[1]) ?? 1,
+    },
+    desktop: {
+      breakpoint: {
+        max: theme.breakpoints.values.xl,
+        min: theme.breakpoints.values.md,
+      },
+      items: (itemsPerRow && itemsPerRow[2]) ?? 3,
+    },
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: theme.breakpoints.values.xl },
+      items: (itemsPerRow && itemsPerRow[3]) ?? 3,
     },
   };
 };
 
 const Carousel: React.FC<CustomCarouselProps> = ({
   children,
-  itemsPerRowLargeDesktop,
-  itemsPerRowDesktop,
-  itemsPerRowTablet,
-  itemsPerRowMobile,
+  itemsPerRow,
   ...props
 }) => {
   const responsive = generateResponsiveBody({
-    itemsPerRowLargeDesktop,
-    itemsPerRowDesktop,
-    itemsPerRowTablet,
-    itemsPerRowMobile,
+    itemsPerRow,
   });
 
   return (
