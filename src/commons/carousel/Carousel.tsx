@@ -1,30 +1,58 @@
 import React from "react";
-import ReactCarousel, { CarouselProps } from "react-multi-carousel";
+import ReactCarousel, {
+  CarouselProps,
+  ResponsiveType,
+} from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import "./react-multi-carousel-custom-styles.css"
+import theme from "../../theme";
 
-type CustomCarouselProps = Omit<CarouselProps, "responsive">;
+interface CustomCarouselProps extends Omit<CarouselProps, "responsive"> {
+  itemsPerRow?: (null | number)[]; //from SuperLarge to mobile
+}
 
-const responsive = {
-  superLargeDesktop: {
-    // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 3000 },
-    items: 5,
-  },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 5,
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 3,
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 3,
-  },
+type CarouseRowType = {
+  itemsPerRow?: (null | number)[];
 };
 
-const Carousel: React.FC<CustomCarouselProps> = ({ children, ...props }) => {
+const generateResponsiveBody = ({
+  itemsPerRow,
+}: CarouseRowType): ResponsiveType => {
+  return {
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: (itemsPerRow && itemsPerRow[0]) ?? 1,
+    },
+    tablet: {
+      breakpoint: {
+        max: theme.breakpoints.values.md,
+        min: theme.breakpoints.values.sm,
+      },
+      items: (itemsPerRow && itemsPerRow[1]) ?? 1,
+    },
+    desktop: {
+      breakpoint: {
+        max: theme.breakpoints.values.xl,
+        min: theme.breakpoints.values.md,
+      },
+      items: (itemsPerRow && itemsPerRow[2]) ?? 3,
+    },
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: theme.breakpoints.values.xl },
+      items: (itemsPerRow && itemsPerRow[3]) ?? 3,
+    },
+  };
+};
+
+const Carousel: React.FC<CustomCarouselProps> = ({
+  children,
+  itemsPerRow,
+  ...props
+}) => {
+  const responsive = generateResponsiveBody({
+    itemsPerRow,
+  });
+
   return (
     <ReactCarousel responsive={responsive} {...props}>
       {children}
