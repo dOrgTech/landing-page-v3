@@ -1,7 +1,7 @@
 import React from "react";
 import { FormPage } from "../FormPage"
-import { Box,BoxProps,  Divider, FormControl, Stack, Typography } from "@mui/material";
-import Select from "react-select";
+import { Divider, FormControl, Stack, Typography } from "@mui/material";
+import { CreatableSelect as Select } from "../../../commons/form/CreatableSelect";
 import { Label } from "../../../commons/form/Label"
 import { FormInput } from "../../../commons/form/FormInput"
 import { Button } from "../../../commons/button/Button"
@@ -170,7 +170,6 @@ export const HireUsView: React.FC = () => {
             </Stack>
           </Stack>
         </Stack>
-
         <Button
           variant="outlined"
           sx={{

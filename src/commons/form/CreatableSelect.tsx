@@ -11,6 +11,9 @@ export interface CreateSelectProps {
   value?: string[]
   placeholder?: string
   errorMsg?: string
+  isMulti?: boolean
+  isClearable?: boolean
+  isSearchable?: boolean
   isAddress?: boolean
 }
 
@@ -25,22 +28,28 @@ export const customStyles = {
       border: state.isFocused ? `1px solid ${colors.black}` : `1px solid ${colors.black}`,
     },
   }),
+  indicatorSeparator: (base: any) => ({
+    ...base,
+    backgroundColor: colors.grays[100],
+  }),
+  multiValue: (base: any) => ({
+    ...base,
+    backgroundColor: colors.green,
+    "& [role=button]:hover": {
+      backgroundColor: colors.magenta,
+      color: colors.white,
+    }
+  }),
   valueContainer: (base: any) => ({
     ...base,
     minHeight: 47,
   }),
   menu: (base: any) => ({
     ...base,
-    // override border radius to match the box
     borderRadius: 8,
-    // kill the gap
     marginTop: 8,
   }),
-  menuList: (base: any) => ({
-    ...base,
-    // kill the white space on first and last option
-    // padding: 0,
-  }),
+
 }
 
 export interface DropdownOption {
@@ -51,7 +60,7 @@ export interface DropdownOption {
 
 export type CreateSelectOption = Omit<DropdownOption, "icon">
 
-export const CreatableSelect: React.FC<CreateSelectProps> = ({ id, options, onSelected, value, placeholder, errorMsg }) => {
+export const CreatableSelect: React.FC<CreateSelectProps> = ({ id, options, onSelected, value, placeholder, errorMsg, ...props}) => {
   const [values, setValues] = useState<CreateSelectOption[]>([])
 
   useEffect(() => {
@@ -77,9 +86,8 @@ export const CreatableSelect: React.FC<CreateSelectProps> = ({ id, options, onSe
         id={id}
         value={values}
         options={options}
-        isMulti
         onChange={handleChange}
-        placeholder={placeholder}
+        {...props}
       />
       {errorMsg && (
         <FormHelperText sx={{ textTransform: "capitalize" }}>{errorMsg}</FormHelperText>

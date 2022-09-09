@@ -1,11 +1,10 @@
 import React from "react";
 import { FormPage } from "../FormPage"
-import { Divider, FormControl, Stack, TextField, Typography } from "@mui/material";
+import { Divider, FormControl, Stack, Typography } from "@mui/material";
 import { colors } from "../../../theme";
 import { Label } from "../../../commons/form/Label"
 import { FormInput } from "../../../commons/form/FormInput"
-import { customStyles, CreatableSelect } from "../../../commons/form/CreatableSelect";
-import Select from "react-select/creatable"
+import { CreatableSelect as Select } from "../../../commons/form/CreatableSelect";
 
 const specializations = [
   { value: "frontend", label: "Frontend Development"},
@@ -80,9 +79,10 @@ export const JoinUsView: React.FC = () => {
                 <Label required sx={{color: "currentColor"}}>
                   What is your main specialization?
                 </Label>
-                <CreatableSelect
+                <Select
                   id="main-specialization"
                   options={specializations}
+                  isMulti
                 />
               </FormControl>
             </Stack>
@@ -101,7 +101,6 @@ export const JoinUsView: React.FC = () => {
                 How many years have you been specializing in this professionally?
                 </Label>
                 <Select
-                  styles={customStyles}
                   id="years-experience"
                   isClearable={false}
                   isSearchable={false}
@@ -113,7 +112,6 @@ export const JoinUsView: React.FC = () => {
                   Do you have any other specializations?
                 </Label>
                 <Select
-                  styles={customStyles}
                   id="other-specializations"
                   isMulti
                   options={specializations}
@@ -123,8 +121,9 @@ export const JoinUsView: React.FC = () => {
                 <Label required sx={{color: "currentColor"}}>
                   List the technologies you are proficient in:
                 </Label>
-                <CreatableSelect
+                <Select
                   id="technologies"
+                  isMulti
                   options={technologies}
                 />
               </FormControl>
@@ -137,7 +136,6 @@ export const JoinUsView: React.FC = () => {
                     How would you rate your experience in the web3 space?
                   </Typography>
                   <Select
-                    styles={customStyles}
                     id="crypto-exerpeince"
                     isClearable={false}
                     isSearchable={false}
@@ -161,7 +159,6 @@ export const JoinUsView: React.FC = () => {
                 Availability (hours per week)
                 </Label>
                 <Select
-                  styles={customStyles}
                   id="availability"
                   isClearable={false}
                   isSearchable={false}
@@ -238,7 +235,6 @@ export const JoinUsView: React.FC = () => {
                   Do you have a US Tax Residency?
                 </Label>
                 <Select
-                  styles={customStyles}
                   id="tax-registry"
                   isClearable={false}
                   isSearchable={false}
