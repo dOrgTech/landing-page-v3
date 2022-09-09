@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ChartGraphic from "./ChartGraphic"
-import { Box, Stack, styled, Theme, Typography } from "@mui/material";
+import { Box, Stack, styled, Theme, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { StatProps } from "."
 import { colors } from "../../../../theme";
 
@@ -25,6 +25,12 @@ const StatCard: React.FC<Stat> = ({stat}) => {
   const handleStatCardLeave = () => {
     setHoverId(null);
   }
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  useEffect(() => {
+    setHoverId(isMobile ? id : null);
+  })
 
   return (
     <StyledStatCard
