@@ -208,12 +208,13 @@ theme = createTheme(theme, {
         },
       },
     },
-    MuiTypography: {
+    MuiLink: {
       styleOverrides: {
         root: {
-          margin: 0,
-        },
-      },
+          cursor: "pointer",
+          textDecorationColor: "currentColor",
+        }
+      }
     },
   },
 });
