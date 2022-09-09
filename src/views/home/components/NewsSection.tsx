@@ -1,45 +1,12 @@
 import React from "react";
-import { Box, Container, Link, Stack,  Typography } from "@mui/material";
+import { Box, Container, Link, Stack,  Typography, useTheme } from "@mui/material";
 import Carousel from "../../../commons/carousel/Carousel";
 import { colors } from "../../../theme"
 import ExternalLinkIcon from "../../../assets/imgs/external-link-icon.svg";
-import TimeIcon from "../../../assets/imgs/news/time.svg";
-import DelphiIcon from "../../../assets/imgs/news/delphi.svg";
-import StanfordIcon from "../../../assets/imgs/news/stanford.svg";
-
-const newsCards = [
-  {
-    image: TimeIcon,
-    slug: "time",
-    path: "https://time.com/6146406/working-at-dao-dorg/",
-    text: "In march this year Time Magazine published an article titled No Bosses: What It’s Like Working at a DAO, in which dOrg was featured throughout its entirety.",
-    type: "article",
-  },
-  {
-    image: DelphiIcon,
-    slug: "delphi",
-    path: "https://members.delphidigital.io/media/dorg-defining-daos-comparing-the-dao-model-to-traditional-llc-structures-and-the-future-of-dao-tooling",
-    text: "A deep dive with dOrg’s Ori Shimony and Nestor Amesty, covering DAO ontology and taxonomy, the future of DAO tooling, and much more.",
-    type: "podcast",
-  },
-  {
-    image: StanfordIcon,
-    slug: "stanford",
-    path: "https://www.youtube.com/watch?v=SYPzqRaN4zA",
-    text: "In this lecture presented at Stanford's BioE60 Beyond Bitcoin course, Ron Bogerand Ori Shimony of dOrg present an overview on DAOs.",
-    type: "lecture",
-  },
-]
-
-interface NewsCard {
-  path: string;
-  slug: string;
-  text: string;
-  type?: string;
-  image?: string;
-}
+import { newsCards, NewsCardProps } from "../../../constants/news"
 
 export const NewsSection: React.FC = () => {
+  const theme = useTheme();
 
   return (
     <Box my={16} px={4}>
@@ -57,20 +24,18 @@ export const NewsSection: React.FC = () => {
           <Carousel
             swipeable
             draggable
-            arrows
-            showDots
-            infinite
+            arrows={newsCards.length > 3}
+            showDots={newsCards.length > 3}
             shouldResetAutoplay
             itemsPerRow={[1,1,3,3]}
           >
-            {newsCards.map((card: NewsCard, index) => (
+            {newsCards.map((card: NewsCardProps, index) => (
               <Link href={card.path} key={index} target='_blank' underline="none" sx={{alignSelf: "stretch"}}>
                 <Stack
                   spacing={4}
                   direction="column"
                   sx={{
                     mb: 12,
-                    ml: 3,
                     p: 4,
                     justifyContent: "flex-start",
                     border: `6px solid ${colors.grays[700]}`,
@@ -79,6 +44,9 @@ export const NewsSection: React.FC = () => {
                     transition: "all 0.25s ease-in-out",
                     "& .read-link": {
                       transition: "opacity 0.25s ease-in-out",
+                    },
+                    [theme.breakpoints.up('md')]: {
+                      ml: 3,
                     },
                     "&:hover": {
                       background: `linear-gradient(rgba(255,255,255,50%), rgba(255,255,255,0))`,
