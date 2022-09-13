@@ -31,7 +31,7 @@ export const testimonials = [
   },
   {
     account: testimonialAccounts.tezos,
-    externalLink: "https://twitter.com/fhomoney/status/1476228453980585984",
+    externalLink: "hhttps://twitter.com/TezosCommons/status/1435241508832092165",
     testimonialText: testimonialContent.tezos,
   },
   {
