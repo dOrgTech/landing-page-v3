@@ -3,7 +3,6 @@ import { Box, Container, ContainerProps, styled } from "@mui/material";
 import { ButtonGroupProps } from "react-multi-carousel";
 import arrowLeft from "../../assets/imgs/arrow-left.svg";
 import arrowRight from "../../assets/imgs/arrow-right.svg";
-import { StringDecoder } from "string_decoder";
 
 interface CarouselButtonGroupProps extends ButtonGroupProps, ContainerProps {
   offset?: number | string;

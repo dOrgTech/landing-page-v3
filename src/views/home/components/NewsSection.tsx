@@ -1,5 +1,5 @@
-import React from "react";
-import { Box, Container, Link, Stack,  Typography, useTheme } from "@mui/material";
+import React, { useState } from "react";
+import { Box, Container, Link, Stack,  Typography, useMediaQuery, useTheme } from "@mui/material";
 import Carousel from "../../../commons/carousel/Carousel";
 import { ButtonGroup } from "../../../commons/carousel/ButtonGroup";
 import { colors } from "../../../theme"
@@ -7,7 +7,16 @@ import ExternalLinkIcon from "../../../assets/imgs/external-link-icon.svg";
 import { newsCards, NewsCardProps } from "../../../constants/news"
 
 export const NewsSection: React.FC = () => {
+  const [isMoving, setMoving] = useState<boolean>(false)
+
   const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
+  const handleClick = (e: any) => {
+    if(isMoving) {
+      e.preventDefault();
+    }
+  }
 
   return (
     <Box sx={{
@@ -18,7 +27,7 @@ export const NewsSection: React.FC = () => {
         pb: 16,
       }
     }}>
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" disableGutters={isMobile}>
         <Typography
           variant="h6"
           component="h2"
@@ -32,16 +41,29 @@ export const NewsSection: React.FC = () => {
           <Carousel
             swipeable
             draggable
-            showDots
             arrows={false}
+            showDots={newsCards.length > 3}
             renderButtonGroupOutside={true}
-            customButtonGroup={<ButtonGroup offset={theme.spacing(7)}/>}
             shouldResetAutoplay
-            itemsPerRow={[1,1,3,3]}
+            itemsPerRow={[1,2,3,3]}
+            beforeChange={() => setMoving(true)}
+            afterChange={() => setMoving(false)}
+            customButtonGroup={
+              (isMobile || newsCards.length > 3) ? (
+                <ButtonGroup offset={theme.spacing(7)}/>
+              ) : null
+            }
           >
             {newsCards.map((card: NewsCardProps, index) => (
-              <Box px={1} key={index} >
-                <Link href={card.path} target='_blank' underline="none" sx={{alignSelf: "stretch"}}>
+              <Box px={isMobile ? 2 : undefined} key={index}>
+                <Link
+                  href={card.path}
+                  target='_blank'
+                  underline="none"
+                  draggable={false}
+                  onClick={(e) => handleClick(e)}
+                  sx={{alignSelf: "stretch"}}
+                >
                   <Stack
                     spacing={4}
                     direction="column"

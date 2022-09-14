@@ -16,8 +16,14 @@ export interface TwitterCardProps {
 export const TwitterCard: React.FC<TwitterCardProps> = ({ account, externalLink, text, image, color, clickable }) => {
   const { avatar, name, username } = account;
 
+  const handleClick = (e: any) => {
+    if(!clickable) {
+      e.preventDefault();
+    }
+  }
+
   return (
-    <Link underline="none" href={externalLink} target="_blank">
+    <Link underline="none" href={externalLink} target="_blank" draggable={false} onClick={(e) => handleClick(e)}>
       <Stack
         direction="column"
         spacing={2}
@@ -62,7 +68,7 @@ export const TwitterCard: React.FC<TwitterCardProps> = ({ account, externalLink,
         </Stack>
         {text}
         {image && (
-          <img src={image} alt="" style={{borderRadius: 8}}/>
+          <img src={image} alt="" style={{borderRadius: 8, pointerEvents: "none"}}/>
         )}
       </Stack>
     </Link>
