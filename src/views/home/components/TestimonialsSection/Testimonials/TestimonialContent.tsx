@@ -1,16 +1,6 @@
 import React from "react";
 import { styled, Typography } from "@mui/material";
-import { colors } from "../../../../../theme"
-
-const PostLink = styled(Typography)({
-  color: colors.blue,
-  display: "inline",
-  lineHeight: 1.25,
-  overflowWrap: "break-word",
-  "&:hover": {
-    opacity: 0.8
-  }
-})
+import { PostLink } from "../../../../../commons/twitter/PostLink"
 
 const ContentTypography = styled(Typography)({
   lineHeight: 1.25,

@@ -1,15 +1,19 @@
 import React from "react";
-import { Box, Link, Stack,  Typography } from "@mui/material";
-import { TestimonialsProps } from "./Testimonials"
-import { colors } from "../../../../theme"
-import TwitterIcon from "../../../../assets/imgs/twitter.svg";
+import { Box, Link, Stack, Typography } from "@mui/material";
+import { colors } from "../../theme"
+import TwitterIcon from "../../assets/imgs/twitter.svg";
+import { TwitterAccountProps } from "../../constants/twitterAccounts"
 
-export interface TestimonialContentProps {
-  content: TestimonialsProps;
+export interface TwitterCardProps {
+  account: TwitterAccountProps;
+  externalLink: string;
+  text: React.ReactNode;
+  image?: string;
+  color?: string;
+  clickable?: boolean;
 }
 
-export const Testimonial: React.FC<TestimonialContentProps> = ({content}) => {
-  const {account, externalLink, testimonialText } = content;
+export const TwitterCard: React.FC<TwitterCardProps> = ({ account, externalLink, text, image, color, clickable }) => {
   const { avatar, name, username } = account;
 
   return (
@@ -19,7 +23,7 @@ export const Testimonial: React.FC<TestimonialContentProps> = ({content}) => {
         spacing={2}
         sx={{
           bgcolor: colors.black,
-          border: `6px solid ${colors.grays[600]}`,
+          border: `4px solid ${color || colors.grays[600]}`,
           borderRadius: "24px",
           color: colors.white,
           cursor: "pointer",
@@ -56,7 +60,10 @@ export const Testimonial: React.FC<TestimonialContentProps> = ({content}) => {
             <img src={TwitterIcon} alt="Twitter" />
           </Box>
         </Stack>
-        {testimonialText}
+        {text}
+        {image && (
+          <img src={image} alt="" style={{borderRadius: 8}}/>
+        )}
       </Stack>
     </Link>
   );

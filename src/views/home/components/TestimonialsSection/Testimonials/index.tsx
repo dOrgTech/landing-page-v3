@@ -1,46 +1,41 @@
 import { testimonialContent } from "./TestimonialContent";
-import { testimonialAccounts, TestimonialAccountProps } from "./TestimonialAccounts";
+import { twitterAccounts } from "../../../../../constants/twitterAccounts";
+import { TwitterCardProps } from "../../../../../commons/twitter/TwitterCard";
 
-export interface TestimonialsProps {
-  account: TestimonialAccountProps;
-  externalLink: string;
-  testimonialText: React.ReactNode;
-}
-
-export const testimonials = [
+export const testimonials: TwitterCardProps[] = [
   {
-    account: testimonialAccounts.doinGud,
+    account: twitterAccounts.doinGud,
     externalLink: "https://twitter.com/DoinGudHQ/status/1403380341239390212",
-    testimonialText: testimonialContent.doinGud,
+    text: testimonialContent.doinGud,
   },
   {
-    account: testimonialAccounts.fhomoney,
+    account: twitterAccounts.fhomoney,
     externalLink: "https://twitter.com/fhomoney/status/1476228453980585984",
-    testimonialText: testimonialContent.fhomoney,
+    text: testimonialContent.fhomoney,
   },
   {
-    account: testimonialAccounts.auryn,
+    account: twitterAccounts.auryn,
     externalLink: "https://mobile.twitter.com/auryn_macmillan/status/1550298154515709953",
-    testimonialText: testimonialContent.tabula,
+    text: testimonialContent.tabula,
   },
   {
-    account: testimonialAccounts.starkware,
+    account: twitterAccounts.starkware,
     externalLink: "https://mobile.twitter.com/StarkWareLtd/status/1445440226436993025",
-    testimonialText: testimonialContent.starkware,
+    text: testimonialContent.starkware,
   },
   {
-    account: testimonialAccounts.tezos,
+    account: twitterAccounts.tezos,
     externalLink: "hhttps://twitter.com/TezosCommons/status/1435241508832092165",
-    testimonialText: testimonialContent.tezos,
+    text: testimonialContent.tezos,
   },
   {
-    account: testimonialAccounts.acreInvest,
+    account: twitterAccounts.acreInvest,
     externalLink: "https://mobile.twitter.com/ACREinvest/status/1511125211889950722",
-    testimonialText: testimonialContent.acreInvest,
+    text: testimonialContent.acreInvest,
   },
   {
-    account: testimonialAccounts.auryn,
+    account: twitterAccounts.auryn,
     externalLink: "https://mobile.twitter.com/auryn_macmillan/status/1437803822215274498",
-    testimonialText: testimonialContent.zodiac,
+    text: testimonialContent.zodiac,
   },
 ]

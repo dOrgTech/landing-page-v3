@@ -1,36 +1,46 @@
-import React, { ReactChildren } from "react";
-import { Box, Container, Grid, Link, Stack,  Typography } from "@mui/material";
+import React from "react";
+import { Box, Container, Typography, useTheme } from "@mui/material";
 import Masonry from '@mui/lab/Masonry';
-import { Button } from "../../../../commons/button/Button";
-import { colors } from "../../../../theme"
-import { testimonials, TestimonialsProps } from "./Testimonials";
-import { Testimonial } from "./Testimonial";
+import { TwitterCard, TwitterCardProps } from "../../../../commons/twitter/TwitterCard";
+import { testimonials } from "./Testimonials";
 
 export const TestimonialsSection: React.FC = () => {
+  const theme = useTheme();
+
   return (
     <Box my={16} position="relative">
-      <Container maxWidth="lg" sx={{position: "relative"}}>
+      <Container
+        maxWidth="lg"
+        sx={{
+          position: "relative",
+          [theme.breakpoints.down('md')]: {
+            px: 0,
+          }
+        }}
+      >
         <Typography
           variant="h6"
           component="h2"
           textTransform="uppercase"
           textAlign="center"
-          letterSpacing={6}
+          letterSpacing={5}
         >
           In dOrg We Trust <span role="img" aria-label="sparkles">✨</span>
         </Typography>
-        <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={5} sx={{mt: 8}}>
-          {testimonials.map((testimonial: TestimonialsProps) => {
+        <Masonry
+          columns={{ xs: 1, sm: 2, md: 3 }}
+          spacing={5}
+          sx={{
+            mt: 8,
+            mx: 0,
+          }}
+        >
+          {testimonials.map((testimonial: TwitterCardProps) => {
             return (
-              <Testimonial key={testimonial.externalLink} content={testimonial} />
+              <TwitterCard key={testimonial.externalLink} {...testimonial} />
             )
           })}
         </Masonry>
-        <Grid container justifyContent="center" mt={12}>
-          <Grid item>
-            <Button href="/#/hireUs" variant='outlined'>Let&apos;s Talk</Button>
-          </Grid>
-        </Grid>
       </Container>
     </Box>
   );
