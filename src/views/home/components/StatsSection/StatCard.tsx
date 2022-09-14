@@ -34,7 +34,7 @@ const StatCard: React.FC<Stat> = ({stat}) => {
     if (isMobile) {
       setHoverId(id);
     }
-  }, [isMobile])
+  }, [isMobile, id])
 
   return (
     <StyledStatCard

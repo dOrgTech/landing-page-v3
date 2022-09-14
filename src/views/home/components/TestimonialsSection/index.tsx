@@ -33,9 +33,7 @@ export const TestimonialsSection: React.FC = () => {
           spacing={5}
           sx={{
             mt: 8,
-            [theme.breakpoints.down('md')]: {
-              mx: 0,
-            }
+            mx: 0,
           }}
         >
           {testimonials.map((testimonial: TwitterCardProps) => {
