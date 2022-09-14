@@ -38,7 +38,7 @@ export const NewsSection: React.FC = () => {
                     mb: 12,
                     p: 4,
                     justifyContent: "flex-start",
-                    border: `6px solid ${colors.grays[700]}`,
+                    border: `4px solid ${colors.grays[700]}`,
                     borderRadius: "24px",
                     color: colors.white,
                     transition: "all 0.25s ease-in-out",

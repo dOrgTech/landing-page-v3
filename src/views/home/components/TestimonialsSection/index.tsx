@@ -42,11 +42,6 @@ export const TestimonialsSection: React.FC = () => {
             )
           })}
         </Masonry>
-        <Grid container justifyContent="center" mt={12}>
-          <Grid item>
-            <Button href="/#/hireUs" variant='outlined'>Let&apos;s Talk</Button>
-          </Grid>
-        </Grid>
       </Container>
     </Box>
   );

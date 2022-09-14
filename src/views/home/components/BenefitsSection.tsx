@@ -70,7 +70,7 @@ export const BenefitsSection: React.FC = () => {
                   spacing={3}
                   sx={{
                     bgcolor: "rgba(0,0,0,0.8)",
-                    border: `6px solid ${benefit.color}`,
+                    border: `4px solid ${benefit.color}`,
                     borderRadius: "24px",
                     height: "100%",
                     "&:hover": {

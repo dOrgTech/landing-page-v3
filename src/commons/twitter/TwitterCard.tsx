@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Link, Stack,  Typography } from "@mui/material";
+import { Box, Link, Stack, Typography } from "@mui/material";
 import { colors } from "../../theme"
 import TwitterIcon from "../../assets/imgs/twitter.svg";
 import { TwitterAccountProps } from "../../constants/twitterAccounts"
@@ -7,10 +7,12 @@ import { TwitterAccountProps } from "../../constants/twitterAccounts"
 export interface TwitterCardProps {
   account: TwitterAccountProps;
   externalLink: string;
-  testimonialText: React.ReactNode;
+  text: React.ReactNode;
+  image?: string;
+  color?: string;
 }
 
-export const TwitterCard: React.FC<TwitterCardProps> = ({ account, externalLink, testimonialText }) => {
+export const TwitterCard: React.FC<TwitterCardProps> = ({ account, externalLink, text, image, color }) => {
   const { avatar, name, username } = account;
 
   return (
@@ -20,7 +22,7 @@ export const TwitterCard: React.FC<TwitterCardProps> = ({ account, externalLink,
         spacing={2}
         sx={{
           bgcolor: colors.black,
-          border: `6px solid ${colors.grays[600]}`,
+          border: `4px solid ${color || colors.grays[600]}`,
           borderRadius: "24px",
           color: colors.white,
           cursor: "pointer",
@@ -57,7 +59,10 @@ export const TwitterCard: React.FC<TwitterCardProps> = ({ account, externalLink,
             <img src={TwitterIcon} alt="Twitter" />
           </Box>
         </Stack>
-        {testimonialText}
+        {text}
+        {image && (
+          <img src={image} alt="" style={{borderRadius: 8}}/>
+        )}
       </Stack>
     </Link>
   );

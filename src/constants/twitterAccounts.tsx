@@ -1,10 +1,15 @@
 import React from "react";
-import DoinGudAvatar from "../assets/imgs/testimonials/doinGud.png";
-import FhomoneyAvatar from "../assets/imgs/testimonials/fhomoney.png";
-import AurynAvatar from "../assets/imgs/testimonials/auryn.png";
-import StarkwareAvatar from "../assets/imgs/testimonials/starkware.png";
-import AcreInvestAvatar from "../assets/imgs/testimonials/acreInvest.png";
-import tezosAvatar from "../assets/imgs/testimonials/tezos.png";
+import DoinGudAvatar from "../assets/imgs/avatars/doinGud.png";
+import FhomoneyAvatar from "../assets/imgs/avatars/fhomoney.png";
+import AurynAvatar from "../assets/imgs/avatars/auryn.png";
+import StarkwareAvatar from "../assets/imgs/avatars/starkware.png";
+import AcreInvestAvatar from "../assets/imgs/avatars/acreInvest.png";
+import TezosAvatar from "../assets/imgs/avatars/tezos.png";
+import DorgAvatar from "../assets/imgs/avatars/dorg.png";
+import PhilAvatar from "../assets/imgs/avatars/philh.png";
+import LinusAvatar from "../assets/imgs/avatars/linus.png";
+import MrsBadgerFaceAvatar from "../assets/imgs/avatars/mrsbadgerface.png";
+import ManBoyAvatar from "../assets/imgs/avatars/asgeir.png";
 
 export interface TwitterAccountProps {
   avatar: string;
@@ -19,9 +24,14 @@ export interface TwitterAccounts {
   starkware: TwitterAccountProps;
   acreInvest: TwitterAccountProps;
   tezos: TwitterAccountProps;
+  dorg: TwitterAccountProps;
+  phil_h: TwitterAccountProps;
+  linus: TwitterAccountProps;
+  mrsBadgerFace: TwitterAccountProps;
+  manboy: TwitterAccountProps;
 }
 
-export const testimonialAccounts: TwitterAccounts = {
+export const twitterAccounts: TwitterAccounts = {
   doinGud: {
     name: "DoinGud (:D, :D)",
     username: "@doinGudHQ",
@@ -50,6 +60,31 @@ export const testimonialAccounts: TwitterAccounts = {
   tezos: {
     name: "Tezos Commons",
     username: "@TezosCommons",
-    avatar: tezosAvatar,
-  }
-}
+    avatar: TezosAvatar,
+  },
+  dorg: {
+    name: "dOrg",
+    username: "@dOrg_tech",
+    avatar: DorgAvatar,
+  },
+  phil_h: {
+    name: <>philh <span role="image" aria-label="rainbow">🌈</span></>,
+    username: "@phil_h",
+    avatar: PhilAvatar,
+  },
+  linus: {
+    name: "Linus",
+    username: "@Linus_Eth",
+    avatar: LinusAvatar,
+  },
+  mrsBadgerFace: {
+    name: "Anna-Marie Swan",
+    username: "@MrsBadgerface",
+    avatar: MrsBadgerFaceAvatar,
+  },
+  manboy: {
+    name: <>manboy.ethᵍᵐ<span role="image" aria-label="coffee">☕️</span></>,
+    username: "@manboy_eth",
+    avatar: ManBoyAvatar,
+  },
+};

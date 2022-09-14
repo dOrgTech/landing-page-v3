@@ -42,7 +42,7 @@ const StatCard: React.FC<Stat> = ({stat}) => {
       onMouseLeave={() => handleStatCardLeave()}
       sx={{
         backgroundColor: hoverId? "#222" : "transparent",
-        border: `6px solid ${hoverId ? "#E5E5E5" : colors.grays[700]}`,
+        border: `4px solid ${hoverId ? "#E5E5E5" : colors.grays[700]}`,
       }}
     >
       <Box position="relative">
