@@ -31,7 +31,7 @@ const GameOfLifeAnimation = ({
   mouseTrailEffect = true,
   opacity = 0.4,
   resolution = 10,
-  }: GameOfLifeProps) => {
+}: GameOfLifeProps) => {
   
   let prefersReducedMotion: boolean | null;
   let grid: number[][];

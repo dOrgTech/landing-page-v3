@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import StatCard from "./StatCard"
 import { Box, Container, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { colors } from "../../../../theme"
@@ -50,7 +50,7 @@ export const StatsSection: React.FC = () => {
   ]
 
   return (
-    <Box my={20} px={4}>
+    <Box my={20}>
 
       <Container maxWidth="lg">
         <Grid
@@ -84,7 +84,7 @@ export const StatsSection: React.FC = () => {
             </Typography>
           </Grid>
           <Grid item xs={12} lg={6}>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} sx={{overflow: "hidden"}}>
               {stats.map((stat: StatProps, index) => {
                 return (
                   <Grid item key={index} xs={12} sm={6}>

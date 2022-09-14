@@ -1,5 +1,13 @@
 import React from "react";
-import { Box, Container, Grid, Link, Stack, styled, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Grid,
+  Link,
+  Stack,
+  styled,
+  Typography,
+} from "@mui/material";
 import useIsDesktop from "../../../hooks/useIsDesktop";
 import { Button } from "../../../commons/button/Button";
 import GameOfLifeAnimationCanvas from "../../../commons/gameOfLifeAnimation/GameOfLifeAnimation";
@@ -27,14 +35,13 @@ export const PresentationSection: React.FC = () => {
   return (
     <PresentationSectionContainer>
       <GameOfLifeAnimationCanvas />
-      <Container maxWidth="lg" sx={{height: "90%", position: "relative"}}>
+      <Container maxWidth='lg' sx={{ height: "90%", position: "relative" }}>
         <Grid
           container
           flexDirection='column'
           justifyContent={"center"}
           spacing={1}
-          height="100%"
-        >
+          height='100%'>
           <Grid
             item
             sx={{
@@ -84,9 +91,9 @@ export const PresentationSection: React.FC = () => {
           pauseOnHover={true}
           customTransition='all 4s linear'
           transitionDuration={4000}
-        >
+          itemsPerRow={[3, 3, 5, 5]}>
           {clientIcons.map((iconLink: IconLink, index) => (
-            <Link href={iconLink.path} key={index} target='_blank'>
+            <Link href={iconLink.path} key={index} target='_blank' className="--centered">
               <StyledLogo
                 sx={{ width: isDesktop ? 150 : 100, height: 42 }}
                 src={iconLink.icon}

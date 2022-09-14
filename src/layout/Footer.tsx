@@ -182,7 +182,7 @@ export const Footer: React.FC = () => {
           spacing={1}
         >
           <Link
-            href="/privacy-policy"
+            href="/#/privacy-policy"
             underline="always"
             sx={{
               color: colors.grays[500],

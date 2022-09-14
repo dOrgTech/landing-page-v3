@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ChartGraphic from "./ChartGraphic"
-import { Box, Stack, styled, Theme, Typography } from "@mui/material";
+import { Box, Stack, styled, Theme, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { StatProps } from "."
 import { colors } from "../../../../theme";
 
@@ -15,6 +15,8 @@ export interface Stat {
 
 const StatCard: React.FC<Stat> = ({stat}) => {
   const {id, title, statNumber, color, activeColors} = stat;
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   const [hoverId, setHoverId] = useState<string | null>(null)
 
@@ -23,8 +25,16 @@ const StatCard: React.FC<Stat> = ({stat}) => {
   }
 
   const handleStatCardLeave = () => {
-    setHoverId(null);
+    if (!isMobile) {
+      setHoverId(null);
+    }
   }
+
+  useEffect(() => {
+    if (isMobile) {
+      setHoverId(id);
+    }
+  }, [isMobile, id])
 
   return (
     <StyledStatCard
@@ -32,7 +42,7 @@ const StatCard: React.FC<Stat> = ({stat}) => {
       onMouseLeave={() => handleStatCardLeave()}
       sx={{
         backgroundColor: hoverId? "#222" : "transparent",
-        border: `6px solid ${hoverId ? "#E5E5E5" : colors.grays[700]}`,
+        border: `4px solid ${hoverId ? "#E5E5E5" : colors.grays[700]}`,
       }}
     >
       <Box position="relative">
@@ -61,6 +71,7 @@ const StatCard: React.FC<Stat> = ({stat}) => {
                 fontSize: "0.825rem",
                 letterSpacing: 3,
                 lineHeight: 1,
+                marginBlockStart: 0,
                 textTransform: "uppercase",
               }}
             >
@@ -74,7 +85,7 @@ const StatCard: React.FC<Stat> = ({stat}) => {
                 fontWeight: 800,
                 lineHeight: 1,
                 transformOrigin: "bottom left",
-                transform: `scale(${hoverId == id ? 1.4 : 1})`,
+                transform: `scale(${hoverId === id ? 1.4 : 1})`,
                 transition: "transform 0.25s ease-in-out",
               }}
             >

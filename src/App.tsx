@@ -5,6 +5,7 @@ import { Footer } from "./layout/Footer";
 import { HomeView } from "./views/home/Home";
 import { JoinUsView } from "./views/formPages/joinUs/JoinUs";
 import { HireUsView } from "./views/formPages/hireUs/HireUs";
+import { PrivacyPolicy } from "./views/privacyPolicy";
 
 const App: React.FC = () => {
 
@@ -21,6 +22,7 @@ const App: React.FC = () => {
           <Route path='/' element={<HomeView />} />
           <Route path='/joinUs' element={<JoinUsView />} />
           <Route path='/hireUs' element={<HireUsView />} />
+          <Route path='/privacy-policy' element={<PrivacyPolicy />} />
         </Routes>
       </Navbar>
       <Footer />

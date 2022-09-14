@@ -59,7 +59,7 @@ export const ServicesSection: React.FC = () => {
           component="h2"
           textTransform="uppercase"
           textAlign="center"
-          letterSpacing={6}
+          letterSpacing={5}
         >
           Development Services <span role="img" aria-label="hammer and wrench">🛠</span>
         </Typography>

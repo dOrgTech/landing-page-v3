@@ -10,13 +10,6 @@ import { useState } from "react";
 import { MENU_ITEMS, MenuItem } from "./Header";
 import { IconLink, socialIconLinks } from "../../constants/routes";
 
-const Navbar = styled(Box)({
-  backgroundColor: colors.black,
-  position: "sticky",
-  top: 0,
-  zIndex: 99,
-})
-
 const HeaderMobileContainer = styled(Grid)({
   background: `linear-gradient(180deg, ${colors.purple} 0%, ${colors.magenta} 100%)`,
   boxSizing: "border-box",
@@ -57,13 +50,11 @@ const HeaderMobile: React.FC = () => {
   const socialIcons = Object.values(socialIconLinks);
 
   return (
-    <Navbar component="header">
-      <Grid container justifyContent={"space-between"} alignItems={"center"} px={3.5} pt={3.5} pb={3}>
-        <Link href="/" display="inline-flex">
-          <StyledLogo src={LogoColor} alt='dOrg Color Logo' />
-        </Link>
-        <MenuButton onClick={handleOpen} />
-      </Grid>
+    <>
+      <Link href="/" display="inline-flex">
+        <StyledLogo src={LogoColor} alt='dOrg Color Logo' />
+      </Link>
+      <MenuButton onClick={handleOpen} />
       <Dialog fullScreen open={open} onClose={handleClose}>
         <HeaderMobileContainer
           container
@@ -81,6 +72,7 @@ const HeaderMobile: React.FC = () => {
           <Grid container justifyContent={"center"} alignItems={"center"} gap={4} flexDirection={"column"}>
             {MENU_ITEMS.map((item: MenuItem, index) => (
               <Link
+                underline="none"
                 href={item.path}
                 target={item.external ? "_blank" : undefined}
                 key={index}
@@ -103,7 +95,7 @@ const HeaderMobile: React.FC = () => {
           </Grid>
         </HeaderMobileContainer>
       </Dialog>
-    </Navbar>
+    </>
   );
 };
 

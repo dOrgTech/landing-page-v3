@@ -4,16 +4,6 @@ import { experimental_sx as sx } from "@mui/system";
 import { Box, Container, Stack, styled, Typography } from "@mui/material";
 import { colors } from "../../theme";
 
-const AnimationContainer = styled(Box)(
-  sx({
-    backgroundColor: "rgba(0,0,0,0.5)",
-    paddingBottom: 8,
-    paddingTop: "40vh",
-    position: "relative",
-    width: "100vw",
-  })
-);
-
 interface FormPageProps {
   title: string;
   description: string;
@@ -22,7 +12,13 @@ interface FormPageProps {
 export const FormPage: React.FC<FormPageProps> = ({ title, description, children }) => {
   return (
     <>
-      <AnimationContainer>
+      <Box sx={{
+        backgroundColor: "rgba(0,0,0,0.5)",
+        paddingBottom: 8,
+        paddingTop: "40vh",
+        position: "relative",
+        width: "100vw",
+      }}>
           <GameOfLifeAnimation fadeToBlack={false} opacity={0.35} />
         <Container maxWidth="sm" sx={{position: "relative"}}>
           <Stack spacing={3} sx={{textShadow: "0 0.5rem 1rem rgba(0,0,0,1)"}}>
@@ -34,7 +30,7 @@ export const FormPage: React.FC<FormPageProps> = ({ title, description, children
             </Typography>
           </Stack>
         </Container>
-      </AnimationContainer>
+      </Box>
       <Box sx={{
         bgcolor: colors.grays[100],
         color: colors.black,
