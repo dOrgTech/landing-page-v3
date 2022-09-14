@@ -1,26 +1,16 @@
 import React from "react";
-import { Box, Container, Grid, Link, Typography } from "@mui/material";
+import { Link, Stack, Typography } from "@mui/material";
 import Logo from "../../assets/imgs/dOrg-logo.svg";
 import { styled } from "@material-ui/core";
 import { MENU_ITEMS, MenuItem } from "./Header";
-import theme, { colors } from "../../theme";
-
-const Navbar = styled(Box)({
-  background: "rgba(0,0,0,0.95)",
-  backdropFilter: "blur(2px)",
-  paddingBottom: theme.spacing(4),
-  paddingTop: theme.spacing(4),
-  position: "fixed",
-  top: 0,
-  width: "100vw",
-  zIndex: 99,
-});
+import { colors } from "../../theme";
 
 const StyledLogo = styled("img")({
   cursor: "pointer",
   filter: "brightness(10) saturate(0%)",
   height: "auto",
   objectFit: "contain",
+  transform: "translateY(5px)",
   width: 100,
   "&:hover": {
     filter: "brightness(1) saturate(100%)",
@@ -33,48 +23,44 @@ const MenuItemButton = styled(Typography)({
 });
 
 const HeaderDesktop: React.FC = () => {
-
   return (
-    <Navbar component="header">
-      <Container maxWidth="lg">
-        <Grid
-          container
-          justifyContent={"space-between"}
-          alignItems={"center"}
-        >
-          <Grid item>
-            <Link href="/">
-              <StyledLogo src={Logo} alt='dOrg White Logo' />
-            </Link>
-          </Grid>
-          <Grid item>
-            <Grid container justifyContent={"center"} alignItems={"center"} gap={4}>
-              {MENU_ITEMS.map((item: MenuItem, index) => (
-                <Link
-                  href={item.path}
-                  target={item.external ? "_blank" : undefined}
-                  key={index}
-                >
-                  <MenuItemButton
-                    variant='h6'
-                    color={colors.white}
-                    key={index}
-                    sx={{
-                      transition: "color 0.25s ease-in-out",
-                      "&:hover": {
-                        color: colors.green,
-                      }
-                    }}
-                  >
-                    {item.name}
-                  </MenuItemButton>
-                </Link>
-              ))}
-            </Grid>
-          </Grid>
-        </Grid>
-      </Container>
-    </Navbar>
+    <>
+      <Link href="/">
+        <StyledLogo src={Logo} alt='dOrg White Logo' />
+      </Link>
+      <Stack
+        direction="row"
+        spacing={4}
+        sx={{
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {MENU_ITEMS.map((item: MenuItem, index) => (
+          <Link
+            display="inherit"
+            href={item.path}
+            underline="none"
+            target={item.external ? "_blank" : undefined}
+            key={index}
+          >
+            <MenuItemButton
+              color={colors.white}
+              key={index}
+              sx={{
+                fontWeight: 800,
+                transition: "color 0.25s ease-in-out",
+                "&:hover": {
+                  color: colors.green,
+                }
+              }}
+            >
+              {item.name}
+            </MenuItemButton>
+          </Link>
+        ))}
+      </Stack>
+    </>
   );
 };
 
