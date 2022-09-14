@@ -10,7 +10,7 @@ const ContentTypography = styled(Typography)({
 const MagentaText = () => {
   return (
     <ContentTypography variant="subtitle2">
-      <span role="image" aria-label="speech balloon">💬</span> &quot;The
+      <span role="img" aria-label="speech balloon">💬</span> &quot;The
       most striking thing about dOrg is everyone here are incredible people. 
       Brilliant and human-centered in why we are doing what we are doing.&quot;
       Learn more about dOrg&apos;s <PostLink>@magentaceiba</PostLink> and her
@@ -22,7 +22,7 @@ const MagentaText = () => {
 const LinusText = () => {
   return (
     <ContentTypography variant="subtitle2">
-      Merry Christmas to me <span role="image" aria-label="smiley glasses">😎</span> <PostLink>@dOrg_tech</PostLink> <PostLink>@TheMetaFactory</PostLink>
+      Merry Christmas to me <span role="img" aria-label="smiley glasses">😎</span> <PostLink>@dOrg_tech</PostLink> <PostLink>@TheMetaFactory</PostLink>
     </ContentTypography>
   )
 }
@@ -30,7 +30,7 @@ const LinusText = () => {
 const PhilText = () => {
   return (
     <ContentTypography variant="subtitle2">
-      Nous sommes dOrg <span role="image" aria-label="heart">❤️</span>
+      Nous sommes dOrg <span role="img" aria-label="heart">❤️</span>
       <br/>
       <br/>
       With <PostLink>@dOrgJelli</PostLink> <PostLink>@MrsBadgerface</PostLink> <PostLink>@DaoAdvocate</PostLink> <PostLink>@ronboger</PostLink>
@@ -42,13 +42,13 @@ const PhilText = () => {
 const NewsletterText = () => {
   return (
     <ContentTypography variant="subtitle2">
-      Check out the latest installment of our <span role="image" aria-label="spark">✨</span>occasional<span role="image" aria-label="spark">✨</span> newsletter, where we discuss:
+      Check out the latest installment of our <span role="img" aria-label="spark">✨</span>occasional<span role="img" aria-label="spark">✨</span> newsletter, where we discuss:
       <br/>
-      <span role="image" aria-label="bee">🐝</span> Swarm Intelligence
+      <span role="img" aria-label="bee">🐝</span> Swarm Intelligence
       <br/>
-      <span role="image" aria-label="running shoe">👟</span> Automata Sneakers
+      <span role="img" aria-label="running shoe">👟</span> Automata Sneakers
       <br/>
-      <span role="image" aria-label="see-no-evil monkey">🙈</span> The Opposite of FOMO
+      <span role="img" aria-label="see-no-evil monkey">🙈</span> The Opposite of FOMO
       <br/>
       ...and a lot more ;)
       <br/>
@@ -63,7 +63,7 @@ const GivethText = () => {
       Awwww. Feeling the love remotely joining <PostLink>@dOrg_tech</PostLink>&apos;s unconference day in the 
       <PostLink>@Givethio</PostLink> house in Spain where one of the lovely <PostLink>@commonsstack</PostLink>
       and <PostLink>@tecmns</PostLink> folk that I know is hosting and we had one of those &quot;hello!&quot;
-      happy moments <span role="image" aria-label="smile with heart-eyes">😍</span>
+      happy moments <span role="img" aria-label="smile with heart-eyes">😍</span>
     </ContentTypography>
   )
 }

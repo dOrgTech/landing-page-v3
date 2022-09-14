@@ -68,7 +68,7 @@ export const twitterAccounts: TwitterAccounts = {
     avatar: DorgAvatar,
   },
   phil_h: {
-    name: <>philh <span role="image" aria-label="rainbow">🌈</span></>,
+    name: <>philh <span role="img" aria-label="rainbow">🌈</span></>,
     username: "@phil_h",
     avatar: PhilAvatar,
   },
@@ -83,7 +83,7 @@ export const twitterAccounts: TwitterAccounts = {
     avatar: MrsBadgerFaceAvatar,
   },
   manboy: {
-    name: <>manboy.ethᵍᵐ<span role="image" aria-label="coffee">☕️</span></>,
+    name: <>manboy.ethᵍᵐ<span role="img" aria-label="coffee">☕️</span></>,
     username: "@manboy_eth",
     avatar: ManBoyAvatar,
   },

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Grid, Typography, useTheme } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import { Button } from "../../../../commons/button/Button";
 import { TwitterCard, TwitterCardProps } from "../../../../commons/twitter/TwitterCard";
 import { communityTweets } from "./Tweets";

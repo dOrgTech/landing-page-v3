@@ -48,7 +48,7 @@ export const ServicesSection: React.FC = () => {
       _currentServices.unshift(activeService)
       updateServices(_currentServices);
     }
-  }, [activeServiceId && isDesktop])
+  }, [activeServiceId, currentServices, isDesktop])
 
   return (
     <Box py={24} position="relative">
