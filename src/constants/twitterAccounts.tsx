@@ -1,18 +1,27 @@
 import React from "react";
-import DoinGudAvatar from "../../../../../assets/imgs/testimonials/doinGud.png";
-import FhomoneyAvatar from "../../../../../assets/imgs/testimonials/fhomoney.png";
-import AurynAvatar from "../../../../../assets/imgs/testimonials/auryn.png";
-import StarkwareAvatar from "../../../../../assets/imgs/testimonials/starkware.png";
-import AcreInvestAvatar from "../../../../../assets/imgs/testimonials/acreInvest.png";
-import tezosAvatar from "../../../../../assets/imgs/testimonials/tezos.png";
+import DoinGudAvatar from "../assets/imgs/testimonials/doinGud.png";
+import FhomoneyAvatar from "../assets/imgs/testimonials/fhomoney.png";
+import AurynAvatar from "../assets/imgs/testimonials/auryn.png";
+import StarkwareAvatar from "../assets/imgs/testimonials/starkware.png";
+import AcreInvestAvatar from "../assets/imgs/testimonials/acreInvest.png";
+import tezosAvatar from "../assets/imgs/testimonials/tezos.png";
 
-export interface TestimonialAccountProps {
+export interface TwitterAccountProps {
   avatar: string;
   name: React.ReactNode;
   username: string;
 }
 
-export const testimonialAccounts = {
+export interface TwitterAccounts {
+  doinGud: TwitterAccountProps;
+  fhomoney: TwitterAccountProps;
+  auryn: TwitterAccountProps;
+  starkware: TwitterAccountProps;
+  acreInvest: TwitterAccountProps;
+  tezos: TwitterAccountProps;
+}
+
+export const testimonialAccounts: TwitterAccounts = {
   doinGud: {
     name: "DoinGud (:D, :D)",
     username: "@doinGudHQ",

@@ -1,14 +1,9 @@
 import React from "react";
 import { testimonialContent } from "./TestimonialContent";
-import { testimonialAccounts, TestimonialAccountProps } from "./TestimonialAccounts";
+import { testimonialAccounts } from "../../../../../constants/twitterAccounts";
+import { TwitterCardProps } from "../../../../../commons/twitter/TwitterCard";
 
-export interface TestimonialsProps {
-  account: TestimonialAccountProps;
-  externalLink: string;
-  testimonialText: React.ReactNode;
-}
-
-export const testimonials = [
+export const testimonials: TwitterCardProps[] = [
   {
     account: testimonialAccounts.doinGud,
     externalLink: "https://twitter.com/DoinGudHQ/status/1403380341239390212",

@@ -1,15 +1,16 @@
 import React from "react";
 import { Box, Link, Stack,  Typography } from "@mui/material";
-import { TestimonialsProps } from "./Testimonials"
-import { colors } from "../../../../theme"
-import TwitterIcon from "../../../../assets/imgs/twitter.svg";
+import { colors } from "../../theme"
+import TwitterIcon from "../../assets/imgs/twitter.svg";
+import { TwitterAccountProps } from "../../constants/twitterAccounts"
 
-export interface TestimonialContentProps {
-  content: TestimonialsProps;
+export interface TwitterCardProps {
+  account: TwitterAccountProps;
+  externalLink: string;
+  testimonialText: React.ReactNode;
 }
 
-export const Testimonial: React.FC<TestimonialContentProps> = ({content}) => {
-  const {account, externalLink, testimonialText } = content;
+export const TwitterCard: React.FC<TwitterCardProps> = ({ account, externalLink, testimonialText }) => {
   const { avatar, name, username } = account;
 
   return (

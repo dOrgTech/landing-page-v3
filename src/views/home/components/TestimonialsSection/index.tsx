@@ -1,10 +1,9 @@
-import React, { ReactChildren } from "react";
+import React from "react";
 import { Box, Container, Grid, Link, Stack,  Typography } from "@mui/material";
 import Masonry from '@mui/lab/Masonry';
 import { Button } from "../../../../commons/button/Button";
-import { colors } from "../../../../theme"
-import { testimonials, TestimonialsProps } from "./Testimonials";
-import { Testimonial } from "./Testimonial";
+import { TwitterCard, TwitterCardProps } from "../../../../commons/twitter/TwitterCard";
+import { testimonials } from "./Testimonials";
 
 export const TestimonialsSection: React.FC = () => {
   return (
@@ -20,9 +19,9 @@ export const TestimonialsSection: React.FC = () => {
           In dOrg We Trust <span role="img" aria-label="sparkles">✨</span>
         </Typography>
         <Masonry columns={{ xs: 1, sm: 2, md: 3 }} spacing={5} sx={{mt: 8}}>
-          {testimonials.map((testimonial: TestimonialsProps) => {
+          {testimonials.map((testimonial) => {
             return (
-              <Testimonial key={testimonial.externalLink} content={testimonial} />
+              <TwitterCard key={testimonial.externalLink} {...testimonial} />
             )
           })}
         </Masonry>
