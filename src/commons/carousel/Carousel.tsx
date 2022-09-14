@@ -54,7 +54,10 @@ const Carousel: React.FC<CustomCarouselProps> = ({
   });
 
   return (
-    <ReactCarousel responsive={responsive} {...props}>
+    <ReactCarousel 
+      responsive={responsive}
+      {...props}
+    >
       {children}
     </ReactCarousel>
   );

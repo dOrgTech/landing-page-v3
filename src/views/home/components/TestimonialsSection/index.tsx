@@ -23,7 +23,7 @@ export const TestimonialsSection: React.FC = () => {
           component="h2"
           textTransform="uppercase"
           textAlign="center"
-          letterSpacing={6}
+          letterSpacing={5}
         >
           In dOrg We Trust <span role="img" aria-label="sparkles">✨</span>
         </Typography>

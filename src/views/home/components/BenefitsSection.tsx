@@ -49,7 +49,7 @@ export const BenefitsSection: React.FC = () => {
           component="h2"
           textTransform="uppercase"
           textAlign="center"
-          letterSpacing={6}
+          letterSpacing={5}
         >
           The Dorg Difference <span role="img" aria-label="magic wand">🪄</span>
         </Typography>

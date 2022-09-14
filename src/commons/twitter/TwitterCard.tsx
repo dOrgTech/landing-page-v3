@@ -10,9 +10,10 @@ export interface TwitterCardProps {
   text: React.ReactNode;
   image?: string;
   color?: string;
+  clickable?: boolean;
 }
 
-export const TwitterCard: React.FC<TwitterCardProps> = ({ account, externalLink, text, image, color }) => {
+export const TwitterCard: React.FC<TwitterCardProps> = ({ account, externalLink, text, image, color, clickable }) => {
   const { avatar, name, username } = account;
 
   return (
