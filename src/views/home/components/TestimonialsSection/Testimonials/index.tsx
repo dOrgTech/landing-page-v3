@@ -1,4 +1,3 @@
-import React from "react";
 import { testimonialContent } from "./TestimonialContent";
 import { testimonialAccounts, TestimonialAccountProps } from "./TestimonialAccounts";
 

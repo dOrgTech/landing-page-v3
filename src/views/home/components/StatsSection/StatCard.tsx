@@ -15,6 +15,8 @@ export interface Stat {
 
 const StatCard: React.FC<Stat> = ({stat}) => {
   const {id, title, statNumber, color, activeColors} = stat;
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   const [hoverId, setHoverId] = useState<string | null>(null)
 
@@ -23,14 +25,16 @@ const StatCard: React.FC<Stat> = ({stat}) => {
   }
 
   const handleStatCardLeave = () => {
-    setHoverId(null);
+    if (!isMobile) {
+      setHoverId(null);
+    }
   }
 
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   useEffect(() => {
-    setHoverId(isMobile ? id : null);
-  })
+    if (isMobile) {
+      setHoverId(id);
+    }
+  }, [isMobile])
 
   return (
     <StyledStatCard
@@ -67,6 +71,7 @@ const StatCard: React.FC<Stat> = ({stat}) => {
                 fontSize: "0.825rem",
                 letterSpacing: 3,
                 lineHeight: 1,
+                marginBlockStart: 0,
                 textTransform: "uppercase",
               }}
             >
@@ -80,7 +85,7 @@ const StatCard: React.FC<Stat> = ({stat}) => {
                 fontWeight: 800,
                 lineHeight: 1,
                 transformOrigin: "bottom left",
-                transform: `scale(${hoverId == id ? 1.4 : 1})`,
+                transform: `scale(${hoverId === id ? 1.4 : 1})`,
                 transition: "transform 0.25s ease-in-out",
               }}
             >

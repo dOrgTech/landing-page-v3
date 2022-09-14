@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import StatCard from "./StatCard"
 import { Box, Container, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { colors } from "../../../../theme"
