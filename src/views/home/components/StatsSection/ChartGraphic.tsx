@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { styled } from "@mui/material";
 import { StatProps } from ".";
 
@@ -17,7 +17,7 @@ interface Props {
 
 const ChartGraphic: React.FC<Props> = ({hoverId, id, color, activeColors}) => {
 
-  const hovering = hoverId == id;
+  const hovering = hoverId === id;
   const baseColor = (hovering && activeColors) ? activeColors[0] : color
 
   return (
