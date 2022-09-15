@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Controller, useForm } from 'react-hook-form';
 import { FormPage } from "../FormPage"
 import { Divider, FormControl, Stack, Typography } from "@mui/material";
@@ -8,9 +8,11 @@ import { FormInput, FormErrorText } from "../../../commons/form/FormInput"
 import { Button } from "../../../commons/button/Button"
 import { colors } from "../../../theme";
 import { hireUsSelectOptions } from "../../../constants/hireUs";
-import { HireUsFormInputs } from "../../../utils/network";
+import { sendContactForm, HireUsFormInputs } from "../../../utils/network";
 
 export const HireUsView: React.FC = () => {
+  const [successOpen, setSuccessOpen] = React.useState(false);
+  const [failOpen, setFailOpen] = React.useState(false);
 
   const {
     handleSubmit,
@@ -26,7 +28,14 @@ export const HireUsView: React.FC = () => {
 
   const onSubmit = (data: HireUsFormInputs) => {
     const submittedData: HireUsFormInputs = {...data}
-    console.log(submittedData);
+    sendContactForm(submittedData)
+      .then(() => {
+        setSuccessOpen(true);
+        // resetInputs();
+      })
+      .catch(error => {
+        setFailOpen(true);
+      });
   };
 
    return (

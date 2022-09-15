@@ -26,7 +26,7 @@ async function fetchMembers(apiKey) {
 
 // takes form data as json string and submits to airtable
 async function submitContactForm(apiKey, body) {
-  return fetch(`https://api.airtable.com/v0/${process.env.AIR_TABLE_ID}/Contacts`, {
+  return fetch(`https://api.airtable.com/v0/${process.env.AIRTABLE_BASE}/${process.env.AIRTABLE_HIRE_TABLE}/${process.env.AIRTABLE_API_VIEW}`, {
     method: "POST",
     headers: new fetch.Headers({
       Authorization: `Bearer ${apiKey}`,

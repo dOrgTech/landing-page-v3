@@ -22,7 +22,7 @@ export const hireUsSelectOptions: FormValueLabels = {
   approaches: [
     { value: "fixed scope", label: "Fixed Scope Project"},
     { value: "team extension", label: "Team Extension"},
-    { value: "consulting", label: "Consulting &amp; Advisory"},
+    { value: "consulting", label: "Consulting & Advisory"},
     { value: "ecosystem partnership", label: "Ecosystem Partnership"},
     { value: "not specified", label: "Not Specified"},
   ],
