@@ -1,7 +1,6 @@
 import React from "react";
 import GameOfLifeAnimation from "../../commons/gameOfLifeAnimation/GameOfLifeAnimation";
-import { experimental_sx as sx } from "@mui/system";
-import { Box, Container, Stack, styled, Typography } from "@mui/material";
+import { Box, Container, Stack, Typography } from "@mui/material";
 import { colors } from "../../theme";
 
 interface FormPageProps {
@@ -19,7 +18,7 @@ export const FormPage: React.FC<FormPageProps> = ({ title, description, children
         position: "relative",
         width: "100vw",
       }}>
-          <GameOfLifeAnimation fadeToBlack={false} opacity={0.35} />
+        <GameOfLifeAnimation fadeToBlack={false} opacity={0.25} />
         <Container maxWidth="sm" sx={{position: "relative"}}>
           <Stack spacing={3} sx={{textShadow: "0 0.5rem 1rem rgba(0,0,0,1)"}}>
             <Typography variant="h2" component="h1">

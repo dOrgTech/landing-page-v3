@@ -38,7 +38,7 @@ export const twitterAccounts: TwitterAccounts = {
     avatar: DoinGudAvatar,
   },
   fhomoney: {
-    name: <>kianga.eth <span role="img" aria-label="eart">🌍</span> 1000 ACRE DAOs in 1000 Days</>,
+    name: <>kianga.eth <span role="img" aria-label="earth">🌍</span> 1000 ACRE DAOs in 1000 Days</>,
     username: "@fhomoney",
     avatar: FhomoneyAvatar,
   },

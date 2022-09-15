@@ -3,13 +3,18 @@ import { OnChangeValue } from "react-select"
 import React, { useEffect, useState } from "react"
 import { FormHelperText } from "@mui/material"
 import { colors } from "../../theme"
+import { FormErrorText } from "./FormInput"
+import { color } from "@mui/system"
 
 export interface CreateSelectProps {
   id?: string;
   options?: CreateSelectOption[]
   onSelected?: (items: CreateSelectOption[]) => void
+  name?: string
   value?: string[]
   placeholder?: string
+  onChange?: any
+  inputRef?: any
   errorMsg?: string
   isMulti?: boolean
   isClearable?: boolean
@@ -17,15 +22,15 @@ export interface CreateSelectProps {
   isAddress?: boolean
 }
 
-export const customStyles = {
-  control: (base: any, state: { isFocused: any }) => ({
+export const customStyles = (error: boolean) => ({
+  control: (base: any, state: { isFocused: boolean }) => ({
     ...base,
     background: colors.white,
     borderRadius: 8,
-    border: state.isFocused ? `1px solid ${colors.green}` : `1px solid ${colors.white}`,
     boxShadow: state.isFocused ? null : null,
+    border: `1px solid ${error ? colors.magenta : state.isFocused ? colors.green : colors.white}`,
     "&:hover": {
-      border: state.isFocused ? `1px solid ${colors.black}` : `1px solid ${colors.black}`,
+      border: `1px solid ${state.isFocused ? colors.black : colors.black}`,
     },
   }),
   indicatorSeparator: (base: any) => ({
@@ -49,8 +54,7 @@ export const customStyles = {
     borderRadius: 8,
     marginTop: 8,
   }),
-
-}
+})
 
 export interface DropdownOption {
   label: string
@@ -60,7 +64,17 @@ export interface DropdownOption {
 
 export type CreateSelectOption = Omit<DropdownOption, "icon">
 
-export const CreatableSelect: React.FC<CreateSelectProps> = ({ id, options, onSelected, value, placeholder, errorMsg, ...props}) => {
+export const CreatableSelect: React.FC<CreateSelectProps> = ({
+  id,
+  options,
+  onSelected,
+  onChange,
+  name,
+  value,
+  placeholder,
+  errorMsg,
+  ...props
+}) => {
   const [values, setValues] = useState<CreateSelectOption[]>([])
 
   useEffect(() => {
@@ -73,24 +87,26 @@ export const CreatableSelect: React.FC<CreateSelectProps> = ({ id, options, onSe
   }, [value])
 
   const handleChange = (newValue: OnChangeValue<CreateSelectOption, any>) => {
+    onChange(newValue)
     if (onSelected) {
       onSelected(newValue as CreateSelectOption[])
     }
     setValues(newValue as CreateSelectOption[])
   }
 
+  const error: boolean = !!errorMsg && errorMsg.length > 0
   return (
     <>
       <Select
-        styles={customStyles}
-        id={id}
+        styles={customStyles(error)}
+        id={name || id}
         value={values}
         options={options}
         onChange={handleChange}
         {...props}
       />
       {errorMsg && (
-        <FormHelperText sx={{ textTransform: "capitalize" }}>{errorMsg}</FormHelperText>
+        <FormErrorText>{errorMsg}</FormErrorText>
       )}
     </>
   )

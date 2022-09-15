@@ -1,7 +1,8 @@
-import { InputBase, styled } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { FormHelperText, FormHelperTextProps, InputBase, InputBaseProps, styled } from "@mui/material";
 import { colors } from "../../theme";
 
-export const FormInput = styled(InputBase)(({ theme }: any) => ({
+const StyledFormInput = styled(InputBase)(({ theme }) => ({
   '& .MuiInputBase-input': {
     backgroundColor: colors.white,
     border: `1px solid ${colors.white}`,
@@ -22,5 +23,39 @@ export const FormInput = styled(InputBase)(({ theme }: any) => ({
   },
   '&.Mui-focused .MuiInputBase-input': {
     borderColor: colors.green,
+  },
+  "&.Mui-error .MuiInputBase-input": {
+    borderColor: colors.magenta,
   }
 }));
+
+export const FormInput = (props: InputBaseProps) => {
+  const [value, setValue] = React.useState(props.value || "");
+
+  // useEffect(() => {
+  //   setValue(props.value);
+  // }, [props.value])
+
+  return (
+    <StyledFormInput
+      id={props.name}
+      name={props.name}
+      error={props.error}
+      multiline={props.multiline}
+      inputProps={props.inputProps}
+      rows={props.rows}
+      sx={props.sx}
+      value={value}
+      onChange={(e) => {
+        setValue(e.target.value);
+        props.onChange && props.onChange(e)
+      }}
+    />
+  )
+}
+
+export const FormErrorText = ({children}: FormHelperTextProps) => (
+  <FormHelperText sx={{color: colors.magenta}}>
+    {children}
+  </FormHelperText>
+)
