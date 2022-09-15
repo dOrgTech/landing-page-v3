@@ -34,7 +34,7 @@ export const PresentationSection: React.FC = () => {
 
   return (
     <PresentationSectionContainer>
-      <GameOfLifeAnimationCanvas />
+      <GameOfLifeAnimationCanvas opacity={0.25} />
       <Container maxWidth='lg' sx={{ height: "90%", position: "relative" }}>
         <Grid
           container
@@ -73,35 +73,35 @@ export const PresentationSection: React.FC = () => {
           </Grid>
         </Grid>
       </Container>
-      <Box>
-        <Carousel
-          swipeable={false}
-          draggable={false}
-          arrows={false}
-          showDots={false}
-          infinite={true}
-          autoPlay={true}
-          shouldResetAutoplay={true}
-          rewindWithAnimation={false}
-          rewind={false}
-          additionalTransfrom={0}
-          slidesToSlide={1}
-          autoPlaySpeed={1}
-          centerMode={false}
-          pauseOnHover={true}
-          customTransition='all 4s linear'
-          transitionDuration={4000}
-          itemsPerRow={[3, 3, 5, 5]}>
-          {clientIcons.map((iconLink: IconLink, index) => (
-            <Link href={iconLink.path} key={index} target='_blank' className="--centered">
-              <StyledLogo
-                sx={{ width: isDesktop ? 150 : 100, height: 42 }}
-                src={iconLink.icon}
-              />
-            </Link>
-          ))}
-        </Carousel>
-      </Box>
+      <Carousel
+        swipeable={false}
+        draggable={false}
+        arrows={false}
+        showDots={false}
+        infinite={true}
+        autoPlay={true}
+        shouldResetAutoplay={true}
+        rewindWithAnimation={false}
+        rewind={false}
+        additionalTransfrom={0}
+        slidesToSlide={1}
+        autoPlaySpeed={1}
+        centerMode={false}
+        pauseOnHover={true}
+        customTransition='all 4s linear'
+        transitionDuration={4000}
+        itemsPerRow={[3, 3, 5, 5]}
+        containerClass="carousel--presentation"
+      >
+        {clientIcons.map((iconLink: IconLink, index) => (
+          <Link href={iconLink.path} key={index} target='_blank' className="--centered">
+            <StyledLogo
+              sx={{ width: isDesktop ? 150 : 100, height: 42 }}
+              src={iconLink.icon}
+            />
+          </Link>
+        ))}
+      </Carousel>
     </PresentationSectionContainer>
   );
 };

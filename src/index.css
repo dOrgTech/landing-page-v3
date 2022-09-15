@@ -10,6 +10,11 @@ body {
   margin: 0;
   height: 100%;
   position: relative;
+  background-color: #000;
+}
+
+.carousel--presentation {
+  height: 10%;
 }
 
 .react-multi-carousel-track {
