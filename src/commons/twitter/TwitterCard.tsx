@@ -1,4 +1,4 @@
-import React from "react";
+import React, { MouseEvent } from "react";
 import { Box, Link, Stack, Typography } from "@mui/material";
 import { colors } from "../../theme"
 import TwitterIcon from "../../assets/imgs/twitter.svg";
@@ -16,7 +16,7 @@ export interface TwitterCardProps {
 export const TwitterCard: React.FC<TwitterCardProps> = ({ account, externalLink, text, image, color, clickable }) => {
   const { avatar, name, username } = account;
 
-  const handleClick = (e: any) => {
+  const handleClick = (e: MouseEvent) => {
     if(!clickable) {
       e.preventDefault();
     }

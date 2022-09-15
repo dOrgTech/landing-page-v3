@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { MouseEvent, useState } from "react";
 import { Box, Container, Link, Stack,  Typography, useMediaQuery, useTheme } from "@mui/material";
 import Carousel from "../../../commons/carousel/Carousel";
 import { ButtonGroup } from "../../../commons/carousel/ButtonGroup";
@@ -12,7 +12,7 @@ export const NewsSection: React.FC = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
-  const handleClick = (e: any) => {
+  const handleClick = (e: MouseEvent) => {
     if(isMoving) {
       e.preventDefault();
     }

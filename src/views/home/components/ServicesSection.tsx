@@ -43,12 +43,14 @@ export const ServicesSection: React.FC = () => {
 
   useEffect(() => {
     const activeService = currentServices?.find(service => service.id === activeServiceId);
-    if(activeService) {
+    if(activeService && isDesktop) {
       const _currentServices = currentServices.filter((service) => service.id !== activeService.id);
       _currentServices.unshift(activeService)
       updateServices(_currentServices);
+    } else {
+      updateServices(services);
     }
-  }, [activeServiceId && isDesktop])
+  }, [activeServiceId, isDesktop])
 
   return (
     <Box py={24} position="relative">
