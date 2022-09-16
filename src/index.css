@@ -11,6 +11,7 @@ body {
   background-color: #000;
 }
 
+/* Carousel */
 .carousel--presentation {
   height: 10%;
 }
@@ -23,4 +24,43 @@ body {
 
 .react-multi-carousel-item {
   text-align: center;
+}
+
+/* Substack Email Signup */
+#custom-substack-embed form.csw-substack-gradient-custom {
+  border-radius: 0.75rem;
+  border-width: 4px !important;
+  height: 3.25rem;
+}
+form.csw-substack-gradient-custom input {
+  background-color: transparent !important;
+  border-radius: 0.75rem !important;
+}
+#custom-substack-embed button {
+  background-color: transparent !important;
+  color: transparent !important;
+  position: relative;
+}
+#custom-substack-embed button:hover {
+  opacity: 0.6;
+}
+#custom-substack-embed button:after {
+  content: "→";
+  color: #6D6D6D;
+  font-size: 1.75rem;
+  position: absolute;
+  inset: 0;
+  bottom: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#custom-substack-embed .loader {
+  background: #111;
+  position: absolute !important;
+  z-index: 2;
+  padding: 10px;
+  right: 19px;
 }

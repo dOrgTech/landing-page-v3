@@ -1,6 +1,5 @@
 import React from "react";
-import { Box, Container, Grid, InputAdornment, Link, Stack, styled, TextField, Typography, useTheme } from "@mui/material";
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Box, Container, Grid, Link, Stack, styled, TextField, Typography, useTheme } from "@mui/material";
 import Logo from "../assets/imgs/dOrg-logo.svg";
 import { IconLink, socialIconLinks } from "../constants/routes"
 import { MenuItem, MENU_ITEMS } from "../commons/header/Header"
@@ -160,18 +159,7 @@ export const Footer: React.FC = () => {
               <FooterTitle variant="h6">
                 OUR NEWSLETTER
               </FooterTitle>
-              <NewsletterInput
-                id="email"
-                placeholder="Enter email to subscribe"
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <ArrowForwardIcon/>
-                    </InputAdornment>
-                  ),
-                }}
-                variant="outlined"
-              />
+              <div id="custom-substack-embed"></div>
             </Stack>
           </Grid>
         </Grid>

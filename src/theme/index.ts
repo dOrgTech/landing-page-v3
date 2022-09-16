@@ -185,6 +185,16 @@ theme = createTheme(theme, {
     },
   },
   components: {
+    MuiCssBaseline: {
+      styleOverrides: `
+        #custom-substack-embed input {
+          font-family: ${theme.typography.fontFamily};
+        }
+        #custom-substack-embed input::placeholder {
+          color: ${colors.grays[400]} !important;
+        }
+      `,
+    },
     MuiButton: {
       styleOverrides: {
         root: {
