@@ -1,16 +1,47 @@
-import React from "react";
+import React, {useState} from "react";
+import { Controller, useForm } from 'react-hook-form';
 import { FormPage } from "../FormPage"
 import { Divider, FormControl, Stack, Typography } from "@mui/material";
 import { colors } from "../../../theme";
+import { Button } from "../../../commons/button/Button"
 import { Label } from "../../../commons/form/Label"
-import { FormInput } from "../../../commons/form/FormInput"
+import { FormInput, FormErrorText } from "../../../commons/form/FormInput"
 import { CreatableSelect as Select } from "../../../commons/form/CreatableSelect";
 import { joinUsSelectOptions } from "../../../constants/joinUs";
+import { sendJoinUsForm, JoinUsFormInputs } from "../../../utils/network";
 
 export const JoinUsView: React.FC = () => {
+  const [successOpen, setSuccessOpen] = React.useState(false);
+  const [failOpen, setFailOpen] = React.useState(false);
+
+  const {
+    handleSubmit,
+    control,
+    formState: { errors }
+  } = useForm<JoinUsFormInputs>({
+    mode: 'onSubmit',
+  })
+
+  if(Object.keys(errors).length > 0) {
+    console.log("errors", errors)
+  }
+
+  const onSubmit = (data: JoinUsFormInputs) => {
+    const submittedData: JoinUsFormInputs = {...data}
+    console.log(submittedData)
+    // sendJoinUsForm(submittedData)
+    //   .then(() => {
+    //     setSuccessOpen(true);
+    //     // resetInputs();
+    //   })
+    //   .catch(error => {
+    //     setFailOpen(true);
+    //   });
+  };
+
   return (
     <FormPage title="Join Us" description="Fill out the form if you want to join us!">
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)} method='post'>
         <Stack spacing={10}>
           <Stack spacing={4}>
             <Stack spacing={2}>
@@ -24,29 +55,72 @@ export const JoinUsView: React.FC = () => {
                 <Label required sx={{color: "currentColor"}}>
                   What is your full name?
                 </Label>
-                <FormInput
-                  id="name"
-                  required
+                <Controller 
+                  control={control}
+                  name="name"
+                  rules={{
+                    required: "Please enter your name."
+                  }}
+                  render={({
+                    field: {
+                      onChange, onBlur, name
+                    }
+                  }) => (
+                    <FormInput
+                      onChange={onChange}
+                      onBlur={onBlur}
+                      name={name}
+                      error={!!errors.name}
+                    />
+                  )}
                 />
+                { errors.name && <FormErrorText>{errors.name.message}</FormErrorText> }
               </FormControl>
               <FormControl>
                 <Label required sx={{color: "currentColor"}}>
                   What is your email?
                 </Label>
-                <FormInput
-                  id="email"
-                  required
-                  sx={{width: "100%"}}
-                />
+                <Controller 
+                    control={control}
+                    name="email"
+                    rules={{
+                      required: "Please enter your email."
+                    }}
+                    render={({
+                      field: {
+                        onChange, onBlur, name
+                      }
+                    }) => (
+                      <FormInput
+                        onChange={onChange}
+                        onBlur={onBlur}
+                        name={name}
+                        error={!!errors.email}
+                      />
+                    )}
+                  />
+                  { errors.email && <FormErrorText>{errors.email.message}</FormErrorText> }
               </FormControl>
               <FormControl>
                 <Label required sx={{color: "currentColor"}}>
                   What is your main specialization?
                 </Label>
-                <Select
-                  id="main_specialization"
-                  options={joinUsSelectOptions.specializations}
-                  isMulti
+                <Controller 
+                  control={control}
+                  name="main_specialization"
+                  rules={{
+                    required: "Please include a main specialization"
+                  }}
+                  render={({ field: { onChange, name }}) => (
+                    <Select
+                      name={name}
+                      isSearchable={false}
+                      isClearable={false}
+                      options={joinUsSelectOptions.specializations}
+                      onChange={(val: any) => onChange(val.value)}
+                      errorMsg={errors.main_specialization && (errors.main_specialization as any).message}
+                    />
+                  )}
                 />
               </FormControl>
             </Stack>
@@ -64,31 +138,60 @@ export const JoinUsView: React.FC = () => {
                 <Label required sx={{color: "currentColor"}}>
                 How many years have you been specializing in this professionally?
                 </Label>
-                <Select
-                  id="years_experience"
-                  isClearable={false}
-                  isSearchable={false}
-                  options={joinUsSelectOptions.experienceYears}
+                <Controller 
+                  control={control}
+                  name="years_experience"
+                  rules={{
+                    required: "Please provide your experience"
+                  }}
+                  render={({ field: { onChange, name }}) => (
+                    <Select
+                      name={name}
+                      isSearchable={false}
+                      isClearable={false}
+                      options={joinUsSelectOptions.experienceYears}
+                      onChange={(val: any) => onChange(val.value)}
+                      errorMsg={errors.years_experience && (errors.years_experience as any).message}
+                    />
+                  )}
                 />
               </FormControl>
               <FormControl>
-                <Label required sx={{color: "currentColor"}}>
+                <Label sx={{color: "currentColor"}}>
                   Do you have any other specializations?
                 </Label>
-                <Select
-                  id="other_specializations"
-                  isMulti
-                  options={joinUsSelectOptions.specializations}
+                <Controller 
+                  control={control}
+                  name="other_specializations"
+                  render={({ field: { onChange }}) => (
+                    <Select
+                      isMulti
+                      isSearchable={false}
+                      isClearable={false}
+                      options={joinUsSelectOptions.specializations}
+                      onChange={(val: any) => onChange(val.map((c: any) => c.value))}
+                      errorMsg={errors.other_specializations && (errors.other_specializations as any).message}
+                    />
+                  )}
                 />
               </FormControl>
               <FormControl>
-                <Label required sx={{color: "currentColor"}}>
+                <Label sx={{color: "currentColor"}}>
                   List the technologies you are proficient in:
                 </Label>
-                <Select
-                  id="technologies"
-                  isMulti
-                  options={joinUsSelectOptions.technologies}
+                <Controller 
+                  control={control}
+                  name="technologies"
+                  render={({ field: { onChange }}) => (
+                    <Select
+                      isMulti
+                      isSearchable={false}
+                      isClearable={false}
+                      options={joinUsSelectOptions.technologies}
+                      onChange={(val: any) => onChange(val.map((c: any) => c.value))}
+                      errorMsg={errors.technologies && (errors.technologies as any).message}
+                    />
+                  )}
                 />
               </FormControl>
               <FormControl>
@@ -99,11 +202,22 @@ export const JoinUsView: React.FC = () => {
                   <Typography variant="body2">
                     How would you rate your experience in the web3 space?
                   </Typography>
-                  <Select
-                    id="crypto_exerpeince"
-                    isClearable={false}
-                    isSearchable={false}
-                    options={joinUsSelectOptions.cryptoExperience}
+                  <Controller 
+                    control={control}
+                    name="crypto_experience"
+                    rules={{
+                      required: "Please provide your experience with crypto"
+                    }}
+                    render={({ field: { onChange, name }}) => (
+                      <Select
+                        name={name}
+                        isSearchable={false}
+                        isClearable={false}
+                        options={joinUsSelectOptions.cryptoExperience}
+                        onChange={(val: any) => onChange(val.value)}
+                        errorMsg={errors.crypto_experience && (errors.crypto_experience as any).message}
+                      />
+                    )}
                   />
                 </Stack>
               </FormControl>
@@ -120,13 +234,24 @@ export const JoinUsView: React.FC = () => {
             <Stack spacing={4}>
               <FormControl>
                 <Label required sx={{color: "currentColor"}}>
-                Availability (hours per week)
+                  Availability (hours per week)
                 </Label>
-                <Select
-                  id="availability"
-                  isClearable={false}
-                  isSearchable={false}
-                  options={joinUsSelectOptions.availability}
+                <Controller
+                  control={control}
+                  name="availability"
+                  rules={{
+                    required: "Please provide your availability"
+                  }}
+                  render={({ field: { onChange, name }}) => (
+                    <Select
+                      name={name}
+                      isSearchable={false}
+                      isClearable={false}
+                      options={joinUsSelectOptions.availability}
+                      onChange={(val: any) => onChange(val.value)}
+                      errorMsg={errors.availability && (errors.availability as any).message}
+                    />
+                  )}
                 />
               </FormControl>
               <FormControl>
@@ -137,48 +262,110 @@ export const JoinUsView: React.FC = () => {
                   <Typography variant="body2">
                     Include any relevant experiences or links to past work.
                   </Typography>
-                  <FormInput
-                    id=""
-                    required
-                    rows={5}
-                    inputProps={{ sx: {resize: "vertical"} }}
-                  />
+                  <Controller 
+                      control={control}
+                      name="interest"
+                      rules={{
+                        required: "Please tell us why you're interested in joining dOrg."
+                      }}
+                      render={({
+                        field: {
+                          onChange, onBlur, name
+                        }
+                      }) => (
+                        <FormInput
+                          onChange={onChange}
+                          onBlur={onBlur}
+                          name={name}
+                          multiline
+                          rows={5}
+                          inputProps={{ sx: {resize: "vertical"} }}
+                          sx={{pb: 0}}
+                          error={!!errors.interest}
+                        />
+                      )}
+                    />
+                    { errors.interest && <FormErrorText>{errors.interest.message}</FormErrorText> }
                 </Stack>
               </FormControl>
               <FormControl>
                 <Label sx={{color: "currentColor"}}>
                   Github
                 </Label>
-                <FormInput
-                  id="github"
-                  sx={{width: "100%"}}
+                <Controller 
+                  control={control}
+                  name="github"
+                  render={({
+                    field: {
+                      onChange, onBlur, name
+                    }
+                  }) => (
+                    <FormInput
+                      onChange={onChange}
+                      onBlur={onBlur}
+                      name={name}
+                    />
+                  )}
                 />
               </FormControl>
               <FormControl>
                 <Label sx={{color: "currentColor"}}>
                   LinkedIn
                 </Label>
-                <FormInput
-                  id="linkedIn"
-                  sx={{width: "100%"}}
+                <Controller 
+                  control={control}
+                  name="linkedIn"
+                  render={({
+                    field: {
+                      onChange, onBlur, name
+                    }
+                  }) => (
+                    <FormInput
+                      onChange={onChange}
+                      onBlur={onBlur}
+                      name={name}
+                    />
+                  )}
                 />
               </FormControl>
               <FormControl>
                 <Label sx={{color: "currentColor"}}>
                   Twitter
                 </Label>
-                <FormInput
-                  id="twitter"
-                  sx={{width: "100%"}}
+                <Controller 
+                  control={control}
+                  name="twitter"
+                  render={({
+                    field: {
+                      onChange, onBlur, name
+                    }
+                  }) => (
+                    <FormInput
+                      onChange={onChange}
+                      onBlur={onBlur}
+                      name={name}
+                    />
+                  )}
                 />
               </FormControl>
               <FormControl>
                 <Label sx={{color: "currentColor"}}>
                   Discord
                 </Label>
-                <FormInput
-                  id="discord"
-                  sx={{width: "100%"}}
+                <Controller 
+                  control={control}
+                  name="discord"
+                  render={({
+                    field: {
+                      onChange, onBlur, name
+                    }
+                  }) => (
+                    <FormInput
+                      onChange={onChange}
+                      onBlur={onBlur}
+                      name={name}
+                    />
+                  )}
                 />
               </FormControl>
               <FormControl>
@@ -189,9 +376,20 @@ export const JoinUsView: React.FC = () => {
                   <Typography variant="body2">
                     If someone in particular referred you, please let us know who!
                   </Typography>
-                  <FormInput
-                    id="hear_about"
-                    sx={{width: "100%"}}
+                  <Controller 
+                    control={control}
+                    name="hear_about"
+                    render={({
+                      field: {
+                        onChange, onBlur, name
+                      }
+                    }) => (
+                      <FormInput
+                        onChange={onChange}
+                        onBlur={onBlur}
+                        name={name}
+                      />
+                    )}
                   />
                 </Stack>
               </FormControl>
@@ -199,17 +397,42 @@ export const JoinUsView: React.FC = () => {
                 <Label required sx={{color: "currentColor"}}>
                   Do you have a US Tax Residency?
                 </Label>
-                <Select
-                  id="tax_registry"
-                  isClearable={false}
-                  isSearchable={false}
-                  options={joinUsSelectOptions.taxResidency}
+                <Controller 
+                  control={control}
+                  name="tax_registry"
+                  rules={{
+                    required: "Please provide an answer"
+                  }}
+                  render={({ field: { onChange, name }}) => (
+                    <Select
+                      name={name}
+                      isSearchable={false}
+                      isClearable={false}
+                      options={joinUsSelectOptions.taxResidency}
+                      onChange={(val: any) => onChange(val.value)}
+                      errorMsg={errors.tax_registry && (errors.tax_registry as any).message}
+                    />
+                  )}
                 />
               </FormControl>
             </Stack>
           </Stack>
-
         </Stack>
+        <Button
+          variant="outlined"
+          type="submit"
+          sx={{
+            borderColor: colors.black,
+            color: colors.black,
+            mt: 8,
+            width: "auto",
+            "&:hover": {
+              color: colors.white,
+            }
+          }}
+        >
+          Submit
+        </Button>
       </form>
     </FormPage>
   );

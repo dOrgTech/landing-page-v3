@@ -22,8 +22,9 @@ export interface JoinUsFormInputs {
   "years_experience": string;
   "other_specializations": JoinUsSelectForms["specializations"][];
   "technologies": JoinUsSelectForms["technologies"][];
-  "crypto_exerpeince": string;
+  "crypto_experience": string;
   "availability": string;
+  "interest": string;
   "github": string;
   "linkedIn": string;
   "twitter": string;
@@ -55,8 +56,9 @@ interface JoinUsSelectFormsubmission {
     "Years Experience": string;
     "Other Specializations": JoinUsSelectForms["specializations"][];
     "Technologies": JoinUsSelectForms["technologies"][];
-    "Crypto Exerpeince": string;
+    "Crypto Experience": string;
     "Availability": string;
+    "Interest": string;
     "Github": string;
     "LinkedIn": string;
     "Twitter": string;
@@ -104,8 +106,9 @@ export const sendJoinUsForm = async (data: JoinUsFormInputs): Promise<Response> 
       "Years Experience": data.years_experience,
       "Other Specializations": data.other_specializations,
       "Technologies": data.technologies,
-      "Crypto Exerpeince": data.crypto_exerpeince,
+      "Crypto Experience": data.crypto_experience,
       "Availability": data.availability,
+      "Interest": data.interest,
       "Github": data.github,
       "LinkedIn": data.linkedIn,
       "Twitter": data.twitter,
