@@ -42,14 +42,15 @@ export const sendContactForm = async (data: HireUsFormInputs): Promise<Response>
       "Source": data.source,
     } 
   };
-  const url = window.location.href.substring(0, window.location.href.indexOf("/#")) + '/submitContactForm';
+  // const url = window.location.href.substring(0, window.location.href.indexOf("/#")) + '/submitContactForm';
+  const url = 'http://localhost:3042/submitContactForm';
   return fetch(url, {
     method: "POST",
     body: JSON.stringify(body)
   })
     .then(response => {
       if (!response.ok) {
-        console.log(response.json());
+        // console.log(response.json());
         throw Error('HTTP Error');
       }
       return response;
