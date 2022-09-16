@@ -1,17 +1,13 @@
+import { SelectForm } from "./selectForm"
 
-export interface FormValueLabel {
-  value: string;
-  label: string;
+export interface HireUsSelectForms {
+  categories: SelectForm[];
+  approaches: SelectForm[];
+  budgets: SelectForm[];
+  start_dates: SelectForm[];
 }
 
-export interface FormValueLabels {
-  categories: FormValueLabel[];
-  approaches: FormValueLabel[];
-  budgets: FormValueLabel[];
-  start_dates: FormValueLabel[];
-}
-
-export const hireUsSelectOptions: FormValueLabels = {
+export const hireUsSelectOptions: HireUsSelectForms = {
   categories: [
     { value: "dao/governance", label: "DAO/Governance"},
     { value: "deFi", label: "DeFi"},

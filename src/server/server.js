@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const { submitContactForm } = require("./request");
+const { submitHireUsForm } = require("./request");
 
 const apiKey = process.env.AIRTABLE_API_KEY || process.argv[2];
 const PORT = process.env.PORT || 3042;
@@ -8,8 +8,8 @@ const app = express();
 app.use(express.text());
 
 // path to submit contact form
-app.post("/submitContactForm", (request, response) => {
-  let responseBody = submitContactForm(apiKey, request.body)
+app.post("/submitHireUsForm", (request, response) => {
+  let responseBody = submitHireUsForm(apiKey, request.body)
   .catch(e => console.log(e));
   if (!responseBody) {
     responseBody = "";

@@ -8,7 +8,7 @@ import { FormInput, FormErrorText } from "../../../commons/form/FormInput"
 import { Button } from "../../../commons/button/Button"
 import { colors } from "../../../theme";
 import { hireUsSelectOptions } from "../../../constants/hireUs";
-import { sendContactForm, HireUsFormInputs } from "../../../utils/network";
+import { sendHireUsForm, HireUsFormInputs } from "../../../utils/network";
 
 export const HireUsView: React.FC = () => {
   const [successOpen, setSuccessOpen] = React.useState(false);
@@ -28,7 +28,7 @@ export const HireUsView: React.FC = () => {
 
   const onSubmit = (data: HireUsFormInputs) => {
     const submittedData: HireUsFormInputs = {...data}
-    sendContactForm(submittedData)
+    sendHireUsForm(submittedData)
       .then(() => {
         setSuccessOpen(true);
         // resetInputs();

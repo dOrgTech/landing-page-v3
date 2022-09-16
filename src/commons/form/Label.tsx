@@ -10,15 +10,14 @@ interface LabelProps extends BoxProps {
 export const Label: React.FC<LabelProps> = (props) => {
   return (
     <Box component="label" htmlFor={props.htmlFor} {...props} sx={{
-      alignItems: "center",
       color: "currentColor",
-      display: "inline-flex",
       fontWeight: 500,
+      lineHeight: 1.25,
       mb: 1,
     }}>
       {props.children}
       {props.required && (
-        <Typography color={colors.magenta} sx={{ml: "2px"}}>
+        <Typography component="span" color={colors.magenta} sx={{ml: "2px"}}>
           *
         </Typography>
       )}

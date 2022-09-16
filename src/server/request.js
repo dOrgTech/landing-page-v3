@@ -1,7 +1,7 @@
 const fetch = require("node-fetch");
 
 // takes form data as json string and submits to airtable
-async function submitContactForm(apiKey, body) {
+async function submitHireUsForm(apiKey, body) {
   return fetch(`https://api.airtable.com/v0/${process.env.AIRTABLE_BASE}/Table%201`, {
     method: "POST",
     headers: new fetch.Headers({
@@ -13,4 +13,4 @@ async function submitContactForm(apiKey, body) {
 }
 
 // export functions
-exports.submitContactForm = (apiKey, body) => submitContactForm(apiKey, body);
+exports.submitHireUsForm = (apiKey, body) => submitHireUsForm(apiKey, body);

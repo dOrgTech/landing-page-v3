@@ -74,21 +74,14 @@ export const PresentationSection: React.FC = () => {
         </Grid>
       </Container>
       <Carousel
-        swipeable={false}
-        draggable={false}
-        arrows={false}
-        showDots={false}
         infinite={true}
         autoPlay={true}
-        shouldResetAutoplay={true}
-        rewindWithAnimation={false}
-        rewind={false}
-        additionalTransfrom={0}
+        arrows={false}
         slidesToSlide={1}
         autoPlaySpeed={1}
-        centerMode={false}
+        centerMode
         pauseOnHover={true}
-        customTransition='all 4s linear'
+        customTransition='transform 4s linear'
         transitionDuration={4000}
         itemsPerRow={[3, 3, 5, 5]}
         containerClass="carousel--presentation"

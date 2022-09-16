@@ -87,7 +87,9 @@ export const CreatableSelect: React.FC<CreateSelectProps> = ({
   }, [value])
 
   const handleChange = (newValue: OnChangeValue<CreateSelectOption, any>) => {
-    onChange(newValue)
+    if(onChange) {
+      onChange(newValue)
+    }
     if (onSelected) {
       onSelected(newValue as CreateSelectOption[])
     }

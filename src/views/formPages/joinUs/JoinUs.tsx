@@ -5,43 +5,7 @@ import { colors } from "../../../theme";
 import { Label } from "../../../commons/form/Label"
 import { FormInput } from "../../../commons/form/FormInput"
 import { CreatableSelect as Select } from "../../../commons/form/CreatableSelect";
-
-const specializations = [
-  { value: "frontend", label: "Frontend Development"},
-  { value: "backend", label: "Backend Development"},
-  { value: "fullstack", label: "Full-Stack Development"},
-  { value: "smart contract", label: "Smart Contract Developer"},
-  { value: "blockchain developer", label: "Blockchain Developer"},
-  { value: "protocol", label: "Protocol Engineer"},
-  { value: "engineer", label: "DevOps Engineer"},
-  { value: "design", label: "Product Design"},
-]
-
-const experienceYears = [
-  { value: "junior", label: "Junior (0-2 years)"},
-  { value: "intermediate", label: "Intermediate (3-4 years"},
-  { value: "senior", label: "Senior (5-8 yeras)"},
-  { value: "veteran", label: "Veteran (8+ years)"},
-]
-
-const technologies = [
-  { value: "fake", label: "Need to add technologies from airtable"},
-]
-
-const cryptoExperience = [
-  { value: "none/limited", label: "No or limited experience"},
-  { value: "personal projects/hackathons", label: "Personal projects or hackathons"},
-  { value: "0-2 years", label: "0-2 years of professional experience"},
-  { value: "2+ yeras", label: "2+ years of professional experience"},
-]
-
-const availability = [
-  { value: "very part-time", label: "Very part-time (1-5)"},
-  { value: "part time", label: "Part-time (6-15)"},
-  { value: "half-time", label: "Half-time (16-25)"},
-  { value: "almost full-time", label: "Almost full-time (26-35)"},
-  { value: "full-time", label: "Full-time (35+)"},
-]
+import { joinUsSelectOptions } from "../../../constants/joinUs";
 
 export const JoinUsView: React.FC = () => {
   return (
@@ -80,8 +44,8 @@ export const JoinUsView: React.FC = () => {
                   What is your main specialization?
                 </Label>
                 <Select
-                  id="main-specialization"
-                  options={specializations}
+                  id="main_specialization"
+                  options={joinUsSelectOptions.specializations}
                   isMulti
                 />
               </FormControl>
@@ -101,10 +65,10 @@ export const JoinUsView: React.FC = () => {
                 How many years have you been specializing in this professionally?
                 </Label>
                 <Select
-                  id="years-experience"
+                  id="years_experience"
                   isClearable={false}
                   isSearchable={false}
-                  options={experienceYears}
+                  options={joinUsSelectOptions.experienceYears}
                 />
               </FormControl>
               <FormControl>
@@ -112,9 +76,9 @@ export const JoinUsView: React.FC = () => {
                   Do you have any other specializations?
                 </Label>
                 <Select
-                  id="other-specializations"
+                  id="other_specializations"
                   isMulti
-                  options={specializations}
+                  options={joinUsSelectOptions.specializations}
                 />
               </FormControl>
               <FormControl>
@@ -124,7 +88,7 @@ export const JoinUsView: React.FC = () => {
                 <Select
                   id="technologies"
                   isMulti
-                  options={technologies}
+                  options={joinUsSelectOptions.technologies}
                 />
               </FormControl>
               <FormControl>
@@ -136,10 +100,10 @@ export const JoinUsView: React.FC = () => {
                     How would you rate your experience in the web3 space?
                   </Typography>
                   <Select
-                    id="crypto-exerpeince"
+                    id="crypto_exerpeince"
                     isClearable={false}
                     isSearchable={false}
-                    options={cryptoExperience}
+                    options={joinUsSelectOptions.cryptoExperience}
                   />
                 </Stack>
               </FormControl>
@@ -162,7 +126,7 @@ export const JoinUsView: React.FC = () => {
                   id="availability"
                   isClearable={false}
                   isSearchable={false}
-                  options={availability}
+                  options={joinUsSelectOptions.availability}
                 />
               </FormControl>
               <FormControl>
@@ -174,6 +138,7 @@ export const JoinUsView: React.FC = () => {
                     Include any relevant experiences or links to past work.
                   </Typography>
                   <FormInput
+                    id=""
                     required
                     rows={5}
                     inputProps={{ sx: {resize: "vertical"} }}
@@ -225,7 +190,7 @@ export const JoinUsView: React.FC = () => {
                     If someone in particular referred you, please let us know who!
                   </Typography>
                   <FormInput
-                    id="hear-about"
+                    id="hear_about"
                     sx={{width: "100%"}}
                   />
                 </Stack>
@@ -235,10 +200,10 @@ export const JoinUsView: React.FC = () => {
                   Do you have a US Tax Residency?
                 </Label>
                 <Select
-                  id="tax-registry"
+                  id="tax_registry"
                   isClearable={false}
                   isSearchable={false}
-                  options={[{value: "yes", label: "Yes"},{value: "no", label: "No"}]}
+                  options={joinUsSelectOptions.taxResidency}
                 />
               </FormControl>
             </Stack>
