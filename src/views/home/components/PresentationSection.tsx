@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Box,
   Container,
@@ -78,41 +78,33 @@ export const PresentationSection: React.FC = () => {
             </Stack>
           </Grid>
         </Grid>
+        <Grid
+          columnGap={[10, 10, 10, 16]}
+          rowGap={[1, 3, 8, 10]}
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "space-around",
+          }}
+        >
+          {clientIcons.map((iconLink: IconLink, index) => (
+            <Grid item key={index}>
+              <Link href={iconLink.path} target="_blank" className="--centered">
+                <StyledLogo
+                  sx={{
+                    width: [60, 80, 100, 120],
+                    height: 42,
+                    opacity: 0.85,
+                    transition: "all 0.25s ease-in-out",
+                    "&:hover": { opacity: 1, transform: "scale(1.08)" },
+                  }}
+                  src={iconLink.icon}
+                />
+              </Link>
+            </Grid>
+          ))}
+        </Grid>
       </Container>
-      <Carousel
-        swipeable={false}
-        draggable={false}
-        arrows={false}
-        showDots={false}
-        infinite={true}
-        autoPlay={true}
-        shouldResetAutoplay={true}
-        rewindWithAnimation={false}
-        rewind={false}
-        additionalTransfrom={0}
-        slidesToSlide={1}
-        autoPlaySpeed={1}
-        centerMode={false}
-        pauseOnHover={true}
-        customTransition="all 5s linear"
-        transitionDuration={5000}
-        itemsPerRow={[3, 3, 5, 5]}
-        containerClass="carousel--presentation"
-      >
-        {clientIcons.map((iconLink: IconLink, index) => (
-          <Link
-            href={iconLink.path}
-            key={index}
-            target="_blank"
-            className="--centered"
-          >
-            <StyledLogo
-              sx={{ width: isDesktop ? 150 : 100, height: 42 }}
-              src={iconLink.icon}
-            />
-          </Link>
-        ))}
-      </Carousel>
     </PresentationSectionContainer>
   );
 };
