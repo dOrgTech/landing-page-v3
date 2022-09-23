@@ -72,6 +72,12 @@ const GameOfLifeAnimation = ({
     ).matches;
 
     setupGrid(p5);
+
+    if (className === "presentation") {
+      setInterval(() => {
+        setupGrid(p5);
+      }, 32000);
+    }
   };
 
   const draw = (p5: p5Types) => {
