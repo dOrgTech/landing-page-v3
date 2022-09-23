@@ -34,25 +34,28 @@ export const PresentationSection: React.FC = () => {
 
   return (
     <PresentationSectionContainer>
-      <GameOfLifeAnimationCanvas opacity={0.25} />
-      <Container maxWidth='lg' sx={{ height: "90%", position: "relative" }}>
+      <GameOfLifeAnimationCanvas opacity={0.25} className="presentation" />
+      <Container maxWidth="lg" sx={{ height: "90%", position: "relative" }}>
         <Grid
           container
-          flexDirection='column'
+          flexDirection="column"
           justifyContent={"center"}
           spacing={1}
-          height='100%'>
+          height="100%"
+        >
           <Grid
             item
             sx={{
               justifyContent: "flex-start",
               alignItems: "center",
               display: "flex",
-            }}>
+            }}
+          >
             <Stack spacing={6} maxWidth={1000}>
               <Typography
-                variant='h1'
-                textAlign={isDesktop ? "initial" : "center"}>
+                variant="h1"
+                textAlign={isDesktop ? "initial" : "center"}
+              >
                 Building for the decentralized web.
               </Typography>
               <Grid
@@ -61,12 +64,13 @@ export const PresentationSection: React.FC = () => {
                 mt={isDesktop ? 0 : 10}
                 flexDirection={isDesktop ? "row" : "column"}
                 alignItems={"center"}
-                justifyContent={isDesktop ? "initial" : "center"}>
+                justifyContent={isDesktop ? "initial" : "center"}
+              >
                 <Grid item>
-                  <Button variant='contained'>Leverage our expertise</Button>
+                  <Button variant="contained">Leverage our expertise</Button>
                 </Grid>
                 <Grid item>
-                  <Button variant='outlined' sx={{ bgcolor: colors.black }}>
+                  <Button variant="outlined" sx={{ bgcolor: colors.black }}>
                     Become a member
                   </Button>
                 </Grid>
@@ -90,13 +94,18 @@ export const PresentationSection: React.FC = () => {
         autoPlaySpeed={1}
         centerMode={false}
         pauseOnHover={true}
-        customTransition='all 4s linear'
-        transitionDuration={4000}
+        customTransition="all 5s linear"
+        transitionDuration={5000}
         itemsPerRow={[3, 3, 5, 5]}
         containerClass="carousel--presentation"
       >
         {clientIcons.map((iconLink: IconLink, index) => (
-          <Link href={iconLink.path} key={index} target='_blank' className="--centered">
+          <Link
+            href={iconLink.path}
+            key={index}
+            target="_blank"
+            className="--centered"
+          >
             <StyledLogo
               sx={{ width: isDesktop ? 150 : 100, height: 42 }}
               src={iconLink.icon}

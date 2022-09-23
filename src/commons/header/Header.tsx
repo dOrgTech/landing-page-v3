@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Container, Stack, useMediaQuery, useTheme } from "@mui/material";
 import HeaderDesktop from "./HeaderDesktop";
 import HeaderMobile from "./HeaderMobile";
@@ -12,45 +12,44 @@ export type MenuItem = {
 export const MENU_ITEMS: MenuItem[] = [
   {
     name: "Hire us",
-    path: "/#/hireUs"
+    path: "/#/hireUs",
   },
   {
     name: "Join us",
-    path: "/#/joinUs"
+    path: "/#/joinUs",
   },
   {
-    name: "Our Handbook",
+    name: "Handbook",
     path: "https://docs.dorg.tech/",
-    external: true
-  }, 
+    external: true,
+  },
   {
     name: "Blog",
     path: "https://blog.dorg.tech/",
-    external: true
+    external: true,
   },
 ];
 
 export const Header: React.FC = () => {
   const [isFixed, setIsFixed] = useState(false);
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
+  const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
 
-  
   useEffect(() => {
     const handleScroll = () => {
       const position = window.scrollY;
       setIsFixed(position > 100);
-    }
+    };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  })
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
 
   return (
-    <Box 
+    <Box
       component="header"
       sx={{
         background: `rgba(0,0,0,${isFixed ? 0.95 : 0})`,
@@ -74,7 +73,7 @@ export const Header: React.FC = () => {
             justifyContent: "space-between",
           }}
         >
-          {(isMobile) ? <HeaderMobile /> : <HeaderDesktop />}
+          {isMobile ? <HeaderMobile /> : <HeaderDesktop />}
         </Stack>
       </Container>
     </Box>

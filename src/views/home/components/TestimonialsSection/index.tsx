@@ -1,7 +1,10 @@
 import React from "react";
 import { Box, Container, Typography, useTheme } from "@mui/material";
-import Masonry from '@mui/lab/Masonry';
-import { TwitterCard, TwitterCardProps } from "../../../../commons/twitter/TwitterCard";
+import Masonry from "@mui/lab/Masonry";
+import {
+  TwitterCard,
+  TwitterCardProps,
+} from "../../../../commons/twitter/TwitterCard";
 import { testimonials } from "./Testimonials";
 
 export const TestimonialsSection: React.FC = () => {
@@ -13,9 +16,9 @@ export const TestimonialsSection: React.FC = () => {
         maxWidth="lg"
         sx={{
           position: "relative",
-          [theme.breakpoints.down('md')]: {
+          [theme.breakpoints.down("md")]: {
             px: 0,
-          }
+          },
         }}
       >
         <Typography
@@ -25,12 +28,16 @@ export const TestimonialsSection: React.FC = () => {
           textAlign="center"
           letterSpacing={5}
         >
-          In dOrg We Trust <span role="img" aria-label="sparkles">✨</span>
+          In dOrg We Trust{" "}
+          <span role="img" aria-label="sparkles">
+            ✨
+          </span>
         </Typography>
         <Masonry
           columns={{ xs: 1, sm: 2, md: 3 }}
           spacing={5}
           sx={{
+            minHeight: "100vh",
             mt: 8,
             mx: 0,
           }}
@@ -38,7 +45,7 @@ export const TestimonialsSection: React.FC = () => {
           {testimonials.map((testimonial: TwitterCardProps) => {
             return (
               <TwitterCard key={testimonial.externalLink} {...testimonial} />
-            )
+            );
           })}
         </Masonry>
       </Container>
