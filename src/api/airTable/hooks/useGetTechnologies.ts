@@ -1,30 +1,34 @@
 import { useState } from "react";
+import { CreateSelectOption } from "../../../commons/form/CreatableSelect";
 
 const useGetTechnologies = () => {
+  const [data, setData] = useState<CreateSelectOption[]>([]);
 
-  const fetchSkills = async (): Promise<any> => {
+  const fetchSkills = async () => {
     await fetch(
       `https://api.airtable.com/v0/appbNUGuda5Gk6wPg/tblsHUcPVh40bZAis?fields%5B%5D=Name`,
       {
         method: "GET",
         headers: {
-          "Authorization": `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`
-        }
+          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
+        },
       }
     )
-    .then(response => response.json())
-    .then(response => {
-  
-        const technologies = response.records.map((record: any) => {
-          return     {
-             label: record.fields.Name ? record.fields.Name : "",
-             value: record.fields.Name ? record.fields.Name : "",
-           }
-        } )
-        return technologies
-    } )
+      .then((response) => response.json())
+      .then((response) => {
+        const technologies = response.records.map(
+          (record: { fields: { Name: string } }) => {
+            return {
+              label: record.fields.Name ? record.fields.Name : "",
+              value: record.fields.Name ? record.fields.Name : "",
+            };
+          }
+        );
+        setData(technologies);
+      });
+  };
 
-  return {  fetchSkills };
-}};
+  return { fetchSkills, data };
+};
 
 export default useGetTechnologies;

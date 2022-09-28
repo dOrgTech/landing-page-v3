@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { FormPage } from "../FormPage";
 import { Divider, FormControl, Stack, Typography } from "@mui/material";
@@ -14,8 +14,7 @@ import useGetTechnologies from "../../../api/airTable/hooks/useGetTechnologies";
 
 export const JoinUsView: React.FC = () => {
   const { loading, createRecord } = useCreateJoinRecord();
-  const { fetchSkills } = useGetTechnologies();
-  const [technologies, setTechnologies] = useState([]);
+  const { fetchSkills, data: technologies } = useGetTechnologies();
 
   const {
     handleSubmit,
@@ -35,28 +34,20 @@ export const JoinUsView: React.FC = () => {
   };
 
   useEffect(() => {
-    // declare the data fetching function
-    const fetchData = async () => {
-      const data = await fetchSkills();
-      console.log("data", data);
-    };
-
-    // call the function
-    fetchData()
-      // make sure to catch any error
-      .catch(console.error);
-  }, []);
+    if (!technologies.length) {
+      fetchSkills();
+    }
+  }, [fetchSkills, technologies]);
 
   return (
     <FormPage
-      title="Join Us"
-      description="Fill out the form if you want to join us!"
-    >
-      <form onSubmit={handleSubmit(onSubmit)} method="post">
+      title='Join Us'
+      description='Fill out the form if you want to join us!'>
+      <form onSubmit={handleSubmit(onSubmit)} method='post'>
         <Stack spacing={10}>
           <Stack spacing={4}>
             <Stack spacing={2}>
-              <Typography variant="h5" component="h2">
+              <Typography variant='h5' component='h2'>
                 Basic information
               </Typography>
               <Divider sx={{ border: `2px solid ${colors.black}` }} />
@@ -68,7 +59,7 @@ export const JoinUsView: React.FC = () => {
                 </Label>
                 <Controller
                   control={control}
-                  name="name"
+                  name='name'
                   rules={{
                     required: "Please enter your name.",
                   }}
@@ -91,7 +82,7 @@ export const JoinUsView: React.FC = () => {
                 </Label>
                 <Controller
                   control={control}
-                  name="email"
+                  name='email'
                   rules={{
                     required: "Please enter your email.",
                   }}
@@ -114,7 +105,7 @@ export const JoinUsView: React.FC = () => {
                 </Label>
                 <Controller
                   control={control}
-                  name="main_specialization"
+                  name='main_specialization'
                   rules={{
                     required: "Please include a main specialization",
                   }}
@@ -138,7 +129,7 @@ export const JoinUsView: React.FC = () => {
 
           <Stack spacing={4}>
             <Stack spacing={2}>
-              <Typography variant="h5" component="h2">
+              <Typography variant='h5' component='h2'>
                 Experience
               </Typography>
               <Divider sx={{ border: `2px solid ${colors.black}` }} />
@@ -151,7 +142,7 @@ export const JoinUsView: React.FC = () => {
                 </Label>
                 <Controller
                   control={control}
-                  name="years_experience"
+                  name='years_experience'
                   rules={{
                     required: "Please provide your experience",
                   }}
@@ -176,7 +167,7 @@ export const JoinUsView: React.FC = () => {
                 </Label>
                 <Controller
                   control={control}
-                  name="other_specializations"
+                  name='other_specializations'
                   render={({ field: { onChange } }) => (
                     <Select
                       isMulti
@@ -200,13 +191,13 @@ export const JoinUsView: React.FC = () => {
                 </Label>
                 <Controller
                   control={control}
-                  name="technologies"
+                  name='technologies'
                   render={({ field: { onChange } }) => (
                     <Select
                       isMulti
                       isSearchable={false}
                       isClearable={false}
-                      options={joinUsSelectOptions.technologies}
+                      options={technologies}
                       onChange={(val: any) =>
                         onChange(val.map((c: any) => c.value))
                       }
@@ -223,12 +214,12 @@ export const JoinUsView: React.FC = () => {
                   Crypto Experience
                 </Label>
                 <Stack spacing={1}>
-                  <Typography variant="body2">
+                  <Typography variant='body2'>
                     How would you rate your experience in the web3 space?
                   </Typography>
                   <Controller
                     control={control}
-                    name="crypto_experience"
+                    name='crypto_experience'
                     rules={{
                       required: "Please provide your experience with crypto",
                     }}
@@ -253,7 +244,7 @@ export const JoinUsView: React.FC = () => {
 
           <Stack spacing={4}>
             <Stack spacing={2}>
-              <Typography variant="h5" component="h2">
+              <Typography variant='h5' component='h2'>
                 Additional information
               </Typography>
               <Divider sx={{ border: `2px solid ${colors.black}` }} />
@@ -265,7 +256,7 @@ export const JoinUsView: React.FC = () => {
                 </Label>
                 <Controller
                   control={control}
-                  name="availability"
+                  name='availability'
                   rules={{
                     required: "Please provide your availability",
                   }}
@@ -290,12 +281,12 @@ export const JoinUsView: React.FC = () => {
                   out of joining dOrg
                 </Label>
                 <Stack spacing={1}>
-                  <Typography variant="body2">
+                  <Typography variant='body2'>
                     Include any relevant experiences or links to past work.
                   </Typography>
                   <Controller
                     control={control}
-                    name="interest"
+                    name='interest'
                     rules={{
                       required:
                         "Please tell us why you're interested in joining dOrg.",
@@ -322,7 +313,7 @@ export const JoinUsView: React.FC = () => {
                 <Label sx={{ color: "currentColor" }}>Github</Label>
                 <Controller
                   control={control}
-                  name="github"
+                  name='github'
                   render={({ field: { onChange, onBlur, name } }) => (
                     <FormInput
                       onChange={onChange}
@@ -336,7 +327,7 @@ export const JoinUsView: React.FC = () => {
                 <Label sx={{ color: "currentColor" }}>LinkedIn</Label>
                 <Controller
                   control={control}
-                  name="linkedIn"
+                  name='linkedIn'
                   render={({ field: { onChange, onBlur, name } }) => (
                     <FormInput
                       onChange={onChange}
@@ -350,7 +341,7 @@ export const JoinUsView: React.FC = () => {
                 <Label sx={{ color: "currentColor" }}>Twitter</Label>
                 <Controller
                   control={control}
-                  name="twitter"
+                  name='twitter'
                   render={({ field: { onChange, onBlur, name } }) => (
                     <FormInput
                       onChange={onChange}
@@ -364,7 +355,7 @@ export const JoinUsView: React.FC = () => {
                 <Label sx={{ color: "currentColor" }}>Discord</Label>
                 <Controller
                   control={control}
-                  name="discord"
+                  name='discord'
                   render={({ field: { onChange, onBlur, name } }) => (
                     <FormInput
                       onChange={onChange}
@@ -379,13 +370,13 @@ export const JoinUsView: React.FC = () => {
                   How did you hear about dOrg?
                 </Label>
                 <Stack spacing={1}>
-                  <Typography variant="body2">
+                  <Typography variant='body2'>
                     If someone in particular referred you, please let us know
                     who!
                   </Typography>
                   <Controller
                     control={control}
-                    name="hear_about"
+                    name='hear_about'
                     render={({ field: { onChange, onBlur, name } }) => (
                       <FormInput
                         onChange={onChange}
@@ -402,7 +393,7 @@ export const JoinUsView: React.FC = () => {
                 </Label>
                 <Controller
                   control={control}
-                  name="tax_registry"
+                  name='tax_registry'
                   rules={{
                     required: "Please provide an answer",
                   }}
@@ -425,8 +416,8 @@ export const JoinUsView: React.FC = () => {
           </Stack>
         </Stack>
         <Button
-          variant="outlined"
-          type="submit"
+          variant='outlined'
+          type='submit'
           sx={{
             borderColor: colors.black,
             color: colors.black,
@@ -435,8 +426,7 @@ export const JoinUsView: React.FC = () => {
             "&:hover": {
               color: colors.white,
             },
-          }}
-        >
+          }}>
           Submit
         </Button>
       </form>
