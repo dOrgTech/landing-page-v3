@@ -84,7 +84,7 @@ export const sendHireUsForm = async (data: HireUsFormInputs): Promise<Response> 
     } 
   };
   const url = window.location.href.substring(0, window.location.href.indexOf("/#")) + '/submitHireUsForm';
-  return fetch(`https://api.airtable.com/v0/${process.env.appyKCRZDc4ENqG0r}/Table%201`, {
+  return fetch(`https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/Table%201`, {
     method: "POST",
     headers: {
       
@@ -121,7 +121,7 @@ export const sendJoinUsForm = async (data: JoinUsFormInputs): Promise<Response> 
     }
   };
   const url = window.location.href.substring(0, window.location.href.indexOf("/#")) + '/submitJoinUsForm';
-  return fetch(url, {
+  return fetch(`https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/Table%201`, {
     method: "POST",
     body: JSON.stringify(body)
   })

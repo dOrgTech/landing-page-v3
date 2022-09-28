@@ -33,7 +33,7 @@ export const joinUsSelectOptions: JoinUsSelectForms = {
     { value: "none/limited", label: "No or limited experience"},
     { value: "personal projects/hackathons", label: "Personal projects or hackathons"},
     { value: "0-2 years", label: "0-2 years of professional experience"},
-    { value: "2+ yeras", label: "2+ years of professional experience"},
+    { value: "2+ years", label: "2+ years of professional experience"},
   ],
   availability: [
     { value: "very part-time", label: "Very part-time (1-5)"},
