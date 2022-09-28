@@ -36,13 +36,13 @@ export interface JoinUsFormInputs {
 interface HireUsSelectFormsubmission {
   fields: {
     "Name": string;
+    "Approach": HireUsSelectForms["approaches"][];
+    "Budget": string;
     "Email": string;
     "Organization": string;
     "Website": string;
     "Project Categories": HireUsSelectForms["categories"][];
-    "Approach": HireUsSelectForms["approaches"][];
     "Project Description": string;
-    "Budget": string;
     "Start Date": string;
     "Source": string;
   }
@@ -84,8 +84,11 @@ export const sendHireUsForm = async (data: HireUsFormInputs): Promise<Response> 
     } 
   };
   const url = window.location.href.substring(0, window.location.href.indexOf("/#")) + '/submitHireUsForm';
-  return fetch(url, {
+  return fetch(`https://api.airtable.com/v0/${process.env.appyKCRZDc4ENqG0r}/Table%201`, {
     method: "POST",
+    headers: {
+      
+    },
     body: JSON.stringify(body)
   })
     .then(response => {
