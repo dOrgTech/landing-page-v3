@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Box,
   Container,
@@ -34,25 +34,28 @@ export const PresentationSection: React.FC = () => {
 
   return (
     <PresentationSectionContainer>
-      <GameOfLifeAnimationCanvas opacity={0.25} />
-      <Container maxWidth='lg' sx={{ height: "90%", position: "relative" }}>
+      <GameOfLifeAnimationCanvas opacity={0.25} className="presentation" />
+      <Container maxWidth="lg" sx={{ height: "90%", position: "relative" }}>
         <Grid
           container
-          flexDirection='column'
+          flexDirection="column"
           justifyContent={"center"}
           spacing={1}
-          height='100%'>
+          height="100%"
+        >
           <Grid
             item
             sx={{
               justifyContent: "flex-start",
               alignItems: "center",
               display: "flex",
-            }}>
+            }}
+          >
             <Stack spacing={6} maxWidth={1000}>
               <Typography
-                variant='h1'
-                textAlign={isDesktop ? "initial" : "center"}>
+                variant="h1"
+                textAlign={isDesktop ? "initial" : "center"}
+              >
                 Building for the decentralized web.
               </Typography>
               <Grid
@@ -61,40 +64,53 @@ export const PresentationSection: React.FC = () => {
                 mt={isDesktop ? 0 : 10}
                 flexDirection={isDesktop ? "row" : "column"}
                 alignItems={"center"}
-                justifyContent={isDesktop ? "initial" : "center"}>
+                justifyContent={isDesktop ? "initial" : "center"}
+              >
                 <Grid item>
-                  <Button href="/#/hireUs" variant='contained'>Leverage our expertise</Button>
+                  <Button href="/#/hireUs" variant="contained">
+                    Leverage our expertise
+                  </Button>
                 </Grid>
                 <Grid item>
-                  <Button href="/#/joinUs" variant='outlined' sx={{bgcolor: colors.black}}>Become a member</Button>
+                  <Button
+                    href="/#/joinUs"
+                    variant="outlined"
+                    sx={{ bgcolor: colors.black }}
+                  >
+                    Become a member
+                  </Button>
                 </Grid>
               </Grid>
             </Stack>
           </Grid>
         </Grid>
+        <Grid
+          columnGap={[10, 10, 10, 16]}
+          rowGap={[1, 3, 8, 10]}
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "space-around",
+          }}
+        >
+          {clientIcons.map((iconLink: IconLink, index) => (
+            <Grid item key={index}>
+              <Link href={iconLink.path} target="_blank" className="--centered">
+                <StyledLogo
+                  sx={{
+                    width: [60, 80, 100, 120],
+                    height: 42,
+                    opacity: 0.85,
+                    transition: "all 0.25s ease-in-out",
+                    "&:hover": { opacity: 1, transform: "scale(1.08)" },
+                  }}
+                  src={iconLink.icon}
+                />
+              </Link>
+            </Grid>
+          ))}
+        </Grid>
       </Container>
-      <Carousel
-        infinite={true}
-        autoPlay={true}
-        arrows={false}
-        slidesToSlide={1}
-        autoPlaySpeed={1}
-        centerMode
-        pauseOnHover={true}
-        customTransition='transform 4s linear'
-        transitionDuration={4000}
-        itemsPerRow={[3, 3, 5, 5]}
-        containerClass="carousel--presentation"
-      >
-        {clientIcons.map((iconLink: IconLink, index) => (
-          <Link href={iconLink.path} key={index} target='_blank' className="--centered">
-            <StyledLogo
-              sx={{ width: isDesktop ? 150 : 100, height: 42 }}
-              src={iconLink.icon}
-            />
-          </Link>
-        ))}
-      </Carousel>
     </PresentationSectionContainer>
   );
 };
