@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { FormPage } from "../FormPage";
 import { Divider, FormControl, Stack, Typography } from "@mui/material";
@@ -10,9 +10,12 @@ import { CreatableSelect as Select } from "../../../commons/form/CreatableSelect
 import { joinUsSelectOptions } from "../../../constants/joinUs";
 import { JoinUsFormInputs } from "../../../utils/network";
 import useCreateJoinRecord from "../../../api/airTable/hooks/useCreateJoinRecord";
+import useGetTechnologies from "../../../api/airTable/hooks/useGetTechnologies";
 
 export const JoinUsView: React.FC = () => {
   const { loading, createRecord } = useCreateJoinRecord();
+  const { fetchSkills } = useGetTechnologies();
+  const [technologies, setTechnologies] = useState([]);
 
   const {
     handleSubmit,
@@ -30,6 +33,19 @@ export const JoinUsView: React.FC = () => {
     const submittedData: JoinUsFormInputs = { ...data };
     await createRecord(submittedData);
   };
+
+  useEffect(() => {
+    // declare the data fetching function
+    const fetchData = async () => {
+      const data = await fetchSkills();
+      console.log("data", data);
+    };
+
+    // call the function
+    fetchData()
+      // make sure to catch any error
+      .catch(console.error);
+  }, []);
 
   return (
     <FormPage
