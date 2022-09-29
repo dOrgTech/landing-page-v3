@@ -10,13 +10,6 @@ import { useState } from "react";
 import { MENU_ITEMS, MenuItem } from "./Header";
 import { IconLink, socialIconLinks } from "../../constants/routes";
 
-const HeaderMobileContainer = styled(Grid)({
-  background: `linear-gradient(180deg, ${colors.purple} 0%, ${colors.magenta} 100%)`,
-  boxSizing: "border-box",
-  height: "100%",
-  minHeight: "100%",
-});
-
 const StyledLogo = styled("img")({
   height: "auto",
   objectFit: "contain",
@@ -26,15 +19,15 @@ const StyledLogo = styled("img")({
 
 const CloseButton = styled(CloseIcon)({
   color: colors.white,
-  width: 46,
-  height: 46,
+  width: 32,
+  height: 32,
   cursor: "pointer",
 });
 
 const MenuButton = styled(MenuIcon)({
   color: colors.white,
-  width: 46,
-  height: 46,
+  width: 32,
+  height: 32,
   cursor: "pointer",
 });
 
@@ -55,21 +48,36 @@ const HeaderMobile: React.FC = () => {
         <StyledLogo src={LogoColor} alt="dOrg Color Logo" />
       </Link>
       <MenuButton onClick={handleOpen} />
-      <Dialog fullScreen open={open} onClose={handleClose}>
-        <HeaderMobileContainer
+      <Dialog
+        fullScreen
+        open={open}
+        onClose={handleClose}
+        sx={{ "& .MuiPaper-root": { background: "transparent" } }}
+      >
+        <Grid
           container
-          flexDirection={"column"}
-          justifyContent={"space-between"}
-          px={3.5}
-          pt={3.5}
-          pb={5}
+          sx={{
+            flexDirection: "column",
+            justifyContent: "space-between",
+            background: `linear-gradient(180deg, ${colors.purple} 0%, ${colors.magenta} 100%)`,
+            boxSizing: "border-box",
+            height: "100%",
+            minHeight: "100%",
+            px: 2,
+            pt: 2,
+            pb: 5,
+          }}
         >
           <Grid
             container
             justifyContent={"space-between"}
             alignItems={"center"}
           >
-            <Link href="/" onClick={() => setOpen(false)}>
+            <Link
+              href="/"
+              onClick={() => setOpen(false)}
+              sx={{ display: "flex" }}
+            >
               <StyledLogo src={Logo} alt="dOrg Logo" />
             </Link>
             <CloseButton onClick={handleClose} />
@@ -112,7 +120,7 @@ const HeaderMobile: React.FC = () => {
               </Grid>
             ))}
           </Grid>
-        </HeaderMobileContainer>
+        </Grid>
       </Dialog>
     </>
   );

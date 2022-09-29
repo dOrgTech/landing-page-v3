@@ -4,6 +4,14 @@ import TwitterLogo from "../assets/imgs/twitter.svg";
 import EmailLogo from "../assets/imgs/mail.svg";
 
 import GnosisLogo from "../assets/imgs/clients/gnosis.svg";
+import MessariLogo from "../assets/imgs/clients/messari.svg";
+import AcredaosLogo from "../assets/imgs/clients/acredaos.svg";
+import EthereumFoundationLogo from "../assets/imgs/clients/ethereumfoundation.svg";
+import CoordinapeLogo from "../assets/imgs/clients/coordinape.svg";
+import EcoLogo from "../assets/imgs/clients/eco.svg";
+import AmnestyLogo from "../assets/imgs/clients/amnesty.svg";
+import SafeLogo from "../assets/imgs/clients/safe.svg";
+import GnosisguildLogo from "../assets/imgs/clients/gnosisguild.svg";
 import OpolisLogo from "../assets/imgs/clients/opolis.svg";
 import StarkwareLogo from "../assets/imgs/clients/starkware.svg";
 import BalancerLogo from "../assets/imgs/clients/balancer.svg";
@@ -27,6 +35,14 @@ export interface SocialIconLinks {
 
 export interface ClientIconLinks {
   gnosis: Readonly<IconLink>;
+  messari: Readonly<IconLink>;
+  acredaos: Readonly<IconLink>;
+  ethereumfoundation: Readonly<IconLink>;
+  coordinape: Readonly<IconLink>;
+  eco: Readonly<IconLink>;
+  amnesty: Readonly<IconLink>;
+  safe: Readonly<IconLink>;
+  gnosisguild: Readonly<IconLink>;
   opolis: Readonly<IconLink>;
   starkware: Readonly<IconLink>;
   balancer: Readonly<IconLink>;
@@ -61,20 +77,60 @@ export const socialIconLinks: SocialIconLinks = {
 };
 
 export const clientIconLinks: ClientIconLinks = {
+  ethereumfoundation: {
+    path: "https://ethereum.org/en/foundation/",
+    icon: EthereumFoundationLogo,
+    name: "Ethereum Foundation",
+  },
   gnosis: {
     path: "https://gnosis.io/",
     icon: GnosisLogo,
     name: "Gnosis",
   },
-  opolis: {
-    path: "https://opolis.co/",
-    icon: OpolisLogo,
-    name: "Opolis",
+  messari: {
+    path: "https://messari.io/",
+    icon: MessariLogo,
+    name: "Messari",
+  },
+  acredaos: {
+    path: "https://acredaos.com/",
+    icon: AcredaosLogo,
+    name: "Acre Daos",
+  },
+  coordinape: {
+    path: "https://coordinape.com/",
+    icon: CoordinapeLogo,
+    name: "Coordinape",
+  },
+  eco: {
+    path: "https://eco.com/",
+    icon: EcoLogo,
+    name: "Eco",
   },
   starkware: {
     path: "https://starkware.co/",
     icon: StarkwareLogo,
     name: "Starkware",
+  },
+  amnesty: {
+    path: "https://amnesty.org/en/",
+    icon: AmnestyLogo,
+    name: "Amnesty",
+  },
+  safe: {
+    path: "https://safe.global/",
+    icon: SafeLogo,
+    name: "Safe",
+  },
+  gnosisguild: {
+    path: "https://gnosisguild.org/",
+    icon: GnosisguildLogo,
+    name: "Gnosis Guild",
+  },
+  opolis: {
+    path: "https://opolis.co/",
+    icon: OpolisLogo,
+    name: "Opolis",
   },
   balancer: {
     path: "https://balancer.fi/",

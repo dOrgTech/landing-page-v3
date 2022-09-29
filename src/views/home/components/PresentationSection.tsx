@@ -23,7 +23,7 @@ const StyledLogo = styled("img")({
 
 const PresentationSectionContainer = styled(Box)({
   width: "100vw",
-  height: "100vh",
+  minHeight: "100vh",
   position: "relative",
 });
 
@@ -34,13 +34,15 @@ export const PresentationSection: React.FC = () => {
   return (
     <PresentationSectionContainer>
       <GameOfLifeAnimationCanvas opacity={0.25} className="presentation" />
-      <Container maxWidth="lg" sx={{ height: "90%", position: "relative" }}>
+      <Container maxWidth="lg" sx={{ position: "relative" }}>
         <Grid
           container
-          flexDirection="column"
-          justifyContent={"center"}
           spacing={1}
-          height="100%"
+          sx={{
+            flexDirection: "column",
+            justifyContent: "center",
+            minHeight: "90vh",
+          }}
         >
           <Grid
             item
@@ -84,8 +86,8 @@ export const PresentationSection: React.FC = () => {
           </Grid>
         </Grid>
         <Grid
-          columnGap={[10, 10, 10, 16]}
-          rowGap={[1, 3, 8, 10]}
+          columnGap={[6, 7, 10]}
+          rowGap={[1, 3, 4]}
           sx={{
             display: "flex",
             flexWrap: "wrap",
@@ -97,7 +99,7 @@ export const PresentationSection: React.FC = () => {
               <Link href={iconLink.path} target="_blank" className="--centered">
                 <StyledLogo
                   sx={{
-                    width: [60, 80, 100, 120],
+                    width: [60, 70, 80, 120],
                     height: 42,
                     opacity: 0.85,
                     transition: "all 0.25s ease-in-out",

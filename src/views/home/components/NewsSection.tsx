@@ -29,7 +29,7 @@ export const NewsSection: React.FC = () => {
   return (
     <Box
       sx={{
-        mt: 16,
+        mt: [16, 24, 32],
         pb: 8,
         position: "relative",
         [theme.breakpoints.up("sm")]: {

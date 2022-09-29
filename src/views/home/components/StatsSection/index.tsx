@@ -56,7 +56,7 @@ export const StatsSection: React.FC = () => {
   ];
 
   return (
-    <Box mb={20} mt={32}>
+    <Box mt={[16, 24, 32]}>
       <Container maxWidth="lg">
         <Grid
           container

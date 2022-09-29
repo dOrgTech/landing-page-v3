@@ -10,7 +10,7 @@ export const TestimonialsSection: React.FC = () => {
   const theme = useTheme();
 
   return (
-    <Box my={16} position="relative">
+    <Box mt={[16, 24, 32]} position="relative">
       <Container
         maxWidth="lg"
         sx={{

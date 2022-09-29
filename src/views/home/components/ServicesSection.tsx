@@ -68,7 +68,7 @@ export const ServicesSection: React.FC = () => {
   }, [activeServiceId, isDesktop]);
 
   return (
-    <Box py={24} position="relative">
+    <Box mt={[24, 32]} position="relative">
       <GameOfLifeAnimation
         fadeFromBlack
         opacity={0.1}

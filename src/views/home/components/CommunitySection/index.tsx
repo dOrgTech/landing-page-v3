@@ -13,7 +13,7 @@ export const CommunitySection: React.FC = () => {
   const [isMoving, setMoving] = useState<boolean>(false);
 
   return (
-    <Box my={16} position="relative">
+    <Box my={[16, 24, 32]} position="relative">
       <Typography
         variant="h6"
         component="h2"
@@ -45,7 +45,7 @@ export const CommunitySection: React.FC = () => {
           ))}
         </Carousel>
       </Box>
-      <Grid container justifyContent="center" mt={12}>
+      <Grid container justifyContent="center" mt={8}>
         <Grid item>
           <Button href="/#/joinUs" variant="outlined">
             Apply to Join
