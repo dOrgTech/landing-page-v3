@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Container, Typography, useTheme } from "@mui/material";
-import Masonry from "@mui/lab/Masonry";
 import {
   TwitterCard,
   TwitterCardProps,
@@ -33,21 +32,28 @@ export const TestimonialsSection: React.FC = () => {
             ✨
           </span>
         </Typography>
-        <Masonry
-          columns={{ xs: 1, sm: 2, md: 3 }}
-          spacing={5}
+        <Box
           sx={{
-            minHeight: "100vh",
+            columnCount: [1, 2, null, 3],
+            columnGap: 4,
             mt: 8,
-            mx: 0,
           }}
         >
           {testimonials.map((testimonial: TwitterCardProps) => {
             return (
-              <TwitterCard key={testimonial.externalLink} {...testimonial} />
+              <Box
+                key={testimonial.externalLink}
+                sx={{
+                  breakInside: "avoid",
+                  pageBreakInside: "avoid",
+                  mb: 4,
+                }}
+              >
+                <TwitterCard {...testimonial} />
+              </Box>
             );
           })}
-        </Masonry>
+        </Box>
       </Container>
     </Box>
   );
