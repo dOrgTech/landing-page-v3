@@ -6,7 +6,7 @@ const useGetTechnologies = () => {
 
   const fetchSkills = async () => {
     await fetch(
-      `https://api.airtable.com/v0/appbNUGuda5Gk6wPg/tblsHUcPVh40bZAis?fields%5B%5D=Name`,
+      `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/${process.env.REACT_APP_AIRTABLE_TECHNOLOGIES_TABLE}?fields%5B%5D=Name`,
       {
         method: "GET",
         headers: {
