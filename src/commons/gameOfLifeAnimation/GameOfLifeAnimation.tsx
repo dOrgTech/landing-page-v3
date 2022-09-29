@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Box, hexToRgb } from "@mui/material";
 import Sketch from "react-p5";
 import p5Types from "p5";

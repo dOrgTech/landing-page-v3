@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import {
   Box,
   Container,
@@ -12,7 +12,6 @@ import useIsDesktop from "../../../hooks/useIsDesktop";
 import { Button } from "../../../commons/button/Button";
 import GameOfLifeAnimationCanvas from "../../../commons/gameOfLifeAnimation/GameOfLifeAnimation";
 import { clientIconLinks, IconLink } from "../../../constants/routes";
-import Carousel from "../../../commons/carousel/Carousel";
 import { colors } from "../../../theme";
 
 const StyledLogo = styled("img")({
