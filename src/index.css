@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 html {
   height: 100%;
   position: relative;
+  background-color: #000;
 }
 
 body {
   margin: 0;
   height: 100%;
-  overflow: auto;
   position: relative;
   background-color: #000;
 }

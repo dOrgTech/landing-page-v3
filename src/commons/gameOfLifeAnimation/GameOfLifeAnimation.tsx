@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Box, hexToRgb } from "@mui/material";
 import Sketch from "react-p5";
 import p5Types from "p5";
@@ -73,7 +73,7 @@ const GameOfLifeAnimation = ({
 
     setupGrid(p5);
 
-    if (className === "presentation") {
+    if (className === "presentation" || className === "form") {
       setInterval(() => {
         setupGrid(p5);
       }, 32000);

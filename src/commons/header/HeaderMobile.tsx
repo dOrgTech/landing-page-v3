@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Dialog, Grid, Link, Typography } from "@mui/material";
+import { Dialog, Grid, Link, Typography } from "@mui/material";
 import { styled } from "@material-ui/styles";
 import { colors } from "../../theme";
 import CloseIcon from "@mui/icons-material/Close";
@@ -52,7 +52,7 @@ const HeaderMobile: React.FC = () => {
   return (
     <>
       <Link href="/" display="inline-flex">
-        <StyledLogo src={LogoColor} alt='dOrg Color Logo' />
+        <StyledLogo src={LogoColor} alt="dOrg Color Logo" />
       </Link>
       <MenuButton onClick={handleOpen} />
       <Dialog fullScreen open={open} onClose={handleClose}>
@@ -62,14 +62,25 @@ const HeaderMobile: React.FC = () => {
           justifyContent={"space-between"}
           px={3.5}
           pt={3.5}
-          pb={5}>
-          <Grid container justifyContent={"space-between"} alignItems={"center"}>
+          pb={5}
+        >
+          <Grid
+            container
+            justifyContent={"space-between"}
+            alignItems={"center"}
+          >
             <Link href="/" onClick={() => setOpen(false)}>
-              <StyledLogo src={Logo} alt='dOrg Logo' />
+              <StyledLogo src={Logo} alt="dOrg Logo" />
             </Link>
             <CloseButton onClick={handleClose} />
           </Grid>
-          <Grid container justifyContent={"center"} alignItems={"center"} gap={4} flexDirection={"column"}>
+          <Grid
+            container
+            justifyContent={"center"}
+            alignItems={"center"}
+            gap={4}
+            flexDirection={"column"}
+          >
             {MENU_ITEMS.map((item: MenuItem, index) => (
               <Link
                 underline="none"
@@ -78,16 +89,24 @@ const HeaderMobile: React.FC = () => {
                 key={index}
                 onClick={() => setOpen(false)}
               >
-                <MenuItemButton variant='h4' color={colors.white} fontWeight='bold'>
+                <MenuItemButton
+                  variant="h4"
+                  color={colors.white}
+                  fontWeight="bold"
+                >
                   {item.name}
                 </MenuItemButton>
               </Link>
             ))}
           </Grid>
-          <Grid container justifyContent={"center"} alignItems='center' gap={7}>
+          <Grid container justifyContent={"center"} alignItems="center" gap={7}>
             {socialIcons.map((iconLink: IconLink, index) => (
               <Grid item key={index}>
-                <Link href={iconLink.path} target="_blank" onClick={() => setOpen(false)}>
+                <Link
+                  href={iconLink.path}
+                  target="_blank"
+                  onClick={() => setOpen(false)}
+                >
                   <StyledLogo style={{ width: 24 }} src={iconLink.icon} />
                 </Link>
               </Grid>
