@@ -73,7 +73,7 @@ const GameOfLifeAnimation = ({
 
     setupGrid(p5);
 
-    if (className === "presentation") {
+    if (className === "presentation" || className === "form") {
       setInterval(() => {
         setupGrid(p5);
       }, 32000);
