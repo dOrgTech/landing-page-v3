@@ -1,6 +1,11 @@
 import TimeIcon from "../assets/imgs/news/time.svg";
 import DelphiIcon from "../assets/imgs/news/delphi.svg";
 import StanfordIcon from "../assets/imgs/news/stanford.svg";
+import PrincetonIcon from "../assets/imgs/news/princeton.svg";
+import MitIcon from "../assets/imgs/news/mit.svg";
+import CointelegrpahIcon from "../assets/imgs/news/cointelegrpah.svg";
+import CoindeskIcon from "../assets/imgs/news/coindesk.svg";
+import HackernoonIcon from "../assets/imgs/news/hackernoon.svg";
 
 export interface NewsCardProps {
   path: string;
@@ -31,5 +36,40 @@ export const newsCards = [
     path: "https://www.youtube.com/watch?v=SYPzqRaN4zA",
     text: "In this lecture presented at Stanford's BioE60 Beyond Bitcoin course, Ron Bogerand Ori Shimony of dOrg present an overview on DAOs.",
     type: "lecture",
+  },
+  {
+    image: PrincetonIcon,
+    slug: "princeton",
+    path: "https://www.youtube.com/watch?v=yai6OVnytsw",
+    text: "Ron and Ori’s 2022 lecture on the evolution of DAOs at Princeton’s official course on web3.",
+    type: "lecture",
+  },
+  {
+    image: MitIcon,
+    slug: "mit",
+    path: "https://www.youtube.com/watch?v=SYPzqRaN4zA",
+    text: "An interview in MIT’s Computational Law Report on what the future holds for autonomous legal entities.",
+    type: "article",
+  },
+  {
+    image: CointelegrpahIcon,
+    slug: "cointelegrpah",
+    path: "https://cointelegraph.com/news/dorg-llc-purports-to-be-first-legally-valid-dao-under-us-law",
+    text: "CoIntelegraph’s coverage of dOrg’s historic step in becoming the first limited liability DAO under US law.",
+    type: "article",
+  },
+  {
+    image: CoindeskIcon,
+    slug: "coindesk",
+    path: "https://www.coindesk.com/markets/2019/06/11/dorg-founders-have-created-the-first-limited-liability-dao/",
+    text: "Coindesk interviews dOrg about becoming the first legally registered DAO in the United States.",
+    type: "article",
+  },
+  {
+    image: HackernoonIcon,
+    slug: "hackernoon",
+    path: "https://hackernoon.com/the-evolution-of-dorg-the-builder-dao-jcz3xxg",
+    text: "This article chronicles dOrg’s evolution from a few engineers to a network of builders developing industry-leading web3 software.",
+    type: "article",
   },
 ]

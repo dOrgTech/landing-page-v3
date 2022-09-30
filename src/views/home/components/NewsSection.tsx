@@ -1,32 +1,42 @@
 import React, { MouseEvent, useState } from "react";
-import { Box, Container, Link, Stack,  Typography, useMediaQuery, useTheme } from "@mui/material";
+import {
+  Box,
+  Container,
+  Link,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import Carousel from "../../../commons/carousel/Carousel";
 import { ButtonGroup } from "../../../commons/carousel/ButtonGroup";
-import { colors } from "../../../theme"
+import { colors } from "../../../theme";
 import ExternalLinkIcon from "../../../assets/imgs/external-link-icon.svg";
-import { newsCards, NewsCardProps } from "../../../constants/news"
+import { newsCards, NewsCardProps } from "../../../constants/news";
 
 export const NewsSection: React.FC = () => {
-  const [isMoving, setMoving] = useState<boolean>(false)
+  const [isMoving, setMoving] = useState<boolean>(false);
 
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const handleClick = (e: MouseEvent) => {
-    if(isMoving) {
+    if (isMoving) {
       e.preventDefault();
     }
-  }
+  };
 
   return (
-    <Box sx={{
-      mt: 16,
-      pb: 8,
-      position: "relative",
-      [theme.breakpoints.up('sm')]: {
-        pb: 16,
-      }
-    }}>
+    <Box
+      sx={{
+        mt: [16, 24, 32],
+        pb: 8,
+        position: "relative",
+        [theme.breakpoints.up("sm")]: {
+          pb: 16,
+        },
+      }}
+    >
       <Container maxWidth="lg" disableGutters={isMobile}>
         <Typography
           variant="h6"
@@ -35,7 +45,10 @@ export const NewsSection: React.FC = () => {
           textAlign="center"
           letterSpacing={5}
         >
-          We&apos;re getting noticed <span role="img" aria-label="fire">🔥</span>
+          We&apos;re getting noticed{" "}
+          <span role="img" aria-label="fire">
+            🔥
+          </span>
         </Typography>
         <Box mt={12}>
           <Carousel
@@ -45,12 +58,13 @@ export const NewsSection: React.FC = () => {
             showDots={newsCards.length > 3}
             renderButtonGroupOutside={true}
             shouldResetAutoplay
-            itemsPerRow={[1,2,3,3]}
+            infinite
+            itemsPerRow={[1, 2, 3, 3]}
             beforeChange={() => setMoving(true)}
             afterChange={() => setMoving(false)}
             customButtonGroup={
-              (isMobile || newsCards.length > 3) ? (
-                <ButtonGroup offset={theme.spacing(7)}/>
+              isMobile || newsCards.length > 3 ? (
+                <ButtonGroup offset={theme.spacing(7)} />
               ) : null
             }
           >
@@ -58,11 +72,11 @@ export const NewsSection: React.FC = () => {
               <Box px={isMobile ? 2 : undefined} key={index}>
                 <Link
                   href={card.path}
-                  target='_blank'
+                  target="_blank"
                   underline="none"
                   draggable={false}
                   onClick={(e) => handleClick(e)}
-                  sx={{alignSelf: "stretch"}}
+                  sx={{ alignSelf: "stretch" }}
                 >
                   <Stack
                     spacing={4}
@@ -78,7 +92,7 @@ export const NewsSection: React.FC = () => {
                       "& .read-link": {
                         transition: "opacity 0.25s ease-in-out",
                       },
-                      [theme.breakpoints.up('md')]: {
+                      [theme.breakpoints.up("md")]: {
                         ml: 3,
                       },
                       "&:hover": {
@@ -86,25 +100,38 @@ export const NewsSection: React.FC = () => {
                         borderColor: colors.white,
                         " .read-link": {
                           opacity: 0.6,
-                        }
-                      }
+                        },
+                      },
                     }}
                   >
                     <Box display="flex" justifyContent="flex-start">
-                      <img src={card.image} alt={card.slug} style={{height: "40px", width: "auto"}}/>
+                      <img
+                        src={card.image}
+                        alt={card.slug}
+                        style={{ height: "40px", maxWidth: 200, width: "auto" }}
+                      />
                     </Box>
-                    <Typography variant="body1" lineHeight={1.5}>
+                    <Typography
+                      variant="body1"
+                      lineHeight={1.5}
+                      textAlign="left"
+                    >
                       {card.text}
                     </Typography>
                     <Stack direction="row" spacing={2} className="read-link">
-                      <Typography variant="body1" textTransform="uppercase" fontWeight={800} letterSpacing={3}>
-                        {card.type ? (
-                          `Read the ${card.type}` 
-                        ) : (
-                          "Read more"
-                        )}
+                      <Typography
+                        variant="body1"
+                        textTransform="uppercase"
+                        fontWeight={800}
+                        letterSpacing={3}
+                      >
+                        {card.type ? `Read the ${card.type}` : "Read more"}
                       </Typography>
-                      <img src={ExternalLinkIcon} alt="" style={{width: "1rem"}} />
+                      <img
+                        src={ExternalLinkIcon}
+                        alt=""
+                        style={{ width: "1rem" }}
+                      />
                     </Stack>
                   </Stack>
                 </Link>

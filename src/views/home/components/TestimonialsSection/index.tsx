@@ -1,21 +1,23 @@
 import React from "react";
 import { Box, Container, Typography, useTheme } from "@mui/material";
-import Masonry from '@mui/lab/Masonry';
-import { TwitterCard, TwitterCardProps } from "../../../../commons/twitter/TwitterCard";
+import {
+  TwitterCard,
+  TwitterCardProps,
+} from "../../../../commons/twitter/TwitterCard";
 import { testimonials } from "./Testimonials";
 
 export const TestimonialsSection: React.FC = () => {
   const theme = useTheme();
 
   return (
-    <Box my={16} position="relative">
+    <Box mt={[16, 24, 32]} position="relative">
       <Container
         maxWidth="lg"
         sx={{
           position: "relative",
-          [theme.breakpoints.down('md')]: {
+          [theme.breakpoints.down("md")]: {
             px: 0,
-          }
+          },
         }}
       >
         <Typography
@@ -25,22 +27,33 @@ export const TestimonialsSection: React.FC = () => {
           textAlign="center"
           letterSpacing={5}
         >
-          In dOrg We Trust <span role="img" aria-label="sparkles">✨</span>
+          In dOrg We Trust{" "}
+          <span role="img" aria-label="sparkles">
+            ✨
+          </span>
         </Typography>
-        <Masonry
-          columns={{ xs: 1, sm: 2, md: 3 }}
-          spacing={5}
+        <Box
           sx={{
-            mt: 8,
-            mx: 0,
+            columnCount: [1, 2, null, 3],
+            columnGap: 4,
+            mt: 12,
           }}
         >
           {testimonials.map((testimonial: TwitterCardProps) => {
             return (
-              <TwitterCard key={testimonial.externalLink} {...testimonial} />
-            )
+              <Box
+                key={testimonial.externalLink}
+                sx={{
+                  breakInside: "avoid",
+                  pageBreakInside: "avoid",
+                  mb: 4,
+                }}
+              >
+                <TwitterCard {...testimonial} />
+              </Box>
+            );
           })}
-        </Masonry>
+        </Box>
       </Container>
     </Box>
   );
