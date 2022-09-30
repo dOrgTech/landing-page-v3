@@ -11,14 +11,14 @@ import CoordinapeLogo from "../assets/imgs/clients/coordinape.svg";
 import EcoLogo from "../assets/imgs/clients/eco.svg";
 import AmnestyLogo from "../assets/imgs/clients/amnesty.svg";
 import SafeLogo from "../assets/imgs/clients/safe.svg";
-import GnosisguildLogo from "../assets/imgs/clients/gnosisguild.svg";
+// import GnosisguildLogo from "../assets/imgs/clients/gnosisguild.svg";
 import OpolisLogo from "../assets/imgs/clients/opolis.svg";
 import StarkwareLogo from "../assets/imgs/clients/starkware.svg";
 import BalancerLogo from "../assets/imgs/clients/balancer.svg";
 import ParaswapLogo from "../assets/imgs/clients/paraswap.svg";
 import EtoroLogo from "../assets/imgs/clients/etoro.svg";
 import DoingudLogo from "../assets/imgs/clients/doingud.svg";
-import DiversifiLogo from "../assets/imgs/clients/diversifi.svg";
+// import DiversifiLogo from "../assets/imgs/clients/diversifi.svg";
 import CompoundLogo from "../assets/imgs/clients/compound.svg";
 import BoardroomLogo from "../assets/imgs/clients/boardroom.svg";
 import CentLogo from "../assets/imgs/clients/cent.png";
@@ -34,6 +34,7 @@ import NearLogo from "../assets/imgs/clients/near.svg";
 import RaribleLogo from "../assets/imgs/clients/rarible.svg";
 import TezosLogo from "../assets/imgs/clients/tezos.svg";
 import PolywrapLogo from "../assets/imgs/clients/polywrap.svg";
+import OperaLogo from "../assets/imgs/clients/opera.svg";
 
 export interface IconLink {
   path: string;
@@ -57,7 +58,7 @@ export interface ClientIconLinks {
   eco: Readonly<IconLink>;
   amnesty: Readonly<IconLink>;
   safe: Readonly<IconLink>;
-  gnosisguild: Readonly<IconLink>;
+  // gnosisguild: Readonly<IconLink>;
   opolis: Readonly<IconLink>;
   starkware: Readonly<IconLink>;
   balancer: Readonly<IconLink>;
@@ -80,6 +81,7 @@ export interface ClientIconLinks {
   rarible: Readonly<IconLink>;
   tezos: Readonly<IconLink>;
   polywrap: Readonly<IconLink>;
+  opera: Readonly<IconLink>;
 }
 
 export const socialIconLinks: SocialIconLinks = {
@@ -151,11 +153,11 @@ export const clientIconLinks: ClientIconLinks = {
     icon: SafeLogo,
     name: "Safe",
   },
-  gnosisguild: {
-    path: "https://gnosisguild.org/",
-    icon: GnosisguildLogo,
-    name: "Gnosis Guild",
-  },
+  // gnosisguild: {
+  //   path: "https://gnosisguild.org/",
+  //   icon: GnosisguildLogo,
+  //   name: "Gnosis Guild",
+  // },
   opolis: {
     path: "https://opolis.co/",
     icon: OpolisLogo,
@@ -260,5 +262,10 @@ export const clientIconLinks: ClientIconLinks = {
     path: "https://polywrap.io/",
     icon: PolywrapLogo,
     name: "Polywrap",
+  },
+  opera: {
+    path: "https://opera.com/",
+    icon: OperaLogo,
+    name: "Opera",
   },
 };

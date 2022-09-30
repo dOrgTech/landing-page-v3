@@ -11,7 +11,11 @@ import {
 import useIsDesktop from "../../../hooks/useIsDesktop";
 import { Button } from "../../../commons/button/Button";
 import GameOfLifeAnimationCanvas from "../../../commons/gameOfLifeAnimation/GameOfLifeAnimation";
-import { clientIconLinks, IconLink } from "../../../constants/routes";
+import {
+  ClientIconLinks,
+  clientIconLinks,
+  IconLink,
+} from "../../../constants/routes";
 import { colors } from "../../../theme";
 
 const StyledLogo = styled("img")({
@@ -29,7 +33,12 @@ const PresentationSectionContainer = styled(Box)({
 
 export const PresentationSection: React.FC = () => {
   const isDesktop = useIsDesktop();
-  const clientIcons = Object.values(clientIconLinks);
+
+  const sortObjectByKeys = (object: ClientIconLinks) =>
+    Object.fromEntries(
+      Object.entries(object).sort(([k1], [k2]) => (k1 < k2 ? -1 : 1))
+    );
+  const clientIcons = Object.values(sortObjectByKeys(clientIconLinks));
 
   return (
     <PresentationSectionContainer>
@@ -105,6 +114,7 @@ export const PresentationSection: React.FC = () => {
                     transition: "all 0.25s ease-in-out",
                     "&:hover": { opacity: 1, transform: "scale(1.08)" },
                   }}
+                  alt={iconLink.name}
                   src={iconLink.icon}
                 />
               </Link>
