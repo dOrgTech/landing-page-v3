@@ -20,6 +20,21 @@ import EtoroLogo from "../assets/imgs/clients/etoro.svg";
 import DoingudLogo from "../assets/imgs/clients/doingud.svg";
 import DiversifiLogo from "../assets/imgs/clients/diversifi.svg";
 import CompoundLogo from "../assets/imgs/clients/compound.svg";
+import BoardroomLogo from "../assets/imgs/clients/boardroom.svg";
+import CentLogo from "../assets/imgs/clients/cent.png";
+import TheGraphLogo from "../assets/imgs/clients/thegraph.svg";
+import SovrynLogo from "../assets/imgs/clients/sovryn.svg";
+import StakedusLogo from "../assets/imgs/clients/stakedus.svg";
+import AragonLogo from "../assets/imgs/clients/aragon.svg";
+import BadgerLogo from "../assets/imgs/clients/badger.svg";
+import DaostackLogo from "../assets/imgs/clients/daostack.svg";
+import DxdaoLogo from "../assets/imgs/clients/dxdao.svg";
+import MindsLogo from "../assets/imgs/clients/minds.svg";
+import NearLogo from "../assets/imgs/clients/near.svg";
+import RaribleLogo from "../assets/imgs/clients/rarible.svg";
+import TezosLogo from "../assets/imgs/clients/tezos.svg";
+import PolywrapLogo from "../assets/imgs/clients/polywrap.svg";
+
 export interface IconLink {
   path: string;
   icon: string;
@@ -49,8 +64,22 @@ export interface ClientIconLinks {
   paraswap: Readonly<IconLink>;
   etoro: Readonly<IconLink>;
   doingud: Readonly<IconLink>;
-  diversifi: Readonly<IconLink>;
+  // diversifi: Readonly<IconLink>;
   compound: Readonly<IconLink>;
+  boardroom: Readonly<IconLink>;
+  cent: Readonly<IconLink>;
+  theGraph: Readonly<IconLink>;
+  sovryn: Readonly<IconLink>;
+  stakedus: Readonly<IconLink>;
+  aragon: Readonly<IconLink>;
+  badger: Readonly<IconLink>;
+  daostack: Readonly<IconLink>;
+  dxdao: Readonly<IconLink>;
+  minds: Readonly<IconLink>;
+  near: Readonly<IconLink>;
+  rarible: Readonly<IconLink>;
+  tezos: Readonly<IconLink>;
+  polywrap: Readonly<IconLink>;
 }
 
 export const socialIconLinks: SocialIconLinks = {
@@ -152,14 +181,84 @@ export const clientIconLinks: ClientIconLinks = {
     icon: DoingudLogo,
     name: "Doingud",
   },
-  diversifi: {
-    path: "https://diversificrypto.com/",
-    icon: DiversifiLogo,
-    name: "Diversifi",
-  },
+  // diversifi: {
+  //   path: "https://diversificrypto.com/",
+  //   icon: DiversifiLogo,
+  //   name: "Diversifi",
+  // },
   compound: {
     path: "https://compound.finance/",
     icon: CompoundLogo,
     name: "Compound",
+  },
+  boardroom: {
+    path: "https://boardroom.io/",
+    icon: BoardroomLogo,
+    name: "Boardroom",
+  },
+  cent: {
+    path: "https://cent.co",
+    icon: CentLogo,
+    name: "Cent",
+  },
+  theGraph: {
+    path: "https://thegraph.com/",
+    icon: TheGraphLogo,
+    name: "The Graph",
+  },
+  sovryn: {
+    path: "https://sovryn.app/",
+    icon: SovrynLogo,
+    name: "Sovryn",
+  },
+  stakedus: {
+    path: "https://staked.us/",
+    icon: StakedusLogo,
+    name: "Stakedus",
+  },
+  aragon: {
+    path: "https://aragon.org//",
+    icon: AragonLogo,
+    name: "Aragon",
+  },
+  badger: {
+    path: "https://badger.com/",
+    icon: BadgerLogo,
+    name: "Badger",
+  },
+  daostack: {
+    path: "https://daostack.io/",
+    icon: DaostackLogo,
+    name: "Daostack",
+  },
+  dxdao: {
+    path: "https://dxdao.eth.link/",
+    icon: DxdaoLogo,
+    name: "Dxdao",
+  },
+  minds: {
+    path: "https://minds.com/",
+    icon: MindsLogo,
+    name: "Minds",
+  },
+  near: {
+    path: "https://near.org/",
+    icon: NearLogo,
+    name: "Near",
+  },
+  rarible: {
+    path: "https://rarible.com/",
+    icon: RaribleLogo,
+    name: "Rarible",
+  },
+  tezos: {
+    path: "https://tezos.com/",
+    icon: TezosLogo,
+    name: "Tezos",
+  },
+  polywrap: {
+    path: "https://polywrap.io/",
+    icon: PolywrapLogo,
+    name: "Polywrap",
   },
 };
