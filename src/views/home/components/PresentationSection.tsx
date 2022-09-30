@@ -86,8 +86,8 @@ export const PresentationSection: React.FC = () => {
           </Grid>
         </Grid>
         <Grid
-          columnGap={[6, 7, 10]}
-          rowGap={[1, 3, 4]}
+          columnGap={[4, 6, 7, 10]}
+          rowGap={[2, 3, 4]}
           sx={{
             display: "flex",
             flexWrap: "wrap",
