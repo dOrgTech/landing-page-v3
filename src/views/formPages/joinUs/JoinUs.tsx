@@ -417,7 +417,7 @@ export const JoinUsView: React.FC = () => {
                     />
                   </Stack>
                 </FormControl>
-                <FormControl>
+                {/* <FormControl>
                   <Label required sx={{ color: "currentColor" }}>
                     Do you have a US Tax Residency?
                   </Label>
@@ -441,7 +441,7 @@ export const JoinUsView: React.FC = () => {
                       />
                     )}
                   />
-                </FormControl>
+                </FormControl> */}
               </Stack>
             </Stack>
           </Stack>

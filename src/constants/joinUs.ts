@@ -6,7 +6,7 @@ export interface JoinUsSelectForms {
   technologies: SelectForm[];
   cryptoExperience: SelectForm[];
   availability: SelectForm[];
-  taxResidency: SelectForm[];
+  // taxResidency: SelectForm[];
 }
 
 export const joinUsSelectOptions: JoinUsSelectForms = {
@@ -42,8 +42,8 @@ export const joinUsSelectOptions: JoinUsSelectForms = {
     { value: "almost full-time", label: "Almost full-time (26-35)"},
     { value: "full-time", label: "Full-time (35+)"},
   ],
-  taxResidency: [
-    {value: "yes", label: "Yes"},
-    {value: "no", label: "No"}
-  ]
+  // taxResidency: [
+  //   {value: "yes", label: "Yes"},
+  //   {value: "no", label: "No"}
+  // ]
 }

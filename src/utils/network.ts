@@ -1,6 +1,5 @@
-import { HireUsSelectForms, hireUsSelectOptions } from "../constants/hireUs";
-import { JoinUsSelectForms, joinUsSelectOptions } from "../constants/joinUs";
-import { SelectForm } from "../constants/selectForm";
+import { HireUsSelectForms } from "../constants/hireUs";
+import { JoinUsSelectForms } from "../constants/joinUs";
 
 export interface HireUsFormInputs {
   "name": string;
@@ -30,7 +29,7 @@ export interface JoinUsFormInputs {
   "twitter": string;
   "discord": string;
   "hear_about": string;
-  "tax_registry": string;
+  // "tax_registry": string;
 }
 
 interface HireUsSelectFormsubmission {
@@ -64,7 +63,7 @@ interface JoinUsSelectFormsubmission {
     "Twitter": string;
     "Discord": string;
     "Hear About": string;
-    "Tax Registry": string;
+    // "Tax Registry": string;
   }
 }
 
@@ -117,7 +116,7 @@ export const sendJoinUsForm = async (data: JoinUsFormInputs): Promise<Response> 
       "Twitter": data.twitter,
       "Discord": data.discord,
       "Hear About": data.hear_about,
-      "Tax Registry": data.tax_registry,
+      // "Tax Registry": data.tax_registry,
     }
   };
   const url = window.location.href.substring(0, window.location.href.indexOf("/#")) + '/submitJoinUsForm';

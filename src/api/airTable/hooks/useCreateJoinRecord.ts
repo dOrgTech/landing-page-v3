@@ -23,7 +23,7 @@ const useCreateJoinRecord = () => {
             "Twitter": fields.twitter,
             "Discord": fields.discord,
             "Hear About": fields.hear_about,
-            "Tax Registry": fields.tax_registry,
+            // "Tax Registry": fields.tax_registry,
           },
         },
       ],
