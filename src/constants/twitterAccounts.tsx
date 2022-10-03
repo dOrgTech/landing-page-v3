@@ -10,6 +10,7 @@ import PhilAvatar from "../assets/imgs/avatars/philh.png";
 import LinusAvatar from "../assets/imgs/avatars/linus.png";
 import MrsBadgerFaceAvatar from "../assets/imgs/avatars/mrsbadgerface.png";
 import ManBoyAvatar from "../assets/imgs/avatars/asgeir.png";
+import CentAvatar from "../assets/imgs/avatars/cent.png";
 
 export interface TwitterAccountProps {
   avatar: string;
@@ -29,6 +30,7 @@ export interface TwitterAccounts {
   linus: TwitterAccountProps;
   mrsBadgerFace: TwitterAccountProps;
   manboy: TwitterAccountProps;
+  cent: TwitterAccountProps;
 }
 
 export const twitterAccounts: TwitterAccounts = {
@@ -38,7 +40,15 @@ export const twitterAccounts: TwitterAccounts = {
     avatar: DoinGudAvatar,
   },
   fhomoney: {
-    name: <>kianga.eth <span role="img" aria-label="earth">🌍</span> 1000 ACRE DAOs in 1000 Days</>,
+    name: (
+      <>
+        kianga.eth{" "}
+        <span role="img" aria-label="earth">
+          🌍
+        </span>{" "}
+        1000 ACRE DAOs in 1000 Days
+      </>
+    ),
     username: "@fhomoney",
     avatar: FhomoneyAvatar,
   },
@@ -68,7 +78,14 @@ export const twitterAccounts: TwitterAccounts = {
     avatar: DorgAvatar,
   },
   phil_h: {
-    name: <>philh <span role="img" aria-label="rainbow">🌈</span></>,
+    name: (
+      <>
+        philh{" "}
+        <span role="img" aria-label="rainbow">
+          🌈
+        </span>
+      </>
+    ),
     username: "@phil_h",
     avatar: PhilAvatar,
   },
@@ -83,8 +100,20 @@ export const twitterAccounts: TwitterAccounts = {
     avatar: MrsBadgerFaceAvatar,
   },
   manboy: {
-    name: <>manboy.ethᵍᵐ<span role="img" aria-label="coffee">☕️</span></>,
+    name: (
+      <>
+        manboy.ethᵍᵐ
+        <span role="img" aria-label="coffee">
+          ☕️
+        </span>
+      </>
+    ),
     username: "@manboy_eth",
     avatar: ManBoyAvatar,
+  },
+  cent: {
+    name: "Cent",
+    username: "@cent",
+    avatar: CentAvatar,
   },
 };

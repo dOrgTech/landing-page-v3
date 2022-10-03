@@ -25,11 +25,16 @@ export const testimonials: TwitterCardProps[] = [
     externalLink: "https://twitter.com/fhomoney/status/1476228453980585984",
     text: testimonialContent.fhomoney,
   },
+  // {
+  //   account: twitterAccounts.auryn,
+  //   externalLink:
+  //     "https://mobile.twitter.com/auryn_macmillan/status/1437803822215274498",
+  //   text: testimonialContent.zodiac,
+  // },
   {
-    account: twitterAccounts.auryn,
-    externalLink:
-      "https://mobile.twitter.com/auryn_macmillan/status/1437803822215274498",
-    text: testimonialContent.zodiac,
+    account: twitterAccounts.cent,
+    externalLink: "https://twitter.com/Cent/status/1530209860876394496",
+    text: testimonialContent.cent,
   },
   {
     account: twitterAccounts.auryn,
