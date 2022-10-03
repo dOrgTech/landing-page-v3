@@ -9,28 +9,28 @@ const useCreateJoinRecord = () => {
       records: [
         {
           fields: {
-            "Name": fields.name,
-            "Email": fields.email,
-            "Main Specialization": fields.main_specialization,
-            "Years Experience": fields.years_experience,
-            "Other Specializations": fields.other_specializations,
-            "Technologies": fields.technologies,
+            Name: fields.name,
+            "Personal Email": fields.email,
+            "Main Specialization": [fields.main_specialization],
+            "Professional Experience": fields.years_experience,
             "Crypto Experience": fields.crypto_experience,
-            "Availability": fields.availability,
-            "Interest": fields.interest,
-            "Github": fields.github,
-            "LinkedIn": fields.linkedIn,
-            "Twitter": fields.twitter,
-            "Discord": fields.discord,
-            "Hear About": fields.hear_about,
-            // "Tax Registry": fields.tax_registry,
+            "Other Specializations": fields.other_specializations,
+            "Tech Stack": fields.technologies,
+            Availability: fields.availability,
+            About: fields.interest,
+            Github: fields.github,
+            LinkedIn: fields.linkedIn,
+            Twitter: fields.twitter,
+            Discord: fields.discord,
+            Referral: fields.hear_about,
+            Status: "Lead",
           },
         },
       ],
     };
   };
 
-  const createRecord = async (fields: JoinUsFormInputs): Promise<any> => {
+  const createRecord = async (fields: JoinUsFormInputs): Promise<void> => {
     setLoading(true);
     const body = generateBody(fields);
     await fetch(

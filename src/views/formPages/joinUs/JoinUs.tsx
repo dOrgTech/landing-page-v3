@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Controller, useForm } from "react-hook-form";
+import { Controller, FieldErrors, useForm } from "react-hook-form";
 import { FormPage } from "../FormPage";
 import { Divider, FormControl, Stack, Typography } from "@mui/material";
 import { colors } from "../../../theme";
@@ -11,10 +11,12 @@ import { joinUsSelectOptions } from "../../../constants/joinUs";
 import { JoinUsFormInputs } from "../../../utils/network";
 import useCreateJoinRecord from "../../../api/airTable/hooks/useCreateJoinRecord";
 import useGetTechnologies from "../../../api/airTable/hooks/useGetTechnologies";
+import useGetSkills from "../../../api/airTable/hooks/useGetSkills";
 
 export const JoinUsView: React.FC = () => {
-  const { loading, createRecord } = useCreateJoinRecord();
-  const { fetchSkills, data: technologies } = useGetTechnologies();
+  const { createRecord, loading } = useCreateJoinRecord();
+  const { fetchTechnologies, data: technologies } = useGetTechnologies();
+  const { fetchSkills, data: skills } = useGetSkills();
   const [submitted, setSubmitted] = useState<boolean>(false);
 
   const {
@@ -37,9 +39,12 @@ export const JoinUsView: React.FC = () => {
 
   useEffect(() => {
     if (!technologies.length) {
+      fetchTechnologies();
+    }
+    if (!skills.length) {
       fetchSkills();
     }
-  }, [fetchSkills, technologies]);
+  }, [fetchTechnologies, technologies, skills, fetchSkills]);
 
   return (
     <FormPage
@@ -144,11 +149,15 @@ export const JoinUsView: React.FC = () => {
                         name={name}
                         isSearchable={false}
                         isClearable={false}
-                        options={joinUsSelectOptions.specializations}
-                        onChange={(val: any) => onChange(val.value)}
+                        options={skills}
+                        onChange={(val) => {
+                          if (!Array.isArray(val)) {
+                            onChange(val.value);
+                          }
+                        }}
                         errorMsg={
                           errors.main_specialization &&
-                          (errors.main_specialization as any).message
+                          (errors.main_specialization as FieldErrors).message
                         }
                       />
                     )}
@@ -182,10 +191,14 @@ export const JoinUsView: React.FC = () => {
                         isSearchable={false}
                         isClearable={false}
                         options={joinUsSelectOptions.experienceYears}
-                        onChange={(val: any) => onChange(val.value)}
+                        onChange={(val) => {
+                          if (!Array.isArray(val)) {
+                            onChange(val.value);
+                          }
+                        }}
                         errorMsg={
                           errors.years_experience &&
-                          (errors.years_experience as any).message
+                          (errors.years_experience as FieldErrors).message
                         }
                       />
                     )}
@@ -203,13 +216,15 @@ export const JoinUsView: React.FC = () => {
                         isMulti
                         isSearchable={false}
                         isClearable={false}
-                        options={joinUsSelectOptions.specializations}
-                        onChange={(val: any) =>
-                          onChange(val.map((c: any) => c.value))
-                        }
+                        options={skills}
+                        onChange={(val) => {
+                          if (Array.isArray(val)) {
+                            onChange(val.map((c) => c.value));
+                          }
+                        }}
                         errorMsg={
                           errors.other_specializations &&
-                          (errors.other_specializations as any).message
+                          (errors.other_specializations as FieldErrors).message
                         }
                       />
                     )}
@@ -228,12 +243,14 @@ export const JoinUsView: React.FC = () => {
                         isSearchable={false}
                         isClearable={false}
                         options={technologies}
-                        onChange={(val: any) =>
-                          onChange(val.map((c: any) => c.value))
-                        }
+                        onChange={(val) => {
+                          if (Array.isArray(val)) {
+                            onChange(val.map((c) => c.value));
+                          }
+                        }}
                         errorMsg={
                           errors.technologies &&
-                          (errors.technologies as any).message
+                          (errors.technologies as FieldErrors).message
                         }
                       />
                     )}
@@ -259,10 +276,14 @@ export const JoinUsView: React.FC = () => {
                           isSearchable={false}
                           isClearable={false}
                           options={joinUsSelectOptions.cryptoExperience}
-                          onChange={(val: any) => onChange(val.value)}
+                          onChange={(val) => {
+                            if (!Array.isArray(val)) {
+                              onChange(val.value);
+                            }
+                          }}
                           errorMsg={
                             errors.crypto_experience &&
-                            (errors.crypto_experience as any).message
+                            (errors.crypto_experience as FieldErrors).message
                           }
                         />
                       )}
@@ -296,10 +317,14 @@ export const JoinUsView: React.FC = () => {
                         isSearchable={false}
                         isClearable={false}
                         options={joinUsSelectOptions.availability}
-                        onChange={(val: any) => onChange(val.value)}
+                        onChange={(val) => {
+                          if (!Array.isArray(val)) {
+                            onChange(val.value);
+                          }
+                        }}
                         errorMsg={
                           errors.availability &&
-                          (errors.availability as any).message
+                          (errors.availability as FieldErrors).message
                         }
                       />
                     )}
@@ -417,37 +442,13 @@ export const JoinUsView: React.FC = () => {
                     />
                   </Stack>
                 </FormControl>
-                {/* <FormControl>
-                  <Label required sx={{ color: "currentColor" }}>
-                    Do you have a US Tax Residency?
-                  </Label>
-                  <Controller
-                    control={control}
-                    name="tax_registry"
-                    rules={{
-                      required: "Please provide an answer",
-                    }}
-                    render={({ field: { onChange, name } }) => (
-                      <Select
-                        name={name}
-                        isSearchable={false}
-                        isClearable={false}
-                        options={joinUsSelectOptions.taxResidency}
-                        onChange={(val: any) => onChange(val.value)}
-                        errorMsg={
-                          errors.tax_registry &&
-                          (errors.tax_registry as any).message
-                        }
-                      />
-                    )}
-                  />
-                </FormControl> */}
               </Stack>
             </Stack>
           </Stack>
           <Button
             variant="outlined"
             type="submit"
+            disabled={loading}
             sx={{
               borderColor: colors.black,
               color: colors.black,
@@ -458,7 +459,7 @@ export const JoinUsView: React.FC = () => {
               },
             }}
           >
-            Submit
+            {loading ? "Submitting" : "Submit"}
           </Button>
         </form>
       )}
