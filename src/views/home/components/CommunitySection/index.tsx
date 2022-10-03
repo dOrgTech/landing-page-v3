@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import { Button } from "../../../../commons/button/Button";
 import {
@@ -8,9 +8,19 @@ import {
 import { communityTweets } from "./Tweets";
 import Carousel from "../../../../commons/carousel/Carousel";
 import { ButtonGroup } from "../../../../commons/carousel/ButtonGroup";
+import { colors } from "../../../../theme";
 
 export const CommunitySection: React.FC = () => {
   const [isMoving, setMoving] = useState<boolean>(false);
+
+  const cardColors = [
+    colors.magenta,
+    colors.orange,
+    colors.yellow,
+    colors.green,
+    colors.blue,
+    colors.purple,
+  ];
 
   return (
     <Box my={[16, 24, 32]} position="relative">
@@ -38,9 +48,13 @@ export const CommunitySection: React.FC = () => {
           beforeChange={() => setMoving(true)}
           afterChange={() => setMoving(false)}
         >
-          {communityTweets.map((tweet: TwitterCardProps) => (
+          {communityTweets.map((tweet: TwitterCardProps, i) => (
             <Box key={tweet.externalLink} px={2}>
-              <TwitterCard {...tweet} clickable={!isMoving} />
+              <TwitterCard
+                {...tweet}
+                clickable={!isMoving}
+                color={cardColors[i % cardColors.length]}
+              />
             </Box>
           ))}
         </Carousel>

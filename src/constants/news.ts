@@ -20,7 +20,7 @@ export const newsCards = [
     image: TimeIcon,
     slug: "time",
     path: "https://time.com/6146406/working-at-dao-dorg/",
-    text: "In march this year Time Magazine published an article titled No Bosses: What It’s Like Working at a DAO, in which dOrg was featured throughout its entirety.",
+    text: "Time Magazine published a full profile of dOrg, interviewing several members to help the world understand what it's like to work in a DAO.",
     type: "article",
   },
   {
@@ -34,7 +34,7 @@ export const newsCards = [
     image: StanfordIcon,
     slug: "stanford",
     path: "https://www.youtube.com/watch?v=SYPzqRaN4zA",
-    text: "In this lecture presented at Stanford's BioE60 Beyond Bitcoin course, Ron Bogerand Ori Shimony of dOrg present an overview on DAOs.",
+    text: "In this lecture presented at Stanford's BioE60 Beyond Bitcoin course, Ron Bogerand and Ori Shimony of dOrg present an overview on DAOs.",
     type: "lecture",
   },
   {

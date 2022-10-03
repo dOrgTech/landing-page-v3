@@ -46,8 +46,8 @@ export const NewsSection: React.FC = () => {
           letterSpacing={5}
         >
           We&apos;re getting noticed{" "}
-          <span role="img" aria-label="fire">
-            🔥
+          <span role="img" aria-label="eyes">
+            👀
           </span>
         </Typography>
         <Box mt={12}>
@@ -118,7 +118,7 @@ export const NewsSection: React.FC = () => {
                     >
                       {card.text}
                     </Typography>
-                    <Stack direction="row" spacing={2} className="read-link">
+                    {/* <Stack direction="row" spacing={2} className="read-link">
                       <Typography
                         variant="body1"
                         textTransform="uppercase"
@@ -132,7 +132,7 @@ export const NewsSection: React.FC = () => {
                         alt=""
                         style={{ width: "1rem" }}
                       />
-                    </Stack>
+                    </Stack> */}
                   </Stack>
                 </Link>
               </Box>

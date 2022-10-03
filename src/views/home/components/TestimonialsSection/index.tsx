@@ -27,7 +27,7 @@ export const TestimonialsSection: React.FC = () => {
           textAlign="center"
           letterSpacing={5}
         >
-          In dOrg We Trust{" "}
+          In dOrg They Trust{" "}
           <span role="img" aria-label="sparkles">
             ✨
           </span>
@@ -49,7 +49,7 @@ export const TestimonialsSection: React.FC = () => {
                   mb: 4,
                 }}
               >
-                <TwitterCard {...testimonial} />
+                <TwitterCard {...testimonial} clickable={true} />
               </Box>
             );
           })}
