@@ -9,23 +9,24 @@ const useCreateHireRecord = () => {
       records: [
         {
           fields: {
-            Name: fields.name,
-            "Project Categories": fields.project_categories,
-            Approach: fields.approach,
-            "Project Description": fields.project_description,
-            Budget: fields.budget,
-            "Start Date": fields.start_date,
-            Source: fields.source,
-            Email: fields.email,
             Organization: fields.organization,
+            "Contact Name": fields.name,
+            "Contact Email": fields.email,
             Website: fields.website,
+            Description: fields.project_description,
+            Category: fields.project_categories,
+            "What is your budget": fields.budget,
+            "How would you like to work together?": fields.approach,
+            "When would you like to get started?": fields.start_date,
+            "How did you hear about us?": fields.source,
+            Stage: "Not Pursuing",
           },
         },
       ],
     };
   };
 
-  const createRecord = async (fields: HireUsFormInputs): Promise<any> => {
+  const createRecord = async (fields: HireUsFormInputs): Promise<void> => {
     setLoading(true);
     const body = generateBody(fields);
     await fetch(

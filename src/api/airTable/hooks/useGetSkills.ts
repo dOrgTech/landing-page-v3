@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { CreateSelectOption } from "../../../commons/form/CreatableSelect";
 
-const useGetTechnologies = () => {
+const useGetSkills = () => {
   const [data, setData] = useState<CreateSelectOption[]>([]);
 
-  const fetchTechnologies = async () => {
+  const fetchSkills = async () => {
     await fetch(
-      `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/${process.env.REACT_APP_AIRTABLE_TECHNOLOGIES_TABLE}?fields%5B%5D=Name`,
+      `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/${process.env.REACT_APP_AIRTABLE_SKILLS_TABLE}?fields%5B%5D=Name`,
       {
         method: "GET",
         headers: {
@@ -16,7 +16,7 @@ const useGetTechnologies = () => {
     )
       .then((response) => response.json())
       .then((response) => {
-        const technologies = response.records.map(
+        const skills = response.records.map(
           (record: { fields: { Name: string }; id: string }) => {
             return {
               label: record.fields.Name ? record.fields.Name : "",
@@ -24,11 +24,11 @@ const useGetTechnologies = () => {
             };
           }
         );
-        setData(technologies);
+        setData(skills);
       });
   };
 
-  return { fetchTechnologies, data };
+  return { fetchSkills, data };
 };
 
-export default useGetTechnologies;
+export default useGetSkills;

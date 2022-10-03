@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Select from "react-select/creatable";
 import { OnChangeValue } from "react-select";
 import React, { useEffect, useState } from "react";
@@ -11,8 +12,7 @@ export interface CreateSelectProps {
   name?: string;
   value?: string[];
   placeholder?: string;
-  onChange?: any;
-  inputRef?: any;
+  onChange?: (field: CreateSelectOption | CreateSelectOption[]) => void;
   errorMsg?: string;
   isMulti?: boolean;
   isClearable?: boolean;
@@ -59,7 +59,6 @@ export const customStyles = (error: boolean) => ({
 export interface DropdownOption {
   label: string;
   value: string;
-  icon?: any;
 }
 
 export type CreateSelectOption = Omit<DropdownOption, "icon">;
@@ -86,9 +85,11 @@ export const CreatableSelect: React.FC<CreateSelectProps> = ({
     }
   }, [value]);
 
-  const handleChange = (newValue: OnChangeValue<CreateSelectOption, any>) => {
+  const handleChange = (
+    newValue: OnChangeValue<CreateSelectOption, boolean>
+  ) => {
     if (onChange) {
-      onChange(newValue);
+      onChange(newValue as CreateSelectOption[]);
     }
     if (onSelected) {
       onSelected(newValue as CreateSelectOption[]);
