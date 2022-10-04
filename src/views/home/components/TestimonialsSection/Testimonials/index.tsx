@@ -10,8 +10,7 @@ export const testimonials: TwitterCardProps[] = [
   },
   {
     account: twitterAccounts.tezos,
-    externalLink:
-      "hhttps://twitter.com/TezosCommons/status/1435241508832092165",
+    externalLink: "https://twitter.com/TezosCommons/status/1435241508832092165",
     text: testimonialContent.tezos,
   },
   {

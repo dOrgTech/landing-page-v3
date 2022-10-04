@@ -89,8 +89,7 @@ export const communityTweets: TwitterCardProps[] = [
   },
   {
     account: twitterAccounts.dorg,
-    externalLink:
-      "https://twitternear..com/dOrg_tech/status/1527478011863367689",
+    externalLink: "https://twitter.com/dOrg_tech/status/1527478011863367689",
     text: communityContent.near,
     image: Near,
     // color: colors.yellow,

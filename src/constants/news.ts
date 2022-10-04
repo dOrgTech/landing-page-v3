@@ -47,7 +47,7 @@ export const newsCards = [
   {
     image: MitIcon,
     slug: "mit",
-    path: "https://www.youtube.com/watch?v=SYPzqRaN4zA",
+    path: "http://legal-engineering.mit.edu/bbllc",
     text: "An interview in MIT’s Computational Law Report on what the future holds for autonomous legal entities.",
     type: "article",
   },
