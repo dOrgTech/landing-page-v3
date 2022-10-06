@@ -74,35 +74,38 @@ export const Footer: React.FC = () => {
 
   return (
     <Box
-      component='footer'
+      component="footer"
       sx={{
         bgcolor: colors.grays[900],
         py: 6,
         px: 4,
-      }}>
-      <Container maxWidth='lg'>
+      }}
+    >
+      <Container maxWidth="lg">
         <Grid container spacing={6}>
           <Grid item xs={12} lg={4}>
-            <Link href='/'>
-              <StyledLogo src={Logo} alt='dOrg White Logo' />
+            <Link href="/">
+              <StyledLogo src={Logo} alt="dOrg White Logo" />
             </Link>
           </Grid>
           <Grid item xs={12} md={6} lg={4}>
-            <Grid container flexDirection='row-reverse' spacing={4}>
+            <Grid container flexDirection="row-reverse" spacing={4}>
               <Grid item xs={6}>
-                <FooterTitle variant='h6'>DORG</FooterTitle>
+                <FooterTitle variant="h6">DORG</FooterTitle>
                 <Stack spacing={3} mt={4}>
                   {MENU_ITEMS.map((item: MenuItem, index) => {
                     return (
                       <Link
                         href={item.path}
                         target={item.external ? "_blank" : undefined}
-                        key={index}>
-                        <FooterLink>
+                        key={index}
+                      >
+                        <FooterLink sx={{ justifyContent: "center" }}>
                           <Typography
-                            variant='body1'
+                            variant="body1"
                             lineHeight={1}
-                            color={colors.white}>
+                            color={colors.white}
+                          >
                             {item.name}
                           </Typography>
                         </FooterLink>
@@ -112,21 +115,23 @@ export const Footer: React.FC = () => {
                 </Stack>
               </Grid>
               <Grid item xs={6}>
-                <FooterTitle variant='h6'>SOCIAL</FooterTitle>
+                <FooterTitle variant="h6">SOCIAL</FooterTitle>
                 <Stack spacing={3} mt={4}>
                   {socialLinks.map((social: IconLink, index) => {
                     return (
                       <Link
                         color={colors.white}
                         href={social.path}
-                        target='_blank'
-                        rel='noredirect'
-                        underline='none'
-                        key={social.name}>
+                        target="_blank"
+                        rel="noredirect"
+                        underline="none"
+                        key={social.name}
+                      >
                         <FooterLink
-                          direction='row'
-                          alignItems='center'
-                          spacing={2}>
+                          direction="row"
+                          alignItems="center"
+                          spacing={2}
+                        >
                           <Box width={theme.spacing(3)}>
                             <img
                               src={social.icon}
@@ -134,7 +139,7 @@ export const Footer: React.FC = () => {
                               style={{ display: "block" }}
                             />
                           </Box>
-                          <Typography variant='body1' lineHeight={1}>
+                          <Typography variant="body1" lineHeight={1}>
                             {social.name}
                           </Typography>
                         </FooterLink>
@@ -156,51 +161,48 @@ export const Footer: React.FC = () => {
               [theme.breakpoints.up("md")]: {
                 justifyContent: "flex-end",
               },
-            }}>
+            }}
+          >
             <Stack
               spacing={3}
               sx={{
                 display: "inline-flex",
                 [theme.breakpoints.down("lg")]: { width: "100%" },
-              }}>
-              <FooterTitle variant='h6'>OUR NEWSLETTER</FooterTitle>
+              }}
+            >
+              <FooterTitle variant="h6">OUR NEWSLETTER</FooterTitle>
               <Link
-                href='https://blog.dorg.tech/'
-                target='_blank'
-                rel='noredirect'
-                underline='none'>
-                <Button variant='outlined' size='small'>
+                href="https://blog.dorg.tech/"
+                target="_blank"
+                rel="noredirect"
+                underline="none"
+              >
+                <Button variant="outlined" size="small">
                   Subscribe
                 </Button>
               </Link>
-              {/* <NewsletterInput
-                id="email"
-                placeholder="Enter email to subscribe"
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <ArrowForwardIcon/>
-                    </InputAdornment>
-                  ),
-                }}
-                variant="outlined"
-              /> */}
             </Stack>
           </Grid>
         </Grid>
-        <Stack direction='row' justifyContent='flex-end' mt={6} spacing={1}>
+        <Stack
+          direction="row"
+          justifyContent={["flex-start", "flex-end"]}
+          mt={6}
+          spacing={1}
+        >
           <Link
-            href='/#/privacy-policy'
-            underline='always'
+            href="/#/privacy-policy"
+            underline="always"
             sx={{
               color: colors.grays[500],
               "&:hover": {
                 color: colors.white,
               },
-            }}>
+            }}
+          >
             Privacy Policy
           </Link>
-          <Typography variant='body1' color={colors.grays[500]}>
+          <Typography variant="body1" color={colors.grays[500]}>
             © 2022 dOrg
           </Typography>
         </Stack>

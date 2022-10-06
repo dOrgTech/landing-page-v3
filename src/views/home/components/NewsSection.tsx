@@ -11,7 +11,6 @@ import {
 import Carousel from "../../../commons/carousel/Carousel";
 import { ButtonGroup } from "../../../commons/carousel/ButtonGroup";
 import { colors } from "../../../theme";
-import ExternalLinkIcon from "../../../assets/imgs/external-link-icon.svg";
 import { newsCards, NewsCardProps } from "../../../constants/news";
 
 export const NewsSection: React.FC = () => {

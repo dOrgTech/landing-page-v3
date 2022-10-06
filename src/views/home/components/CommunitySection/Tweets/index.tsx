@@ -1,7 +1,6 @@
 import { communityContent } from "./CommunityContent";
 import { twitterAccounts } from "../../../../../constants/twitterAccounts";
 import { TwitterCardProps } from "../../../../../commons/twitter/TwitterCard";
-import { colors } from "../../../../../theme";
 import Magenta from "../../../../../assets/imgs/community/magenta.png";
 import LinusShoes from "../../../../../assets/imgs/community/linusShoe.png";
 import NousSommes from "../../../../../assets/imgs/community/nousSommes.png";

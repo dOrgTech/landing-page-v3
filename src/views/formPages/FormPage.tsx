@@ -19,7 +19,7 @@ export const FormPage: React.FC<FormPageProps> = ({
         sx={{
           backgroundColor: "rgba(0,0,0,0.5)",
           paddingBottom: 8,
-          paddingTop: "40vh",
+          paddingTop: "20vh",
           position: "relative",
           width: "100vw",
         }}

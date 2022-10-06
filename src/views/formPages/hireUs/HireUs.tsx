@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Controller, FieldErrors, useForm } from "react-hook-form";
 import { FormPage } from "../FormPage";
-import { Divider, FormControl, Stack, Typography } from "@mui/material";
+import { FormControl, Stack, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { CreatableSelect as Select } from "../../../commons/form/CreatableSelect";

@@ -15,9 +15,6 @@ export const TestimonialsSection: React.FC = () => {
         maxWidth="lg"
         sx={{
           position: "relative",
-          [theme.breakpoints.down("md")]: {
-            px: 0,
-          },
         }}
       >
         <Typography

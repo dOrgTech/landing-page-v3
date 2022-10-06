@@ -22,7 +22,6 @@ const StyledLogo = styled("img")({
   height: "auto",
   objectFit: "contain",
   cursor: "pointer",
-  width: 100,
 });
 
 const PresentationSectionContainer = styled(Box)({
@@ -108,7 +107,7 @@ export const PresentationSection: React.FC = () => {
               <Link href={iconLink.path} target="_blank" className="--centered">
                 <StyledLogo
                   sx={{
-                    width: [60, 70, 80, 120],
+                    width: [95, 100, 110, 120],
                     height: 42,
                     opacity: 0.85,
                     transition: "all 0.25s ease-in-out",
