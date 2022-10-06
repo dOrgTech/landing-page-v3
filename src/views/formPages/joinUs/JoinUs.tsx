@@ -90,7 +90,7 @@ export const JoinUsView: React.FC = () => {
               <Stack spacing={4}>
                 <FormControl>
                   <Label required sx={{ color: "currentColor" }}>
-                    What is your full name?
+                    Your Name
                   </Label>
                   <Controller
                     control={control}
@@ -113,7 +113,7 @@ export const JoinUsView: React.FC = () => {
                 </FormControl>
                 <FormControl>
                   <Label required sx={{ color: "currentColor" }}>
-                    What is your email?
+                    Email
                   </Label>
                   <Controller
                     control={control}
@@ -136,7 +136,7 @@ export const JoinUsView: React.FC = () => {
                 </FormControl>
                 <FormControl>
                   <Label required sx={{ color: "currentColor" }}>
-                    What is your main specialization?
+                    Main Specialization
                   </Label>
                   <Controller
                     control={control}

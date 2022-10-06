@@ -37,7 +37,7 @@ export const HireUsView: React.FC = () => {
   return (
     <FormPage
       title="Hire Us"
-      description="Fill out the form below to get in touch!"
+      description="Tell us about your project and how we can help."
     >
       {submitted ? (
         <>
@@ -76,7 +76,7 @@ export const HireUsView: React.FC = () => {
                   htmlFor="name"
                   sx={{ color: "currentColor" }}
                 >
-                  What is your full name?
+                  Your Name
                 </Label>
                 <Controller
                   control={control}
@@ -104,7 +104,7 @@ export const HireUsView: React.FC = () => {
                   htmlFor="email"
                   sx={{ color: "currentColor" }}
                 >
-                  What is your email?
+                  Email
                 </Label>
                 <Controller
                   control={control}
@@ -132,7 +132,7 @@ export const HireUsView: React.FC = () => {
                   htmlFor="approach"
                   sx={{ color: "currentColor" }}
                 >
-                  Project description:
+                  Project Description
                 </Label>
                 <Stack spacing={1}>
                   <Typography variant="body2">
@@ -205,7 +205,7 @@ export const HireUsView: React.FC = () => {
                     htmlFor="organization"
                     sx={{ color: "currentColor" }}
                   >
-                    What is your organization?
+                    Organization
                   </Label>
                   <Controller
                     control={control}
@@ -229,7 +229,7 @@ export const HireUsView: React.FC = () => {
                     htmlFor="website"
                     sx={{ color: "currentColor" }}
                   >
-                    Your organization&apos;s website:
+                    Website
                   </Label>
                   <Controller
                     control={control}
@@ -281,7 +281,7 @@ export const HireUsView: React.FC = () => {
                     htmlFor="approach"
                     sx={{ color: "currentColor" }}
                   >
-                    How would you like to work together
+                    How would you like to work together?
                   </Label>
                   <Controller
                     control={control}
