@@ -3,38 +3,38 @@ import GithubLogo from "../assets/imgs/github.svg";
 import TwitterLogo from "../assets/imgs/twitter.svg";
 import EmailLogo from "../assets/imgs/mail.svg";
 
-import GnosisLogo from "../assets/imgs/clients/gnosis.svg";
-import MessariLogo from "../assets/imgs/clients/messari.svg";
 import AcredaosLogo from "../assets/imgs/clients/acredaos.svg";
-import EthereumFoundationLogo from "../assets/imgs/clients/ethereumfoundation.svg";
-import CoordinapeLogo from "../assets/imgs/clients/coordinape.svg";
-import EcoLogo from "../assets/imgs/clients/eco.svg";
-import AmnestyLogo from "../assets/imgs/clients/amnesty.svg";
-import SafeLogo from "../assets/imgs/clients/safe.svg";
-// import GnosisguildLogo from "../assets/imgs/clients/gnosisguild.svg";
-import OpolisLogo from "../assets/imgs/clients/opolis.svg";
-import StarkwareLogo from "../assets/imgs/clients/starkware.svg";
-import BalancerLogo from "../assets/imgs/clients/balancer.svg";
-import ParaswapLogo from "../assets/imgs/clients/paraswap.svg";
-import EtoroLogo from "../assets/imgs/clients/etoro.svg";
-import DoingudLogo from "../assets/imgs/clients/doingud.svg";
-// import DiversifiLogo from "../assets/imgs/clients/diversifi.svg";
-import CompoundLogo from "../assets/imgs/clients/compound.svg";
-import BoardroomLogo from "../assets/imgs/clients/boardroom.svg";
-import CentLogo from "../assets/imgs/clients/cent.png";
-import TheGraphLogo from "../assets/imgs/clients/thegraph.svg";
-import SovrynLogo from "../assets/imgs/clients/sovryn.svg";
-import StakedusLogo from "../assets/imgs/clients/stakedus.svg";
+// import AmnestyLogo from "../assets/imgs/clients/amnesty.svg";
 import AragonLogo from "../assets/imgs/clients/aragon.svg";
 import BadgerLogo from "../assets/imgs/clients/badger.svg";
+import BalancerLogo from "../assets/imgs/clients/balancer.svg";
+import BoardroomLogo from "../assets/imgs/clients/boardroom.svg";
+import CentLogo from "../assets/imgs/clients/cent.png";
+import CompoundLogo from "../assets/imgs/clients/compound.svg";
+import CoordinapeLogo from "../assets/imgs/clients/coordinape.svg";
 import DaostackLogo from "../assets/imgs/clients/daostack.svg";
+import DiversifiLogo from "../assets/imgs/clients/diversifi.svg";
+import DoingudLogo from "../assets/imgs/clients/doingud.svg";
 import DxdaoLogo from "../assets/imgs/clients/dxdao.svg";
+import EcoLogo from "../assets/imgs/clients/eco.svg";
+import EthereumFoundationLogo from "../assets/imgs/clients/ethereumfoundation.svg";
+import EtoroLogo from "../assets/imgs/clients/etoro.svg";
+import GnosisLogo from "../assets/imgs/clients/gnosis.svg";
+// import GnosisguildLogo from "../assets/imgs/clients/gnosisguild.svg";
+import MessariLogo from "../assets/imgs/clients/messari.svg";
 import MindsLogo from "../assets/imgs/clients/minds.svg";
 import NearLogo from "../assets/imgs/clients/near.svg";
-import RaribleLogo from "../assets/imgs/clients/rarible.svg";
-import TezosLogo from "../assets/imgs/clients/tezos.svg";
-import PolywrapLogo from "../assets/imgs/clients/polywrap.svg";
 import OperaLogo from "../assets/imgs/clients/opera.svg";
+import OpolisLogo from "../assets/imgs/clients/opolis.svg";
+import ParaswapLogo from "../assets/imgs/clients/paraswap.svg";
+import PolywrapLogo from "../assets/imgs/clients/polywrap.svg";
+import RaribleLogo from "../assets/imgs/clients/rarible.svg";
+import SafeLogo from "../assets/imgs/clients/safe.svg";
+import SovrynLogo from "../assets/imgs/clients/sovryn.svg";
+import StakedusLogo from "../assets/imgs/clients/stakedus.svg";
+import StarkwareLogo from "../assets/imgs/clients/starkware.svg";
+import TezosLogo from "../assets/imgs/clients/tezos.svg";
+import TheGraphLogo from "../assets/imgs/clients/thegraph.svg";
 
 export interface IconLink {
   path: string;
@@ -50,38 +50,38 @@ export interface SocialIconLinks {
 }
 
 export interface ClientIconLinks {
-  gnosis: Readonly<IconLink>;
-  messari: Readonly<IconLink>;
   acredaos: Readonly<IconLink>;
-  ethereumfoundation: Readonly<IconLink>;
-  coordinape: Readonly<IconLink>;
-  eco: Readonly<IconLink>;
-  amnesty: Readonly<IconLink>;
-  safe: Readonly<IconLink>;
-  // gnosisguild: Readonly<IconLink>;
-  opolis: Readonly<IconLink>;
-  starkware: Readonly<IconLink>;
-  balancer: Readonly<IconLink>;
-  paraswap: Readonly<IconLink>;
-  etoro: Readonly<IconLink>;
-  doingud: Readonly<IconLink>;
-  // diversifi: Readonly<IconLink>;
-  compound: Readonly<IconLink>;
-  boardroom: Readonly<IconLink>;
-  cent: Readonly<IconLink>;
-  theGraph: Readonly<IconLink>;
-  sovryn: Readonly<IconLink>;
-  stakedus: Readonly<IconLink>;
+  // amnesty: Readonly<IconLink>;
   aragon: Readonly<IconLink>;
   badger: Readonly<IconLink>;
+  balancer: Readonly<IconLink>;
+  boardroom: Readonly<IconLink>;
+  cent: Readonly<IconLink>;
+  compound: Readonly<IconLink>;
+  coordinape: Readonly<IconLink>;
   daostack: Readonly<IconLink>;
+  diversifi: Readonly<IconLink>;
+  doingud: Readonly<IconLink>;
   dxdao: Readonly<IconLink>;
+  eco: Readonly<IconLink>;
+  ethereumfoundation: Readonly<IconLink>;
+  etoro: Readonly<IconLink>;
+  gnosis: Readonly<IconLink>;
+  // gnosisguild: Readonly<IconLink>;
+  messari: Readonly<IconLink>;
   minds: Readonly<IconLink>;
   near: Readonly<IconLink>;
-  rarible: Readonly<IconLink>;
-  tezos: Readonly<IconLink>;
-  polywrap: Readonly<IconLink>;
   opera: Readonly<IconLink>;
+  opolis: Readonly<IconLink>;
+  paraswap: Readonly<IconLink>;
+  polywrap: Readonly<IconLink>;
+  rarible: Readonly<IconLink>;
+  safe: Readonly<IconLink>;
+  sovryn: Readonly<IconLink>;
+  stakedus: Readonly<IconLink>;
+  starkware: Readonly<IconLink>;
+  tezos: Readonly<IconLink>;
+  theGraph: Readonly<IconLink>;
 }
 
 export const socialIconLinks: SocialIconLinks = {
@@ -143,11 +143,11 @@ export const clientIconLinks: ClientIconLinks = {
     icon: StarkwareLogo,
     name: "Starkware",
   },
-  amnesty: {
-    path: "https://amnesty.org/en/",
-    icon: AmnestyLogo,
-    name: "Amnesty",
-  },
+  // amnesty: {
+  //   path: "https://amnesty.org/en/",
+  //   icon: AmnestyLogo,
+  //   name: "Amnesty",
+  // },
   safe: {
     path: "https://safe.global/",
     icon: SafeLogo,
@@ -183,11 +183,11 @@ export const clientIconLinks: ClientIconLinks = {
     icon: DoingudLogo,
     name: "Doingud",
   },
-  // diversifi: {
-  //   path: "https://diversificrypto.com/",
-  //   icon: DiversifiLogo,
-  //   name: "Diversifi",
-  // },
+  diversifi: {
+    path: "https://diversificrypto.com/",
+    icon: DiversifiLogo,
+    name: "Diversifi",
+  },
   compound: {
     path: "https://compound.finance/",
     icon: CompoundLogo,
