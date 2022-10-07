@@ -13,7 +13,7 @@ import CentLogo from "../assets/imgs/clients/cent.png";
 import CompoundLogo from "../assets/imgs/clients/compound.svg";
 import CoordinapeLogo from "../assets/imgs/clients/coordinape.svg";
 import DaostackLogo from "../assets/imgs/clients/daostack.svg";
-import DiversifiLogo from "../assets/imgs/clients/diversifi.svg";
+import RhinofiLogo from "../assets/imgs/clients/rhinofi.svg";
 import DoingudLogo from "../assets/imgs/clients/doingud.svg";
 import DxdaoLogo from "../assets/imgs/clients/dxdao.svg";
 import EcoLogo from "../assets/imgs/clients/eco.svg";
@@ -60,7 +60,6 @@ export interface ClientIconLinks {
   compound: Readonly<IconLink>;
   coordinape: Readonly<IconLink>;
   daostack: Readonly<IconLink>;
-  diversifi: Readonly<IconLink>;
   doingud: Readonly<IconLink>;
   dxdao: Readonly<IconLink>;
   eco: Readonly<IconLink>;
@@ -76,6 +75,7 @@ export interface ClientIconLinks {
   paraswap: Readonly<IconLink>;
   polywrap: Readonly<IconLink>;
   rarible: Readonly<IconLink>;
+  rhinofi: Readonly<IconLink>;
   safe: Readonly<IconLink>;
   sovryn: Readonly<IconLink>;
   stakedus: Readonly<IconLink>;
@@ -109,7 +109,7 @@ export const socialIconLinks: SocialIconLinks = {
 
 export const clientIconLinks: ClientIconLinks = {
   ethereumfoundation: {
-    path: "https://ethereum.org/en/foundation/",
+    path: "https://ethereum.foundation/",
     icon: EthereumFoundationLogo,
     name: "Ethereum Foundation",
   },
@@ -183,10 +183,10 @@ export const clientIconLinks: ClientIconLinks = {
     icon: DoingudLogo,
     name: "Doingud",
   },
-  diversifi: {
-    path: "https://diversificrypto.com/",
-    icon: DiversifiLogo,
-    name: "Diversifi",
+  rhinofi: {
+    path: "https://rhino.fi/",
+    icon: RhinofiLogo,
+    name: "Rhino.fi",
   },
   compound: {
     path: "https://compound.finance/",
