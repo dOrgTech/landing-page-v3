@@ -4,7 +4,9 @@ import "./index.css";
 import App from "./App";
 import ReactGA from "react-ga";
 import { ThemeProvider, CssBaseline } from "@mui/material";
-import { HashRouter } from "react-router-dom"
+import { HelmetProvider } from "react-helmet-async";
+
+import { HashRouter } from "react-router-dom";
 import theme from "./theme";
 
 const GA_ID: string = process.env.GA_ID || "";
@@ -14,8 +16,10 @@ ReactDOM.render(
   <React.StrictMode>
     <HashRouter>
       <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <App />
+        <HelmetProvider>
+          <CssBaseline />
+          <App />
+        </HelmetProvider>
       </ThemeProvider>
     </HashRouter>
   </React.StrictMode>,
