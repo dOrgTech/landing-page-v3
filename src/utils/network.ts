@@ -1,26 +1,26 @@
-import { HireUsSelectForms } from "../constants/hireUs";
-import { JoinUsSelectForms } from "../constants/joinUs";
+import { HireSelectForms } from "../constants/hire";
+import { JoinSelectForms } from "../constants/join";
 
-export interface HireUsFormInputs {
+export interface HireFormInputs {
   organization: string;
   name: string;
   email: string;
   website: string;
-  project_categories: HireUsSelectForms["categories"][];
-  approach: HireUsSelectForms["approaches"][];
+  project_categories: HireSelectForms["categories"][];
+  approach: HireSelectForms["approaches"][];
   project_description: string;
   budget: string;
   start_date: string;
   source: string;
 }
 
-export interface JoinUsFormInputs {
+export interface JoinFormInputs {
   name: string;
   email: string;
   main_specialization: string;
   years_experience: string;
-  other_specializations: JoinUsSelectForms["specializations"][];
-  technologies: JoinUsSelectForms["technologies"][];
+  other_specializations: JoinSelectForms["specializations"][];
+  technologies: JoinSelectForms["technologies"][];
   crypto_experience: string;
   availability: string;
   interest: string;

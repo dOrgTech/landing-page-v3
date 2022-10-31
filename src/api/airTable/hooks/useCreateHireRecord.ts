@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { HireUsFormInputs } from "../../../utils/network";
+import { HireFormInputs } from "../../../utils/network";
 
 const useCreateHireRecord = () => {
   const [loading, setLoading] = useState<boolean>(false);
 
-  const generateBody = (fields: HireUsFormInputs) => {
+  const generateBody = (fields: HireFormInputs) => {
     return {
       records: [
         {
@@ -26,7 +26,7 @@ const useCreateHireRecord = () => {
     };
   };
 
-  const createRecord = async (fields: HireUsFormInputs): Promise<void> => {
+  const createRecord = async (fields: HireFormInputs): Promise<void> => {
     setLoading(true);
     const body = generateBody(fields);
     await fetch(

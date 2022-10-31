@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { JoinUsFormInputs } from "../../../utils/network";
+import { JoinFormInputs } from "../../../utils/network";
 
 const useCreateJoinRecord = () => {
   const [loading, setLoading] = useState<boolean>(false);
 
-  const generateBody = (fields: JoinUsFormInputs) => {
+  const generateBody = (fields: JoinFormInputs) => {
     return {
       records: [
         {
@@ -30,7 +30,7 @@ const useCreateJoinRecord = () => {
     };
   };
 
-  const createRecord = async (fields: JoinUsFormInputs): Promise<void> => {
+  const createRecord = async (fields: JoinFormInputs): Promise<void> => {
     setLoading(true);
     const body = generateBody(fields);
     await fetch(

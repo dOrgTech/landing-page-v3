@@ -9,10 +9,10 @@ import { Label } from "../../../commons/form/Label";
 import { FormInput, FormErrorText } from "../../../commons/form/FormInput";
 import { Button } from "../../../commons/button/Button";
 import { colors } from "../../../theme";
-import { hireUsSelectOptions } from "../../../constants/hireUs";
-import { HireUsFormInputs } from "../../../utils/network";
+import { hireSelectOptions } from "../../../constants/hire";
+import { HireFormInputs } from "../../../utils/network";
 import useCreateHireRecord from "../../../api/airTable/hooks/useCreateHireRecord";
-export const HireUsView: React.FC = () => {
+export const HireView: React.FC = () => {
   const { loading, createRecord } = useCreateHireRecord();
   const [showOptional, setShowOptional] = useState<boolean>(false);
   const [submitted, setSubmitted] = useState<boolean>(false);
@@ -20,7 +20,7 @@ export const HireUsView: React.FC = () => {
     handleSubmit,
     control,
     formState: { errors },
-  } = useForm<HireUsFormInputs>({
+  } = useForm<HireFormInputs>({
     mode: "onSubmit",
   });
 
@@ -28,8 +28,8 @@ export const HireUsView: React.FC = () => {
     console.log("errors", errors);
   }
 
-  const onSubmit = async (data: HireUsFormInputs) => {
-    const submittedData: HireUsFormInputs = { ...data };
+  const onSubmit = async (data: HireFormInputs) => {
+    const submittedData: HireFormInputs = { ...data };
     await createRecord(submittedData);
     setSubmitted(true);
   };
@@ -261,7 +261,7 @@ export const HireUsView: React.FC = () => {
                     render={({ field: { onChange } }) => (
                       <Select
                         isMulti
-                        options={hireUsSelectOptions.categories}
+                        options={hireSelectOptions.categories}
                         onChange={(val) => {
                           if (Array.isArray(val)) {
                             onChange(val.map((c) => c.value));
@@ -289,7 +289,7 @@ export const HireUsView: React.FC = () => {
                     render={({ field: { onChange } }) => (
                       <Select
                         isMulti
-                        options={hireUsSelectOptions.approaches}
+                        options={hireSelectOptions.approaches}
                         onChange={(val) => {
                           if (Array.isArray(val)) {
                             onChange(val.map((c) => c.value));
@@ -317,7 +317,7 @@ export const HireUsView: React.FC = () => {
                     render={({ field: { onChange, name } }) => (
                       <Select
                         name={name}
-                        options={hireUsSelectOptions.budgets}
+                        options={hireSelectOptions.budgets}
                         onChange={(val) => {
                           if (!Array.isArray(val)) {
                             onChange(val.value);
@@ -345,7 +345,7 @@ export const HireUsView: React.FC = () => {
                     render={({ field: { onChange, name } }) => (
                       <Select
                         name={name}
-                        options={hireUsSelectOptions.start_dates}
+                        options={hireSelectOptions.start_dates}
                         onChange={(val) => {
                           if (!Array.isArray(val)) {
                             onChange(val.value);

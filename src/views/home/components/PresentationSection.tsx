@@ -76,13 +76,13 @@ export const PresentationSection: React.FC = () => {
                 justifyContent={isDesktop ? "initial" : "center"}
               >
                 <Grid item>
-                  <Button href="/#/hireUs" variant="contained">
+                  <Button href="/#/hire" variant="contained">
                     Leverage our expertise
                   </Button>
                 </Grid>
                 <Grid item>
                   <Button
-                    href="/#/joinUs"
+                    href="/#/join"
                     variant="outlined"
                     sx={{ bgcolor: colors.black }}
                   >

@@ -227,7 +227,7 @@ export const ServicesSection: React.FC = () => {
         </Container>
         <Grid container justifyContent="center" mt={12}>
           <Grid item>
-            <Button href="/#/hireUs" variant="outlined">
+            <Button href="/#/hire" variant="outlined">
               Get a Quote
             </Button>
           </Grid>
