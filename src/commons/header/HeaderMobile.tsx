@@ -107,7 +107,12 @@ const HeaderMobile: React.FC = () => {
               </Link>
             ))}
           </Grid>
-          <Grid container justifyContent={"center"} alignItems="center" gap={7}>
+          <Grid
+            container
+            justifyContent={"space-around"}
+            alignItems="center"
+            gap={2}
+          >
             {socialIcons.map((iconLink: IconLink, index) => (
               <Grid item key={index}>
                 <Link

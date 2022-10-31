@@ -1,5 +1,6 @@
 import DiscordLogo from "../assets/imgs/discord.svg";
 import GithubLogo from "../assets/imgs/github.svg";
+import YoutubeLogo from "../assets/imgs/youtube.svg";
 import TwitterLogo from "../assets/imgs/twitter.svg";
 import EmailLogo from "../assets/imgs/mail.svg";
 
@@ -45,6 +46,7 @@ export interface IconLink {
 export interface SocialIconLinks {
   discord: Readonly<IconLink>;
   twitter: Readonly<IconLink>;
+  youtube: Readonly<IconLink>;
   github: Readonly<IconLink>;
   email: Readonly<IconLink>;
 }
@@ -94,6 +96,11 @@ export const socialIconLinks: SocialIconLinks = {
     path: "https://twitter.com/dOrg_tech",
     icon: TwitterLogo,
     name: "Twitter",
+  },
+  youtube: {
+    path: "https://www.youtube.com/c/dOrg_tech/videos",
+    icon: YoutubeLogo,
+    name: "Youtube",
   },
   github: {
     path: "https://github.com/dOrgTech",
