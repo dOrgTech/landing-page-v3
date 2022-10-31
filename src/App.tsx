@@ -6,9 +6,9 @@ import { HomeView } from "./views/home/Home";
 import { JoinUsView } from "./views/formPages/joinUs/JoinUs";
 import { HireUsView } from "./views/formPages/hireUs/HireUs";
 import { PrivacyPolicy } from "./views/privacyPolicy";
+import SEO from "./commons/seo/SEO";
 
 const App: React.FC = () => {
-
   const location = useLocation();
   // Scroll to top if path changes
   useEffect(() => {
@@ -17,15 +17,17 @@ const App: React.FC = () => {
 
   return (
     <>
-      <Navbar>
-        <Routes>
-          <Route path='/' element={<HomeView />} />
-          <Route path='/joinUs' element={<JoinUsView />} />
-          <Route path='/hireUs' element={<HireUsView />} />
-          <Route path='/privacy-policy' element={<PrivacyPolicy />} />
-        </Routes>
-      </Navbar>
-      <Footer />
+      <SEO>
+        <Navbar>
+          <Routes>
+            <Route path='/' element={<HomeView />} />
+            <Route path='/joinUs' element={<JoinUsView />} />
+            <Route path='/hireUs' element={<HireUsView />} />
+            <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+          </Routes>
+        </Navbar>
+        <Footer />
+      </SEO>
     </>
   );
 };
