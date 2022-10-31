@@ -6,6 +6,7 @@ import { HomeView } from "./views/home/Home";
 import { JoinView } from "./views/formPages/join/Join";
 import { HireView } from "./views/formPages/hire/Hire";
 import { PrivacyPolicy } from "./views/privacyPolicy";
+import SEO from "./commons/seo/SEO";
 
 const App: React.FC = () => {
   const location = useLocation();
