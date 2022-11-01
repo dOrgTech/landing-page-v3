@@ -1,6 +1,6 @@
 import { SelectForm } from "./selectForm";
 
-export interface JoinUsSelectForms {
+export interface JoinSelectForms {
   specializations: SelectForm[];
   experienceYears: SelectForm[];
   technologies: SelectForm[];
@@ -8,7 +8,7 @@ export interface JoinUsSelectForms {
   availability: SelectForm[];
 }
 
-export const joinUsSelectOptions: JoinUsSelectForms = {
+export const joinSelectOptions: JoinSelectForms = {
   specializations: [
     { value: "frontend", label: "Frontend Development" },
     { value: "backend", label: "Backend Development" },

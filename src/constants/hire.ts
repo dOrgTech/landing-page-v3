@@ -1,13 +1,13 @@
 import { SelectForm } from "./selectForm"
 
-export interface HireUsSelectForms {
+export interface HireSelectForms {
   categories: SelectForm[];
   approaches: SelectForm[];
   budgets: SelectForm[];
   start_dates: SelectForm[];
 }
 
-export const hireUsSelectOptions: HireUsSelectForms = {
+export const hireSelectOptions: HireSelectForms = {
   categories: [
     { value: "dao/governance", label: "DAO/Governance"},
     { value: "deFi", label: "DeFi"},

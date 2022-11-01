@@ -12,11 +12,11 @@ export type MenuItem = {
 export const MENU_ITEMS: MenuItem[] = [
   {
     name: "Hire us",
-    path: "/#/hireUs",
+    path: "/#/hire",
   },
   {
     name: "Join us",
-    path: "/#/joinUs",
+    path: "/#/join",
   },
   {
     name: "Handbook",

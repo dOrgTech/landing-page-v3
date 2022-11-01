@@ -7,13 +7,13 @@ import { Button } from "../../../commons/button/Button";
 import { Label } from "../../../commons/form/Label";
 import { FormInput, FormErrorText } from "../../../commons/form/FormInput";
 import { CreatableSelect as Select } from "../../../commons/form/CreatableSelect";
-import { joinUsSelectOptions } from "../../../constants/joinUs";
-import { JoinUsFormInputs } from "../../../utils/network";
+import { joinSelectOptions } from "../../../constants/join";
+import { JoinFormInputs } from "../../../utils/network";
 import useCreateJoinRecord from "../../../api/airTable/hooks/useCreateJoinRecord";
 import useGetTechnologies from "../../../api/airTable/hooks/useGetTechnologies";
 import useGetSkills from "../../../api/airTable/hooks/useGetSkills";
 
-export const JoinUsView: React.FC = () => {
+export const JoinView: React.FC = () => {
   const { createRecord, loading } = useCreateJoinRecord();
   const { fetchTechnologies, data: technologies } = useGetTechnologies();
   const { fetchSkills, data: skills } = useGetSkills();
@@ -23,7 +23,7 @@ export const JoinUsView: React.FC = () => {
     handleSubmit,
     control,
     formState: { errors },
-  } = useForm<JoinUsFormInputs>({
+  } = useForm<JoinFormInputs>({
     mode: "onSubmit",
   });
 
@@ -31,8 +31,8 @@ export const JoinUsView: React.FC = () => {
     console.log("errors", errors);
   }
 
-  const onSubmit = async (data: JoinUsFormInputs) => {
-    const submittedData: JoinUsFormInputs = { ...data };
+  const onSubmit = async (data: JoinFormInputs) => {
+    const submittedData: JoinFormInputs = { ...data };
     await createRecord(submittedData);
     setSubmitted(true);
   };
@@ -190,7 +190,7 @@ export const JoinUsView: React.FC = () => {
                         name={name}
                         isSearchable={false}
                         isClearable={false}
-                        options={joinUsSelectOptions.experienceYears}
+                        options={joinSelectOptions.experienceYears}
                         onChange={(val) => {
                           if (!Array.isArray(val)) {
                             onChange(val.value);
@@ -275,7 +275,7 @@ export const JoinUsView: React.FC = () => {
                           name={name}
                           isSearchable={false}
                           isClearable={false}
-                          options={joinUsSelectOptions.cryptoExperience}
+                          options={joinSelectOptions.cryptoExperience}
                           onChange={(val) => {
                             if (!Array.isArray(val)) {
                               onChange(val.value);
@@ -316,7 +316,7 @@ export const JoinUsView: React.FC = () => {
                         name={name}
                         isSearchable={false}
                         isClearable={false}
-                        options={joinUsSelectOptions.availability}
+                        options={joinSelectOptions.availability}
                         onChange={(val) => {
                           if (!Array.isArray(val)) {
                             onChange(val.value);

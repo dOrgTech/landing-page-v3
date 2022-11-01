@@ -61,7 +61,7 @@ export const CommunitySection: React.FC = () => {
       </Box>
       <Grid container justifyContent="center" mt={8}>
         <Grid item>
-          <Button href="/#/joinUs" variant="outlined">
+          <Button href="/#/join" variant="outlined">
             Apply to Join
           </Button>
         </Grid>
