@@ -2,14 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.dorg.tech/</loc>
+        <priority>1.0</priority>
   </url>
    <url>
     <loc>https://www.dorg.tech/#/hire</loc>
+    <priority>0.7</priority>
   </url>
    <url>
     <loc>https://www.dorg.tech/#/join</loc>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.dorg.tech/#/privacy-policy</loc>
+    <priority>0.7</priority>
   </url>
 </urlset>
