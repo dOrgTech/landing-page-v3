@@ -29,6 +29,21 @@ export const TwitterCard: React.FC<TwitterCardProps> = ({
     }
   };
 
+  const twitterStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "SocialMediaPosting",
+    description: "Twitter partner testimony about @dorg_tech",
+    headline: text,
+    name: `${username} tweet about @dorg_tech`,
+    image: avatar ? avatar : image,
+    author: {
+      "@type": "Organization",
+      name: name,
+      url: username,
+    },
+    url: externalLink
+  };
+
   return (
     <Link
       underline="none"
@@ -37,6 +52,10 @@ export const TwitterCard: React.FC<TwitterCardProps> = ({
       draggable={false}
       onClick={(e) => handleClick(e)}
     >
+      <script type="application/ld+json">
+        {JSON.stringify(twitterStructuredData)}
+      </script>
+
       <Stack
         direction="column"
         spacing={2}

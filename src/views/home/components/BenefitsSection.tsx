@@ -95,6 +95,36 @@ export const BenefitsSection: React.FC = () => {
                   >
                     {benefit.description}
                   </Typography>
+                  <script type="application/ld+json">
+                    {JSON.stringify({
+                      "@context": "https://schema.org/",
+                      "@type": "Service",
+                      serviceType: "dOrg service offer",
+                      provider: {
+                        "@type": "Organization",
+                        name: "dOrg",
+                      },
+                      hasOfferCatalog: {
+                        "@type": "OfferCatalog",
+                        name: benefit.title,
+                        itemListElement: [
+                          {
+                            "@type": "OfferCatalog",
+                            name: benefit.slug,
+                            itemListElement: [
+                              {
+                                "@type": "Offer",
+                                itemOffered: {
+                                  "@type": "Service",
+                                  description: benefit.description,
+                                },
+                              },
+                            ],
+                          },
+                        ],
+                      }
+                    })}
+                  </script>
                 </Stack>
               </Grid>
             );
