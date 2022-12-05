@@ -26,12 +26,12 @@ const StyledLogo = styled("img")({
   },
 });
 
-const FooterTitle = styled(Typography)({
+const FooterTitle = {
   color: colors.grays[400],
   fontSize: "1rem",
   letterSpacing: "3px",
   textTransform: "uppercase",
-});
+};
 
 const FooterLink = styled(Stack)({
   cursor: "pointer",
@@ -91,7 +91,9 @@ export const Footer: React.FC = () => {
           <Grid item xs={12} md={6} lg={4}>
             <Grid container flexDirection="row-reverse" spacing={4}>
               <Grid item xs={6}>
-                <FooterTitle variant="h6">DORG</FooterTitle>
+                <Typography component="h2" variant="h6" sx={{ ...FooterTitle }}>
+                  DORG
+                </Typography>
                 <Stack spacing={3} mt={4}>
                   {MENU_ITEMS.map((item: MenuItem, index) => {
                     return (
@@ -115,7 +117,9 @@ export const Footer: React.FC = () => {
                 </Stack>
               </Grid>
               <Grid item xs={6}>
-                <FooterTitle variant="h6">SOCIAL</FooterTitle>
+                <Typography component="h2" variant="h6" sx={{ ...FooterTitle }}>
+                  SOCIAL
+                </Typography>
                 <Stack spacing={3} mt={4}>
                   {socialLinks.map((social: IconLink, index) => {
                     return (
@@ -170,7 +174,9 @@ export const Footer: React.FC = () => {
                 [theme.breakpoints.down("lg")]: { width: "100%" },
               }}
             >
-              <FooterTitle variant="h6">OUR NEWSLETTER</FooterTitle>
+              <Typography component="h2" variant="h6" sx={{ ...FooterTitle }}>
+                OUR NEWSLETTER
+              </Typography>
               <Link
                 href="https://blog.dorg.tech/"
                 target="_blank"

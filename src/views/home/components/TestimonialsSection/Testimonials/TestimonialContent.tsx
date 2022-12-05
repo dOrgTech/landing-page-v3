@@ -1,15 +1,19 @@
 import React from "react";
-import { styled, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { PostLink } from "../../../../../commons/twitter/PostLink";
 
-const ContentTypography = styled(Typography)({
+const ContentTypography = {
   lineHeight: 1.25,
   fontWeight: 500,
-});
+};
 
 const DoinGudText = () => {
   return (
-    <ContentTypography variant="subtitle2">
+    <Typography
+      component="h3"
+      variant="subtitle2"
+      sx={{ ...ContentTypography }}
+    >
       We are glad to announce our partnership with{" "}
       <PostLink>@dorg_tech</PostLink> and its DAO strong of 60+ devs!
       <br />
@@ -20,21 +24,29 @@ const DoinGudText = () => {
       </span>
       <PostLink>$AMOR</PostLink> <PostLink>#Partnership</PostLink>{" "}
       <PostLink>#NFTmarketplace</PostLink> <PostLink>#DAOBuilders</PostLink>
-    </ContentTypography>
+    </Typography>
   );
 };
 
 const FhomoneyText = () => {
   return (
-    <ContentTypography variant="subtitle2">
+    <Typography
+      component="h3"
+      variant="subtitle2"
+      sx={{ ...ContentTypography }}
+    >
       Where would We be without <PostLink>@dorg_tech</PostLink>?t
-    </ContentTypography>
+    </Typography>
   );
 };
 
 const TabulaText = () => {
   return (
-    <ContentTypography variant="subtitle2">
+    <Typography
+      component="h3"
+      variant="subtitle2"
+      sx={{ ...ContentTypography }}
+    >
       The Tabula publication is live!
       <br />
       <br />
@@ -44,13 +56,17 @@ const TabulaText = () => {
       Thanks to the <PostLink>@GnosisGuild</PostLink> and{" "}
       <PostLink>@dOrg_tech</PostLink> team for all of the work you&apos;ve put
       into it.
-    </ContentTypography>
+    </Typography>
   );
 };
 
 const StarkwareText = () => {
   return (
-    <ContentTypography variant="subtitle2">
+    <Typography
+      component="h3"
+      variant="subtitle2"
+      sx={{ ...ContentTypography }}
+    >
       StarkNet is being built not only by the StarkWare team, but also by a
       variety of leading teams from the blockchain sphere:
       <br />
@@ -69,13 +85,17 @@ const StarkwareText = () => {
       <br />
       The <PostLink>#StarkNet</PostLink> ecosystem - have we mentioned it&apos;s
       growing?
-    </ContentTypography>
+    </Typography>
   );
 };
 
 const TezosText = () => {
   return (
-    <ContentTypography variant="subtitle2">
+    <Typography
+      component="h3"
+      variant="subtitle2"
+      sx={{ ...ContentTypography }}
+    >
       In collaboration with <PostLink>@dOrg_tech</PostLink>, we are excited to
       announce that Homebase is live on Tezos mainnet!
       <br />
@@ -85,13 +105,17 @@ const TezosText = () => {
       <br />
       <br />
       <PostLink>https://news.tezoscommons.org/home...</PostLink>
-    </ContentTypography>
+    </Typography>
   );
 };
 
 const AcreInvestText = () => {
   return (
-    <ContentTypography variant="subtitle2">
+    <Typography
+      component="h3"
+      variant="subtitle2"
+      sx={{ ...ContentTypography }}
+    >
       So proud of our work with <PostLink>@dOrg_tech</PostLink>
       to make Web3 governance beautiful{" "}
       <span role="img" aria-label="smiling face with heart-eyes">
@@ -103,30 +127,34 @@ const AcreInvestText = () => {
       <PostLink>$ACRE</PostLink> token gated via our Members Portal App.
       <br />
       <PostLink>https://forum.acredaos.com</PostLink>
-    </ContentTypography>
+    </Typography>
   );
 };
 
 // const ZodiacText = () => {
 //   return (
-//     <ContentTypography variant="subtitle2">
+//     <Typography  variant="subtitle2">
 //       And I want to give a special thank you to <PostLink>@cesarbrazon</PostLink> and
 //       <PostLink>@carlosfebres97</PostLink> from <PostLink>@dOrg_tech</PostLink>.
 //       We couldn&apos;t have done this without your help.
-//     </ContentTypography>
+//     </Typography>
 //   )
 // }
 
 const CentText = () => {
   return (
-    <ContentTypography variant="subtitle2">
+    <Typography
+      component="h3"
+      variant="subtitle2"
+      sx={{ ...ContentTypography }}
+    >
       We’ve partnered with
       <PostLink>@dOrg_tech</PostLink>
       to launch Hive (<PostLink>http://hive.cent.co</PostLink>). Hive is a new
       way to explore relationships on the Ethereum blockchain. It shows you a
       ranked list of people that share the same NFT collections as you—your
       Hive.
-    </ContentTypography>
+    </Typography>
   );
 };
 
