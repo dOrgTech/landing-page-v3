@@ -1,18 +1,18 @@
 import { communityContent } from "./CommunityContent";
 import { twitterAccounts } from "../../../../../constants/twitterAccounts";
 import { TwitterCardProps } from "../../../../../commons/twitter/TwitterCard";
-import Magenta from "../../../../../assets/imgs/community/magenta.png";
-import LinusShoes from "../../../../../assets/imgs/community/linusShoe.png";
-import NousSommes from "../../../../../assets/imgs/community/nousSommes.png";
-import Newsletter from "../../../../../assets/imgs/community/newsletter.png";
-import Giveth from "../../../../../assets/imgs/community/givethio.png";
-import Unconference from "../../../../../assets/imgs/community/unconference.png";
-import GranCanaria from "../../../../../assets/imgs/community/grancanaria.png";
-import EthBerlin from "../../../../../assets/imgs/community/ethBerlin.png";
-import MetaFam from "../../../../../assets/imgs/community/metaFam.png";
-import Kleros from "../../../../../assets/imgs/community/kleros.png";
-import Near from "../../../../../assets/imgs/community/near.png";
-import Mackenzie from "../../../../../assets/imgs/community/mackenzie.png";
+import Magenta from "../../../../../assets/imgs/community/magenta.webp";
+import LinusShoes from "../../../../../assets/imgs/community/linusShoe.webp";
+import NousSommes from "../../../../../assets/imgs/community/nousSommes.webp";
+import Newsletter from "../../../../../assets/imgs/community/newsletter.webp";
+import Giveth from "../../../../../assets/imgs/community/givethio.webp";
+import Unconference from "../../../../../assets/imgs/community/unconference.webp";
+import GranCanaria from "../../../../../assets/imgs/community/grancanaria.webp";
+import EthBerlin from "../../../../../assets/imgs/community/ethBerlin.webp";
+import MetaFam from "../../../../../assets/imgs/community/metaFam.webp";
+import Kleros from "../../../../../assets/imgs/community/kleros.webp";
+import Near from "../../../../../assets/imgs/community/near.webp";
+import Mackenzie from "../../../../../assets/imgs/community/mackenzie.webp";
 
 export const communityTweets: TwitterCardProps[] = [
   {
