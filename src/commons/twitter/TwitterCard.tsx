@@ -93,7 +93,7 @@ export const TwitterCard: React.FC<TwitterCardProps> = ({
                 variant="body2"
                 lineHeight={1.25}
                 fontWeight={100}
-                color={colors.grays[500]}
+                color={colors.grays[400]}
               >
                 {username}
               </Typography>
