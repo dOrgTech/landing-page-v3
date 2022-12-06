@@ -200,7 +200,7 @@ export const Footer: React.FC = () => {
             href="/#/privacy-policy"
             underline="always"
             sx={{
-              color: colors.grays[500],
+              color: colors.grays[300],
               "&:hover": {
                 color: colors.white,
               },
@@ -208,7 +208,7 @@ export const Footer: React.FC = () => {
           >
             Privacy Policy
           </Link>
-          <Typography variant="body1" color={colors.grays[500]}>
+          <Typography variant="body1" color={colors.grays[300]}>
             © 2022 dOrg
           </Typography>
         </Stack>
