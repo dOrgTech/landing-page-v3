@@ -27,7 +27,7 @@ const StyledLogo = styled("img")({
 });
 
 const FooterTitle = {
-  color: colors.grays[400],
+  color: colors.grays[300],
   fontSize: "1rem",
   letterSpacing: "3px",
   textTransform: "uppercase",
@@ -45,7 +45,7 @@ const FooterLink = styled(Stack)({
 
 // const NewsletterInput = styled(TextField)({
 //   backgroundColor: colors.black,
-//   border: `4px solid ${colors.grays[400]}`,
+//   border: `4px solid ${colors.grays[300]}`,
 //   borderRadius: 12,
 //   transition: "all 0.25s ease-in-out",
 //   "&:hover": {
@@ -60,7 +60,7 @@ const FooterLink = styled(Stack)({
 //     paddingBottom: 8,
 //   },
 //   " .MuiSvgIcon-root": {
-//     color: colors.grays[400],
+//     color: colors.grays[300],
 //   },
 //   " fieldset": {
 //     border: "none",
