@@ -142,6 +142,36 @@ export const ServicesSection: React.FC = () => {
                 }}
                 onClick={() => setActiveServiceId(isActive ? null : service.id)}
               >
+                <script type="application/ld+json">
+                  {JSON.stringify({
+                    "@context": "https://schema.org/",
+                    "@type": "Service",
+                    serviceType: "dOrg service offer",
+                    provider: {
+                      "@type": "Organization",
+                      name: "dOrg",
+                    },
+                    hasOfferCatalog: {
+                      "@type": "OfferCatalog",
+                      name: service.title,
+                      itemListElement: [
+                        {
+                          "@type": "OfferCatalog",
+                          name: service.title,
+                          itemListElement: [
+                            {
+                              "@type": "Offer",
+                              itemOffered: {
+                                "@type": "Service",
+                                description: service.description,
+                              },
+                            },
+                          ],
+                        },
+                      ],
+                    },
+                  })}
+                </script>
                 <Box>
                   <Typography
                     variant="subtitle2"
@@ -208,6 +238,36 @@ export const ServicesSection: React.FC = () => {
                   sm={4}
                   md={3}
                 >
+                  <script type="application/ld+json">
+                    {JSON.stringify({
+                      "@context": "https://schema.org/",
+                      "@type": "Service",
+                      serviceType: "dOrg service offer",
+                      provider: {
+                        "@type": "Organization",
+                        name: "dOrg",
+                      },
+                      hasOfferCatalog: {
+                        "@type": "OfferCatalog",
+                        name: item,
+                        itemListElement: [
+                          {
+                            "@type": "OfferCatalog",
+                            name: item,
+                            itemListElement: [
+                              {
+                                "@type": "Offer",
+                                itemOffered: {
+                                  "@type": "Service",
+                                  description: item,
+                                },
+                              },
+                            ],
+                          },
+                        ],
+                      },
+                    })}
+                  </script>
                   <Box
                     sx={{
                       backgroundColor: colors.black,

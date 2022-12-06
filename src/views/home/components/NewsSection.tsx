@@ -77,6 +77,23 @@ export const NewsSection: React.FC = () => {
                   onClick={(e) => handleClick(e)}
                   sx={{ alignSelf: "stretch" }}
                 >
+                  <script type="application/ld+json">
+                    {JSON.stringify({
+                      "@context": "https://schema.org",
+                      "@type": "OpinionNewsArticle",
+                      gender: `${card.type}`,
+                      about: `${card.type} featuring dorg`,
+                      headline: card.text,
+                      dateline: card.text,
+                      name: `${card.slug} ${card.type} post about dorg`,
+                      author: {
+                        "@type": "Organization",
+                        name: card.slug,
+                        url: card.author
+                      },
+                      url: card.path,
+                    })}
+                  </script>
                   <Stack
                     spacing={4}
                     direction="column"
