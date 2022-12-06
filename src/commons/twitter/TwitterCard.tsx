@@ -41,7 +41,7 @@ export const TwitterCard: React.FC<TwitterCardProps> = ({
       name: name,
       url: username,
     },
-    url: externalLink
+    url: externalLink,
   };
 
   return (
@@ -93,7 +93,7 @@ export const TwitterCard: React.FC<TwitterCardProps> = ({
                 variant="body2"
                 lineHeight={1.25}
                 fontWeight={100}
-                color={colors.grays[400]}
+                color={colors.grays[300]}
               >
                 {username}
               </Typography>
