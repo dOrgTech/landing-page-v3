@@ -12,6 +12,8 @@ import { colors } from "../../../theme";
 import { hireSelectOptions } from "../../../constants/hire";
 import { HireFormInputs } from "../../../utils/network";
 import useCreateHireRecord from "../../../api/airTable/hooks/useCreateHireRecord";
+import ReactGA from "react-ga";
+
 export const HireView: React.FC = () => {
   const { loading, createRecord } = useCreateHireRecord();
   const [showOptional, setShowOptional] = useState<boolean>(false);
@@ -32,6 +34,11 @@ export const HireView: React.FC = () => {
     const submittedData: HireFormInputs = { ...data };
     await createRecord(submittedData);
     setSubmitted(true);
+    
+    ReactGA.event({
+      category: 'hire_form_submit',
+      action: 'submitted_hire_form'
+    });
   };
 
   return (
@@ -41,7 +48,7 @@ export const HireView: React.FC = () => {
     >
       {submitted ? (
         <>
-          <Stack spacing={2}>
+          <Stack spacing={2} id="hire_us_thank_you" className="hire_us_thank_you">
             <Typography variant="h2">Thanks for your interest!</Typography>
             <Typography variant="body1">
               We&apos;ve just received your submission and we will get back to
@@ -66,7 +73,7 @@ export const HireView: React.FC = () => {
           </Button>
         </>
       ) : (
-        <form onSubmit={handleSubmit(onSubmit)} method="post">
+        <form onSubmit={handleSubmit(onSubmit)} method="post" id="hire_us_form">
           <section id="core-information">
             <Stack spacing={4}>
               <FormControl variant="standard">
@@ -389,6 +396,9 @@ export const HireView: React.FC = () => {
           )}
 
           <Button
+            id="hire_us"
+            className="hire_us"
+            name="hire_us_button"
             variant="outlined"
             type="submit"
             disabled={loading}

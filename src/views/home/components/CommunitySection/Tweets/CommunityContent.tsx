@@ -1,15 +1,19 @@
 import React from "react";
-import { styled, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { PostLink } from "../../../../../commons/twitter/PostLink";
 
-const ContentTypography = styled(Typography)({
+const ContentTypography = {
   lineHeight: 1.25,
   fontWeight: 500,
-});
+};
 
 const MagentaText = () => {
   return (
-    <ContentTypography variant="subtitle2">
+    <Typography
+      component="h3"
+      variant="subtitle2"
+      sx={{ ...ContentTypography }}
+    >
       <span role="img" aria-label="speech balloon">
         💬
       </span>{" "}
@@ -18,25 +22,33 @@ const MagentaText = () => {
       doing.&rdquo; Learn more about dOrg&apos;s{" "}
       <PostLink>@magentaceiba</PostLink> and her thoughts on the DAO here:{" "}
       <PostLink>https://bit.ly/3j4NKhW</PostLink>
-    </ContentTypography>
+    </Typography>
   );
 };
 
 const LinusText = () => {
   return (
-    <ContentTypography variant="subtitle2">
+    <Typography
+      component="h3"
+      variant="subtitle2"
+      sx={{ ...ContentTypography }}
+    >
       Merry Christmas to me{" "}
       <span role="img" aria-label="smiley glasses">
         😎
       </span>{" "}
       <PostLink>@dOrg_tech</PostLink> <PostLink>@TheMetaFactory</PostLink>
-    </ContentTypography>
+    </Typography>
   );
 };
 
 const PhilText = () => {
   return (
-    <ContentTypography variant="subtitle2">
+    <Typography
+      component="h3"
+      variant="subtitle2"
+      sx={{ ...ContentTypography }}
+    >
       Nous sommes dOrg{" "}
       <span role="img" aria-label="heart">
         ❤️
@@ -47,13 +59,17 @@ const PhilText = () => {
       <PostLink>@DaoAdvocate</PostLink> <PostLink>@ronboger</PostLink>-{" "}
       <PostLink>@dOrg_tech</PostLink> at <PostLink>@EthCC</PostLink>{" "}
       <PostLink>@TheDAOist_</PostLink>
-    </ContentTypography>
+    </Typography>
   );
 };
 
 const NewsletterText = () => {
   return (
-    <ContentTypography variant="subtitle2">
+    <Typography
+      component="h3"
+      variant="subtitle2"
+      sx={{ ...ContentTypography }}
+    >
       Check out the latest installment of our{" "}
       <span role="img" aria-label="spark">
         ✨
@@ -82,13 +98,17 @@ const NewsletterText = () => {
       ...and a lot more ;)
       <br />
       <PostLink>https://bit.ly/3BUBK8F</PostLink>
-    </ContentTypography>
+    </Typography>
   );
 };
 
 const GivethText = () => {
   return (
-    <ContentTypography variant="subtitle2">
+    <Typography
+      component="h3"
+      variant="subtitle2"
+      sx={{ ...ContentTypography }}
+    >
       Awwww. Feeling the love remotely joining <PostLink>@dOrg_tech</PostLink>
       &apos;s unconference day in the <PostLink>@Givethio</PostLink> house in
       Spain where one of the lovely <PostLink>@commonsstack</PostLink> and{" "}
@@ -97,13 +117,17 @@ const GivethText = () => {
       <span role="img" aria-label="smile with heart-eyes">
         😍
       </span>
-    </ContentTypography>
+    </Typography>
   );
 };
 
 const UnconferenceText = () => {
   return (
-    <ContentTypography variant="subtitle2">
+    <Typography
+      component="h3"
+      variant="subtitle2"
+      sx={{ ...ContentTypography }}
+    >
       Our unconference day was a success!{" "}
       <span role="img" aria-label="raised hands">
         🙌🏻
@@ -118,13 +142,17 @@ const UnconferenceText = () => {
       <span role="img" aria-label="rocket">
         🚀
       </span>
-    </ContentTypography>
+    </Typography>
   );
 };
 
 const GranCanariaText = () => {
   return (
-    <ContentTypography variant="subtitle2">
+    <Typography
+      component="h3"
+      variant="subtitle2"
+      sx={{ ...ContentTypography }}
+    >
       We had a blast at our presentation in Gran Canaria!{` `}
       <span role="img" aria-label="desert-island">
         🏝
@@ -136,13 +164,17 @@ const GranCanariaText = () => {
       <span role="img" aria-label="lightning">
         ⚡️
       </span>
-    </ContentTypography>
+    </Typography>
   );
 };
 
 const EthBerlinText = () => {
   return (
-    <ContentTypography variant="subtitle2">
+    <Typography
+      component="h3"
+      variant="subtitle2"
+      sx={{ ...ContentTypography }}
+    >
       Thanks to <PostLink>@ETHBerlin</PostLink> for an amazing weekend!
       <br />
       <br />
@@ -156,13 +188,17 @@ const EthBerlinText = () => {
       <span role="img" aria-label="backhand index finger pointing down">
         👇
       </span>
-    </ContentTypography>
+    </Typography>
   );
 };
 
 const MetaFamText = () => {
   return (
-    <ContentTypography variant="subtitle2">
+    <Typography
+      component="h3"
+      variant="subtitle2"
+      sx={{ ...ContentTypography }}
+    >
       Check out our talk at Metafest2 where{` `}
       <PostLink>@namestyd</PostLink> walks through how dOrg works why builders
       join.
@@ -173,13 +209,17 @@ const MetaFamText = () => {
       <span role="img" aria-label="octopus">
         🐙
       </span>
-    </ContentTypography>
+    </Typography>
   );
 };
 
 const KlerosText = () => {
   return (
-    <ContentTypography variant="subtitle2">
+    <Typography
+      component="h3"
+      variant="subtitle2"
+      sx={{ ...ContentTypography }}
+    >
       Thanks to <PostLink>@federicoast</PostLink> and{" "}
       <PostLink>@JayBuidl</PostLink>
       {` `}
@@ -192,13 +232,17 @@ const KlerosText = () => {
       <span role="img" aria-label="scales">
         ⚖️
       </span>
-    </ContentTypography>
+    </Typography>
   );
 };
 
 const NearText = () => {
   return (
-    <ContentTypography variant="subtitle2">
+    <Typography
+      component="h3"
+      variant="subtitle2"
+      sx={{ ...ContentTypography }}
+    >
       Thanks{` `}
       <PostLink>@NEARProtocol</PostLink>
       {` `}
@@ -208,13 +252,17 @@ const NearText = () => {
       <PostLink>@hgarciaalcala</PostLink>
       {` `}
       <PostLink>@nic_maq</PostLink>
-    </ContentTypography>
+    </Typography>
   );
 };
 
 const MackenzieText = () => {
   return (
-    <ContentTypography variant="subtitle2">
+    <Typography
+      component="h3"
+      variant="subtitle2"
+      sx={{ ...ContentTypography }}
+    >
       <span role="img" aria-label="speech balloon">
         💬
       </span>{" "}
@@ -224,7 +272,7 @@ const MackenzieText = () => {
       <br />
       <br />
       Read on: <PostLink>https://bit.ly/3FcEKi3</PostLink>
-    </ContentTypography>
+    </Typography>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Typography, useTheme } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import {
   TwitterCard,
   TwitterCardProps,
@@ -7,8 +7,6 @@ import {
 import { testimonials } from "./Testimonials";
 
 export const TestimonialsSection: React.FC = () => {
-  const theme = useTheme();
-
   return (
     <Box mt={[16, 24, 32]} position="relative">
       <Container
