@@ -3,6 +3,7 @@ import GithubLogo from "../assets/imgs/github.svg";
 import YoutubeLogo from "../assets/imgs/youtube.svg";
 import TwitterLogo from "../assets/imgs/twitter.svg";
 import EmailLogo from "../assets/imgs/mail.svg";
+import LinkedIn from "../assets/imgs/linkedIn.svg";
 
 import AcredaosLogo from "../assets/imgs/clients/acredaos.svg";
 // import AmnestyLogo from "../assets/imgs/clients/amnesty.svg";
@@ -49,6 +50,7 @@ export interface SocialIconLinks {
   youtube: Readonly<IconLink>;
   github: Readonly<IconLink>;
   email: Readonly<IconLink>;
+  linkedIn: Readonly<IconLink>;
 }
 
 export interface ClientIconLinks {
@@ -111,6 +113,11 @@ export const socialIconLinks: SocialIconLinks = {
     path: "mailto:contact@dorg.tech",
     icon: EmailLogo,
     name: "Email",
+  },
+  linkedIn: {
+    path: "https://www.linkedin.com/company/dorg-tech/",
+    icon: LinkedIn,
+    name: 'LinkedIn'
   },
 };
 
