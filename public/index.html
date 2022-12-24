@@ -43,6 +43,8 @@
       <meta name="twitter:image:width" content="2998" />
       <meta name="twitter:image:height" content="1570" />
 
+     
+
       <!-- Global site tag (gtag.js) - Google Analytics -->
       <script
          async
@@ -67,6 +69,7 @@
    <body>
       <noscript>You need to enable JavaScript to run this app.</noscript>
       <div id="root"></div>
+      
       <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -77,5 +80,17 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "dOrg",
+        "url": "https://www.dorg.tech/#/",
+        "address": "",
+        "sameAs": [
+          "https://www.linkedin.com/company/dorg-tech/"
+        ]
+      }
+    </script>
    </body>
 </html>
