@@ -1,4 +1,4 @@
-import React, { MouseEvent, useState } from "react";
+import React, { MouseEvent, useState } from 'react';
 import {
   Box,
   Container,
@@ -7,17 +7,17 @@ import {
   Typography,
   useMediaQuery,
   useTheme,
-} from "@mui/material";
-import Carousel from "../../../commons/carousel/Carousel";
-import { ButtonGroup } from "../../../commons/carousel/ButtonGroup";
-import { colors } from "../../../theme";
-import { newsCards, NewsCardProps } from "../../../constants/news";
+} from '@mui/material';
+import Carousel from '../../../commons/carousel/Carousel';
+import { ButtonGroup } from '../../../commons/carousel/ButtonGroup';
+import { colors } from '../../../theme';
+import { newsCards, NewsCardProps } from '../../../constants/news';
 
 export const NewsSection: React.FC = () => {
   const [isMoving, setMoving] = useState<boolean>(false);
 
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   const handleClick = (e: MouseEvent) => {
     if (isMoving) {
@@ -30,8 +30,8 @@ export const NewsSection: React.FC = () => {
       sx={{
         mt: [16, 24, 32],
         pb: 8,
-        position: "relative",
-        [theme.breakpoints.up("sm")]: {
+        position: 'relative',
+        [theme.breakpoints.up('sm')]: {
           pb: 16,
         },
       }}
@@ -44,9 +44,9 @@ export const NewsSection: React.FC = () => {
           textAlign="center"
           letterSpacing={5}
         >
-          We&apos;re getting noticed{" "}
+               We&apos;re getting noticed{' '}
           <span role="img" aria-label="eyes">
-            👀
+                  👀
           </span>
         </Typography>
         <Box mt={12}>
@@ -75,21 +75,21 @@ export const NewsSection: React.FC = () => {
                   underline="none"
                   draggable={false}
                   onClick={(e) => handleClick(e)}
-                  sx={{ alignSelf: "stretch" }}
+                  sx={{ alignSelf: 'stretch' }}
                 >
                   <script type="application/ld+json">
                     {JSON.stringify({
-                      "@context": "https://schema.org",
-                      "@type": "OpinionNewsArticle",
+                      '@context': 'https://schema.org',
+                      '@type': 'OpinionNewsArticle',
                       gender: `${card.type}`,
                       about: `${card.type} featuring dorg`,
                       headline: card.text,
                       dateline: card.text,
                       name: `${card.slug} ${card.type} post about dorg`,
                       author: {
-                        "@type": "Organization",
+                        '@type': 'Organization',
                         name: card.slug,
-                        url: card.author
+                        url: card.author,
                       },
                       url: card.path,
                     })}
@@ -100,21 +100,21 @@ export const NewsSection: React.FC = () => {
                     sx={{
                       mb: 12,
                       p: 4,
-                      justifyContent: "flex-start",
+                      justifyContent: 'flex-start',
                       border: `4px solid ${colors.grays[700]}`,
-                      borderRadius: "24px",
+                      borderRadius: '24px',
                       color: colors.white,
-                      transition: "all 0.25s ease-in-out",
-                      "& .read-link": {
-                        transition: "opacity 0.25s ease-in-out",
+                      transition: 'all 0.25s ease-in-out',
+                      '& .read-link': {
+                        transition: 'opacity 0.25s ease-in-out',
                       },
-                      [theme.breakpoints.up("md")]: {
+                      [theme.breakpoints.up('md')]: {
                         ml: 3,
                       },
-                      "&:hover": {
+                      '&:hover': {
                         background: `linear-gradient(rgba(255,255,255,50%), rgba(255,255,255,0))`,
                         borderColor: colors.white,
-                        " .read-link": {
+                        ' .read-link': {
                           opacity: 0.6,
                         },
                       },
@@ -122,9 +122,14 @@ export const NewsSection: React.FC = () => {
                   >
                     <Box display="flex" justifyContent="flex-start">
                       <img
+                        loading="lazy"
                         src={card.image}
                         alt={card.slug}
-                        style={{ height: "40px", maxWidth: 200, width: "auto" }}
+                        style={{
+                          height: '40px',
+                          maxWidth: 200,
+                          width: 'auto',
+                        }}
                       />
                     </Box>
                     <Typography
