@@ -61,7 +61,7 @@ export const PresentationSection: React.FC = () => {
             }}
           >
             <Stack spacing={6} maxWidth={1000}>
-              <script type="application/ld+json">
+              <script async={true} type="application/ld+json">
                 {JSON.stringify({
                   '@context': 'https://schema.org',
                   '@type': 'Organization',
