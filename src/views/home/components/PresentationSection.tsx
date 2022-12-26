@@ -173,7 +173,6 @@ export const PresentationSection: React.FC = () => {
                           transform: 'scale(1.08)',
                         },
                       }}
-                      loading="lazy"
                       alt={iconLink.name}
                       src={iconLink.icon}
                     />
@@ -189,6 +188,7 @@ export const PresentationSection: React.FC = () => {
                           transform: 'scale(1.08)',
                         },
                       }}
+                      loading="lazy"
                       alt={iconLink.name}
                       src={iconLink.icon}
                     />
