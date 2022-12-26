@@ -38,7 +38,7 @@ export const PresentationSection: React.FC = () => {
       Object.entries(object).sort(([k1], [k2]) => (k1 < k2 ? -1 : 1))
     );
   const clientIcons = Object.values(sortObjectByKeys(clientIconLinks));
-
+  console.log(clientIcons, 'line');
   return (
     <PresentationSectionContainer>
       <GameOfLifeAnimationCanvas opacity={0.25} className="presentation" />
@@ -160,21 +160,39 @@ export const PresentationSection: React.FC = () => {
                     '@id': `${iconLink.path}`,
                   })}
                 </script>
-                <StyledLogo
-                  sx={{
-                    width: [95, 100, 110, 120],
-                    height: 42,
-                    opacity: 0.85,
-                    transition: 'all 0.25s ease-in-out',
-                    '&:hover': {
-                      opacity: 1,
-                      transform: 'scale(1.08)',
-                    },
-                  }}
-                  loading="lazy"
-                  alt={iconLink.name}
-                  src={iconLink.icon}
-                />
+                {iconLink.name === 'Acre Daos' ||
+                        iconLink.name === 'Aragon' ? (
+                    <StyledLogo
+                      sx={{
+                        width: [95, 100, 110, 120],
+                        height: 42,
+                        opacity: 0.85,
+                        transition: 'all 0.25s ease-in-out',
+                        '&:hover': {
+                          opacity: 1,
+                          transform: 'scale(1.08)',
+                        },
+                      }}
+                      loading="lazy"
+                      alt={iconLink.name}
+                      src={iconLink.icon}
+                    />
+                  ) : (
+                    <StyledLogo
+                      sx={{
+                        width: [95, 100, 110, 120],
+                        height: 42,
+                        opacity: 0.85,
+                        transition: 'all 0.25s ease-in-out',
+                        '&:hover': {
+                          opacity: 1,
+                          transform: 'scale(1.08)',
+                        },
+                      }}
+                      alt={iconLink.name}
+                      src={iconLink.icon}
+                    />
+                  )}
               </Link>
             </Grid>
           ))}
