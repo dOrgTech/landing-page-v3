@@ -38,7 +38,7 @@ export const PresentationSection: React.FC = () => {
       Object.entries(object).sort(([k1], [k2]) => (k1 < k2 ? -1 : 1))
     );
   const clientIcons = Object.values(sortObjectByKeys(clientIconLinks));
-  console.log(clientIcons, 'line');
+
   return (
     <PresentationSectionContainer>
       <GameOfLifeAnimationCanvas opacity={0.25} className="presentation" />

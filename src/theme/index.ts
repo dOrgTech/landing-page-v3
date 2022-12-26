@@ -63,13 +63,16 @@ let theme = createTheme({
       '"Apple Color Emoji"',
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
+   
     ].join(","),
+    
     h1: {
       margin: 0,
       fontSize: "3rem",
       fontWeight: 600,
       marginBlockStart: "2.5rem",
       lineHeight: 1,
+      fontDisplay: 'swap',
     },
     h2: {
       margin: 0,
@@ -152,6 +155,7 @@ theme = createTheme(theme, {
       lineHeight: 1.7,
     },
     h1: {
+      fontDisplay: 'swap',
       margin: 0,
       [`${theme.breakpoints.up("md")}`]: {
         fontSize: "5.25rem",
