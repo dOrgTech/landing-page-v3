@@ -1,16 +1,16 @@
-import React, { MouseEvent } from "react";
-import { Box, Link, Stack, Typography } from "@mui/material";
-import { colors } from "../../theme";
-import TwitterIcon from "../../assets/imgs/twitter.svg";
-import { TwitterAccountProps } from "../../constants/twitterAccounts";
+import React, { MouseEvent } from 'react';
+import { Box, Link, Stack, Typography } from '@mui/material';
+import { colors } from '../../theme';
+import TwitterIcon from '../../assets/imgs/twitter.svg';
+import { TwitterAccountProps } from '../../constants/twitterAccounts';
 
 export interface TwitterCardProps {
-  account: TwitterAccountProps;
-  externalLink: string;
-  text: React.ReactNode;
-  image?: string;
-  color?: string;
-  clickable?: boolean;
+   account: TwitterAccountProps;
+   externalLink: string;
+   text: React.ReactNode;
+   image?: string;
+   color?: string;
+   clickable?: boolean;
 }
 
 export const TwitterCard: React.FC<TwitterCardProps> = ({
@@ -30,14 +30,14 @@ export const TwitterCard: React.FC<TwitterCardProps> = ({
   };
 
   const twitterStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "SocialMediaPosting",
-    description: "Twitter partner testimony about @dorg_tech",
+    '@context': 'https://schema.org',
+    '@type': 'SocialMediaPosting',
+    description: 'Twitter partner testimony about @dorg_tech',
     headline: text,
     name: `${username} tweet about @dorg_tech`,
     image: avatar ? avatar : image,
     author: {
-      "@type": "Organization",
+      '@type': 'Organization',
       name: name,
       url: username,
     },
@@ -62,13 +62,13 @@ export const TwitterCard: React.FC<TwitterCardProps> = ({
         sx={{
           bgcolor: colors.black,
           border: `4px solid ${color || colors.grays[600]}`,
-          borderRadius: "24px",
+          borderRadius: '24px',
           color: colors.white,
-          cursor: "pointer",
+          cursor: 'pointer',
           p: 2,
-          textAlign: "left",
-          transition: "backgroundColor 0.25s ease-in-out",
-          "&:hover": {
+          textAlign: 'left',
+          transition: 'backgroundColor 0.25s ease-in-out',
+          '&:hover': {
             bgcolor: colors.grays[800],
           },
         }}
@@ -80,13 +80,17 @@ export const TwitterCard: React.FC<TwitterCardProps> = ({
                 width: 32,
                 height: 32,
                 borderRadius: 999,
-                overflow: "hidden",
+                overflow: 'hidden',
               }}
             >
-              <img src={avatar} alt={username} />
+              <img loading="lazy" src={avatar} alt={username} />
             </Box>
             <Box>
-              <Typography variant="body2" lineHeight={1.25} fontWeight={800}>
+              <Typography
+                variant="body2"
+                lineHeight={1.25}
+                fontWeight={800}
+              >
                 {name}
               </Typography>
               <Typography
@@ -102,9 +106,9 @@ export const TwitterCard: React.FC<TwitterCardProps> = ({
           <Box
             sx={{
               opacity: 0.8,
-              transition: "opacity 0.25s ease-in-out",
+              transition: 'opacity 0.25s ease-in-out',
               width: 20,
-              "&:hover": {
+              '&:hover': {
                 opacity: 0.6,
               },
             }}
@@ -117,7 +121,7 @@ export const TwitterCard: React.FC<TwitterCardProps> = ({
           <img
             src={image}
             alt=""
-            style={{ borderRadius: 8, pointerEvents: "none" }}
+            style={{ borderRadius: 8, pointerEvents: 'none' }}
           />
         )}
       </Stack>

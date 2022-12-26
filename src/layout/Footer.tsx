@@ -150,6 +150,7 @@ export const Footer: React.FC = () => {
                         >
                           <Box width={theme.spacing(3)}>
                             <img
+                              loading="lazy"
                               src={social.icon}
                               alt={social.name}
                               style={{ display: 'block' }}
