@@ -113,12 +113,13 @@ export const TwitterCard: React.FC<TwitterCardProps> = ({
               },
             }}
           >
-            <img src={TwitterIcon} alt="Twitter" />
+            <img loading="lazy" src={TwitterIcon} alt="Twitter" />
           </Box>
         </Stack>
         {text}
         {image && (
           <img
+            loading="lazy"
             src={image}
             alt=""
             style={{ borderRadius: 8, pointerEvents: 'none' }}
