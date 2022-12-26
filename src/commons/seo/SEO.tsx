@@ -25,6 +25,11 @@ const SEO: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         {/* End Facebook tags */}
         {/* Twitter tags */}
         <meta name="twitter:title" content="dOrg" />
+        <meta
+          name="twitter:description"
+          content="We are an autonomous collective building decentralized infrastructure and applications"
+        />
+
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@dOrg_tech" />
         <meta name="twitter:creator" content="@dOrg_tech" />
