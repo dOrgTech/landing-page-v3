@@ -23,7 +23,7 @@
 
       <meta
          property="og:image"
-         content="%PUBLIC_URL%/assets/seo/dorg-logo-seo.png"
+         content="https://www.dorg.tech/assets/seo/dorg-logo-seo.png"
       />
       <meta property="og:image:width" content="2998" />
       <meta property="og:image:height" content="1570" />
@@ -33,15 +33,19 @@
       <meta property="og:type" content="website" />
       <link rel="stylesheet" href="%PUBLIC_URL%/fonts/fonts.css" />
       <!-- Twitter -->
+      <meta name="tiwtter:title" content="dOrg" />
+      <meta name="twitter:description" content="We are an autonomous collective building decentralized infrastructure and applications" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@dOrg_tech" />
       <meta name="twitter:creator" content="@dOrg_tech" />
       <meta
          name="twitter:image"
-         content="%PUBLIC_URL%/assets/seo/dorg-logo-twitter.png"
+         content="https://www.dorg.tech/assets/seo/dorg-logo-twitter.png"
       />
       <meta name="twitter:image:width" content="2998" />
       <meta name="twitter:image:height" content="1570" />
+
+     
 
       <!-- Global site tag (gtag.js) - Google Analytics -->
       <script
@@ -67,6 +71,7 @@
    <body>
       <noscript>You need to enable JavaScript to run this app.</noscript>
       <div id="root"></div>
+      
       <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -77,5 +82,17 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "dOrg",
+        "url": "https://www.dorg.tech/#/",
+        "address": "",
+        "sameAs": [
+          "https://www.linkedin.com/company/dorg-tech/"
+        ]
+      }
+    </script>
    </body>
 </html>
