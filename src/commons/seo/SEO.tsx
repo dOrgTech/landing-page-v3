@@ -1,10 +1,59 @@
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet-async';
+// import {
+//   Article,
+//   BreadcrumbList,
+//   Organization,
+//   Person,
+//   WebSite,
+// } from 'schema-dts';
+// import { helmetJsonLdProp } from 'react-schemaorg';
 
 const SEO: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <Fragment>
       <Helmet>
+        <script async={true} type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            email: 'mailto:contact@dorg.tech',
+            name: `dOrg`,
+            keywords: [
+              'web3',
+              'fullstack',
+              'development',
+              'web services',
+              'dapp',
+              'web3 dapp',
+              'decentralize',
+              'web',
+              'onchain',
+              'swarm',
+              'builders',
+              'community',
+              'web3 community',
+            ],
+            knowsAbout: [
+              'web3',
+              'fullstack',
+              'development',
+              'web services',
+              'dapp',
+              'web3 dapp',
+              'decentralize',
+              'web',
+              'onchain',
+              'swarm',
+              'builders',
+              'community',
+              'web3 community',
+            ],
+            slogan: 'Building for the decentralized web',
+            url: 'https://www.dorg.tech/',
+            ethicsPolicy: 'https://www.dorg.tech/#/privacy-policy',
+          })}
+        </script>
         {/* Facebook tags */}
         <meta property="og:type" content="website" />
         <meta

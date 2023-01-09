@@ -61,48 +61,6 @@ export const PresentationSection: React.FC = () => {
             }}
           >
             <Stack spacing={6} maxWidth={1000}>
-              <script async={true} type="application/ld+json">
-                {JSON.stringify({
-                  '@context': 'https://schema.org',
-                  '@type': 'Organization',
-                  email: 'mailto:contact@dorg.tech',
-                  name: `dOrg`,
-                  keywords: [
-                    'web3',
-                    'fullstack',
-                    'development',
-                    'web services',
-                    'dapp',
-                    'web3 dapp',
-                    'decentralize',
-                    'web',
-                    'onchain',
-                    'swarm',
-                    'builders',
-                    'community',
-                    'web3 community',
-                  ],
-                  knowsAbout: [
-                    'web3',
-                    'fullstack',
-                    'development',
-                    'web services',
-                    'dapp',
-                    'web3 dapp',
-                    'decentralize',
-                    'web',
-                    'onchain',
-                    'swarm',
-                    'builders',
-                    'community',
-                    'web3 community',
-                  ],
-                  slogan: 'Building for the decentralized web',
-                  url: 'https://www.dorg.tech/',
-                  ethicsPolicy:
-                              'https://www.dorg.tech/#/privacy-policy',
-                })}
-              </script>
               <Typography
                 variant="h1"
                 textAlign={isDesktop ? 'initial' : 'center'}
