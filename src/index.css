@@ -1,4 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url('/public/font/Space_Grotesk/SpaceGrotesk-Light.ttf');
+}
+@font-face {
+  font-family: "Space Grotesk";
+  src: url('/public/font/Space_Grotesk/SpaceGrotesk-Medium.ttf');
+}
+@font-face {
+  font-family: "Space Grotesk";
+  src: url('/public/font/Space_Grotesk/SpaceGrotesk-Regular.ttf');
+}
+@font-face {
+  font-family: "Space Grotesk";
+  src: url('/public/font/Space_Grotesk/SpaceGrotesk-SemiBold.ttf');
+}
+@font-face {
+  font-family: "Space Grotesk";
+  src: url('/public/font/Space_Grotesk/SpaceGrotesk-Bold.ttf');
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url('/public/font/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf');
+}
 
 html {
   height: 100%;

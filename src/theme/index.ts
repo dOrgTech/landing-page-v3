@@ -51,6 +51,7 @@ let theme = createTheme({
   },
   typography: {
     // Base Typography
+    
     fontFamily: [
       "Space Grotesk",
       "-apple-system",
@@ -65,6 +66,7 @@ let theme = createTheme({
       '"Segoe UI Symbol"',
    
     ].join(","),
+   
     
     h1: {
       margin: 0,
