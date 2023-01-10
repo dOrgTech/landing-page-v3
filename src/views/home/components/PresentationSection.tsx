@@ -61,12 +61,37 @@ export const PresentationSection: React.FC = () => {
             }}
           >
             <Stack spacing={6} maxWidth={1000}>
-              <Typography
-                variant="h1"
-                textAlign={isDesktop ? 'initial' : 'center'}
-              >
-                        Building for the decentralized web.
-              </Typography>
+              {isDesktop ? (
+                <Typography
+                  textAlign={'initial'}
+                  sx={{
+                    fontWeight: 600,
+                    fontSize: '5.25em',
+                    marginBlockStart: '2.5rem',
+                    lineHeight: 1,
+                    margin: '0px',
+                    display: 'block',
+                  }}
+                >
+                           Building for the decentralized web.
+                </Typography>
+              ) : (
+                <Typography
+                  textAlign={'center'}
+                  sx={{
+                    fontWeight: 600,
+                    fontSize: '2.8rem',
+                    marginBlockStart: '2.5rem',
+                    lineHeight: 1,
+                    margin: '0px',
+                    padding: '0px',
+                    display: 'block',
+                  }}
+                >
+                           Building for the decentralized web.
+                </Typography>
+              )}
+
               <Grid
                 container
                 gap={5}
