@@ -28,10 +28,8 @@ export const HireView: React.FC = () => {
   });
 
   if (Object.keys(errors).length > 0) {
-    console.log("errors", errors);
+    console.error("errors", errors);
   }
-
-  console.log(ReactGA.ga())
 
   const onSubmit = async (data: HireFormInputs) => {
     const submittedData: HireFormInputs = { ...data };
