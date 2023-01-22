@@ -9,7 +9,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { HashRouter } from "react-router-dom";
 import theme from "./theme";
 
-const GA_ID: string = process.env.GA_ID || "";
+const GA_ID: string = process.env.REACT_APP_GA_ID || "";
 ReactGA.initialize(GA_ID);
 
 ReactDOM.render(

@@ -1,3 +1,4 @@
+import ReactGA from "react-ga";
 import React, { useState } from "react";
 import { Controller, FieldErrors, useForm } from "react-hook-form";
 import { FormPage } from "../FormPage";
@@ -12,7 +13,7 @@ import { colors } from "../../../theme";
 import { hireSelectOptions } from "../../../constants/hire";
 import { HireFormInputs } from "../../../utils/network";
 import useCreateHireRecord from "../../../api/airTable/hooks/useCreateHireRecord";
-import ReactGA from "react-ga";
+import TagManager from 'react-gtm-module';
 
 export const HireView: React.FC = () => {
   const { loading, createRecord } = useCreateHireRecord();
@@ -27,17 +28,28 @@ export const HireView: React.FC = () => {
   });
 
   if (Object.keys(errors).length > 0) {
-    console.log("errors", errors);
+    console.error("errors", errors);
   }
 
   const onSubmit = async (data: HireFormInputs) => {
     const submittedData: HireFormInputs = { ...data };
     await createRecord(submittedData);
     setSubmitted(true);
-    
+
+    const args = {
+      dataLayer: {
+        event: "submitted_hire_form"
+        /* can pass more variables here if needed */
+      },
+      dataLayerName: "HirePageLayer"
+    };
+    TagManager.dataLayer(args);
+
+    ReactGA.pageview("/hire");
     ReactGA.event({
-      category: 'hire_form_submit',
-      action: 'submitted_hire_form'
+      category: "hire_form_submit",
+      action: "submitted_hire_form",
+      label: "submitted_hire_form",
     });
   };
 
@@ -48,7 +60,11 @@ export const HireView: React.FC = () => {
     >
       {submitted ? (
         <>
-          <Stack spacing={2} id="hire_us_thank_you" className="hire_us_thank_you">
+          <Stack
+            spacing={2}
+            id="hire_us_thank_you"
+            className="hire_us_thank_you"
+          >
             <Typography variant="h2">Thanks for your interest!</Typography>
             <Typography variant="body1">
               We&apos;ve just received your submission and we will get back to
