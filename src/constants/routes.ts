@@ -41,7 +41,7 @@ import TheGraphLogo from "../assets/imgs/clients/thegraph.svg";
 import InchLogo from "../assets/imgs/clients/1inch.svg";
 import AuthLogo from "../assets/imgs/clients/auth.svg";
 import BinanceLogo from "../assets/imgs/clients/binance.svg";
-import BloomLogo from "../assets/imgs/clients/bloom.svg";
+// import BloomLogo from "../assets/imgs/clients/bloom.svg";
 import ConsesysLogo from "../assets/imgs/clients/consensys.svg";
 import KlerosLogo from "../assets/imgs/clients/kleros.svg";
 import LensLogo from "../assets/imgs/clients/lens.svg";

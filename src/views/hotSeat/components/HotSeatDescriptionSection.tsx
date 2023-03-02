@@ -8,7 +8,6 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { Link } from "@material-ui/core";
 
 export interface Stats {
   stats: StatProps[];
