@@ -38,6 +38,21 @@ import StarkwareLogo from "../assets/imgs/clients/starkware.svg";
 import TezosLogo from "../assets/imgs/clients/tezos.svg";
 import TheGraphLogo from "../assets/imgs/clients/thegraph.svg";
 
+import InchLogo from "../assets/imgs/clients/1inch.svg";
+import AuthLogo from "../assets/imgs/clients/auth.svg";
+import BinanceLogo from "../assets/imgs/clients/binance.svg";
+// import BloomLogo from "../assets/imgs/clients/bloom.svg";
+import ConsesysLogo from "../assets/imgs/clients/consensys.svg";
+import KlerosLogo from "../assets/imgs/clients/kleros.svg";
+import LensLogo from "../assets/imgs/clients/lens.svg";
+import MetagameLogo from "../assets/imgs/clients/metagame.svg";
+import OwncoLogo from "../assets/imgs/clients/ownco.svg";
+import SismoLogo from "../assets/imgs/clients/sismo.svg";
+import SuperfluidLogo from "../assets/imgs/clients/superfluid.svg";
+import SnapshotLogo from "../assets/imgs/clients/snapshot.svg";
+import UtopiaLogo from "../assets/imgs/clients/utopia.svg";
+import VocdoniLogo from "../assets/imgs/clients/vocdoni.svg";
+
 export interface IconLink {
   path: string;
   icon: string;
@@ -87,6 +102,26 @@ export interface ClientIconLinks {
   tezos: Readonly<IconLink>;
   theGraph: Readonly<IconLink>;
 }
+export interface HotSeatGuestIconLinks {
+  polywrap: Readonly<IconLink>;
+  utopia: Readonly<IconLink>;
+  superfluid: Readonly<IconLink>;
+  kleros: Readonly<IconLink>;
+  // bloomNetwork: Readonly<IconLink>;
+  auth: Readonly<IconLink>;
+  vocdoni: Readonly<IconLink>;
+  sismo: Readonly<IconLink>;
+  ownco: Readonly<IconLink>;
+  lens: Readonly<IconLink>;
+  metagame: Readonly<IconLink>;
+  inch: Readonly<IconLink>;
+  etoro: Readonly<IconLink>;
+  binance: Readonly<IconLink>;
+  consensys: Readonly<IconLink>;
+  snapshot: Readonly<IconLink>;
+  safe: Readonly<IconLink>;
+  // starkware: Readonly<IconLink>;
+}
 
 export const socialIconLinks: SocialIconLinks = {
   discord: {
@@ -117,7 +152,7 @@ export const socialIconLinks: SocialIconLinks = {
   linkedIn: {
     path: "https://www.linkedin.com/company/dorg-tech/",
     icon: LinkedIn,
-    name: 'LinkedIn'
+    name: "LinkedIn",
   },
 };
 
@@ -281,5 +316,101 @@ export const clientIconLinks: ClientIconLinks = {
     path: "https://opera.com/",
     icon: OperaLogo,
     name: "Opera",
+  },
+};
+
+export const hotSeatIconLinks: HotSeatGuestIconLinks = {
+  polywrap: {
+    path: "https://polywrap.io/",
+    icon: PolywrapLogo,
+    name: "Polywrap",
+  },
+  utopia: {
+    path: "https://www.utopialabs.com/",
+    icon: UtopiaLogo,
+    name: "Utopia",
+  },
+  superfluid: {
+    path: "https://www.superfluid.finance/",
+    icon: SuperfluidLogo,
+    name: "Superfluid",
+  },
+  kleros: {
+    path: "https://kleros.io/",
+    icon: KlerosLogo,
+    name: "Kleros",
+  },
+  // bloomNetwork: {
+  //   path: "https://bloomnetwork.org/",
+  //   icon: BloomLogo,
+  //   name: "Bloom",
+  // },
+  auth: {
+    path: "",
+    icon: AuthLogo,
+    name: "Auth",
+  },
+  vocdoni: {
+    path: "https://vocdoni.io/",
+    icon: VocdoniLogo,
+    name: "Vocdoni",
+  },
+  sismo: {
+    path: "https://www.sismo.io/",
+    icon: SismoLogo,
+    name: "Sismo",
+  },
+  ownco: {
+    path: "https://www.ownco.org/",
+    icon: OwncoLogo,
+    name: "Ownco",
+  },
+  lens: {
+    path: "https://www.lens.xyz/",
+    icon: LensLogo,
+    name: "Lens",
+  },
+  metagame: {
+    path: "",
+    icon: MetagameLogo,
+    name: "Metagame",
+  },
+  inch: {
+    path: "https://app.1inch.io/",
+    icon: InchLogo,
+    name: "1Inch",
+  },
+  binance: {
+    path: "https://www.binance.com/",
+    icon: BinanceLogo,
+    name: "Binance",
+  },
+  consensys: {
+    path: "https://consensys.net/",
+    icon: ConsesysLogo,
+    name: "Consesys",
+  },
+  snapshot: {
+    path: "https://snapshot.org/",
+    icon: SnapshotLogo,
+    name: "Snapshot",
+  },
+
+  // starkware: {
+  //   path: "https://starkware.co/",
+  //   icon: StarkwareLogo,
+  //   name: "Starkware",
+  // },
+
+  safe: {
+    path: "https://safe.global/",
+    icon: SafeLogo,
+    name: "Safe",
+  },
+
+  etoro: {
+    path: "https://www.etoro.com/",
+    icon: EtoroLogo,
+    name: "Etoro",
   },
 };
