@@ -123,7 +123,7 @@ export const HotSeatPresentationSection: React.FC = () => {
                       )
                     }
                     variant='contained'>
-                    Become A Sponsor Of The Podcast
+                    Become Sponsor
                   </Button>
                 </Grid>
               </Grid>

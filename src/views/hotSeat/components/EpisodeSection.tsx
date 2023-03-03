@@ -108,7 +108,7 @@ export const EpisodeSection: React.FC = () => {
             onClick={() =>
               window.open("https://airtable.com/shr4VGh3iZCIVhCg3", "_blank")
             }>
-            Become A Sponsor Of The Podcast
+            Become Sponsor
           </Button>
         </Grid>
       </Grid>

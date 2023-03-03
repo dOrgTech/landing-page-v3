@@ -120,7 +120,7 @@ export interface HotSeatGuestIconLinks {
   consensys: Readonly<IconLink>;
   snapshot: Readonly<IconLink>;
   safe: Readonly<IconLink>;
-  starkware: Readonly<IconLink>;
+  // starkware: Readonly<IconLink>;
 }
 
 export const socialIconLinks: SocialIconLinks = {
@@ -396,11 +396,11 @@ export const hotSeatIconLinks: HotSeatGuestIconLinks = {
     name: "Snapshot",
   },
 
-  starkware: {
-    path: "https://starkware.co/",
-    icon: StarkwareLogo,
-    name: "Starkware",
-  },
+  // starkware: {
+  //   path: "https://starkware.co/",
+  //   icon: StarkwareLogo,
+  //   name: "Starkware",
+  // },
 
   safe: {
     path: "https://safe.global/",
