@@ -74,7 +74,7 @@ export const EpisodeSection: React.FC = () => {
         textTransform='uppercase'
         textAlign='center'
         letterSpacing={5}>
-        Episodes{" "}
+        Episodes ▶️
       </Typography>
       <Box mt={12}>
         <Carousel
@@ -108,7 +108,7 @@ export const EpisodeSection: React.FC = () => {
             onClick={() =>
               window.open("https://airtable.com/shr4VGh3iZCIVhCg3", "_blank")
             }>
-            Become a Sponsor
+            Become A Sponsor Of The Podcast
           </Button>
         </Grid>
       </Grid>

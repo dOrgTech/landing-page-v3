@@ -52,9 +52,10 @@ export const HotSeatDescriptionSection: React.FC = () => {
                   fontWeight: 800,
                 },
               }}>
-              We collectively <strong>interview tech leads and founders</strong>
+              We collectively{" "}
+              <strong>interview tech leads and founders </strong>
               of our favorite{" "}
-              <strong>web3 infrastructure, products, and protocols.</strong>w We
+              <strong>web3 infrastructure, products, and protocols.</strong> We
               get into the nitty-gritty details web3 devs and enthusiasts want
               to hear!
             </Typography>

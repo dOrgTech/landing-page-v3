@@ -31,7 +31,7 @@ const HotSeatPresentationSectionContainer = styled(Box)({
   position: "relative",
 });
 
-const TITLE = "It's all about the hard tech questions.";
+const TITLE = "The podcast about the hard tech questions";
 export const HotSeatPresentationSection: React.FC = () => {
   const isDesktop = useIsDesktop();
 
@@ -63,7 +63,7 @@ export const HotSeatPresentationSection: React.FC = () => {
             <Stack spacing={6} maxWidth={1000}>
               {isDesktop ? (
                 <Box>
-                  <StyledLogo src={HotSeatLogo} sx={{ maxWidth: 700 }} />
+                  <StyledLogo src={HotSeatLogo} sx={{ maxWidth: 450 }} />
                   <Typography
                     textAlign={"initial"}
                     sx={{
@@ -86,7 +86,7 @@ export const HotSeatPresentationSection: React.FC = () => {
                   <Grid item>
                     <StyledLogo
                       src={HotSeatMobileLogo}
-                      sx={{ maxWidth: 350 }}
+                      sx={{ maxWidth: 250 }}
                     />
                   </Grid>
                   <Grid item>
@@ -94,7 +94,7 @@ export const HotSeatPresentationSection: React.FC = () => {
                       textAlign={"center"}
                       sx={{
                         fontWeight: 600,
-                        fontSize: "2.5rem",
+                        fontSize: "1.8rem",
                         marginBlockStart: "2.5rem",
                         lineHeight: 1,
                         margin: "0px",
@@ -123,7 +123,7 @@ export const HotSeatPresentationSection: React.FC = () => {
                       )
                     }
                     variant='contained'>
-                    Become a Sponsor
+                    Become A Sponsor Of The Podcast
                   </Button>
                 </Grid>
               </Grid>
