@@ -13,6 +13,7 @@ interface GameOfLifeProps {
   fadeFromBlack?: boolean;
   fadeToBlack?: boolean;
   frameRate?: number;
+  animate?: boolean;
   mouseTrailEffect?: boolean;
   opacity?: number;
   resolution?: number;
@@ -32,6 +33,7 @@ const GameOfLifeAnimation = ({
   fadeToBlack = true,
   frameRate = 8,
   mouseTrailEffect = true,
+  animate = true,
   opacity = 0.4,
   resolution = 10,
   className,
@@ -81,6 +83,9 @@ const GameOfLifeAnimation = ({
   };
 
   const draw = (p5: p5Types) => {
+    if (!animate) {
+      p5.noLoop();
+    }
     p5.background(0);
     let incrementsPerColor;
     let currentIncrement;

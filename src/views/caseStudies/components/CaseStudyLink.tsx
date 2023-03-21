@@ -1,8 +1,8 @@
 import React from "react";
 import { Box, Link, Typography } from "@mui/material";
 import { colors } from "../../../theme";
-import { CaseStudyLinkProps } from "./CaseStudiesListing";
 import arrowRight from "../../../assets/imgs/arrow-right.svg";
+import { CaseStudyLinkProps } from "../../../constants/caseStudies";
 
 export default function CaseStudiesLink({
   slug,
@@ -15,11 +15,13 @@ export default function CaseStudiesLink({
       underline="none"
       sx={{
         alignItems: "center",
-        borderBottom: `2px solid ${colors.white}`,
-        color: colors.grays[100],
+        borderWidth: "2px",
+        borderBottom: [`solid ${color}`, `solid ${colors.white}`],
+        color: [color, colors.grays[100]],
         cursor: "pointer",
         display: "flex",
-        py: 4,
+        mt: 4,
+        py: [2, 4],
         transition: "border-color 0.25 ease-in-out",
         "&:hover": {
           borderColor: color,
@@ -30,6 +32,7 @@ export default function CaseStudiesLink({
     >
       <Box
         sx={{
+          display: ["none", "block"],
           height: [32, 40, 48],
           width: [48, 56, 64],
           mr: [3, 4, 5],
@@ -56,7 +59,7 @@ export default function CaseStudiesLink({
         component="h2"
         variant="h1"
         className="linkColor"
-        sx={{ fontSize: ["4rem", "5rem", "6rem"] }}
+        sx={{ fontSize: ["3rem", "4rem", "5rem", "6rem"], mt: 0 }}
       >
         {title}
       </Typography>

@@ -4,6 +4,8 @@ import { Navbar } from "./layout/Navbar";
 import { Footer } from "./layout/Footer";
 import { HomeView } from "./views/home/Home";
 import { CaseStudiesView } from "./views/caseStudies/CaseStudies";
+import { caseStudies, CaseStudyLinkProps } from "./constants/caseStudies";
+import { Tezos, GnosisGuild, Starkware, DoinGud } from "./views/caseStudies";
 import { HotSeatView } from "./views/hotSeat/HotSeat";
 import { JoinView } from "./views/formPages/join/Join";
 import { HireView } from "./views/formPages/hire/Hire";
@@ -30,6 +32,22 @@ const App: React.FC = () => {
           <Route path="/" element={<HomeView />} />
           <Route path="/hot-seat" element={<HotSeatView />} />
           <Route path="/case-studies" element={<CaseStudiesView />} />
+          <Route
+            path="/case-studies/tezos"
+            element={<Tezos {...caseStudies["tezos"]} />}
+          />
+          <Route
+            path="/case-studies/gnosis-guild"
+            element={<GnosisGuild {...caseStudies["gnosis-guild"]} />}
+          />
+          <Route
+            path="/case-studies/starkware"
+            element={<Starkware {...caseStudies["starkware"]} />}
+          />
+          <Route
+            path="/case-studies/doingud"
+            element={<DoinGud {...caseStudies["doingud"]} />}
+          />
           <Route path="/join" element={<JoinView />} />
           <Route path="/hire" element={<HireView />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
