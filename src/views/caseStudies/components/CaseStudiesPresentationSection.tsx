@@ -6,7 +6,23 @@ export default function CaseStudiesPresentationSection() {
   return (
     <>
       <Box sx={{ minHeight: "60vh", width: "100%" }}>
-        <GameOfLifeAnimation opacity={0.1} className="presentation" />
+        <Box
+          sx={{
+            width: "100%",
+            height: "100%",
+            // maxHeight: 600,
+            position: "absolute",
+            bottom: 0,
+            filter: "blur(8px)",
+          }}
+        >
+          <GameOfLifeAnimation
+            resolution={128}
+            animate={false}
+            opacity={0.08}
+            className="case-studies"
+          />
+        </Box>
         <Container maxWidth="lg" sx={{ position: "relative" }}>
           <Grid
             container

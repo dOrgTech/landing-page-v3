@@ -28,8 +28,6 @@ export const CaseStudyLayout = ({
         }}
       >
         <GameOfLifeAnimation
-          // mouseTrailEffect={false}
-          // fadeToBlack
           resolution={128}
           animate={false}
           opacity={0.08}
