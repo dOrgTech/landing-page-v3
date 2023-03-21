@@ -19,6 +19,10 @@ export const MENU_ITEMS: MenuItem[] = [
     path: "/#/join",
   },
   {
+    name: "Case Studies",
+    path: "/#/case-studies",
+  },
+  {
     name: "Hot Seat",
     path: "/#/hot-seat",
   },
