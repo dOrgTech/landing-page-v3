@@ -10,6 +10,8 @@ export interface CaseStudyLinkProps {
   summary: string;
   thumbnail: string;
   color: string;
+  roles?: string[];
+  projects?: string[];
 }
 
 export interface CaseStudyProps {
@@ -33,6 +35,8 @@ export const caseStudies: CaseStudyProps = {
     summary: "A case study by dOrg around our architecture and leadership to meet Gnosis Guild’s engineering and design needs in coordination with the core Gnosis Guild team.",
     thumbnail: GnosisGuildThumbnail,
     color: colors.magenta,
+    roles: ["Engineering", "Smart Contracts", "Design"],
+    projects: ["Zodiac", "Tabula", "SafeSnap"]
   },
   starkware: {
     slug: "starkware",

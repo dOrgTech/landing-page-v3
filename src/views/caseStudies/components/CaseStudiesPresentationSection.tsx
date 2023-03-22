@@ -5,7 +5,7 @@ import GameOfLifeAnimation from "../../../commons/gameOfLifeAnimation/GameOfLife
 export default function CaseStudiesPresentationSection() {
   return (
     <>
-      <Box sx={{ minHeight: "60vh", width: "100%" }}>
+      <Box sx={{ minHeight: "100vh", width: "100%" }}>
         <Box
           sx={{
             width: "100%",
@@ -30,7 +30,7 @@ export default function CaseStudiesPresentationSection() {
             sx={{
               flexDirection: "column",
               justifyContent: "center",
-              minHeight: "60vh",
+              minHeight: "100vh",
             }}
           >
             <Grid item>

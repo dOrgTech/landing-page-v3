@@ -1,36 +1,14 @@
 import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
 import { type } from "os";
-import { CaseStudyLinkProps } from "../../../constants/caseStudies";
-
-import AbstractIcon from "../../../assets/imgs/benefits/swarm.svg"; // Placeholder
-
-const types = {
-  abstract: {
-    icon: AbstractIcon,
-    title: "Abstract: ",
-  },
-  background: {
-    icon: AbstractIcon,
-    title: "Background",
-  },
-  team: {
-    icon: AbstractIcon,
-    title: "Team",
-  },
-  focus: {
-    icon: AbstractIcon,
-    title: "Focus Areas",
-  },
-  "long-term": {
-    icon: AbstractIcon,
-    title: "Long Term Alignment",
-  },
-  conclusion: {
-    icon: AbstractIcon,
-    title: "Conclusion",
-  },
-};
+import {
+  AbstractIcon,
+  BackgroundIcon,
+  TeamIcon,
+  FocusIcon,
+  IncentivesIcon,
+  ConclusionIcon,
+} from "./CaseStudiesIcons";
 
 interface CaseStudyHeadingProps {
   color: string;
@@ -39,7 +17,7 @@ interface CaseStudyHeadingProps {
     | "background"
     | "team"
     | "focus"
-    | "long-term"
+    | "alignment"
     | "conclusion";
 }
 
@@ -47,16 +25,44 @@ export default function CaseStudyHeading({
   color,
   type,
 }: CaseStudyHeadingProps) {
+  const types = {
+    abstract: {
+      icon: <AbstractIcon color={color} />,
+      title: "Abstract: ",
+    },
+    background: {
+      icon: <BackgroundIcon color={color} />,
+      title: "Background",
+    },
+    team: {
+      icon: <TeamIcon color={color} />,
+      title: "Team",
+    },
+    focus: {
+      icon: <FocusIcon color={color} />,
+      title: "Focus Areas",
+    },
+    alignment: {
+      icon: <IncentivesIcon color={color} />,
+      title: "Long Term Alignment",
+    },
+    conclusion: {
+      icon: <ConclusionIcon color={color} />,
+      title: "Conclusion",
+    },
+  };
+
   return (
     <Stack direction="row" spacing={2} sx={{ alignItems: "center" }}>
       <Box sx={{ display: "inline-flex" }}>
-        <img
+        {/* <img
           src={types[type].icon}
           alt="Gnosis Guild Abstract"
           loading="lazy"
           height={24}
           width="auto"
-        />
+        /> */}
+        {types[type].icon}
       </Box>
       <Typography variant="h3" color={color}>
         {types[type].title}
