@@ -81,6 +81,7 @@ export const CaseStudyLayout = ({
                 {roles && (
                   <Stack spacing={3}>
                     <Typography
+                      fontWeight={800}
                       textTransform="uppercase"
                       letterSpacing={5}
                       lineHeight={1}
@@ -99,6 +100,7 @@ export const CaseStudyLayout = ({
                 {projects && (
                   <Stack spacing={3}>
                     <Typography
+                      fontWeight={800}
                       textTransform="uppercase"
                       letterSpacing={5}
                       lineHeight={1}

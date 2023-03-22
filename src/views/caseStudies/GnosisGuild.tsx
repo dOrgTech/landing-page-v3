@@ -13,16 +13,22 @@ export const GnosisGuild = ({ ...props }: CaseStudyLinkProps) => {
           <CaseStudyHeading type="abstract" color={color} />
           <Typography sx={{ fontSize: 20 }}>
             dOrg embraced the challenge of building the new and innovative{` `}
-            <Link href="#" sx={{ color: color, fontWeight: 600 }}>
+            <Link
+              href="https://zodiac.wiki/index.php/Category:Documentation"
+              sx={{ color: color, fontWeight: 600 }}
+            >
               Zodiac dApp
             </Link>
             , an expansion pack for DAOs, as well as{` `}
-            <Link href="#" sx={{ color: color, fontWeight: 600 }}>
+            <Link
+              href="https://tabula.gg/"
+              sx={{ color: color, fontWeight: 600 }}
+            >
               Tabula.gg
             </Link>
             , a decentralized publication tool. To hire us to build a
             bleeding-edge web3 project, feel free to fill out{` `}
-            <Link href="#" sx={{ color: color, fontWeight: 600 }}>
+            <Link href="#/hire" sx={{ color: color, fontWeight: 600 }}>
               this form.
             </Link>
           </Typography>
@@ -35,14 +41,20 @@ export const GnosisGuild = ({ ...props }: CaseStudyLinkProps) => {
             framework, a toolkit that extends Safe functionality for DAOs
             through modules within Safe’s dApp. In this project, dOrg to provide
             a full suite of development and maintenance for the{` `}
-            <Link href="#" sx={{ color: color, fontWeight: 600 }}>
+            <Link
+              href="https://zodiac.wiki/index.php/Category:Documentation"
+              sx={{ color: color, fontWeight: 600 }}
+            >
               Zodiac Safe dApp
             </Link>
             : front-end development, web3 integrations, smart contract
             development, and UX/UI design for all functionalities provided by
             the Zodiac modules. In addition, through our continuous ecosystem
             development partnership with Gnosis Guild, dOrg built{` `}
-            <Link href="#" sx={{ color: color, fontWeight: 600 }}>
+            <Link
+              href="https://tabula.gg/"
+              sx={{ color: color, fontWeight: 600 }}
+            >
               Tabula
             </Link>
             , a product built on the Zodiac ecosystem that enables decentralized
@@ -74,9 +86,15 @@ export const GnosisGuild = ({ ...props }: CaseStudyLinkProps) => {
             </Typography>
             <Typography sx={{ fontSize: 20 }}>
               dOrg began by focusing on front-end development for Gnosis
-              SafeSnap plugin for Snapshot, according to the Gnosis DAO Tools
-              backlog. This backlog covers the initial batch of work in what is
-              an on-going relationship. dOrg took on the development of other
+              SafeSnap plugin for Snapshot, according to the{` `}
+              <Link
+                href="https://trello.com/b/SzzgX5Kl/gnosis-dao-tools"
+                sx={{ color: color, fontWeight: 600 }}
+              >
+                Gnosis DAO Tools backlog.
+              </Link>
+              This backlog covers the initial batch of work in what is an
+              on-going relationship. dOrg took on the development of other
               components in the Gnosis SafeSnap projects, such as product
               design, middleware, and backend development as well. In product
               design, we improved the UX of the Reality Module and related
