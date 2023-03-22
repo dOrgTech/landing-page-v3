@@ -14,7 +14,7 @@ const StyledLogo = styled("img")({
   width: 100,
   "&:hover": {
     filter: "brightness(1) saturate(100%)",
-  }
+  },
 });
 
 const MenuItemButton = styled(Typography)({
@@ -23,10 +23,11 @@ const MenuItemButton = styled(Typography)({
 });
 
 const HeaderDesktop: React.FC = () => {
+  const menuItems = MENU_ITEMS.filter((item) => item.desktop);
   return (
     <>
       <Link href="/">
-        <StyledLogo src={Logo} alt='dOrg White Logo' />
+        <StyledLogo src={Logo} alt="dOrg White Logo" />
       </Link>
       <Stack
         direction="row"
@@ -36,7 +37,7 @@ const HeaderDesktop: React.FC = () => {
           alignItems: "center",
         }}
       >
-        {MENU_ITEMS.map((item: MenuItem, index) => (
+        {menuItems.map((item: MenuItem, index) => (
           <Link
             display="inherit"
             href={item.path}
@@ -52,7 +53,7 @@ const HeaderDesktop: React.FC = () => {
                 transition: "color 0.25s ease-in-out",
                 "&:hover": {
                   color: colors.green,
-                }
+                },
               }}
             >
               {item.name}
