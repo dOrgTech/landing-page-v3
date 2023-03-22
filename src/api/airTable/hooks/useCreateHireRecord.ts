@@ -19,8 +19,8 @@ const useCreateHireRecord = () => {
             "How would you like to work together?": fields.approach,
             "When would you like to get started?": fields.start_date,
             "How did you hear about us?": fields.source,
-            Stage: "Lead",
-          },
+            Stage: "Website Lead",
+          }
         },
       ],
     };
