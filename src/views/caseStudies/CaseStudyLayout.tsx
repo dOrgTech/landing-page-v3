@@ -234,9 +234,9 @@ export const CaseStudyLayout = ({
                 <Arrow
                   direction="left"
                   sx={{
-                    display: ["none", "flex"],
+                    display: "flex",
                     height: "100%",
-                    width: [16, 24, 32],
+                    width: [24, 32],
                     transform: "translateX(0%)",
                     transition:
                       "opacity 0.25s ease-in-out, transform 0.25s ease-in-out",
@@ -244,7 +244,11 @@ export const CaseStudyLayout = ({
                   className={`linkColor arrowLink`}
                 />
                 <Typography
-                  sx={{ fontSize: 24, fontWeight: 600, lineHeight: 1 }}
+                  sx={{
+                    fontSize: [16, 20, 24],
+                    fontWeight: 600,
+                    lineHeight: 1,
+                  }}
                   className="linkColor"
                 >
                   {prevProject.title}
@@ -269,16 +273,20 @@ export const CaseStudyLayout = ({
                 }}
               >
                 <Typography
-                  sx={{ fontSize: 24, fontWeight: 600, lineHeight: 1 }}
+                  sx={{
+                    fontSize: [16, 20, 24],
+                    fontWeight: 600,
+                    lineHeight: 1,
+                  }}
                   className="linkColor"
                 >
                   {nextProject.title}
                 </Typography>
                 <Arrow
                   sx={{
-                    display: ["none", "flex"],
+                    display: "flex",
                     height: "100%",
-                    width: [16, 24, 32],
+                    width: [24, 32],
                     transform: "translateX(0%)",
                     transition:
                       "opacity 0.25s ease-in-out, transform 0.25s ease-in-out",

@@ -33,25 +33,25 @@ export default function CaseStudyListing({
         <Typography variant="h4" sx={{ textDecoration: "underline" }}>
           {title}
         </Typography>
-        <Stack
-          direction="row"
-          spacing={2}
+        <Box
           sx={{
-            alignItems: "center",
+            alignItems: ["flex-start", "center"],
+            display: "flex",
+            flexDirection: ["column", "row"],
           }}
         >
-          <Typography sx={{ color: color }}>{date}</Typography>
+          <Typography sx={{ color: color, mr: 2 }}>{date}</Typography>
           {author && (
             <Typography sx={{ color: colors.grays[300] }}>
               by {author}
             </Typography>
           )}
           {publication && (
-            <Typography sx={{ color: colors.grays[300] }}>
+            <Typography sx={{ color: colors.grays[300], ml: [0, author && 2] }}>
               {publication}
             </Typography>
           )}
-        </Stack>
+        </Box>
       </Stack>
     </Link>
   );
