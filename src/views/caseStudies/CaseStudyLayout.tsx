@@ -30,12 +30,10 @@ export const CaseStudyLayout = ({
     });
   }
 
-  console.log(index);
   const prevIndex =
     index - 1 < 0 ? Object.keys(caseStudies).length - 1 : index - 1;
   const nextIndex =
     index + 1 === Object.keys(caseStudies).length ? 0 : index + 1;
-  console.log(prevIndex, index, nextIndex);
 
   const prevSlug = Object.keys(caseStudies)[prevIndex];
   const nextSlug = Object.keys(caseStudies)[nextIndex];
