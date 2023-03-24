@@ -133,9 +133,22 @@ export const CaseStudyLayout = ({
                     </Typography>
                     <Stack spacing={1} sx={{ mt: 3 }}>
                       {projects.map((project, i) => (
-                        <Typography key={i} sx={{ fontSize: 14 }}>
-                          {project}
-                        </Typography>
+                        <Box key={i}>
+                          <Link
+                            sx={{
+                              color: "white",
+                              fontSize: 14,
+                              "&:hover": {
+                                color: color,
+                              },
+                            }}
+                            href={project.link}
+                            target="_blank"
+                            rel="noredirect"
+                          >
+                            {project.name}
+                          </Link>
+                        </Box>
                       ))}
                     </Stack>
                   </Stack>

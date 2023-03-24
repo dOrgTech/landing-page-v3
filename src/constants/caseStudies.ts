@@ -12,6 +12,11 @@ export interface PressProps {
   publication?: string;
 }
 
+export interface ProjectProps {
+  name: string;
+  link: string;
+}
+
 export interface CaseStudyLinkProps {
   slug: string;
   title: string;
@@ -20,7 +25,7 @@ export interface CaseStudyLinkProps {
   index: number;
   color: string;
   roles?: string[];
-  projects?: string[];
+  projects?: ProjectProps[];
   press?: PressProps[];
 }
 
@@ -40,8 +45,21 @@ export const caseStudies: CaseStudyProps = {
     thumbnail: StarkwareThumbnail,
     color: colors.green,
     index: 0,
-    roles: ["Engineering", "Smart Contracts", "Design"],
-    projects: ["Automated Market Maker Demo Application", "RhinoFi integration with Opera", "StarkEx Metrics Dashboard"],
+    roles: ["Engineering", "UI Design", "API Integrations", "DevOps"],
+    projects: [
+      { 
+        name: "Automated Market Maker Demo Application",
+        link: "https://amm-demo.starknet.starkware.co/",
+      },
+      { 
+        name: "RhinoFi integration with Opera",
+        link: "https://press.opera.com/2022/02/23/opera-ethereum-layer2-defi-starkware-diversify/",
+      },
+      { 
+        name: "StarkEx Metrics Dashboard",
+        link: "https://dashboard.starkware.co/starkex",
+      },
+    ],
     press: [
       {
         title: "Opera Integrates Ethereum Layer 2, bringing access to DeFi to Millions of Users",
@@ -67,7 +85,19 @@ export const caseStudies: CaseStudyProps = {
     color: colors.magenta,
     index: 1,
     roles: ["Engineering", "Smart Contracts", "Design"],
-    projects: ["Zodiac", "Tabula", "SafeSnap"],
+    projects: [
+      {
+        name: "Zodiac",
+        link: "https://zodiac.wiki/index.php/Category:Documentation"
+      }, 
+      {
+        name: "Tabula",
+        link: "https://tabula.gg/"
+      }, 
+      {
+        name: "SafeSnap",
+        link: "https://docs.snapshot.org/user-guides/plugins/safesnap-reality"
+      }],
     press: [
       {
         title: "DAOs: Aragon announces new smart contracts, GitcoinDAO diversifies its treasury, Gnosis Guild…",
@@ -96,6 +126,22 @@ export const caseStudies: CaseStudyProps = {
     thumbnail: TezosThumbnail,
     color: colors.blue,
     index: 2,
+    roles: [
+      "Frontend Engineering",
+      "Backend Engineering",
+      "Web3 Integrations",
+      "UX/UI Design",
+    ],
+    projects: [
+      {
+        name: "Homebase dApp",
+        link: "https://tezos-homebase.io/"
+      },
+      {
+        name: "Homebase Lite",
+        link: "https://github.com/tezos-commons/homebase-lite"
+      },
+    ],
     press: [
       {
         title: "Say Hello to Lambda DAOs for Homebase",
@@ -179,5 +225,12 @@ export const caseStudies: CaseStudyProps = {
     thumbnail: DoinGudThumbnail,
     color: colors.orange,
     index: 3,
+    roles: ["Frontend Engineering","Smart Contracts","Web 3 Integrations","Software Architecture"],
+    projects: [
+      {
+        name: "DoinGud NFT Marketplace",
+        link: "https://doingud.com/"
+      }
+    ]
   },
 }

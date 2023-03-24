@@ -37,10 +37,10 @@ export default function CaseStudiesPresentationSection() {
               <Typography variant="h1" sx={{ fontSize: ["3r7em", "4rem"] }}>
                 Case Studies
               </Typography>
-              <Typography sx={{ fontSize: 20, mt: 2, maxWidth: 520 }}>
-                Lorem ipsum information about our case studies and another call
-                out to our values as an org/ benefits our clients have
-                experienced.
+              <Typography sx={{ fontSize: 20, mt: 2, maxWidth: 550 }}>
+                Read on to discover how we&#39;ve empowered organizations across
+                a variety of verticals to harness the power of blockchain and
+                decentralized technologies.
               </Typography>
             </Grid>
           </Grid>
