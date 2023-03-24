@@ -24,8 +24,9 @@ export default function CaseStudyListing({
       sx={{
         color: "white",
         transition: "opacity 0.25s ease-in-out",
+        width: "fit-content",
         "&:hover": {
-          opacity: 0.6,
+          opacity: 0.7,
         },
       }}
     >
