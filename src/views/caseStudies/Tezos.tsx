@@ -4,6 +4,7 @@ import { styled } from "@material-ui/core";
 import { CaseStudyLayout } from "./CaseStudyLayout";
 import { CaseStudyLinkProps } from "../../constants/caseStudies";
 import CaseStudyHeading from "./components/CaseStudyHeading";
+import tezosTweet from "../../assets/imgs/case-studies/tezos-tweet.png";
 
 export const Tezos = ({ ...props }: CaseStudyLinkProps) => {
   const { slug, title, color } = props;
@@ -191,7 +192,19 @@ export const Tezos = ({ ...props }: CaseStudyLinkProps) => {
             </Link>
             {` `}on Ethereum.
           </Typography>
-          {/* <img src={} alt=""/> */}
+          <Link
+            href="https://twitter.com/TezosCommons/status/1435241508832092165"
+            sx={{
+              transition: "opacity 0.25s ease-in-out",
+              "&:hover": { opacity: 0.8 },
+            }}
+          >
+            <img
+              src={tezosTweet}
+              alt="Tezos Commons tweet announcmenet for Homebase Lite"
+              style={{ borderRadius: "1em" }}
+            />
+          </Link>
           <Typography sx={{ fontSize: 20 }}>
             dOrg is also currently working on the{` `}
             <Link
