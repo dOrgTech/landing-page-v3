@@ -4,7 +4,7 @@ import { Navbar } from "./layout/Navbar";
 import { Footer } from "./layout/Footer";
 import { HomeView } from "./views/home/Home";
 import { CaseStudiesView } from "./views/caseStudies/CaseStudies";
-import { caseStudies, CaseStudyLinkProps } from "./constants/caseStudies";
+import { caseStudies } from "./constants/caseStudies";
 import { Tezos, GnosisGuild, StarkWare, DoinGud } from "./views/caseStudies";
 import { HotSeatView } from "./views/hotSeat/HotSeat";
 import { JoinView } from "./views/formPages/join/Join";

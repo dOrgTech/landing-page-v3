@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Link, List, ListItem, Stack, Typography } from "@mui/material";
+import { Link, List, ListItem, Stack, Typography } from "@mui/material";
 import { styled } from "@material-ui/core";
 import { CaseStudyLayout } from "./CaseStudyLayout";
 import { CaseStudyLinkProps } from "../../constants/caseStudies";
@@ -7,7 +7,7 @@ import CaseStudyHeading from "./components/CaseStudyHeading";
 import tezosTweet from "../../assets/imgs/case-studies/tezos-tweet.png";
 
 export const Tezos = ({ ...props }: CaseStudyLinkProps) => {
-  const { slug, title, color } = props;
+  const { color } = props;
 
   const StyledListItem = styled(ListItem)({
     display: "list-item",

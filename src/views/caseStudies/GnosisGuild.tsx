@@ -1,11 +1,11 @@
 import React from "react";
-import { Box, Link, Stack, Typography } from "@mui/material";
+import { Link, Stack, Typography } from "@mui/material";
 import { CaseStudyLayout } from "./CaseStudyLayout";
 import { CaseStudyLinkProps } from "../../constants/caseStudies";
 import CaseStudyHeading from "./components/CaseStudyHeading";
 
 export const GnosisGuild = ({ ...props }: CaseStudyLinkProps) => {
-  const { slug, title, color } = props;
+  const { color } = props;
   return (
     <CaseStudyLayout {...props}>
       <Stack spacing={16}>
