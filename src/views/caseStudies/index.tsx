@@ -1,6 +1,6 @@
 import { Tezos } from "./Tezos";
 import { GnosisGuild } from "./GnosisGuild";
-import { Starkware } from "./Starkware";
+import { StarkWare } from "./StarkWare";
 import { DoinGud } from "./DoinGud";
 
-export { Tezos, GnosisGuild, Starkware, DoinGud };
+export { Tezos, GnosisGuild, StarkWare, DoinGud };

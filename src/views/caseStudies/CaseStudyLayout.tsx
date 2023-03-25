@@ -177,8 +177,8 @@ export const CaseStudyLayout = ({
                   <Typography sx={{ fontSize: 20 }}>
                     dOrg has a longstanding history of complex web3 development
                     and integration partnerships. We’ve worked with over 65 web3
-                    projects since 2019 with more than 2 billion dollars of
-                    total lifetime value in shipped products as well as more
+                    projects since 2019, generating more than 2 billion dollars
+                    of total lifetime value in shipped products as well as more
                     than 5 million on-chain revenue.
                   </Typography>
                 </Stack>

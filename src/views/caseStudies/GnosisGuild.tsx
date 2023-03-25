@@ -26,11 +26,7 @@ export const GnosisGuild = ({ ...props }: CaseStudyLinkProps) => {
             >
               Tabula.gg
             </Link>
-            , a decentralized publication tool. To hire us to build a
-            bleeding-edge web3 project, feel free to fill out{` `}
-            <Link href="#/hire" sx={{ color: color, fontWeight: 600 }}>
-              this form.
-            </Link>
+            , a decentralized publication tool.
           </Typography>
         </Stack>
 

@@ -69,7 +69,7 @@ export const Tezos = ({ ...props }: CaseStudyLinkProps) => {
               href="https://v2.tezos-homebase.io/explorer/dao/KT1HkRUSFvy9CX5NUdC7wPw4wfMHAM1Kroqf/overview"
               sx={{ color: color, fontWeight: 600 }}
             >
-              crunchy.network
+              Crunchy.Network
             </Link>
             {` `}
             and the{` `}

@@ -1,7 +1,7 @@
 import { colors } from "../theme";
 import TezosThumbnail from "../assets/imgs/case-studies/tezos.webp"
 import GnosisGuildThumbnail from "../assets/imgs/case-studies/gnosis_guild.webp"
-import StarkwareThumbnail from "../assets/imgs/case-studies/starkware.webp"
+import StarkWareThumbnail from "../assets/imgs/case-studies/starkware.webp"
 import DoinGudThumbnail from "../assets/imgs/case-studies/doingud.webp"
 
 export interface PressProps {
@@ -40,9 +40,9 @@ export interface CaseStudyProps {
 export const caseStudies: CaseStudyProps = {
   starkware: {
     slug: "starkware",
-    title: "Starkware",
-    summary: "A case study by dOrg about our collaboration with Starkware across 3 projects.",
-    thumbnail: StarkwareThumbnail,
+    title: "StarkWare",
+    summary: "A case study by dOrg about our collaboration with StarkWare across 3 projects.",
+    thumbnail: StarkWareThumbnail,
     color: colors.green,
     index: 0,
     roles: ["Engineering", "UI Design", "API Integrations", "DevOps"],
@@ -71,7 +71,7 @@ export const caseStudies: CaseStudyProps = {
         title: "StarkNet Planets Alpha on Testnet",
         date: "June 14, 2021",
         link: "https://medium.com/starkware/starknet-planets-alpha-on-ropsten-e7494929cb95",
-        author: "Starkware",
+        author: "StarkWare",
         publication: "StarkWare | Medium",
       },
       
@@ -205,7 +205,7 @@ export const caseStudies: CaseStudyProps = {
         publication: "Spotlight",
       },
       {
-        title: "Tezos Commons. The #BlockchainEvolved Show - Lambda DAOs and DAO Philosophy with Andre",
+        title: "Tezos Commons. The #BlockchainEvolved Show - Lambda DAOs and DAO Philosophy with @AndreiTaranu",
         date: "November 17, 2022",
         link: "https://odysee.com/@TezosCommons:8/2022-11-17-13-01-50:e",
         publication: "odysee",

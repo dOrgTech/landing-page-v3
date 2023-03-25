@@ -2,7 +2,7 @@ import React from "react";
 import DoinGudAvatar from "../assets/imgs/avatars/doinGud.png";
 import FhomoneyAvatar from "../assets/imgs/avatars/fhomoney.png";
 import AurynAvatar from "../assets/imgs/avatars/auryn.png";
-import StarkwareAvatar from "../assets/imgs/avatars/starkware.png";
+import StarkWareAvatar from "../assets/imgs/avatars/starkware.png";
 import AcreInvestAvatar from "../assets/imgs/avatars/acreInvest.png";
 import TezosAvatar from "../assets/imgs/avatars/tezos.png";
 import DorgAvatar from "../assets/imgs/avatars/dorg.png";
@@ -60,7 +60,7 @@ export const twitterAccounts: TwitterAccounts = {
   starkware: {
     name: "StarkWare",
     username: "@StarkWareLtd",
-    avatar: StarkwareAvatar,
+    avatar: StarkWareAvatar,
   },
   acreInvest: {
     name: "ACREinvest Web3 Governance & Social Incentives",
