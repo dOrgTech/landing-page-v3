@@ -5,7 +5,7 @@ import { CaseStudyLayout } from "./CaseStudyLayout";
 import { CaseStudyLinkProps } from "../../constants/caseStudies";
 import CaseStudyHeading from "./components/CaseStudyHeading";
 
-export const StarkWare = ({ ...props }: CaseStudyLinkProps) => {
+export const Starkware = ({ ...props }: CaseStudyLinkProps) => {
   const { color } = props;
 
   const StyledListItem = styled(ListItem)({
