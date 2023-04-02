@@ -34,7 +34,7 @@ import RaribleLogo from "../assets/imgs/clients/rarible.svg";
 import SafeLogo from "../assets/imgs/clients/safe.svg";
 import SovrynLogo from "../assets/imgs/clients/sovryn.svg";
 import StakedusLogo from "../assets/imgs/clients/stakedus.svg";
-import StarkwareLogo from "../assets/imgs/clients/starkware.svg";
+import StarkWareLogo from "../assets/imgs/clients/starkware.svg";
 import TezosLogo from "../assets/imgs/clients/tezos.svg";
 import TheGraphLogo from "../assets/imgs/clients/thegraph.svg";
 
@@ -189,8 +189,8 @@ export const clientIconLinks: ClientIconLinks = {
   },
   starkware: {
     path: "https://starkware.co/",
-    icon: StarkwareLogo,
-    name: "Starkware",
+    icon: StarkWareLogo,
+    name: "StarkWare",
   },
   // amnesty: {
   //   path: "https://amnesty.org/en/",
@@ -398,8 +398,8 @@ export const hotSeatIconLinks: HotSeatGuestIconLinks = {
 
   // starkware: {
   //   path: "https://starkware.co/",
-  //   icon: StarkwareLogo,
-  //   name: "Starkware",
+  //   icon: StarkWareLogo,
+  //   name: "StarkWare",
   // },
 
   safe: {

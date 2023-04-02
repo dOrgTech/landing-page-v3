@@ -67,13 +67,14 @@ export const EpisodeSection: React.FC = () => {
   ];
 
   return (
-    <Box my={[16, 24, 32]} position='relative'>
+    <Box my={[16, 24, 32]} position="relative">
       <Typography
-        variant='h6'
-        component='h2'
-        textTransform='uppercase'
-        textAlign='center'
-        letterSpacing={5}>
+        variant="h6"
+        component="h2"
+        textTransform="uppercase"
+        textAlign="center"
+        letterSpacing={5}
+      >
         Episodes ▶️
       </Typography>
       <Box mt={12}>
@@ -86,7 +87,8 @@ export const EpisodeSection: React.FC = () => {
           customButtonGroup={<ButtonGroup />}
           itemsPerRow={[1, 2.5, 3.5, 4]}
           beforeChange={() => setMoving(true)}
-          afterChange={() => setMoving(false)}>
+          afterChange={() => setMoving(false)}
+        >
           {EPISODES.map(({ id, text, description }, i) => (
             <Box key={id} px={2}>
               <YoutubeCard
@@ -100,15 +102,16 @@ export const EpisodeSection: React.FC = () => {
           ))}
         </Carousel>
       </Box>
-      <Grid container justifyContent='center' mt={8}>
+      <Grid container justifyContent="center" mt={8}>
         <Grid item>
           <Button
-            href='/#/join'
-            variant='outlined'
+            href="/#/join"
+            variant="outlined"
             onClick={() =>
               window.open("https://airtable.com/shr4VGh3iZCIVhCg3", "_blank")
-            }>
-            Become Sponsor
+            }
+          >
+            Become a Sponsor
           </Button>
         </Grid>
       </Grid>

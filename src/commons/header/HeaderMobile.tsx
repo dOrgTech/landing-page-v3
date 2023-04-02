@@ -1,5 +1,5 @@
 import React from "react";
-import { Dialog, Grid, Link, Typography } from "@mui/material";
+import { Dialog, Grid, Link, Stack, Typography } from "@mui/material";
 import { styled } from "@material-ui/styles";
 import { colors } from "../../theme";
 import CloseIcon from "@mui/icons-material/Close";
@@ -82,13 +82,7 @@ const HeaderMobile: React.FC = () => {
             </Link>
             <CloseButton onClick={handleClose} />
           </Grid>
-          <Grid
-            container
-            justifyContent={"center"}
-            alignItems={"center"}
-            gap={4}
-            flexDirection={"column"}
-          >
+          <Stack justifyContent={"center"} alignItems={"center"} spacing={3}>
             {MENU_ITEMS.map((item: MenuItem, index) => (
               <Link
                 underline="none"
@@ -101,12 +95,13 @@ const HeaderMobile: React.FC = () => {
                   variant="h4"
                   color={colors.white}
                   fontWeight="bold"
+                  sx={{ mt: 0 }}
                 >
                   {item.name}
                 </MenuItemButton>
               </Link>
             ))}
-          </Grid>
+          </Stack>
           <Grid
             container
             justifyContent={"space-around"}

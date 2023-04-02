@@ -43,8 +43,8 @@ export const HotSeatPresentationSection: React.FC = () => {
 
   return (
     <HotSeatPresentationSectionContainer>
-      <GameOfLifeAnimationCanvas opacity={0.25} className='presentation' />
-      <Container maxWidth='lg' sx={{ position: "relative" }}>
+      <GameOfLifeAnimationCanvas opacity={0.25} className="presentation" />
+      <Container maxWidth="lg" sx={{ position: "relative" }}>
         <Grid
           container
           spacing={1}
@@ -52,14 +52,16 @@ export const HotSeatPresentationSection: React.FC = () => {
             flexDirection: "column",
             justifyContent: "center",
             minHeight: "90vh",
-          }}>
+          }}
+        >
           <Grid
             item
             sx={{
               justifyContent: "flex-start",
               alignItems: "center",
               display: "flex",
-            }}>
+            }}
+          >
             <Stack spacing={6} maxWidth={1000}>
               {isDesktop ? (
                 <Box>
@@ -73,7 +75,8 @@ export const HotSeatPresentationSection: React.FC = () => {
                       lineHeight: 1,
                       margin: "0px",
                       display: "block",
-                    }}>
+                    }}
+                  >
                     {TITLE}
                   </Typography>
                 </Box>
@@ -82,7 +85,8 @@ export const HotSeatPresentationSection: React.FC = () => {
                   container
                   spacing={4}
                   flexDirection={"column"}
-                  justifyContent='center'>
+                  justifyContent="center"
+                >
                   <Grid item>
                     <StyledLogo
                       src={HotSeatMobileLogo}
@@ -100,7 +104,8 @@ export const HotSeatPresentationSection: React.FC = () => {
                         margin: "0px",
                         padding: "0px",
                         display: "block",
-                      }}>
+                      }}
+                    >
                       {TITLE}
                     </Typography>
                   </Grid>
@@ -113,7 +118,8 @@ export const HotSeatPresentationSection: React.FC = () => {
                 mt={isDesktop ? 0 : 10}
                 flexDirection={isDesktop ? "row" : "column"}
                 alignItems={"center"}
-                justifyContent={isDesktop ? "initial" : "center"}>
+                justifyContent={isDesktop ? "initial" : "center"}
+              >
                 <Grid item>
                   <Button
                     onClick={() =>
@@ -122,8 +128,9 @@ export const HotSeatPresentationSection: React.FC = () => {
                         "_blank"
                       )
                     }
-                    variant='contained'>
-                    Become Sponsor
+                    variant="contained"
+                  >
+                    Become a Sponsor
                   </Button>
                 </Grid>
               </Grid>
@@ -137,11 +144,12 @@ export const HotSeatPresentationSection: React.FC = () => {
             display: "flex",
             flexWrap: "wrap",
             justifyContent: "space-around",
-          }}>
+          }}
+        >
           {guestIcons.map((iconLink: IconLink, index) => (
             <Grid item key={index}>
-              <Link href={iconLink.path} target='_blank' className='--centered'>
-                <script type='application/ld+json'>
+              <Link href={iconLink.path} target="_blank" className="--centered">
+                <script type="application/ld+json">
                   {JSON.stringify({
                     "@context": "https://schema.org",
                     "@type": "Organization",
@@ -177,7 +185,7 @@ export const HotSeatPresentationSection: React.FC = () => {
                         transform: "scale(1.08)",
                       },
                     }}
-                    loading='lazy'
+                    loading="lazy"
                     alt={iconLink.name}
                     src={iconLink.icon}
                   />

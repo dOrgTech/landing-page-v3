@@ -141,18 +141,9 @@ let theme = createTheme({
 });
 
 theme = createTheme(theme, {
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 600,
-      md: 900,
-      lg: 1334, // custom lg breakpoint
-      xl: 1536,
-    },
-  },
   typography: {
     button: {
-      fontSize: 18,
+      fontSize: 20,
       fontWeight: 700,
       lineHeight: 1.7,
     },

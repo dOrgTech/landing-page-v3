@@ -60,7 +60,7 @@ const TabulaText = () => {
   );
 };
 
-const StarkwareText = () => {
+const StarkWareText = () => {
   return (
     <Typography
       component="h3"
@@ -162,7 +162,7 @@ export const testimonialContent = {
   doinGud: <DoinGudText />,
   fhomoney: <FhomoneyText />,
   tabula: <TabulaText />,
-  starkware: <StarkwareText />,
+  starkware: <StarkWareText />,
   tezos: <TezosText />,
   acreInvest: <AcreInvestText />,
   cent: <CentText />,
