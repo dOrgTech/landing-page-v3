@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Link, Typography } from "@mui/material";
+import { Link, Typography } from "@mui/material";
 import { colors } from "../../../theme";
 import { CaseStudyLinkProps } from "../../../constants/caseStudies";
 import { Arrow } from "./Arrow";

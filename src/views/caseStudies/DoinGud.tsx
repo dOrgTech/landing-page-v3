@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Link, List, ListItem, Stack, Typography } from "@mui/material";
+import { List, ListItem, Stack, Typography } from "@mui/material";
 import { styled } from "@material-ui/core";
 import { CaseStudyLayout } from "./CaseStudyLayout";
 import { CaseStudyLinkProps } from "../../constants/caseStudies";
@@ -22,7 +22,7 @@ export const DoinGud = ({ ...props }: CaseStudyLinkProps) => {
     <CaseStudyLayout {...props}>
       <Stack spacing={16}>
         <Stack spacing={2}>
-          <CaseStudyHeading type="abstract" color={color} />
+          <CaseStudyHeading type='abstract' color={color} />
           <Typography sx={{ fontSize: 20 }}>
             dOrg built smart contracts together with the impact-focused NFT
             marketplace, DoinGud, from scratch to support english auctions,
@@ -35,7 +35,7 @@ export const DoinGud = ({ ...props }: CaseStudyLinkProps) => {
         </Stack>
 
         <Stack spacing={2}>
-          <CaseStudyHeading type="background" color={color} />
+          <CaseStudyHeading type='background' color={color} />
           <Typography sx={{ fontSize: 20 }}>
             Community-owned and curated, DoinGud is a NFT marketplace
             incorporating social impact through royalties to public goods
@@ -54,14 +54,14 @@ export const DoinGud = ({ ...props }: CaseStudyLinkProps) => {
         </Stack>
 
         <Stack spacing={2}>
-          <CaseStudyHeading type="focus" color={color} />
+          <CaseStudyHeading type='focus' color={color} />
           <Stack spacing={4}>
             <Typography sx={{ fontSize: 20 }}>
               We provided a dOrg team extension for Smart Contract Engineering,
               Web3 Integrations, and Software Architecture.
             </Typography>
             <Stack spacing={0.5}>
-              <Typography variant="h5" component="h4" sx={{ mt: 0 }}>
+              <Typography variant='h5' component='h4' sx={{ mt: 0 }}>
                 Team Extension Support
               </Typography>
               <List sx={{ pt: 0.5 }}>
@@ -95,7 +95,7 @@ export const DoinGud = ({ ...props }: CaseStudyLinkProps) => {
         </Stack>
 
         <Stack spacing={2}>
-          <CaseStudyHeading type="conclusion" color={color} />
+          <CaseStudyHeading type='conclusion' color={color} />
           <Typography sx={{ fontSize: 20 }}>
             dOrg developed the smart contracts and web3 integrations with
             DoinGud’s team for the DoinGud beta. The impact-focused NFT

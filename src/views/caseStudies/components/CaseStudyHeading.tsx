@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
-import { type } from "os";
 import {
   AbstractIcon,
   BackgroundIcon,
