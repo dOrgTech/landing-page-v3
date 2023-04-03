@@ -12,6 +12,16 @@ export type MenuItem = {
 
 export const MENU_ITEMS: MenuItem[] = [
   {
+    name: "Hire us",
+    path: "/#/hire",
+    desktop: true,
+  },
+  {
+    name: "Join us",
+    path: "/#/join",
+    desktop: true,
+  },
+  {
     name: "Case Studies",
     path: "/#/case-studies",
     desktop: true,
@@ -30,15 +40,7 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Blog",
     path: "https://blog.dorg.tech/",
     external: true,
-  },
-  {
-    name: "Hire us",
-    path: "/#/hire",
     desktop: true,
-  },
-  {
-    name: "Join us",
-    path: "/#/join",
   },
 ];
 
@@ -62,7 +64,7 @@ export const Header: React.FC = () => {
 
   return (
     <Box
-      component="header"
+      component='header'
       sx={{
         background: `rgba(0,0,0,${isFixed ? 0.95 : 0})`,
         backdropFilter: isFixed ? "blur(2px)" : undefined,
@@ -73,18 +75,16 @@ export const Header: React.FC = () => {
         transition: "all 0.25s ease-in-out",
         width: "100vw",
         zIndex: 99,
-      }}
-    >
-      <Container maxWidth="lg">
+      }}>
+      <Container maxWidth='lg'>
         <Stack
-          direction="row"
+          direction='row'
           spacing={2}
           sx={{
             alignItems: "center",
             display: "flex",
             justifyContent: "space-between",
-          }}
-        >
+          }}>
           {isMobile ? <HeaderMobile /> : <HeaderDesktop />}
         </Stack>
       </Container>
