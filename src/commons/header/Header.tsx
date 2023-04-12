@@ -12,16 +12,6 @@ export type MenuItem = {
 
 export const MENU_ITEMS: MenuItem[] = [
   {
-    name: "Hire us",
-    path: "/#/hire",
-    desktop: true,
-  },
-  {
-    name: "Join us",
-    path: "/#/join",
-    desktop: true,
-  },
-  {
     name: "Case Studies",
     path: "/#/case-studies",
     desktop: true,
@@ -40,7 +30,15 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Blog",
     path: "https://blog.dorg.tech/",
     external: true,
+  },
+  {
+    name: "Hire us",
+    path: "/#/hire",
     desktop: true,
+  },
+  {
+    name: "Join us",
+    path: "/#/join",
   },
 ];
 

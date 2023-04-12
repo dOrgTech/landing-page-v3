@@ -50,16 +50,15 @@ export const CaseStudyLayout = ({
           position: "absolute",
           top: 0,
           filter: "blur(8px)",
-        }}
-      >
+        }}>
         <GameOfLifeAnimation
           resolution={128}
           animate={false}
           opacity={0.08}
-          className="case-study"
+          className='case-study'
         />
       </Box>
-      <Container maxWidth="lg" sx={{ position: "relative" }}>
+      <Container maxWidth='lg' sx={{ position: "relative" }}>
         <Grid
           container
           rowSpacing={8}
@@ -69,8 +68,7 @@ export const CaseStudyLayout = ({
             flexDirection: "row-reverse",
             mt: [16, 10, 0],
             minHeight: "100vh",
-          }}
-        >
+          }}>
           <Grid item xs={12} lg={6}>
             <Box sx={{ width: "100%" }}>
               <img src={thumbnail} alt={title} />
@@ -78,22 +76,20 @@ export const CaseStudyLayout = ({
           </Grid>
           <Grid item xs={12} lg={6}>
             <Typography
-              textTransform="uppercase"
+              textTransform='uppercase'
               letterSpacing={5}
-              lineHeight={1}
-            >
+              lineHeight={1}>
               Case Study
             </Typography>
             <Typography
-              variant="h1"
-              sx={{ color: color, fontSize: ["3rem", "4rem"], mt: 0 }}
-            >
+              variant='h1'
+              sx={{ color: color, fontSize: ["3rem", "4rem"], mt: 0 }}>
               {title}
             </Typography>
             <Typography sx={{ fontSize: 20, mt: 2 }}>{summary}</Typography>
           </Grid>
         </Grid>
-        <Box component="section" sx={{ pb: 12, pt: [20, 20, 20, 0] }}>
+        <Box component='section' sx={{ pb: 12, pt: [20, 20, 20, 0] }}>
           <Grid container spacing={8} sx={{ flexDirection: "row-reverse" }}>
             <Grid item xs={12} lg={8}>
               {children}
@@ -104,10 +100,9 @@ export const CaseStudyLayout = ({
                   <Stack spacing={3}>
                     <Typography
                       fontWeight={800}
-                      textTransform="uppercase"
+                      textTransform='uppercase'
                       letterSpacing={5}
-                      lineHeight={1}
-                    >
+                      lineHeight={1}>
                       Role
                     </Typography>
                     <Stack spacing={1} sx={{ mt: 3 }}>
@@ -123,10 +118,9 @@ export const CaseStudyLayout = ({
                   <Stack spacing={3}>
                     <Typography
                       fontWeight={800}
-                      textTransform="uppercase"
+                      textTransform='uppercase'
                       letterSpacing={5}
-                      lineHeight={1}
-                    >
+                      lineHeight={1}>
                       Projects
                     </Typography>
                     <Stack spacing={1} sx={{ mt: 3 }}>
@@ -141,9 +135,8 @@ export const CaseStudyLayout = ({
                               },
                             }}
                             href={project.link}
-                            target="_blank"
-                            rel="noredirect"
-                          >
+                            target='_blank'
+                            rel='noredirect'>
                             {project.name}
                           </Link>
                         </Box>
@@ -156,37 +149,33 @@ export const CaseStudyLayout = ({
           </Grid>
         </Box>
         <Box
-          component="section"
+          component='section'
           sx={{
             borderTop: `2px solid ${color}`,
             borderBottom: press ? `2px solid ${color}` : null,
             py: 12,
-          }}
-        >
+          }}>
           <Grid container spacing={4}>
             <Grid item xs={0} lg={4}></Grid>
             <Grid item xs={12} lg={8}>
               <Stack spacing={4}>
                 <Stack spacing={2}>
                   <Typography
-                    variant="h2"
-                    sx={{ fontSize: ["3rem", "4rem", "5rem"], mt: 0 }}
-                  >
+                    variant='h2'
+                    sx={{ fontSize: ["3rem", "4rem", "5rem"], mt: 0 }}>
                     Do you need something built?
                   </Typography>
                   <Typography sx={{ fontSize: 20 }}>
                     dOrg has a longstanding history of complex web3 development
-                    and integration partnerships. We’ve worked with over 65 web3
-                    projects since 2019, generating more than 2 billion dollars
-                    of total lifetime value in shipped products as well as more
-                    than 5 million on-chain revenue.
+                    and integration partnerships. We&apos;ve worked with +65 web3
+                    projects since 2019, generating +$2B of total lifetime value
+                    in shipped products as well +$8M on-chain revenue.
                   </Typography>
                 </Stack>
                 <Button
-                  variant="contained"
+                  variant='contained'
                   sx={{ width: "fit-content" }}
-                  href="/#/hire"
-                >
+                  href='/#/hire'>
                   Hire Us
                 </Button>
               </Stack>
@@ -195,31 +184,28 @@ export const CaseStudyLayout = ({
         </Box>
         {press && (
           <Stack
-            component="section"
+            component='section'
             spacing={2}
             sx={{
               borderBottom: `2px solid ${color}`,
               py: 12,
-            }}
-          >
-            <CaseStudyHeading type="press" color={color} title={title} />
+            }}>
+            <CaseStudyHeading type='press' color={color} title={title} />
             {press?.map((item, i) => {
               return <CaseStudyListing key={i} color={color} {...item} />;
             })}
           </Stack>
         )}
-        <Box component="section" sx={{ py: 12 }}>
+        <Box component='section' sx={{ py: 12 }}>
           <Stack
-            direction="row"
-            sx={{ alignItems: "center", justifyContent: "space-between" }}
-          >
+            direction='row'
+            sx={{ alignItems: "center", justifyContent: "space-between" }}>
             <Link
               href={`#/case-studies/${prevProject.slug}`}
-              underline="none"
-              sx={{ color: "white" }}
-            >
+              underline='none'
+              sx={{ color: "white" }}>
               <Stack
-                direction="row"
+                direction='row'
                 spacing={2}
                 sx={{
                   alignItems: "center",
@@ -227,10 +213,9 @@ export const CaseStudyLayout = ({
                     ".linkColor": { color: prevProject.color, opacity: 1 },
                     ".arrowLink": { transform: "translateX(-50%)" },
                   },
-                }}
-              >
+                }}>
                 <Arrow
-                  direction="left"
+                  direction='left'
                   sx={{
                     display: "flex",
                     height: "100%",
@@ -247,8 +232,7 @@ export const CaseStudyLayout = ({
                     fontWeight: 600,
                     lineHeight: 1,
                   }}
-                  className="linkColor"
-                >
+                  className='linkColor'>
                   {prevProject.title}
                 </Typography>
               </Stack>
@@ -256,11 +240,10 @@ export const CaseStudyLayout = ({
 
             <Link
               href={`#/case-studies/${nextProject.slug}`}
-              underline="none"
-              sx={{ color: "white" }}
-            >
+              underline='none'
+              sx={{ color: "white" }}>
               <Stack
-                direction="row"
+                direction='row'
                 spacing={2}
                 sx={{
                   alignItems: "center",
@@ -268,16 +251,14 @@ export const CaseStudyLayout = ({
                     ".linkColor": { color: nextProject.color, opacity: 1 },
                     ".arrowLink": { transform: "translateX(50%)" },
                   },
-                }}
-              >
+                }}>
                 <Typography
                   sx={{
                     fontSize: [16, 20, 24],
                     fontWeight: 600,
                     lineHeight: 1,
                   }}
-                  className="linkColor"
-                >
+                  className='linkColor'>
                   {nextProject.title}
                 </Typography>
                 <Arrow
