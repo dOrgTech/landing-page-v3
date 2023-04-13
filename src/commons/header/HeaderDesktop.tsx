@@ -24,7 +24,6 @@ const MenuItemButton = styled(Typography)({
 
 const HeaderDesktop: React.FC = () => {
   const menuItems = MENU_ITEMS.filter((item) => item.desktop);
-  console.log('menuItems', menuItems)
   return (
     <>
       <Link href="/">
