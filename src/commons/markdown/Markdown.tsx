@@ -52,14 +52,15 @@ const options = {
       component: Typography,
       props: { gutterBottom: true, paragraph: true },
     },
-    a: { component: Link,
+    a: {
+      component: Link,
       props: {
         sx: {
           color: colors.green,
           cursor: "pointer",
           "&:hover": {
             opacity: 0.6,
-          }
+          },
         },
       },
     },
@@ -89,11 +90,21 @@ const options = {
     pre: {
       props: {
         style: {
+          backgroundColor: colors.grays[800],
           borderRadius: 4,
           marginBottom: "1rem",
           overflow: "auto",
-          paddingBottom: "1rem",
-          paddingTop: "1rem",
+          padding: "0.25rem",
+        },
+      },
+    },
+    code: {
+      props: {
+        style: {
+          padding: "0.25rem",
+          backgroundColor: colors.grays[800],
+          color: colors.orange,
+          whiteSpace: "nowrap",
         },
       },
     },

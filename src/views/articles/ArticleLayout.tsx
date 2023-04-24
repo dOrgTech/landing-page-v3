@@ -123,7 +123,12 @@ export function ArticleLayout({
         </Box>
         <Box component="section" sx={{ pb: 12, pt: [20, 20, 20, 0] }}>
           <Grid container spacing={8}>
-            <Grid item xs={12} lg={8} sx={{ "& *:first-child": { mt: 0 } }}>
+            <Grid
+              item
+              xs={12}
+              lg={8}
+              sx={{ fontSize: "1.125rem", "& *:first-child": { mt: 0 } }}
+            >
               <Markdown>{markdown}</Markdown>
             </Grid>
             <Grid item xs={12} lg={4}>

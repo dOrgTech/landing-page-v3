@@ -1,4 +1,4 @@
-import deployErc20UsingFoundryArticle from "../views/articles/deployErc20UsingFoundryArticle.md"
+import deployErc20UsingFoundryArticle from "../views/articles/deployErc20UsingFoundryArticle/index.md"
 
 interface Tag {
   name: string;
