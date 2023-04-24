@@ -40,6 +40,10 @@ export const MENU_ITEMS: MenuItem[] = [
     name: "Join us",
     path: "/#/join",
   },
+  {
+    name: "FAQs",
+    path: "/#/faqs",
+  },
 ];
 
 export const Header: React.FC = () => {
