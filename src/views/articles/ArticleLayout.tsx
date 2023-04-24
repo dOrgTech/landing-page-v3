@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import {
   Box,
   BoxProps,
@@ -6,17 +7,35 @@ import {
   Link,
   Stack,
   Typography,
-  useTheme,
 } from "@mui/material";
-import React, { ReactChild } from "react";
 import GameOfLifeAnimation from "../../commons/gameOfLifeAnimation/GameOfLifeAnimation";
-import theme, { colors } from "../../theme";
+import { colors } from "../../theme";
+import { ArticleProps } from "../../constants/articles";
+import { Markdown } from "../../commons/markdown/Markdown";
 
 interface ArticleLayoutProps extends BoxProps {
   tags?: string[];
 }
 
-export function ArticleLayout({ children }: ArticleLayoutProps) {
+export function ArticleLayout({
+  title,
+  description,
+  content,
+  date,
+  author,
+  coding,
+  tags,
+}: ArticleProps) {
+  const [markdown, setMarkdown] = useState("");
+
+  useEffect(() => {
+    fetch(content)
+      .then((response) => response.text())
+      .then((text) => {
+        setMarkdown(text);
+      });
+  }, []);
+
   return (
     <Box sx={{ minHeight: "80vh", position: "relative", width: "100%" }}>
       <Box
@@ -51,58 +70,61 @@ export function ArticleLayout({ children }: ArticleLayoutProps) {
               variant="h1"
               sx={{ fontSize: ["2.5rem", "3rem"], mt: 0 }}
             >
-              How to create and deploy an ERC20 token in simple steps using
-              Foundry
+              {title}
             </Typography>
             <Typography sx={{ fontSize: 20, fontWeight: 700, mt: 2 }}>
-              Are you a web3 developer interested in creating your own token on
-              the Ethereum Blockchain? If you are, then this article’s what
-              you’ve been looking for.
+              {description}
             </Typography>
-            <Stack direction="row" spacing={2} sx={{ alignItems: "center" }}>
-              <Stack direction="row" spacing={1} sx={{ alignItems: "center" }}>
+            <Stack direction="row" spacing={3} sx={{ alignItems: "center" }}>
+              <Stack direction="row" spacing={2} sx={{ alignItems: "center" }}>
                 <Typography
                   textTransform="uppercase"
                   letterSpacing={5}
                   lineHeight={1}
                 >
-                  May 25
+                  {date}
                 </Typography>
-                <Typography
-                  textTransform="uppercase"
-                  letterSpacing={5}
-                  lineHeight={1}
-                >
-                  /
-                </Typography>
-                <Typography
-                  textTransform="uppercase"
-                  letterSpacing={5}
-                  lineHeight={1}
-                >
-                  Cesar Brazon
-                </Typography>
+                {author && (
+                  <>
+                    <Typography
+                      textTransform="uppercase"
+                      letterSpacing={5}
+                      lineHeight={1}
+                    >
+                      /
+                    </Typography>
+                    <Typography
+                      textTransform="uppercase"
+                      letterSpacing={5}
+                      lineHeight={1}
+                    >
+                      {author}
+                    </Typography>
+                  </>
+                )}
               </Stack>
-              <Box
-                sx={{
-                  bgcolor: colors.purple,
-                  textTransform: "uppercase",
-                  fontWeight: 700,
-                  letterSpacing: 2.5,
-                  lineHeight: 1,
-                  px: "12px",
-                  py: "4px",
-                }}
-              >
-                Coding
-              </Box>
+              {coding && (
+                <Box
+                  sx={{
+                    bgcolor: colors.purple,
+                    textTransform: "uppercase",
+                    fontWeight: 700,
+                    letterSpacing: 2.5,
+                    lineHeight: 1,
+                    px: "12px",
+                    py: "4px",
+                  }}
+                >
+                  Coding
+                </Box>
+              )}
             </Stack>
           </Stack>
         </Box>
         <Box component="section" sx={{ pb: 12, pt: [20, 20, 20, 0] }}>
           <Grid container spacing={8}>
-            <Grid item xs={12} lg={8}>
-              {children}
+            <Grid item xs={12} lg={8} sx={{ "& *:first-child": { mt: 0 } }}>
+              <Markdown>{markdown}</Markdown>
             </Grid>
             <Grid item xs={12} lg={4}>
               <Stack spacing={8}>
@@ -125,7 +147,7 @@ export function ArticleLayout({ children }: ArticleLayoutProps) {
                     </Stack>
                   </Stack>
                 )}
-                {1 && (
+                {tags && tags.length > 0 && (
                   <Stack spacing={3}>
                     <Typography
                       fontWeight={800}
@@ -136,15 +158,16 @@ export function ArticleLayout({ children }: ArticleLayoutProps) {
                       Tags
                     </Typography>
                     <Stack spacing={1} sx={{ mt: 3 }}>
-                      {["Coding (1)", "Tutorials (2)"].map((project, i) => (
+                      {tags.map(({ name, slug }, i) => (
                         <Box key={i}>
                           <Link
+                            href={`/articles/tags/${slug}`}
                             sx={{
                               color: "white",
                               fontSize: 14,
                             }}
                           >
-                            {project}
+                            {name}
                           </Link>
                         </Box>
                       ))}

@@ -6,12 +6,13 @@ import { HomeView } from "./views/home/Home";
 import { CaseStudiesView } from "./views/caseStudies/CaseStudies";
 import { caseStudies } from "./constants/caseStudies";
 import { Tezos, GnosisGuild, Starkware, DoinGud } from "./views/caseStudies";
-import { ArticleTest } from "./views/articles";
 import { HotSeatView } from "./views/hotSeat/HotSeat";
 import { JoinView } from "./views/formPages/join/Join";
 import { HireView } from "./views/formPages/hire/Hire";
 import { PrivacyPolicy } from "./views/privacyPolicy";
 import TagManager, { TagManagerArgs } from "react-gtm-module";
+import { articles } from "./constants/articles";
+import { ArticleLayout } from "./views/articles/ArticleLayout";
 
 const App: React.FC = () => {
   const location = useLocation();
@@ -33,7 +34,13 @@ const App: React.FC = () => {
           <Route path="/" element={<HomeView />} />
           <Route path="/hot-seat" element={<HotSeatView />} />
           <Route path="/case-studies" element={<CaseStudiesView />} />
-          <Route path="/articles/test" element={<ArticleTest />} />
+          {articles.map((article, i) => (
+            <Route
+              key={article.slug}
+              path={`/articles/${article.slug}`}
+              element={<ArticleLayout {...article} />}
+            />
+          ))}
           <Route
             path="/case-studies/tezos"
             element={<Tezos {...caseStudies["tezos"]} />}
