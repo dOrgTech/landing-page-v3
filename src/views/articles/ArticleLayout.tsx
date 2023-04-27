@@ -10,15 +10,17 @@ import {
 } from "@mui/material";
 import GameOfLifeAnimation from "../../commons/gameOfLifeAnimation/GameOfLifeAnimation";
 import { colors } from "../../theme";
-import { ArticleProps } from "../../constants/articles";
+import { ArticleProps, articles } from "../../constants/articles";
 import { Markdown } from "../../commons/markdown/Markdown";
 import { alpha } from "@material-ui/core";
+import { ArrowBack } from "@material-ui/icons";
 
 interface ArticleLayoutProps extends BoxProps {
   tags?: string[];
 }
 
 export function ArticleLayout({
+  slug,
   title,
   description,
   content,
@@ -36,6 +38,10 @@ export function ArticleLayout({
         setMarkdown(text);
       });
   }, []);
+
+  const filteredArticles = articles.filter(
+    (article, i) => i < 4 && article.slug !== slug
+  );
 
   return (
     <Box sx={{ minHeight: "80vh", position: "relative", width: "100%" }}>
@@ -67,15 +73,30 @@ export function ArticleLayout({
           }}
         >
           <Stack spacing={3}>
+            <Link
+              href="/#/articles"
+              sx={{
+                color: "white",
+                transition: "opacity 0.25s ease-in-out",
+                "&:hover": { opacity: 0.7 },
+              }}
+            >
+              <Stack direction="row" spacing={1} sx={{ alignItems: "center" }}>
+                <ArrowBack width={12} height={12} />
+                <Typography>Back to Articles</Typography>
+              </Stack>
+            </Link>
             <Typography
               variant="h1"
               sx={{ fontSize: ["2.5rem", "3rem"], mt: 0 }}
             >
               {title}
             </Typography>
-            <Typography sx={{ fontSize: 20, fontWeight: 700, mt: 2 }}>
-              {description}
-            </Typography>
+            {description && (
+              <Typography sx={{ fontSize: 20, fontWeight: 700, mt: 2 }}>
+                {description}
+              </Typography>
+            )}
             <Stack direction="row" spacing={3} sx={{ alignItems: "center" }}>
               <Stack direction="row" spacing={2} sx={{ alignItems: "center" }}>
                 <Typography
@@ -95,7 +116,7 @@ export function ArticleLayout({
                       /
                     </Typography>
                     <Link
-                      href={author.link}
+                      href={author.link ? author.link : undefined}
                       sx={{
                         color: "white",
                         letterSpacing: 5,
@@ -153,11 +174,38 @@ export function ArticleLayout({
                     >
                       Posts
                     </Typography>
-                    <Stack spacing={1} sx={{ mt: 3 }}>
-                      {["Post title"].map((role, i) => (
-                        <Typography key={i} sx={{ fontSize: 14 }}>
-                          {role}
-                        </Typography>
+                    <Stack spacing={3} sx={{ mt: 3 }}>
+                      {filteredArticles.map((article, i) => (
+                        <Link
+                          key={i}
+                          href={`/#/articles/${article.slug}`}
+                          underline="none"
+                          sx={{
+                            color: "white",
+                            "&:hover .post-title": { color: colors.green },
+                          }}
+                        >
+                          <Typography
+                            className="post-title"
+                            sx={{
+                              fontSize: 18,
+                              fontWeight: 800,
+                              lineHeight: 1.1,
+                            }}
+                          >
+                            {article.title}
+                          </Typography>
+                          <Typography
+                            sx={{
+                              color: colors.grays[300],
+                              fontSize: 12,
+                              lineHeight: 1.1,
+                              mt: 0.5,
+                            }}
+                          >
+                            {article.date}
+                          </Typography>
+                        </Link>
                       ))}
                     </Stack>
                   </Stack>

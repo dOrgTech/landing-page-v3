@@ -1,6 +1,6 @@
 import React from "react";
 import ReactMarkdown, { MarkdownToJSX } from "markdown-to-jsx";
-import { Typography, List, ListItem, Link } from "@mui/material";
+import { Typography, List, ListItem, Link, Box } from "@mui/material";
 import { colors } from "../../theme";
 
 const options = {
@@ -64,6 +64,23 @@ const options = {
         },
       },
     },
+    ol: {
+      component: List,
+      dense: true,
+      props: {
+        sx: {
+          mb: 2,
+          pt: 0,
+          pl: 2.5,
+          "& li": {
+            display: "list-item",
+            listStyleType: "decimal",
+            pl: 2,
+            py: "0.25rem",
+          },
+        },
+      },
+    },
     ul: {
       component: List,
       dense: true,
@@ -72,18 +89,29 @@ const options = {
           mb: 2,
           pt: 0,
           pl: 0,
+          "& li": {
+            display: "list-item",
+            listStylePosition: "inside",
+            listStyleType: "circle",
+            pl: 0,
+            py: "0.25rem",
+          },
         },
       },
     },
     li: {
       component: ListItem,
+    },
+    blockquote: {
+      component: Box,
       props: {
-        sx: {
-          display: "list-item",
-          listStylePosition: "inside",
-          listStyleType: "circle",
-          pl: 0,
-          py: "0.25rem",
+        component: "blockquote",
+        style: {
+          color: colors.grays[100],
+          fontWeight: 800,
+          marginLeft: 0,
+          paddingLeft: "1em",
+          borderLeft: `4px solid ${colors.magenta}`,
         },
       },
     },

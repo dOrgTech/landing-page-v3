@@ -13,6 +13,7 @@ import { PrivacyPolicy } from "./views/privacyPolicy";
 import TagManager, { TagManagerArgs } from "react-gtm-module";
 import { articles } from "./constants/articles";
 import { ArticleLayout } from "./views/articles/ArticleLayout";
+import ArticlesView from "./views/articles/ArticlesView";
 
 const App: React.FC = () => {
   const location = useLocation();
@@ -34,6 +35,7 @@ const App: React.FC = () => {
           <Route path="/" element={<HomeView />} />
           <Route path="/hot-seat" element={<HotSeatView />} />
           <Route path="/case-studies" element={<CaseStudiesView />} />
+          <Route path="/articles" element={<ArticlesView />} />
           {articles.map((article, i) => (
             <Route
               key={article.slug}
