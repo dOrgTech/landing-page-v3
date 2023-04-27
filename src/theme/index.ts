@@ -135,6 +135,17 @@ let theme = createTheme({
       span {
         color: ${colors.green}
       }
+      pre::-webkit-scrollbar {
+        background: transparent;
+        height: 8px;
+      }
+      pre::-webkit-scrollbar-track {
+        background: ${colors.grays[700]};
+      }
+      pre::-webkit-scrollbar-thumb {
+        background: ${colors.grays[500]};
+        border-radius: 8px;
+      }
     `,
     },
   },

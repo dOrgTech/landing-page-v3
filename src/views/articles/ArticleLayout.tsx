@@ -12,6 +12,7 @@ import GameOfLifeAnimation from "../../commons/gameOfLifeAnimation/GameOfLifeAni
 import { colors } from "../../theme";
 import { ArticleProps } from "../../constants/articles";
 import { Markdown } from "../../commons/markdown/Markdown";
+import { alpha } from "@material-ui/core";
 
 interface ArticleLayoutProps extends BoxProps {
   tags?: string[];
@@ -93,13 +94,22 @@ export function ArticleLayout({
                     >
                       /
                     </Typography>
-                    <Typography
-                      textTransform="uppercase"
-                      letterSpacing={5}
-                      lineHeight={1}
+                    <Link
+                      href={author.link}
+                      sx={{
+                        color: "white",
+                        letterSpacing: 5,
+                        lineHeight: 1,
+                        textTransform: "uppercase",
+                        textUnderlineOffset: 4,
+                        transition: "color 0.25s ease-in-out",
+                        "&:hover": {
+                          color: alpha("rgba(255,255,255)", 0.7),
+                        },
+                      }}
                     >
-                      {author}
-                    </Typography>
+                      {author.name}
+                    </Link>
                   </>
                 )}
               </Stack>

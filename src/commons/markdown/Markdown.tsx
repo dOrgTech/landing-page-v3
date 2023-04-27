@@ -105,6 +105,7 @@ const options = {
           backgroundColor: colors.grays[800],
           color: colors.orange,
           whiteSpace: "nowrap",
+          fontSize: "0.875rem",
         },
       },
     },

@@ -5,12 +5,17 @@ interface Tag {
   slug: string;
 }
 
+interface Author {
+  name: string;
+  link: string;
+}
+
 export interface ArticleProps {
   slug: string;
   title: string;
   description: string;
   date: string;
-  author?: string;
+  author?: Author;
   coding?: boolean;
   content: string;
   tags?: Tag[];
@@ -22,7 +27,10 @@ export const articles = [
     title: "How to create and deploy an ERC20 token in simple steps using Foundry",
     description: "Are you a web3 developer interested in creating your own token on the Ethereum Blockchain? If you are, then this article’s what you’ve been looking for.",
     date: "May 25, 2023",
-    author: "Cesar Brazon",
+    author: {
+      name: "Cesar Brazon",
+      link: "https://github.com/cbrzn"
+    },
     coding: true,
     content: deployErc20UsingFoundryArticle,
     tags: [
