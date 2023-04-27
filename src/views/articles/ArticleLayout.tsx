@@ -221,16 +221,16 @@ export function ArticleLayout({
                       Tags
                     </Typography>
                     <Stack spacing={1} sx={{ mt: 3 }}>
-                      {tags.map(({ name, slug }, i) => (
+                      {tags.map((tag, i) => (
                         <Box key={i}>
                           <Link
-                            href={`/articles/tags/${slug}`}
+                            href={`/#/articles?tag=${tag}`}
                             sx={{
                               color: "white",
                               fontSize: 14,
                             }}
                           >
-                            {name}
+                            {tag}
                           </Link>
                         </Box>
                       ))}

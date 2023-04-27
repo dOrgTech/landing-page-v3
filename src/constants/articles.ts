@@ -4,11 +4,6 @@ import daoToolingVsDaoCulture from "../views/articles/daoToolingVsDaoCulture/ind
 import foundryVsHardhat from "../views/articles/foundryVsHardhat/index.md"
 import comparingSmartContractLanguages from "../views/articles/comparingSmartContractLanguages/index.md"
 
-interface Tag {
-  name: string;
-  slug: string;
-}
-
 interface Author {
   name: string;
   link?: string;
@@ -22,7 +17,7 @@ export interface ArticleProps {
   author?: Author;
   coding?: boolean;
   content: string;
-  tags?: Tag[];
+  tags?: string[];
 }
 
 export const articles = [
@@ -38,18 +33,9 @@ export const articles = [
     coding: true,
     content: deployErc20UsingFoundryArticle,
     tags: [
-      {
-        name: "Coding",
-        slug: "coding",
-      },
-      {
-        name: "Tutorial",
-        slug: "tutorial",
-      },
-      {
-        name: "Smart Contracts",
-        slug: "smart-contracts",
-      },
+        "coding",
+        "tutorial",
+        "smart-contracts",
     ],
   },
   {
@@ -63,10 +49,7 @@ export const articles = [
     coding: false,
     content: smartContractDeveloper2023,
     tags: [
-      {
-        name: "Smart Contracts",
-        slug: "smart-contracts",
-      },
+        "smart-contracts",
     ],
   },
   {
@@ -80,10 +63,7 @@ export const articles = [
     coding: false,
     content: daoToolingVsDaoCulture,
     tags: [
-      {
-        name: "DAOs",
-        slug: "daos",
-      },
+        "daos",
     ],
   },
   {
@@ -97,10 +77,7 @@ export const articles = [
     coding: false,
     content: foundryVsHardhat,
     tags: [
-      {
-        name: "Smart Contracts",
-        slug: "smart-contracts",
-      },
+        "smart-contracts",
     ],
   },
   {
@@ -114,10 +91,7 @@ export const articles = [
     coding: false,
     content: comparingSmartContractLanguages,
     tags: [
-      {
-        name: "Smart Contracts",
-        slug: "smart-contracts",
-      },
+        "smart-contracts",
     ],
   },
 ]
