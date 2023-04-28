@@ -9,35 +9,43 @@ const options = {
       component: Typography,
       props: {
         gutterBottom: true,
-
         variant: "h1",
+        sx: {
+          marginBlockStart: "4rem",
+        },
       },
     },
     h2: {
       component: Typography,
       props: {
         gutterBottom: true,
-
         variant: "h3",
         component: "h2",
+        sx: {
+          marginBlockStart: "4rem",
+        },
       },
     },
     h3: {
       component: Typography,
       props: {
         gutterBottom: true,
-
         variant: "h4",
         component: "h3",
+        sx: {
+          marginBlockStart: "4rem",
+        },
       },
     },
     h4: {
       component: Typography,
       props: {
         gutterBottom: true,
-
         variant: "h5",
         component: "h4",
+        sx: {
+          marginBlockStart: "4rem",
+        },
       },
     },
     h5: {
@@ -111,7 +119,7 @@ const options = {
           fontWeight: 800,
           marginLeft: 0,
           paddingLeft: "1em",
-          borderLeft: `4px solid ${colors.magenta}`,
+          borderLeft: `4px solid ${colors.purple}`,
         },
       },
     },
@@ -132,7 +140,7 @@ const options = {
           padding: "0.25rem",
           backgroundColor: colors.grays[800],
           color: colors.orange,
-          whiteSpace: "nowrap",
+          // whiteSpace: "nowrap",
           fontSize: "0.875rem",
         },
       },

@@ -1,12 +1,20 @@
-import deployErc20UsingFoundryArticle from "../views/articles/deployErc20UsingFoundryArticle/index.md"
-import smartContractDeveloper2023 from "../views/articles/smartContractDeveloper2023/index.md"
-import daoToolingVsDaoCulture from "../views/articles/daoToolingVsDaoCulture/index.md"
-import foundryVsHardhat from "../views/articles/foundryVsHardhat/index.md"
-import comparingSmartContractLanguages from "../views/articles/comparingSmartContractLanguages/index.md"
+import deployErc20UsingFoundryArticle from "../views/articles/deployErc20UsingFoundryArticle.md"
+import smartContractDeveloper2023 from "../views/articles/smartContractDeveloper2023.md"
+import daoToolingVsDaoCulture from "../views/articles/daoToolingVsDaoCulture.md"
+import foundryVsHardhat from "../views/articles/foundryVsHardhat.md"
+import comparingSmartContractLanguages from "../views/articles/comparingSmartContractLanguages.md"
 
 interface Author {
   name: string;
   link?: string;
+}
+
+export interface Resource {
+  title: string;
+  link: string;
+  date?: string;
+  author?: string;
+  publication?: string;
 }
 
 export interface ArticleProps {
@@ -18,6 +26,7 @@ export interface ArticleProps {
   coding?: boolean;
   content: string;
   tags?: string[];
+  resources?: Resource[];
 }
 
 export const articles = [
@@ -37,6 +46,23 @@ export const articles = [
         "tutorial",
         "smart-contracts",
     ],
+    resources: [
+      {
+        title: "Creating an NFT with Solmate",
+        link: "https://book.getfoundry.sh/tutorials/solmate-nft",
+      },
+      {
+        title: "Overview of Forge",
+        link: "https://book.getfoundry.sh/forge/",
+      },
+      {
+        title: "How to use Foundry to test an ERC20 Contract with Fuzzing",
+        link: "https://medium.com/buildbear/web3-beginner-how-to-use-foundry-to-test-an-erc20-contract-with-fuzzing-3f456e8a10f5",
+        date: "Jun 21, 2022",
+        author: "Pari Tomar",
+        publication: "Medium",
+      },
+    ]
   },
   {
     slug: "smart-contract-developer-2023",
@@ -79,6 +105,35 @@ export const articles = [
     tags: [
         "smart-contracts",
     ],
+    resources: [
+      {
+        title: "Smart contract Frameworks – Foundry vs Hardhat: Differences in performance and developer experience",
+        link: "https://chainstack.com/foundry-hardhat-differences-performance/",
+        date: "Mar 19, 2021",
+        author: "Antonio Ufano",
+        publication: "Chainstack",
+      },
+      {
+        title: "Introducing the Foundry Ethereum development toolbox",
+        link: "https://www.paradigm.xyz/2021/12/introducing-the-foundry-ethereum-development-toolbox",
+        date: "Dec 07, 2021",
+        author: "Georgios Konstantopoulos",
+        publication: "Paradigm",
+      },
+      {
+        title: "HardHat Website",
+        link: "https://hardhat.org/",
+        date: "2023",
+        publication: "Nomic Foundation",
+      },
+      {
+        title: "Buidler has evolved: Introducing Hardhat",
+        link: "https://medium.com/nomic-foundation-blog/buidler-has-evolved-introducing-hardhat-4bccd13bc931",
+        date: "Oct 22, 2020",
+        author: "Franco Zeoli",
+        publication: "Medium",
+      },
+    ]
   },
   {
     slug: "comparing-smart-contract-languages",
@@ -93,5 +148,46 @@ export const articles = [
     tags: [
         "smart-contracts",
     ],
+    resources: [
+      {
+        title: "Top 5 smart contract programming languages for blockchain",
+        link: "https://blog.logrocket.com/smart-contract-programming-languages/",
+        date: "Oct 21, 2021",
+        author: "Eze Sunday",
+      },
+      {
+        title: "Developing with Rust",
+        link: "https://docs.solana.com/developing/on-chain-programs/developing-rust",
+        publication: "Solana Documentation"
+      },
+      {
+        title: "Vyperlang",
+        link: "https://docs.vyperlang.org/en/v0.1.0-beta.12/index.html",
+        author: "Vyperlang Documentation",
+      },
+      {
+        title: "The Rust Programming Language",
+        link: "https://doc.rust-lang.org/book/foreword.html",
+        author: "Rust Documentation",
+      },
+      {
+        title: "Smart Contract Languages",
+        link: "https://ethereum.org/en/developers/docs/smart-contracts/languages/",
+        date: "September 2, 2022",
+        author: "Paul Wackerow",
+        publication: "Ethereum Foundation",
+      },
+      {
+        title: "Build Secure Smart Contracts Using Vyper",
+        link: "https://101blockchains.com/vyper-smart-contracts/",
+        date: "September 14, 2022",
+        author: "James Howell",
+        publication: "Ethereum Foundation",
+      },
+      {
+        title: "ChatGPT",
+        link: "https://chat.openai.com/chat",
+      },
+    ]
   },
 ]

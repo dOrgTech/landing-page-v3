@@ -11,11 +11,8 @@ export default function ArticlesView() {
   const [searchParams, setSeachParams] = useSearchParams();
   const [tag, setTag] = useState<string | null>(searchParams.get("tag"));
 
-  console.log(tag);
-
   const filteredArticles = tag
     ? articles.filter((article) => {
-        console.log(article.tags, tag, article.tags.includes(tag));
         return article.tags.includes(tag);
       })
     : articles;

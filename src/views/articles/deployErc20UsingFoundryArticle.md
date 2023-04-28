@@ -52,7 +52,7 @@ Since all the methods from the ERC20 standard come by default from the Open Zepp
 
 The contract would end up looking like this:
 
-![Implement a basic ERC20 token](/erc20-contract.png)
+![Implement a basic ERC20 token](./assets/articles/deployErc20UsingFoundryArticle/erc20-contract.png)
 
 ### Step 5: Implement tests for our basic ERC20 token
 
@@ -60,7 +60,7 @@ Update the auto-generated test file that is inside of the `test folder`. You sho
 
 Let’s go ahead and test the functions you have implemented, the file should look like this:
 
-![Implement tests for our basic ERC20 token](./erc20-tests.png)
+![Implement tests for our basic ERC20 token](./assets/articles/deployErc20UsingFoundryArticle/erc20-tests.png)
 
 Before compiling your Smart Contract, you’ll need to create a `remappings.txt` file in your project root and add `openzeppelin-contracts/=lib/openzeppelin-contracts/` (learn more [here](https://book.getfoundry.sh/projects/dependencies))
 
@@ -96,9 +96,3 @@ forge create MyErc –rpc-url=$RPC_URL --private-key=$PRIVATE_KEY --constructor-
 ```
 
 Check out the full tutorial by Cesar here: [https://github.com/dOrgTech/foundry-erc20-tutorial](https://github.com/dOrgTech/foundry-erc20-tutorial)
-
-## Resources:
-
-- [https://book.getfoundry.sh/tutorials/solmate-nft](https://book.getfoundry.sh/tutorials/solmate-nft)
-- [https://book.getfoundry.sh/forge/](https://book.getfoundry.sh/forge/)
-- [https://medium.com/buildbear/web3-beginner-how-to-use-foundry-to-test-an-erc20-contract-with-fuzzing-3f456e8a10f5](https://medium.com/buildbear/web3-beginner-how-to-use-foundry-to-test-an-erc20-contract-with-fuzzing-3f456e8a10f5)
