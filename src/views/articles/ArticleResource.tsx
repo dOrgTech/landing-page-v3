@@ -42,7 +42,9 @@ export default function ArticleResource({
           }}
         >
           {date && (
-            <Typography sx={{ color: colors.green, mr: 2 }}>{date}</Typography>
+            <Typography sx={{ color: colors.magenta, mr: 2 }}>
+              {date}
+            </Typography>
           )}
           {author && (
             <Typography sx={{ color: colors.grays[300] }}>

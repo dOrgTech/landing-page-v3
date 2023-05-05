@@ -24,11 +24,12 @@ interface ArticleLayoutProps extends BoxProps {
 export function ArticleLayout({
   slug,
   title,
+  deck,
   description,
   content,
   date,
-  author,
-  coding,
+  authors,
+  coders,
   tags,
   resources,
 }: // meta,
@@ -49,9 +50,11 @@ ArticleProps) {
 
   return (
     <>
-      {/* <Helmet>
-        {meta && <meta property="description" content={keywords} />}
-      </Helmet> */}
+      <Helmet>
+        <title>{`dOrg | ${title}`}</title>
+        <meta property="title" content={title} />
+        {description && <meta name="description" content={description} />}
+      </Helmet>
       <Box sx={{ minHeight: "80vh", position: "relative", width: "100%" }}>
         <Box
           sx={{
@@ -76,7 +79,7 @@ ArticleProps) {
               alignItems: "center",
               display: "flex",
               mt: [16, 10, 0],
-              minHeight: "80vh",
+              minHeight: "90vh",
             }}
           >
             <Stack spacing={3}>
@@ -84,8 +87,8 @@ ArticleProps) {
                 href="/#/articles"
                 sx={{
                   color: "white",
-                  transition: "opacity 0.25s ease-in-out",
-                  "&:hover": { opacity: 0.7 },
+                  transition: "color 0.25s ease-in-out",
+                  "&:hover": { color: colors.green },
                 }}
               >
                 <Stack
@@ -103,68 +106,133 @@ ArticleProps) {
               >
                 {title}
               </Typography>
-              {description && (
+              {deck && (
                 <Typography sx={{ fontSize: 20, fontWeight: 700, mt: 2 }}>
-                  {description}
+                  {deck}
                 </Typography>
               )}
-              <Stack direction="row" spacing={3} sx={{ alignItems: "center" }}>
+              <Stack
+                direction="row"
+                spacing={3}
+                sx={{ alignItems: "center", pb: 4 }}
+              >
                 <Stack
                   direction="row"
                   spacing={2}
                   sx={{ alignItems: "center" }}
                 >
                   <Typography
-                    textTransform="uppercase"
-                    letterSpacing={5}
-                    lineHeight={1}
+                    sx={{
+                      color: colors.magenta,
+                      textTransform: "uppercase",
+                      letterSpacing: 5,
+                      lineHeight: 1,
+                    }}
                   >
                     {date}
                   </Typography>
-                  {author && (
+                </Stack>
+              </Stack>
+              {authors && authors.length > 0 && (
+                <Stack
+                  direction="row"
+                  spacing={2}
+                  sx={{ alignItems: "center" }}
+                >
+                  <Typography
+                    sx={{
+                      color: "white",
+                      letterSpacing: 5,
+                      lineHeight: 1,
+                      fontSize: 12,
+                      fontWeight: 800,
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    Authors:
+                  </Typography>
+                  {authors.map((author, i) => (
                     <>
-                      <Typography
-                        textTransform="uppercase"
-                        letterSpacing={5}
-                        lineHeight={1}
-                      >
-                        /
-                      </Typography>
                       <Link
+                        key={i}
                         href={author.link ? author.link : undefined}
+                        underline={author.link ? "always" : "none"}
                         sx={{
                           color: "white",
+                          cursor: author.link ? "pointer" : "default",
                           letterSpacing: 5,
                           lineHeight: 1,
+                          fontSize: 16,
                           textTransform: "uppercase",
                           textUnderlineOffset: 4,
+                          textDecorationColor: colors.grays[400],
                           transition: "color 0.25s ease-in-out",
                           "&:hover": {
-                            color: alpha("rgba(255,255,255)", 0.7),
+                            color: author.link ? colors.green : null,
                           },
                         }}
                       >
                         {author.name}
                       </Link>
+                      {i < authors.length - 1 && (
+                        <Typography
+                          sx={{ color: colors.grays[500], fontSize: 16 }}
+                        >{` / `}</Typography>
+                      )}
                     </>
-                  )}
+                  ))}
                 </Stack>
-                {coding && (
-                  <Box
+              )}
+              {coders && coders.length > 0 && (
+                <Stack
+                  direction="row"
+                  spacing={2}
+                  sx={{ alignItems: "center" }}
+                >
+                  <Typography
                     sx={{
-                      bgcolor: colors.purple,
-                      textTransform: "uppercase",
-                      fontWeight: 700,
-                      letterSpacing: 2.5,
+                      color: "white",
+                      letterSpacing: 5,
                       lineHeight: 1,
-                      px: "12px",
-                      py: "4px",
+                      fontSize: 12,
+                      fontWeight: 800,
+                      textTransform: "uppercase",
                     }}
                   >
-                    Coding
-                  </Box>
-                )}
-              </Stack>
+                    Coders:
+                  </Typography>
+                  {coders.map((coder, i) => (
+                    <>
+                      <Link
+                        key={i}
+                        href={coder.link ? coder.link : undefined}
+                        underline={coder.link ? "always" : "none"}
+                        sx={{
+                          color: "white",
+                          cursor: coder.link ? "pointer" : "default",
+                          letterSpacing: 5,
+                          lineHeight: 1,
+                          fontSize: 16,
+                          textTransform: "uppercase",
+                          textUnderlineOffset: 4,
+                          textDecorationColor: colors.grays[400],
+                          transition: "color 0.25s ease-in-out",
+                          "&:hover": {
+                            color: coder.link ? colors.green : null,
+                          },
+                        }}
+                      >
+                        {coder.name}
+                      </Link>
+                      {i < coders.length - 1 && (
+                        <Typography
+                          sx={{ color: colors.grays[500], fontSize: 16 }}
+                        >{` / `}</Typography>
+                      )}
+                    </>
+                  ))}
+                </Stack>
+              )}
             </Stack>
           </Box>
           <Box component="section" sx={{ pb: 12, pt: [20, 20, 20, 0] }}>

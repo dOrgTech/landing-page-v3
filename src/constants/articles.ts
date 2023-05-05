@@ -20,10 +20,11 @@ export interface Resource {
 export interface ArticleProps {
   slug: string;
   title: string;
+  deck?: string;
   description?: string;
   date: string;
-  author?: Author;
-  coding?: boolean;
+  authors?: Author[];
+  coders?: Author[];
   content: string;
   tags?: string[];
   resources?: Resource[];
@@ -33,18 +34,34 @@ export const articles = [
   {
     slug: "deploy-erc20-using-foundry",
     title: "How to create and deploy an ERC20 token in simple steps using Foundry",
-    description: "Are you a web3 developer interested in creating your own token on the Ethereum Blockchain? If you are, then this article’s what you’ve been looking for.",
+    deck: "Are you a web3 developer interested in creating your own token on the Ethereum Blockchain? If you are, then this article’s what you’ve been looking for.",
+    description: "Learn how to create your own ERC20 token on the Ethereum Blockchain with Foundry. Our step-by-step guide simplifies the process for Smart Contract development. Find the best DAO app development services in the USA with our expert DAO development company. Contact us today for Smart Contracts development services.",
     date: "May 25, 2023",
-    author: {
-      name: "Cesar Brazon",
-      link: "https://github.com/cbrzn"
-    },
+    authors: [
+      {
+        name: "Anita Caldera",
+      }
+    ],
+    coders: [
+      {
+        name: "Cesar Brazon",
+        link: "https://github.com/cbrzn"
+      },
+      {
+        name: "Leonhard Horstmeyer",
+        link: "https://github.com/leomarlo"
+      },
+      {
+        name: "Fernando Torres",
+        link: "https://github.com/thenerdcat"
+      },
+    ],
     coding: true,
     content: deployErc20UsingFoundryArticle,
     tags: [
-        "coding",
-        "tutorial",
-        "smart-contracts",
+      "coding",
+      "tutorial",
+      "smart-contracts",
     ],
     resources: [
       {
@@ -67,43 +84,52 @@ export const articles = [
   {
     slug: "smart-contract-developer-2023",
     title: "Do you want to become a Smart Contract Developer in 2023? Here's what you should do.",
+    description: "Learn how to become a Smart Contract developer in 2023! Discover the technical steps, including Ethereum, Solidity, and Blockchain technology, and improve your skills with resources from dOrg.",
     date: "May 25, 2023",
-    author: {
-      name: "Cesar Brazon",
-      link: "https://github.com/cbrzn"
-    },
+    authors: [
+      {
+        name: "Anita Caldera",
+      },
+    ],
     coding: false,
     content: smartContractDeveloper2023,
     tags: [
-        "smart-contracts",
+      "smart-contracts",
     ],
   },
   {
     slug: "dao-tooling-vs-dao-culture",
     title: "DAO Tooling vs DAO Culture",
+    description: "DAO tooling and culture are crucial for a successful DAO. Prioritize both to foster collaboration and efficiency. Contact us to learn more.",
     date: "May 25, 2023",
-    author: {
-      name: "Cesar Brazon",
-      link: "https://github.com/cbrzn"
-    },
+    authors: [
+      {
+        name: "Anita Caldera",
+      },
+      {
+        name: "Pol Lanski",
+      },
+    ],
     coding: false,
     content: daoToolingVsDaoCulture,
     tags: [
-        "daos",
+      "daos",
     ],
   },
   {
     slug: "foundry-vs-hardhat",
     title: "Foundry vs HardHat",
+    description: "Hardhat or Foundry? Which one is the better development toolkit for Ethereum Smart Contracts? In this article, we compare their features, pros, and cons to help you decide.",
     date: "May 25, 2023",
-    author: {
-      name: "Cesar Brazon",
-      link: "https://github.com/cbrzn"
-    },
+    authors: [
+      {
+        name: "Anita Caldera",
+      },
+    ],
     coding: false,
     content: foundryVsHardhat,
     tags: [
-        "smart-contracts",
+      "smart-contracts",
     ],
     resources: [
       {
@@ -138,15 +164,24 @@ export const articles = [
   {
     slug: "comparing-smart-contract-languages",
     title: "Comparing Ethereum’s Smart Contract development languages",
+    description: "Learn about popular languages for Smart Contract development, including Solidity for Ethereum and other EVM-compatible chains, with code examples.",
     date: "May 25, 2023",
-    author: {
-      name: "Cesar Brazon",
-      link: "https://github.com/cbrzn"
-    },
-    coding: false,
+    authors: [
+      {
+        name: "Elio Briceño",
+        link: "https://github.com/eliobricenov"
+      },
+      {
+        name: "Asgeir Sognefest",
+        link: "https://github.com/manboy-eth"
+      },
+      {
+        name: "Anita Caldera",
+      },
+    ],
     content: comparingSmartContractLanguages,
     tags: [
-        "smart-contracts",
+      "smart-contracts",
     ],
     resources: [
       {

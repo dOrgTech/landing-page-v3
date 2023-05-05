@@ -6,7 +6,7 @@ import { colors } from "../../theme";
 export default function ArticleListing({
   title,
   date,
-  author,
+  authors,
   slug,
 }: ArticleProps) {
   return (
@@ -34,12 +34,20 @@ export default function ArticleListing({
           }}
         >
           {date && (
-            <Typography sx={{ color: colors.green, mr: 2 }}>{date}</Typography>
-          )}
-          {author && (
-            <Typography sx={{ color: colors.grays[300] }}>
-              by {author.name}
+            <Typography sx={{ color: colors.magenta, mr: 2 }}>
+              {date}
             </Typography>
+          )}
+          {authors && authors.length > 0 && (
+            <Stack direction="row" spacing={1}>
+              <Typography sx={{ color: colors.grays[300] }}>by</Typography>
+              {authors.map((author, i) => (
+                <Typography key={i} sx={{ color: colors.grays[300] }}>
+                  {author.name}
+                  {i < authors.length - 1 ? "," : null}
+                </Typography>
+              ))}
+            </Stack>
           )}
         </Box>
       </Stack>
