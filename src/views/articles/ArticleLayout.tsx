@@ -156,6 +156,8 @@ ArticleProps) {
                       <Link
                         key={i}
                         href={author.link ? author.link : undefined}
+                        target="_blank"
+                        rel="noredirect"
                         underline={author.link ? "always" : "none"}
                         sx={{
                           color: "white",
@@ -206,6 +208,8 @@ ArticleProps) {
                       <Link
                         key={i}
                         href={coder.link ? coder.link : undefined}
+                        target="_blank"
+                        rel="noredirect"
                         underline={coder.link ? "always" : "none"}
                         sx={{
                           color: "white",
