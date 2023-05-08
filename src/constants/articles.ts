@@ -3,6 +3,7 @@ import smartContractDeveloper2023 from "../views/articles/smartContractDeveloper
 import daoToolingVsDaoCulture from "../views/articles/daoToolingVsDaoCulture.md"
 import foundryVsHardhat from "../views/articles/foundryVsHardhat.md"
 import comparingSmartContractLanguages from "../views/articles/comparingSmartContractLanguages.md"
+import howToGetStuffDoneInADao from "../views/articles/howToGetStuffDoneInADao.md"
 
 interface Author {
   name: string;
@@ -224,5 +225,22 @@ export const articles = [
         link: "https://chat.openai.com/chat",
       },
     ]
+  },
+  {
+    slug: "how-to-get-stuff-done-in-a-dao",
+    title: "How to Get Stuff Done in a DAO",
+    description: "---",
+    date: "Jul 27, 2022",
+    authors: [
+      {
+        name: "Anita Caldera",
+      },
+    ],
+    content: howToGetStuffDoneInADao,
+    tags: [
+      "daos",
+      "governance",
+      "operations"
+    ],
   },
 ]
