@@ -37,7 +37,7 @@ export const articles = [
     title: "How to create and deploy an ERC20 token in simple steps using Foundry",
     deck: "Are you a web3 developer interested in creating your own token on the Ethereum Blockchain? If you are, then this article’s what you’ve been looking for.",
     description: "Learn how to create your own ERC20 token on the Ethereum Blockchain with Foundry. Our step-by-step guide simplifies the process for Smart Contract development. Find the best DAO app development services in the USA with our expert DAO development company. Contact us today for Smart Contracts development services.",
-    date: "May 25, 2023",
+    date: "Jun 13, 2022",
     authors: [
       {
         name: "Anita Caldera",
@@ -86,7 +86,7 @@ export const articles = [
     slug: "smart-contract-developer-2023",
     title: "Do you want to become a Smart Contract Developer in 2023? Here's what you should do.",
     description: "Learn how to become a Smart Contract developer in 2023! Discover the technical steps, including Ethereum, Solidity, and Blockchain technology, and improve your skills with resources from dOrg.",
-    date: "May 25, 2023",
+    date: "January 3, 2023",
     authors: [
       {
         name: "Anita Caldera",
@@ -102,7 +102,7 @@ export const articles = [
     slug: "dao-tooling-vs-dao-culture",
     title: "DAO Tooling vs DAO Culture",
     description: "DAO tooling and culture are crucial for a successful DAO. Prioritize both to foster collaboration and efficiency. Contact us to learn more.",
-    date: "May 25, 2023",
+    date: "Apr 11, 2023",
     authors: [
       {
         name: "Anita Caldera",
@@ -121,7 +121,7 @@ export const articles = [
     slug: "foundry-vs-hardhat",
     title: "Foundry vs HardHat",
     description: "Hardhat or Foundry? Which one is the better development toolkit for Ethereum Smart Contracts? In this article, we compare their features, pros, and cons to help you decide.",
-    date: "May 25, 2023",
+    date: "Mar 23, 2023",
     authors: [
       {
         name: "Anita Caldera",
@@ -186,12 +186,6 @@ export const articles = [
     ],
     resources: [
       {
-        title: "Top 5 smart contract programming languages for blockchain",
-        link: "https://blog.logrocket.com/smart-contract-programming-languages/",
-        date: "Oct 21, 2021",
-        author: "Eze Sunday",
-      },
-      {
         title: "Developing with Rust",
         link: "https://docs.solana.com/developing/on-chain-programs/developing-rust",
         publication: "Solana Documentation"
@@ -229,7 +223,7 @@ export const articles = [
   {
     slug: "how-to-get-stuff-done-in-a-dao",
     title: "How to Get Stuff Done in a DAO",
-    description: "---",
+    description: "Learn how to get things done in a Decentralized Autonomous Organization (DAO) without managerial roles. Follow these 4 steps to initiate, design, implement and embed solutions.",
     date: "Jul 27, 2022",
     authors: [
       {

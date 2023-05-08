@@ -17,8 +17,8 @@ export const MENU_ITEMS: MenuItem[] = [
     desktop: true,
   },
   {
-    name: "Articles",
-    path: "/#/articles",
+    name: "Hire us",
+    path: "/#/hire",
     desktop: true,
   },
   {
@@ -26,9 +26,8 @@ export const MENU_ITEMS: MenuItem[] = [
     path: "/#/hot-seat",
   },
   {
-    name: "Hire us",
-    path: "/#/hire",
-    desktop: true,
+    name: "Articles",
+    path: "/#/articles",
   },
   {
     name: "Join us",
@@ -40,7 +39,7 @@ export const MENU_ITEMS: MenuItem[] = [
     external: true,
   },
   {
-    name: "Blog",
+    name: "Newsletter",
     path: "https://blog.dorg.tech/",
     external: true,
   },
