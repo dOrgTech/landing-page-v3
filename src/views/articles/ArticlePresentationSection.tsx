@@ -5,7 +5,7 @@ import GameOfLifeAnimation from "../../commons/gameOfLifeAnimation/GameOfLifeAni
 export default function ArticlesPresentationSection() {
   return (
     <>
-      <Box sx={{ minHeight: "60vh", width: "100%" }}>
+      <Box sx={{ minHeight: ["80vh", "60vh"], width: "100%" }}>
         <Box
           sx={{
             width: "100%",

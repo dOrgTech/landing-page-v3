@@ -2,6 +2,27 @@ import React from "react";
 import ReactMarkdown, { MarkdownToJSX } from "markdown-to-jsx";
 import { Typography, List, ListItem, Link, Box } from "@mui/material";
 import { colors } from "../../theme";
+import { Highlight, themes } from "prism-react-renderer";
+import PrismTheme from "./PrismTheme";
+
+interface CodeBlockProps {
+  children: any;
+  className?: string;
+}
+
+interface PrismProps {
+  className?: string;
+  style?: React.CSSProperties;
+  tokens: Token[][];
+  getLineProps: any;
+  getTokenProps: any;
+}
+
+interface Token {
+  types: string[];
+  content: string;
+  empty?: boolean;
+}
 
 const options = {
   overrides: {
@@ -124,14 +145,46 @@ const options = {
       },
     },
     pre: {
-      props: {
-        style: {
-          backgroundColor: colors.grays[800],
-          borderRadius: 4,
-          marginBottom: "1rem",
-          overflow: "auto",
-          padding: "0.25rem",
-        },
+      component: ({ children, ...props }: CodeBlockProps) => {
+        const code = children.props.children.trim();
+
+        const language =
+          props.className?.replace(/language-/, "") || "javascript";
+
+        return (
+          <Highlight theme={PrismTheme} code={code} language={language}>
+            {({
+              className,
+              style,
+              tokens,
+              getLineProps,
+              getTokenProps,
+            }: PrismProps) => (
+              <Box
+                component="pre"
+                className={className}
+                sx={{
+                  ...style,
+                  backgroundColor: colors.grays[800],
+                  borderRadius: 1,
+                  fontSize: "0.875rem",
+                  marginBottom: "1rem",
+                  overflowX: "auto",
+                  padding: "0.25rem",
+                  whiteSpace: "pre-wrap",
+                }}
+              >
+                {tokens.map((line, i) => (
+                  <div key={i} {...getLineProps({ line, key: i })}>
+                    {line.map((token, key) => (
+                      <span key={key} {...getTokenProps({ token, key })} />
+                    ))}
+                  </div>
+                ))}
+              </Box>
+            )}
+          </Highlight>
+        );
       },
     },
     code: {
@@ -140,7 +193,7 @@ const options = {
           padding: "0.25rem",
           backgroundColor: colors.grays[800],
           color: colors.orange,
-          // whiteSpace: "nowrap",
+          whiteSpace: "pre-wrap",
           fontSize: "0.875rem",
         },
       },

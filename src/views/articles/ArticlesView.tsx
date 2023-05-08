@@ -11,11 +11,23 @@ export default function ArticlesView() {
   const [searchParams, setSeachParams] = useSearchParams();
   const [tag, setTag] = useState<string | null>(searchParams.get("tag"));
 
-  const filteredArticles = tag
+  let filteredArticles = tag
     ? articles.filter((article) => {
         return article.tags.includes(tag);
       })
     : articles;
+
+  filteredArticles = filteredArticles.sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    if (dateB > dateA) {
+      return 1;
+    } else if (dateB < dateA) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
 
   const handleTagClick = () => {
     setTag("");

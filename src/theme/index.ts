@@ -132,9 +132,6 @@ let theme = createTheme({
       img {
        width: 100%;
       }
-      span {
-        color: ${colors.green}
-      }
       pre::-webkit-scrollbar {
         background: transparent;
         height: 8px;
