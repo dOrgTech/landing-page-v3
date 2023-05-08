@@ -229,7 +229,7 @@ export const Footer: React.FC = () => {
                   Privacy Policy
           </Link>
           <Typography variant="body1" color={colors.grays[300]}>
-                  © 2022 dOrg
+                  © 2023 dOrg
           </Typography>
         </Stack>
       </Container>

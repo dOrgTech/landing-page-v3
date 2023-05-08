@@ -24,7 +24,9 @@ export const FaqsView: React.FC = () => {
             <Grid item>
               <Typography sx={{ fontSize: 20, maxWidth: 550 }}>
                 Have a question that isn&apos;t here?{" "}
-                <span style={{ color: colors.blue }}>Drop us a line.</span>
+                <Link href={"mailto:contact@dorg.tech"} target='_blank'>
+                  <span style={{ color: colors.blue }}>Drop us a line.</span>
+                </Link>
               </Typography>
             </Grid>
           </Grid>
@@ -61,7 +63,7 @@ const FAQS: FaqItemProps[] = [
             since 2019.
             <br />
             <br />
-            We are an autonomous collective of 60/100 active web3 developers and
+            We are an autonomous collective of 100-ish web3 developers and
             specialists from 20 nationalities. So far we&apos;ve worked with +85
             web3 projects generating +$2B of total LTV in shipped products as
             well as +8$M on-chain revenue.
@@ -76,9 +78,8 @@ const FAQS: FaqItemProps[] = [
         question: "How does dOrg work as an organization?",
         answer: (
           <Fragment>
-            Our structure and processes are open to the community so you can
-            fork from our best practices and so you can a run service DAO. Check
-            out our{" "}
+            Our structure and processes are open to the community to fork from
+            our best practices. Check out our{" "}
             <Link
               href='https://docs.dorg.tech/'
               target='_blank'
@@ -102,28 +103,33 @@ const FAQS: FaqItemProps[] = [
             <br />
             <br />
             <li>
-              Milestone Based: Whether your organization is crypto-native or
-              just exploring the space, our experts can help flesh out your
-              project requirements and deliver a production-ready solution. You
-              own the code and we train your team to maintain it.
+              <strong style={{ fontWeight: "bold" }}>Milestone Based:</strong>{" "}
+              Whether your organization is crypto-native or just exploring the
+              space, our experts can help flesh out your project requirements
+              and deliver a production-ready solution. You own the code and we
+              train your team to maintain it.
             </li>
             <br />
             <li>
-              Team Extension: We embed engineers with your core team to augment
-              and accelerate their web3 development capabilities. We&apos;ll
-              help transition the project to your team when the time is right.
+              <strong style={{ fontWeight: "bold" }}>Team Extension:</strong> We
+              embed engineers with your core team to augment and accelerate
+              their web3 development capabilities. We&apos;ll help transition
+              the project to your team when the time is right.
             </li>
             <br />
             <li>
-              Protocol Partnership: Ready to start scaling your developer
-              ecosystem? We&apos;ll assemble a specialized team that works
-              autonomously to advance roadmap items, battle-test your developer
-              tools, and support 3rd parties looking to integrate your tech.
+              <strong style={{ fontWeight: "bold" }}>
+                Protocol Partnership:
+              </strong>{" "}
+              Ready to start scaling your developer ecosystem? We&apos;ll
+              assemble a specialized team that works autonomously to advance
+              roadmap items, battle-test your developer tools, and support 3rd
+              parties looking to integrate your tech.
             </li>
             <br />
             <br />
             We also offer packages such as Scoping Sprint, token economics and
-            Marketing Audit
+            Marketing Audit.
           </Fragment>
         ),
       },
@@ -140,7 +146,13 @@ const FAQS: FaqItemProps[] = [
             </Link>{" "}
             of the work we did for StarkWare, Gnosis Guild, Tezos and DoinGud.
             If you have any questions feel free to message us on Discord or shot
-            us an email at contact@dorg.tech {";)"}
+            us an email at{" "}
+            <Link href={"mailto:contact@dorg.tech"} target='_blank'>
+              <span style={{ color: colors.green }}>
+                {" "}
+                contact@dorg.tech {";)"}
+              </span>
+            </Link>
           </Fragment>
         ),
       },
@@ -154,57 +166,73 @@ const FAQS: FaqItemProps[] = [
             <br />
             <br />
             <li>
-              Personalized onboarding. We begin by understanding your project
-              requirements, goals, and timeline to ensure we&apos;re aligned
-              with your vision. This process helps us select the best-suited
-              developers and team members from our diverse pool of talent.
+              <strong style={{ fontWeight: "bold" }}>
+                Personalized onboarding.
+              </strong>{" "}
+              We begin by understanding your project requirements, goals, and
+              timeline to ensure we&apos;re aligned with your vision. This
+              process helps us select the best-suited developers and team
+              members from our diverse pool of talent.
             </li>
             <br />
             <li>
-              Transparent communication. We prioritize open and clear
-              communication throughout the project, keeping you informed of
-              progress, milestones, and any potential roadblocks. We are always
-              available to address your questions, concerns, and feedback.
+              <strong style={{ fontWeight: "bold" }}>
+                Transparent communication.
+              </strong>{" "}
+              We prioritize open and clear communication throughout the project,
+              keeping you informed of progress, milestones, and any potential
+              roadblocks. We are always available to address your questions,
+              concerns, and feedback.
             </li>
             <br />
             <li>
-              Adaptive collaboration. Our team is agile and adjusts quickly to
-              project changes or new requirements, ensuring your project stays
-              on track. Our DAO structure allows us to rapidly scale resources
-              as needed, offering a flexible approach that adapts to your
-              evolving needs.
+              <strong style={{ fontWeight: "bold" }}>
+                Adaptive collaboration.
+              </strong>{" "}
+              Our team is agile and adjusts quickly to project changes or new
+              requirements, ensuring your project stays on track. Our DAO
+              structure allows us to rapidly scale resources as needed, offering
+              a flexible approach that adapts to your evolving needs.
             </li>
             <br />
             <li>
-              Cutting-edge expertise. dOrg developers are highly skilled in the
-              latest web3 and blockchain technologies, enabling us to provide
-              top-quality solutions for your project. We stay ahead of industry
-              trends to ensure we&apos;re always ready to tackle new challenges
-              and opportunities.
+              <strong style={{ fontWeight: "bold" }}>
+                Cutting-edge expertise.
+              </strong>{" "}
+              dOrg developers are highly skilled in the latest web3 and
+              blockchain technologies, enabling us to provide top-quality
+              solutions for your project. We stay ahead of industry trends to
+              ensure we&apos;re always ready to tackle new challenges and
+              opportunities.
             </li>
             <br />
             <li>
-              Decentralized project management. Our decentralized approach to
-              project management encourages ownership, creativity, and
-              innovation within our teams. This model fosters a collaborative
-              environment, ensuring the best possible solutions are proposed and
-              implemented for your project.
+              <strong style={{ fontWeight: "bold" }}>
+                Decentralized project management.
+              </strong>{" "}
+              Our decentralized approach to project management encourages
+              ownership, creativity, and innovation within our teams. This model
+              fosters a collaborative environment, ensuring the best possible
+              solutions are proposed and implemented for your project.
             </li>
             <br />
             <li>
-              Quality assurance. We pride ourselves on delivering high-quality
-              work, and our developers adhere to strict coding standards and
-              best practices. Our rigorous quality assurance process ensures
-              that the final product meets your expectations and performs
-              optimally.
+              <strong style={{ fontWeight: "bold" }}>Quality assurance.</strong>{" "}
+              We pride ourselves on delivering high-quality work, and our
+              developers adhere to strict coding standards and best practices.
+              Our rigorous quality assurance process ensures that the final
+              product meets your expectations and performs optimally.
             </li>
             <br />
             <li>
-              Post-project support. After the project is completed, we offer
-              ongoing support and maintenance to ensure your product remains
-              up-to-date and functional. We&apos;re committed to building
-              long-term relationships with our clients and are always available
-              to help with future projects or updates.
+              <strong style={{ fontWeight: "bold" }}>
+                Post-project support.
+              </strong>{" "}
+              After the project is completed, we offer ongoing support and
+              maintenance to ensure your product remains up-to-date and
+              functional. We&apos;re committed to building long-term
+              relationships with our clients and are always available to help
+              with future projects or updates.
             </li>
           </Fragment>
         ),
@@ -280,7 +308,7 @@ const FAQS: FaqItemProps[] = [
               href='https://www.dorg.tech/#/hire'
               target='_blank'
               sx={{ color: colors.green }}>
-              form!
+              form
             </Link>{" "}
             If we have a dedicated team available for you, we&apos;ll reach you
             out to schedule a call to define how we can help you. Be prepared
@@ -356,12 +384,13 @@ const FAQS: FaqItemProps[] = [
               sx={{ color: colors.orange }}>
               Youtube
             </Link>{" "}
+            or{" "}
             <Link
               href='https://open.spotify.com/show/0hoGNLY8fsvTivEBnSW0JK'
               target='_blank'
               sx={{ color: colors.orange }}>
               Spotify
-            </Link>{" "}
+            </Link>
             !<br />
             So far we&apos;ve had awesome guests like {""}
             <Link
@@ -438,7 +467,7 @@ const FAQS: FaqItemProps[] = [
               href='https://www.youtube.com/watch?v=19OVFg4GGHs&t=1s'
               target='_blank'
               sx={{ color: colors.orange }}>
-              Superfluid,
+              Superfluid
             </Link>{" "}
             ,
             <Link
@@ -454,6 +483,7 @@ const FAQS: FaqItemProps[] = [
               sx={{ color: colors.orange }}>
               Bloom Network
             </Link>{" "}
+            ,
             <Link
               href='https://www.youtube.com/watch?v=q1voqfj1GUo'
               target='_blank'
@@ -483,7 +513,7 @@ const FAQS: FaqItemProps[] = [
               sx={{ color: colors.orange }}>
               short form
             </Link>{" "}
-            and we&apos;ll reach out to you!.
+            and we&apos;ll reach out to you!
           </Fragment>
         ),
       },
@@ -501,20 +531,24 @@ const FAQS: FaqItemProps[] = [
             Thanks for your interest in dOrg! Please it would be awesome if you
             could share a bit about your research/press interest, yourself and
             the institution you are representing. You could either send us an
-            email at contact@dorg.tech or text us on our{" "}
+            email at{" "}
+            <Link href={"mailto:contact@dorg.tech"} target='_blank'>
+              <span style={{ color: colors.blue }}>contact@dorg.tech</span>
+            </Link>{" "}
+            or text us on our{" "}
             <Link
               href='https://discord.com/invite/bA9ZM7WXZU'
               target='_blank'
-              sx={{ color: colors.orange }}>
+              sx={{ color: colors.purple }}>
               Discord
             </Link>{" "}
             public channels.
             <br />
             Also, it might be useful to check out our{" "}
             <Link
-              href='https://discord.com/invite/bA9ZM7WXZU'
+              href='https://docs.dorg.tech/'
               target='_blank'
-              sx={{ color: colors.orange }}>
+              sx={{ color: colors.purple }}>
               Handbook
             </Link>{" "}
             to familiarize yourself with dOrg processes and structures!
@@ -526,7 +560,11 @@ const FAQS: FaqItemProps[] = [
         answer: (
           <Fragment>
             Awesome, we&apos;re always up to win-win collabs! Send us an email
-            at contact@dorg.tech or text us on our{" "}
+            at{" "}
+            <Link href={"mailto:contact@dorg.tech"} target='_blank'>
+              <span style={{ color: colors.blue }}>contact@dorg.tech</span>
+            </Link>{" "}
+            or text us on our{" "}
             <Link
               href='https://discord.com/invite/bA9ZM7WXZU'
               target='_blank'
@@ -564,7 +602,7 @@ const FAQS: FaqItemProps[] = [
               sx={{ color: colors.blue }}>
               Twitter
             </Link>
-            !{";)"}
+            ! {";)"}
           </Fragment>
         ),
       },
