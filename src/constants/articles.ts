@@ -176,9 +176,6 @@ export const articles = [
         name: "Asgeir Sognefest",
         link: "https://github.com/manboy-eth"
       },
-      {
-        name: "Anita Caldera",
-      },
     ],
     content: comparingSmartContractLanguages,
     tags: [
@@ -227,7 +224,13 @@ export const articles = [
     date: "Jul 27, 2022",
     authors: [
       {
+        name: "Daniel Cooper",
+      },
+      {
         name: "Anita Caldera",
+      },
+      {
+        name: "Ori Shim",
       },
     ],
     content: howToGetStuffDoneInADao,
