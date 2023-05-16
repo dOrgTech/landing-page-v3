@@ -399,105 +399,91 @@ const FAQS: FaqItemProps[] = [
               sx={{ color: colors.orange }}>
               Lens
             </Link>{" "}
-            ,
             <Link
               href='https://www.youtube.com/watch?v=itIaPLOn6Ew&t=1s'
               target='_blank'
               sx={{ color: colors.orange }}>
               Sismo
             </Link>{" "}
-            ,
             <Link
               href='https://www.youtube.com/watch?v=_bajTdUIf-A'
               target='_blank'
               sx={{ color: colors.orange }}>
               Vocdoni
             </Link>{" "}
-            ,
             <Link
               href='https://www.youtube.com/watch?v=y5JlYSlAgOg'
               target='_blank'
               sx={{ color: colors.orange }}>
               Utopia
             </Link>{" "}
-            ,
             <Link
               href='https://www.youtube.com/watch?v=rPgq7pxw6aU'
               target='_blank'
               sx={{ color: colors.orange }}>
               Kleros
             </Link>{" "}
-            ,
             <Link
               href='https://www.youtube.com/watch?v=RV9ZwvuASYQ'
               target='_blank'
               sx={{ color: colors.orange }}>
               BNB chain
             </Link>{" "}
-            ,
             <Link
               href='https://www.youtube.com/watch?v=RV9ZwvuASYQ'
               target='_blank'
               sx={{ color: colors.orange }}>
               ConsenSys
             </Link>{" "}
-            ,
             <Link
               href='https://www.youtube.com/watch?v=RV9ZwvuASYQ'
               target='_blank'
               sx={{ color: colors.orange }}>
               1Inch
             </Link>{" "}
-            ,
             <Link
               href='https://www.youtube.com/watch?v=XMHacGigGkw&list=PL6f1W8NPPUfhpZFyqa8PEKAKAuJqCuZco&index=12&pp=iAQB'
               target='_blank'
               sx={{ color: colors.orange }}>
               Safe
             </Link>{" "}
-            ,
             <Link
               href='https://www.youtube.com/watch?v=6X7VwiFxNKc&list=PL6f1W8NPPUfhpZFyqa8PEKAKAuJqCuZco&index=14&pp=iAQB'
               target='_blank'
               sx={{ color: colors.orange }}>
               Snapshot
             </Link>{" "}
-            ,
             <Link
               href='https://www.youtube.com/watch?v=19OVFg4GGHs&t=1s'
               target='_blank'
               sx={{ color: colors.orange }}>
               Superfluid
             </Link>{" "}
-            ,
             <Link
               href='https://www.youtube.com/watch?v=9_lDSJXRyHI&t=2s'
               target='_blank'
               sx={{ color: colors.orange }}>
               Polywrap
             </Link>{" "}
-            ,
             <Link
               href='https://www.youtube.com/watch?v=qpPbLZrjhfc&t=1s'
               target='_blank'
               sx={{ color: colors.orange }}>
               Bloom Network
             </Link>{" "}
-            ,
             <Link
               href='https://www.youtube.com/watch?v=q1voqfj1GUo'
               target='_blank'
               sx={{ color: colors.orange }}>
-              Auth,
+              Auth
             </Link>{" "}
-            ,
             <Link
               href='https://www.youtube.com/watch?v=Wr6JX3lEL-Y'
               target='_blank'
               sx={{ color: colors.orange }}>
               Ownco
-            </Link>{" "}
-            , etc.
+            </Link>,
+            etc.
           </Fragment>
         ),
       },

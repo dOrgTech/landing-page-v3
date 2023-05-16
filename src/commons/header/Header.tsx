@@ -17,6 +17,11 @@ export const MENU_ITEMS: MenuItem[] = [
     desktop: true,
   },
   {
+    name: "FAQs",
+    path: "/#/faqs",
+    desktop: true,
+  },
+  {
     name: "Hot Seat",
     path: "/#/hot-seat",
     desktop: true,
@@ -39,10 +44,6 @@ export const MENU_ITEMS: MenuItem[] = [
   {
     name: "Join us",
     path: "/#/join",
-  },
-  {
-    name: "FAQs",
-    path: "/#/faqs",
   },
 ];
 
