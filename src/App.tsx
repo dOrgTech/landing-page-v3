@@ -11,6 +11,7 @@ import { JoinView } from "./views/formPages/join/Join";
 import { HireView } from "./views/formPages/hire/Hire";
 import { PrivacyPolicy } from "./views/privacyPolicy";
 import TagManager, { TagManagerArgs } from "react-gtm-module";
+import { FaqsView } from "./views/faqs/Faqs";
 
 const App: React.FC = () => {
   const location = useLocation();
@@ -51,6 +52,7 @@ const App: React.FC = () => {
           <Route path="/join" element={<JoinView />} />
           <Route path="/hire" element={<HireView />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/faqs" element={<FaqsView />} />
         </Routes>
       </Navbar>
       <Footer />
