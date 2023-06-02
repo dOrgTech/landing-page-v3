@@ -11,7 +11,7 @@ export const hireSelectOptions: HireSelectForms = {
   categories: [
     { value: "DAO/Governance", label: "DAO/Governance"},
     { value: "DeFi", label: "DeFi"},
-    { value: "Social/Entertainment", label: "Social/Entertainment"},
+    { value: "Public Goods", label: "Public Goods"},
     { value: "Infrastructure", label: "Infrastructure"},
     { value: "Other", label: "Other"},
   ],

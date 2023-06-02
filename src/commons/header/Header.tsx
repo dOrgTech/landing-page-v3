@@ -37,7 +37,7 @@ export const MENU_ITEMS: MenuItem[] = [
     external: true,
   },
   {
-    name: "Hire us",
+    name: "Let's Team Up",
     path: "/#/hire",
     desktop: true,
   },
