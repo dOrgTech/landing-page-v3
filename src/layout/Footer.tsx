@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Box,
   Container,
@@ -9,36 +9,36 @@ import {
   // TextField,
   Typography,
   useTheme,
-} from '@mui/material';
-import { Button } from '../commons/button/Button';
-import Logo from '../assets/imgs/dOrg-logo.svg';
-import { IconLink, socialIconLinks } from '../constants/routes';
-import { MenuItem, MENU_ITEMS } from '../commons/header/Header';
-import theme, { colors } from '../theme';
+} from "@mui/material";
+import { Button } from "../commons/button/Button";
+import Logo from "../assets/imgs/dOrg-logo.svg";
+import { IconLink, socialIconLinks } from "../constants/routes";
+import { MenuItem, MENU_ITEMS } from "../commons/header/Header";
+import theme, { colors } from "../theme";
 
-const StyledLogo = styled('img')({
-  height: 'auto',
-  objectFit: 'contain',
-  transition: 'opacity 0.25s ease-in-out',
+const StyledLogo = styled("img")({
+  height: "auto",
+  objectFit: "contain",
+  transition: "opacity 0.25s ease-in-out",
   width: 200,
-  '&:hover': {
+  "&:hover": {
     opacity: 0.8,
   },
 });
 
 const FooterTitle = {
   color: colors.grays[300],
-  fontSize: '1rem',
-  letterSpacing: '3px',
-  textTransform: 'uppercase',
+  fontSize: "1rem",
+  letterSpacing: "3px",
+  textTransform: "uppercase",
 };
 
 const FooterLink = styled(Stack)({
-  cursor: 'pointer',
+  cursor: "pointer",
   height: theme.spacing(3),
   opacity: 0.6,
-  transition: 'opacity 0.25s ease-in-out',
-  '&:hover': {
+  transition: "opacity 0.25s ease-in-out",
+  "&:hover": {
     opacity: 1,
   },
 });
@@ -72,6 +72,8 @@ export const Footer: React.FC = () => {
 
   const socialLinks = Object.values(socialIconLinks);
 
+  const year = new Date().getFullYear();
+
   return (
     <Box
       component="footer"
@@ -91,26 +93,18 @@ export const Footer: React.FC = () => {
           <Grid item xs={12} md={6} lg={4}>
             <Grid container flexDirection="row-reverse" spacing={4}>
               <Grid item xs={6}>
-                <Typography
-                  component="h2"
-                  variant="h6"
-                  sx={{ ...FooterTitle }}
-                >
-                           DORG
+                <Typography component="h2" variant="h6" sx={{ ...FooterTitle }}>
+                  DORG
                 </Typography>
                 <Stack spacing={3} mt={4}>
                   {MENU_ITEMS.map((item: MenuItem, index) => {
                     return (
                       <Link
                         href={item.path}
-                        target={
-                          item.external ? '_blank' : undefined
-                        }
+                        target={item.external ? "_blank" : undefined}
                         key={index}
                       >
-                        <FooterLink
-                          sx={{ justifyContent: 'center' }}
-                        >
+                        <FooterLink sx={{ justifyContent: "center" }}>
                           <Typography
                             variant="body1"
                             lineHeight={1}
@@ -125,12 +119,8 @@ export const Footer: React.FC = () => {
                 </Stack>
               </Grid>
               <Grid item xs={6}>
-                <Typography
-                  component="h2"
-                  variant="h6"
-                  sx={{ ...FooterTitle }}
-                >
-                           SOCIAL
+                <Typography component="h2" variant="h6" sx={{ ...FooterTitle }}>
+                  SOCIAL
                 </Typography>
                 <Stack spacing={3} mt={4}>
                   {socialLinks.map((social: IconLink, index) => {
@@ -153,13 +143,10 @@ export const Footer: React.FC = () => {
                               loading="lazy"
                               src={social.icon}
                               alt={social.name}
-                              style={{ display: 'block' }}
+                              style={{ display: "block" }}
                             />
                           </Box>
-                          <Typography
-                            variant="body1"
-                            lineHeight={1}
-                          >
+                          <Typography variant="body1" lineHeight={1}>
                             {social.name}
                           </Typography>
                         </FooterLink>
@@ -176,26 +163,22 @@ export const Footer: React.FC = () => {
             md={6}
             lg={4}
             sx={{
-              display: 'flex',
-              justifyContent: 'stretch',
-              [theme.breakpoints.up('md')]: {
-                justifyContent: 'flex-end',
+              display: "flex",
+              justifyContent: "stretch",
+              [theme.breakpoints.up("md")]: {
+                justifyContent: "flex-end",
               },
             }}
           >
             <Stack
               spacing={3}
               sx={{
-                display: 'inline-flex',
-                [theme.breakpoints.down('lg')]: { width: '100%' },
+                display: "inline-flex",
+                [theme.breakpoints.down("lg")]: { width: "100%" },
               }}
             >
-              <Typography
-                component="h2"
-                variant="h6"
-                sx={{ ...FooterTitle }}
-              >
-                        OUR NEWSLETTER
+              <Typography component="h2" variant="h6" sx={{ ...FooterTitle }}>
+                OUR NEWSLETTER
               </Typography>
               <Link
                 href="https://blog.dorg.tech/"
@@ -204,7 +187,7 @@ export const Footer: React.FC = () => {
                 underline="none"
               >
                 <Button variant="outlined" size="small">
-                           Subscribe
+                  Subscribe
                 </Button>
               </Link>
             </Stack>
@@ -212,7 +195,7 @@ export const Footer: React.FC = () => {
         </Grid>
         <Stack
           direction="row"
-          justifyContent={['flex-start', 'flex-end']}
+          justifyContent={["flex-start", "flex-end"]}
           mt={6}
           spacing={1}
         >
@@ -221,15 +204,15 @@ export const Footer: React.FC = () => {
             underline="always"
             sx={{
               color: colors.grays[300],
-              '&:hover': {
+              "&:hover": {
                 color: colors.white,
               },
             }}
           >
-                  Privacy Policy
+            Privacy Policy
           </Link>
           <Typography variant="body1" color={colors.grays[300]}>
-                  © 2022 dOrg
+            © {year} dOrg
           </Typography>
         </Stack>
       </Container>

@@ -51,7 +51,7 @@ let theme = createTheme({
   },
   typography: {
     // Base Typography
-    
+
     fontFamily: [
       "Space Grotesk",
       "-apple-system",
@@ -64,17 +64,15 @@ let theme = createTheme({
       '"Apple Color Emoji"',
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
-   
     ].join(","),
-   
-    
+
     h1: {
       margin: 0,
       fontSize: "3rem",
       fontWeight: 600,
       marginBlockStart: "2.5rem",
       lineHeight: 1,
-      fontDisplay: 'swap',
+      fontDisplay: "swap",
     },
     h2: {
       margin: 0,
@@ -156,7 +154,7 @@ theme = createTheme(theme, {
       lineHeight: 1.7,
     },
     h1: {
-      fontDisplay: 'swap',
+      fontDisplay: "swap",
       margin: 0,
       [`${theme.breakpoints.up("md")}`]: {
         fontSize: "5.25rem",
@@ -199,16 +197,49 @@ theme = createTheme(theme, {
       styleOverrides: {
         asterisk: {
           color: colors.magenta,
-        }
-      }
+        },
+      },
     },
     MuiLink: {
       styleOverrides: {
         root: {
           cursor: "pointer",
           textDecorationColor: "currentColor",
-        }
-      }
+        },
+      },
+    },
+    MuiAccordion: {
+      styleOverrides: {
+        root: {
+          borderBottom: "1px solid white",
+          borderRadius: "0px !important",
+        },
+      },
+    },
+    MuiAccordionSummary: {
+      styleOverrides: {
+        root: {
+          fontSize: "2rem",
+          fontWeight: "700",
+          paddingLeft: 0,
+          paddingRight: 16,
+        },
+        content: {
+          margin: "12px 0",
+          "&$expanded": {
+            margin: "12px 0",
+          },
+        },
+      },
+    },
+    MuiAccordionDetails: {
+      styleOverrides: {
+        root: {
+          fontSize: "1.25rem",
+          fontWeight: "500",
+          padding: "16px 0",
+        },
+      },
     },
   },
 });

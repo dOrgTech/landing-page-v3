@@ -14,6 +14,7 @@ import TagManager, { TagManagerArgs } from "react-gtm-module";
 import { articles } from "./constants/articles";
 import { ArticleLayout } from "./views/articles/ArticleLayout";
 import ArticlesView from "./views/articles/ArticlesView";
+import { FaqsView } from "./views/faqs/Faqs";
 
 const App: React.FC = () => {
   const location = useLocation();
@@ -62,6 +63,7 @@ const App: React.FC = () => {
           <Route path="/join" element={<JoinView />} />
           <Route path="/hire" element={<HireView />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/faqs" element={<FaqsView />} />
         </Routes>
       </Navbar>
       <Footer />

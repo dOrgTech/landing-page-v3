@@ -17,6 +17,11 @@ export const MENU_ITEMS: MenuItem[] = [
     desktop: true,
   },
   {
+    name: "FAQs",
+    path: "/#/faqs",
+    desktop: true,
+  },
+  {
     name: "Hire us",
     path: "/#/hire",
     desktop: true,
