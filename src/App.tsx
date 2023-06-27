@@ -11,6 +11,9 @@ import { JoinView } from "./views/formPages/join/Join";
 import { HireView } from "./views/formPages/hire/Hire";
 import { PrivacyPolicy } from "./views/privacyPolicy";
 import TagManager, { TagManagerArgs } from "react-gtm-module";
+import { articles } from "./constants/articles";
+import { ArticleLayout } from "./views/articles/ArticleLayout";
+import ArticlesView from "./views/articles/ArticlesView";
 import { FaqsView } from "./views/faqs/Faqs";
 
 const App: React.FC = () => {
@@ -33,6 +36,14 @@ const App: React.FC = () => {
           <Route path="/" element={<HomeView />} />
           <Route path="/hot-seat" element={<HotSeatView />} />
           <Route path="/case-studies" element={<CaseStudiesView />} />
+          <Route path="/articles" element={<ArticlesView />} />
+          {articles.map((article, i) => (
+            <Route
+              key={article.slug}
+              path={`/articles/${article.slug}`}
+              element={<ArticleLayout {...article} />}
+            />
+          ))}
           <Route
             path="/case-studies/tezos"
             element={<Tezos {...caseStudies["tezos"]} />}
