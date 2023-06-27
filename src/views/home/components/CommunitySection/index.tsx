@@ -23,16 +23,15 @@ export const CommunitySection: React.FC = () => {
   ];
 
   return (
-    <Box my={[16, 24, 32]} position="relative">
+    <Box my={[16, 24, 32]} position='relative'>
       <Typography
-        variant="h6"
-        component="h2"
-        textTransform="uppercase"
-        textAlign="center"
-        letterSpacing={5}
-      >
+        variant='h6'
+        component='h2'
+        textTransform='uppercase'
+        textAlign='center'
+        letterSpacing={5}>
         Community{" "}
-        <span role="img" aria-label="purple heart">
+        <span role='img' aria-label='purple heart'>
           💜
         </span>
       </Typography>
@@ -46,8 +45,7 @@ export const CommunitySection: React.FC = () => {
           customButtonGroup={<ButtonGroup />}
           itemsPerRow={[1, 2.5, 3.5, 4]}
           beforeChange={() => setMoving(true)}
-          afterChange={() => setMoving(false)}
-        >
+          afterChange={() => setMoving(false)}>
           {communityTweets.map((tweet: TwitterCardProps, i) => (
             <Box key={tweet.externalLink} px={2}>
               <TwitterCard
@@ -59,9 +57,9 @@ export const CommunitySection: React.FC = () => {
           ))}
         </Carousel>
       </Box>
-      <Grid container justifyContent="center" mt={8}>
+      <Grid container justifyContent='center' mt={8}>
         <Grid item>
-          <Button href="/#/join" variant="outlined">
+          <Button href='/#/join' variant='outlined'>
             Apply to Join
           </Button>
         </Grid>

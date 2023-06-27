@@ -12,6 +12,7 @@ import { HireView } from "./views/formPages/hire/Hire";
 import { PrivacyPolicy } from "./views/privacyPolicy";
 import TagManager, { TagManagerArgs } from "react-gtm-module";
 import { FaqsView } from "./views/faqs/Faqs";
+import { DaoDrops } from "./views/caseStudies/DaoDrops";
 
 const App: React.FC = () => {
   const location = useLocation();
@@ -48,6 +49,10 @@ const App: React.FC = () => {
           <Route
             path="/case-studies/doingud"
             element={<DoinGud {...caseStudies["doingud"]} />}
+          />
+          <Route
+            path="/case-studies/dao-drops"
+            element={<DaoDrops {...caseStudies["dao-drops"]} />}
           />
           <Route path="/join" element={<JoinView />} />
           <Route path="/hire" element={<HireView />} />

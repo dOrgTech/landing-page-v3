@@ -21,6 +21,7 @@ export const CaseStudyLayout = ({
   summary,
   thumbnail,
   title,
+  category,
 }: CaseStudyLayoutProps) => {
   if (press) {
     press.sort(function (a, b) {
@@ -96,6 +97,24 @@ export const CaseStudyLayout = ({
             </Grid>
             <Grid item xs={12} lg={4}>
               <Stack spacing={8}>
+                {category && (
+                  <Stack spacing={3}>
+                    <Typography
+                      fontWeight={800}
+                      textTransform='uppercase'
+                      letterSpacing={5}
+                      lineHeight={1}>
+                      Category
+                    </Typography>
+                    <Stack spacing={1} sx={{ mt: 3 }}>
+                      {category.map((category, i) => (
+                        <Typography key={i} sx={{ fontSize: 14 }}>
+                          {category}
+                        </Typography>
+                      ))}
+                    </Stack>
+                  </Stack>
+                )}
                 {roles && (
                   <Stack spacing={3}>
                     <Typography
@@ -167,16 +186,16 @@ export const CaseStudyLayout = ({
                   </Typography>
                   <Typography sx={{ fontSize: 20 }}>
                     dOrg has a longstanding history of complex web3 development
-                    and integration partnerships. We&apos;ve worked with +65 web3
-                    projects since 2019, generating +$2B of total lifetime value
-                    in shipped products as well +$8M on-chain revenue.
+                    and integration partnerships. We&apos;ve worked with +85
+                    web3 projects since 2019, generating +$2B of total lifetime
+                    value in shipped products as well +$8M on-chain revenue.
                   </Typography>
                 </Stack>
                 <Button
                   variant='contained'
                   sx={{ width: "fit-content" }}
                   href='/#/hire'>
-                  Hire Us
+                  Let&apos;s team up
                 </Button>
               </Stack>
             </Grid>

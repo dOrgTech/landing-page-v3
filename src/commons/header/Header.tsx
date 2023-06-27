@@ -32,18 +32,18 @@ export const MENU_ITEMS: MenuItem[] = [
     external: true,
   },
   {
-    name: "Blog",
+    name: "Newsletter",
     path: "https://blog.dorg.tech/",
     external: true,
+  },
+  {
+    name: "Join us",
+    path: "/#/join",
   },
   {
     name: "Let's Team Up",
     path: "/#/hire",
     desktop: true,
-  },
-  {
-    name: "Join us",
-    path: "/#/join",
   },
 ];
 
