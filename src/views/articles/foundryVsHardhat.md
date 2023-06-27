@@ -39,6 +39,6 @@ Foundry, meanwhile, offers a Smart Contract development framework, a deploymen
 
 **Learning curve:** Definitely between these tools the learning curve is very different, to compare this factor, the ideal is to try them yourself and choose which one is more comfortable for you.
 
-If you are interested in learning more about **web3 development**, subscribe to our [Newsletter](https://www.google.com/url?q=https://blog.dorg.tech/&sa=D&source=editors&ust=1682364056756727&usg=AOvVaw3qnRW_Mlso-Ax5fPTaone0) and visit our [website](https://www.google.com/url?q=https://www.dorg.tech/&sa=D&source=editors&ust=1682364056756935&usg=AOvVaw0ugrTHOphAsK7q9VvKBmGS).
+If you are interested in learning more about **web3 development**, subscribe to our [Newsletter](https://blog.dorg.tech/) and visit our [website](https://www.dorg.tech/).
 
-You can also keep up to date with everything we do at dOrg by following us on [Twitter](https://www.google.com/url?q=https://twitter.com/dOrg_tech&sa=D&source=editors&ust=1682364056757271&usg=AOvVaw0XJ9-3SGKJ1utdOCF3g52r).
+You can also keep up to date with everything we do at dOrg by following us on [Twitter](https://twitter.com/dOrg_tech).

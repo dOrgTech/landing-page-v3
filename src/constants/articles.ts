@@ -205,13 +205,6 @@ export const articles = [
         publication: "Ethereum Foundation",
       },
       {
-        title: "Build Secure Smart Contracts Using Vyper",
-        link: "https://101blockchains.com/vyper-smart-contracts/",
-        date: "September 14, 2022",
-        author: "James Howell",
-        publication: "Ethereum Foundation",
-      },
-      {
         title: "ChatGPT",
         link: "https://chat.openai.com/chat",
       },

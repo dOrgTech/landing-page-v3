@@ -268,6 +268,31 @@ ArticleProps) {
                     </Stack>
                   </>
                 )}
+                <Box
+                  sx={{
+                    mt: 8,
+                    pt: 8,
+                    borderTop: `2px solid ${colors.grays[500]}`,
+                  }}
+                >
+                  <Link
+                    href="/#/articles"
+                    sx={{
+                      color: "white",
+                      transition: "color 0.25s ease-in-out",
+                      "&:hover": { color: colors.green },
+                    }}
+                  >
+                    <Stack
+                      direction="row"
+                      spacing={1}
+                      sx={{ alignItems: "center" }}
+                    >
+                      <ArrowBack width={12} height={12} />
+                      <Typography sx={{ mt: 4 }}>Back to Articles</Typography>
+                    </Stack>
+                  </Link>
+                </Box>
               </Grid>
               <Grid item xs={12} lg={4}>
                 <Stack spacing={8}>

@@ -20,7 +20,7 @@ To become a **Smart Contract Developer**, you will need to learn about the **Eth
 
 6. Consider earning a certification. There are several organizations that offer certification programs for **Ethereum developers**, such as the Ethereum Foundation and ConsenSys Academy.
 
-If you want to know more, feel free to navigate our [Handbook](https://www.google.com/url?q=https://docs.dorg.tech/&sa=D&source=editors&ust=1682364056743978&usg=AOvVaw2aIZUGXE6TTl-xt4LVqLNk) where we suggest [Web3 devs tools and resources](https://www.google.com/url?q=https://docs.dorg.tech/web3-upskilling&sa=D&source=editors&ust=1682364056744162&usg=AOvVaw1qUznRVCNNagP1lEMsBkwe):
+If you want to know more, feel free to navigate our [Handbook](https://docs.dorg.tech/) where we suggest [Web3 devs tools and resources](https://docs.dorg.tech/web3-upskilling):
 
 If you are looking to improve your skills and expertise in these areas, joining a DAO such as dOrg can be a good way to access resources and gain hands-on experience.
 

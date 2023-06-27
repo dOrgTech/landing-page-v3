@@ -84,6 +84,8 @@ const options = {
     a: {
       component: Link,
       props: {
+        target: "_blank",
+        rel: "noredirect",
         sx: {
           color: colors.green,
           cursor: "pointer",
