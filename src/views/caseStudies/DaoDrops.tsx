@@ -205,7 +205,13 @@ export const DaoDrops = ({ ...props }: CaseStudyLinkProps) => {
               <StyledListItem>$3,056 was the median grant.</StyledListItem>
               <StyledListItem>
                 $18,185 was the largest grant distributed Check out the key
-                learnings and the next steps in the full project report.
+                learnings and the next steps in the{" "}
+                <Link
+                  href='https://substack.com/inbox/post/114871442'
+                  sx={{ color }}
+                  target='_blank'>
+                  full project report.
+                </Link>
               </StyledListItem>
             </List>
           </Typography>

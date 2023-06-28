@@ -41,7 +41,7 @@ export const MENU_ITEMS: MenuItem[] = [
     path: "/#/join",
   },
   {
-    name: "Let's Team Up",
+    name: "Hire us",
     path: "/#/hire",
     desktop: true,
   },
