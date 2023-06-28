@@ -54,6 +54,54 @@ export const EpisodeSection: React.FC = () => {
       text: `${YOUTUBE_PREFIX_TEXT} 8 ft. SISMO`,
       description: "The New Era of Identity and Privacy in web3 with SISMO ...",
     },
+    {
+      id: "Wr6JX3lEL-Y",
+      text: `${YOUTUBE_PREFIX_TEXT} 9 ft. Ownco`,
+      description:
+        "Ownco: A Simple Solution for Creating Web3 Organizations and Distributing Ownership...",
+    },
+    {
+      id: "JA7ZdYOQI-4",
+      text: `${YOUTUBE_PREFIX_TEXT} 10 ft. LENS`,
+      description:
+        "Lens Protocol is one of the most innovative projects in web3, social media, and blockchain...",
+    },
+    {
+      id: "RV9ZwvuASYQ",
+      text: `ETHDenver | Cefi vs. Defi ft. BNB Chain, ConsenSys, 1inch and ETHTrust.`,
+      description:
+        "FTX, DCG, 3AC, Celsius, BlockFi… A story of Grifters and Greed...",
+    },
+    {
+      id: "XMHacGigGkw",
+      text: `${YOUTUBE_PREFIX_TEXT} 12 ft. Safe`,
+      description:
+        "Tune in to this episode of dOrg Hot Seat as we navigate the web3 landscape with Clem and Daniel from SafeCore...",
+    },
+    {
+      id: "jCD3cf3itz4",
+      text: `${YOUTUBE_PREFIX_TEXT} 13 ft. Metagame`,
+      description:
+        "Unlocking the Power of SafeCore Tune in to this episode of dOrg Hot Seat as we navigate the we...",
+    },
+    {
+      id: "6X7VwiFxNKc",
+      text: `${YOUTUBE_PREFIX_TEXT} 14 ft. Snapshot`,
+      description:
+        "DAO Voting: An Exclusive Look into Snapshot with Nate and dOrg Members Discover the power and...",
+    },
+    {
+      id: "4uWkG1ER8aU",
+      text: `${YOUTUBE_PREFIX_TEXT} 15 ft. Job Protocol`,
+      description:
+        "Crypto Hiring, Decentralized: Job Protocol Cofounder Boris & dOrg Members Talk Talent in ...",
+    },
+    {
+      id: "-0lDQx6JfQI",
+      text: `${YOUTUBE_PREFIX_TEXT} 16 ft. Good Dollar`,
+      description:
+        "Free Crypto for Everyone? GoodDollar's Bold Universal Basic Income Vision with Anna Stone &...",
+    },
   ];
   const [isMoving, setMoving] = useState<boolean>(false);
 
@@ -67,14 +115,13 @@ export const EpisodeSection: React.FC = () => {
   ];
 
   return (
-    <Box my={[16, 24, 32]} position="relative">
+    <Box my={[16, 24, 32]} position='relative'>
       <Typography
-        variant="h6"
-        component="h2"
-        textTransform="uppercase"
-        textAlign="center"
-        letterSpacing={5}
-      >
+        variant='h6'
+        component='h2'
+        textTransform='uppercase'
+        textAlign='center'
+        letterSpacing={5}>
         Episodes ▶️
       </Typography>
       <Box mt={12}>
@@ -87,8 +134,7 @@ export const EpisodeSection: React.FC = () => {
           customButtonGroup={<ButtonGroup />}
           itemsPerRow={[1, 2.5, 3.5, 4]}
           beforeChange={() => setMoving(true)}
-          afterChange={() => setMoving(false)}
-        >
+          afterChange={() => setMoving(false)}>
           {EPISODES.map(({ id, text, description }, i) => (
             <Box key={id} px={2}>
               <YoutubeCard
@@ -102,15 +148,14 @@ export const EpisodeSection: React.FC = () => {
           ))}
         </Carousel>
       </Box>
-      <Grid container justifyContent="center" mt={8}>
+      <Grid container justifyContent='center' mt={8}>
         <Grid item>
           <Button
-            href="/#/join"
-            variant="outlined"
+            href='/#/join'
+            variant='outlined'
             onClick={() =>
               window.open("https://airtable.com/shr4VGh3iZCIVhCg3", "_blank")
-            }
-          >
+            }>
             Become a Sponsor
           </Button>
         </Grid>

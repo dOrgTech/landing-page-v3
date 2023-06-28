@@ -15,6 +15,7 @@ import { articles } from "./constants/articles";
 import { ArticleLayout } from "./views/articles/ArticleLayout";
 import ArticlesView from "./views/articles/ArticlesView";
 import { FaqsView } from "./views/faqs/Faqs";
+import { DaoDrops } from "./views/caseStudies/DaoDrops";
 
 const App: React.FC = () => {
   const location = useLocation();
@@ -59,6 +60,10 @@ const App: React.FC = () => {
           <Route
             path="/case-studies/doingud"
             element={<DoinGud {...caseStudies["doingud"]} />}
+          />
+          <Route
+            path="/case-studies/dao-drops"
+            element={<DaoDrops {...caseStudies["dao-drops"]} />}
           />
           <Route path="/join" element={<JoinView />} />
           <Route path="/hire" element={<HireView />} />
