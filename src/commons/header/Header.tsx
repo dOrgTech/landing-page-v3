@@ -24,7 +24,10 @@ export const MENU_ITEMS: MenuItem[] = [
   {
     name: "Hot Seat",
     path: "/#/hot-seat",
-    desktop: true,
+  },
+  {
+    name: "Articles",
+    path: "/#/articles",
   },
   {
     name: "Handbook",
