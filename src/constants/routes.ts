@@ -53,10 +53,24 @@ import SnapshotLogo from "../assets/imgs/clients/snapshot.svg";
 import UtopiaLogo from "../assets/imgs/clients/utopia.svg";
 import VocdoniLogo from "../assets/imgs/clients/vocdoni.svg";
 
+import FigmentLogo from "../assets/imgs/companies/figment.svg";
+import OracleLogo from "../assets/imgs/companies/oracle.svg";
+import MicrosoftLogo from "../assets/imgs/companies/microsoft.svg";
+import KleinerLogo from "../assets/imgs/companies/kleiner.svg";
+
 export interface IconLink {
   path: string;
   icon: string;
   name: string;
+}
+
+export interface BuildersCompaniesIconLinks {
+  messari: Readonly<IconLink>;
+  figment: Readonly<IconLink>;
+  opolis: Readonly<IconLink>;
+  oracle: Readonly<IconLink>;
+  microsoft: Readonly<IconLink>;
+  kleiner: Readonly<IconLink>;
 }
 
 export interface SocialIconLinks {
@@ -412,5 +426,38 @@ export const hotSeatIconLinks: HotSeatGuestIconLinks = {
     path: "https://www.etoro.com/",
     icon: EtoroLogo,
     name: "Etoro",
+  },
+};
+
+export const previousBuildersCompanies: BuildersCompaniesIconLinks = {
+  messari: {
+    path: "https://messari.io/",
+    icon: MessariLogo,
+    name: "Messari",
+  },
+  figment: {
+    path: "",
+    icon: FigmentLogo,
+    name: "Figment",
+  },
+  opolis: {
+    path: "https://opolis.co/",
+    icon: OpolisLogo,
+    name: "Opolis",
+  },
+  oracle: {
+    path: "https://oracle.com/",
+    icon: OracleLogo,
+    name: "oracle",
+  },
+  microsoft: {
+    path: "https://microsoft.com/",
+    icon: MicrosoftLogo,
+    name: "Microsoft",
+  },
+  kleiner: {
+    path: "https://www.kleinerperkins.com/",
+    icon: KleinerLogo,
+    name: "Kleiner Perkins",
   },
 };

@@ -1,4 +1,3 @@
-import { CSSProperties } from "react";
 import { colors } from "../../theme";
 import { PrismTheme as PrismThemeProps } from "./PrismTypes";
 
