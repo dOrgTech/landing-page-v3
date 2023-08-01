@@ -93,7 +93,7 @@ const BuildersMap: React.FC<React.PropsWithChildren<Props>> = (props) => {
       <svg
         width='100%'
         height='100%'
-        viewBox='0 0 1184 762'
+        viewBox='0 0 1302 876'
         preserveAspectRatio='xMidYMid meet'
         fill='none'
         onMouseMove={mouseMoveHandler}

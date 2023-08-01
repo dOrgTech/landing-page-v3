@@ -57,6 +57,17 @@ import FigmentLogo from "../assets/imgs/companies/figment.svg";
 import OracleLogo from "../assets/imgs/companies/oracle.svg";
 import MicrosoftLogo from "../assets/imgs/companies/microsoft.svg";
 import KleinerLogo from "../assets/imgs/companies/kleiner.svg";
+import AWSLogo from "../assets/imgs/companies/aws.svg";
+import BarclaysLogo from "../assets/imgs/companies/barclays.svg";
+import IBMLogo from "../assets/imgs/companies/ibm.svg";
+import KiaLogo from "../assets/imgs/companies/kia.svg";
+import MetaLogo from "../assets/imgs/companies/meta.svg";
+import MorganLogo from "../assets/imgs/companies/morgan.svg";
+import OscarLogo from "../assets/imgs/companies/oscar.svg";
+import PlumroseLogo from "../assets/imgs/companies/plumrose.svg";
+import PNCLogo from "../assets/imgs/companies/pnc.svg";
+import RappiLogo from "../assets/imgs/companies/rappi.svg";
+import WhatsappLogo from "../assets/imgs/companies/whatsapp.svg";
 
 export interface IconLink {
   path: string;
@@ -71,6 +82,16 @@ export interface BuildersCompaniesIconLinks {
   oracle: Readonly<IconLink>;
   microsoft: Readonly<IconLink>;
   kleiner: Readonly<IconLink>;
+  whatsapp: Readonly<IconLink>;
+  meta: Readonly<IconLink>;
+  morgan: Readonly<IconLink>;
+  kia: Readonly<IconLink>;
+  aws: Readonly<IconLink>;
+  barclays: Readonly<IconLink>;
+  rappi: Readonly<IconLink>;
+  pnc: Readonly<IconLink>;
+  plumrose: Readonly<IconLink>;
+  ibm: Readonly<IconLink>;
 }
 
 export interface SocialIconLinks {
@@ -430,6 +451,56 @@ export const hotSeatIconLinks: HotSeatGuestIconLinks = {
 };
 
 export const previousBuildersCompanies: BuildersCompaniesIconLinks = {
+  rappi: {
+    path: "https://rappi.com/",
+    icon: RappiLogo,
+    name: "rappi",
+  },
+  pnc: {
+    path: "https://pnc.com",
+    icon: PNCLogo,
+    name: "PNC",
+  },
+  plumrose: {
+    path: "https://plumrose.com/",
+    icon: PlumroseLogo,
+    name: "Plumrose",
+  },
+  morgan: {
+    path: "https://morganstanley.com/",
+    icon: MorganLogo,
+    name: "Morgan Stanley",
+  },
+  meta: {
+    path: "https://meta.com/",
+    icon: MetaLogo,
+    name: "meta",
+  },
+  kia: {
+    path: "https://kia.com/",
+    icon: KiaLogo,
+    name: "Kia",
+  },
+  ibm: {
+    path: "https://ibm.com/",
+    icon: IBMLogo,
+    name: "IBM",
+  },
+  barclays: {
+    path: "https://www.barclays.co.uk",
+    icon: BarclaysLogo,
+    name: "Barclays",
+  },
+  aws: {
+    path: "https://aws.com/",
+    icon: AWSLogo,
+    name: "Amazon Web Services",
+  },
+  whatsapp: {
+    path: "https://whatsapp.com/",
+    icon: WhatsappLogo,
+    name: "Whatsapp",
+  },
   messari: {
     path: "https://messari.io/",
     icon: MessariLogo,

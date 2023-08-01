@@ -81,51 +81,6 @@ export const BuildersSection: React.FC = () => {
               </Grid>
             ))}
           </Marquee>
-          {/* <Carousel
-            swipeable
-            draggable
-            arrows={false}
-            renderButtonGroupOutside={true}
-            shouldResetAutoplay
-            infinite
-            itemsPerRow={[1, 2, 3, 3]}
-            beforeChange={() => setMoving(true)}
-            afterChange={() => setMoving(false)}>
-            {buildersCompany.map((iconLink: IconLink, index) => (
-              <Grid item key={index}>
-                <Link
-                  href={iconLink.path}
-                  target='_blank'
-                  className='--centered'>
-                  <script type='application/ld+json'>
-                    {JSON.stringify({
-                      "@context": "https://schema.org",
-                      "@type": "Organization",
-                      areaServed: "technology company",
-                      name: `${iconLink.name}`,
-                      "@id": `${iconLink.path}`,
-                    })}
-                  </script>
-
-                  <StyledLogo
-                    sx={{
-                      width: [95, 100, 110, 120],
-                      height: 42,
-                      opacity: 0.85,
-                      transition: "all 0.25s ease-in-out",
-                      "&:hover": {
-                        opacity: 1,
-                        transform: "scale(1.08)",
-                      },
-                    }}
-                    loading='lazy'
-                    alt={iconLink.name}
-                    src={iconLink.icon}
-                  />
-                </Link>
-              </Grid>
-            ))}
-          </Carousel> */}
         </Box>
       </Container>
       <Container maxWidth='lg' sx={{ position: "relative", marginTop: "64px" }}>
