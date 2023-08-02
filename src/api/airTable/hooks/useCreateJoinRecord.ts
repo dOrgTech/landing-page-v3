@@ -39,7 +39,7 @@ const useCreateJoinRecord = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
+          Authorization: `Bearer ${process.env.REACT_APP_PERSONAL_ACCESS_TOKEN_AIRTABLE}`,
         },
         body: JSON.stringify(body),
       }
