@@ -10,7 +10,7 @@ const useGetTechnologies = () => {
       {
         method: "GET",
         headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_API_KEY}`,
+          Authorization: `Bearer ${process.env.REACT_APP_PERSONAL_ACCESS_TOKEN_AIRTABLE}`,
         },
       }
     )

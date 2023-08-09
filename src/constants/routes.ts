@@ -53,10 +53,45 @@ import SnapshotLogo from "../assets/imgs/clients/snapshot.svg";
 import UtopiaLogo from "../assets/imgs/clients/utopia.svg";
 import VocdoniLogo from "../assets/imgs/clients/vocdoni.svg";
 
+import FigmentLogo from "../assets/imgs/companies/figment.svg";
+import OracleLogo from "../assets/imgs/companies/oracle.svg";
+import MicrosoftLogo from "../assets/imgs/companies/microsoft.svg";
+import KleinerLogo from "../assets/imgs/companies/kleiner.svg";
+import AWSLogo from "../assets/imgs/companies/aws.svg";
+import BarclaysLogo from "../assets/imgs/companies/barclays.svg";
+import IBMLogo from "../assets/imgs/companies/ibm.svg";
+import KiaLogo from "../assets/imgs/companies/kia.svg";
+import MetaLogo from "../assets/imgs/companies/meta.svg";
+import MorganLogo from "../assets/imgs/companies/morgan.svg";
+import OscarLogo from "../assets/imgs/companies/oscar.svg";
+import PlumroseLogo from "../assets/imgs/companies/plumrose.svg";
+import PNCLogo from "../assets/imgs/companies/pnc.svg";
+import RappiLogo from "../assets/imgs/companies/rappi.svg";
+import WhatsappLogo from "../assets/imgs/companies/whatsapp.svg";
+
 export interface IconLink {
   path: string;
   icon: string;
   name: string;
+}
+
+export interface BuildersCompaniesIconLinks {
+  messari: Readonly<IconLink>;
+  figment: Readonly<IconLink>;
+  opolis: Readonly<IconLink>;
+  oracle: Readonly<IconLink>;
+  microsoft: Readonly<IconLink>;
+  kleiner: Readonly<IconLink>;
+  whatsapp: Readonly<IconLink>;
+  meta: Readonly<IconLink>;
+  morgan: Readonly<IconLink>;
+  kia: Readonly<IconLink>;
+  aws: Readonly<IconLink>;
+  barclays: Readonly<IconLink>;
+  rappi: Readonly<IconLink>;
+  pnc: Readonly<IconLink>;
+  plumrose: Readonly<IconLink>;
+  ibm: Readonly<IconLink>;
 }
 
 export interface SocialIconLinks {
@@ -412,5 +447,88 @@ export const hotSeatIconLinks: HotSeatGuestIconLinks = {
     path: "https://www.etoro.com/",
     icon: EtoroLogo,
     name: "Etoro",
+  },
+};
+
+export const previousBuildersCompanies: BuildersCompaniesIconLinks = {
+  whatsapp: {
+    path: "https://whatsapp.com/",
+    icon: WhatsappLogo,
+    name: "Whatsapp",
+  },
+  rappi: {
+    path: "https://rappi.com/",
+    icon: RappiLogo,
+    name: "rappi",
+  },
+  pnc: {
+    path: "https://pnc.com",
+    icon: PNCLogo,
+    name: "PNC",
+  },
+  plumrose: {
+    path: "https://plumrose.com/",
+    icon: PlumroseLogo,
+    name: "Plumrose",
+  },
+  morgan: {
+    path: "https://morganstanley.com/",
+    icon: MorganLogo,
+    name: "Morgan Stanley",
+  },
+  meta: {
+    path: "https://meta.com/",
+    icon: MetaLogo,
+    name: "meta",
+  },
+  kia: {
+    path: "https://kia.com/",
+    icon: KiaLogo,
+    name: "Kia",
+  },
+  ibm: {
+    path: "https://ibm.com/",
+    icon: IBMLogo,
+    name: "IBM",
+  },
+  barclays: {
+    path: "https://www.barclays.co.uk",
+    icon: BarclaysLogo,
+    name: "Barclays",
+  },
+  aws: {
+    path: "https://aws.com/",
+    icon: AWSLogo,
+    name: "Amazon Web Services",
+  },
+  messari: {
+    path: "https://messari.io/",
+    icon: MessariLogo,
+    name: "Messari",
+  },
+  figment: {
+    path: "",
+    icon: FigmentLogo,
+    name: "Figment",
+  },
+  opolis: {
+    path: "https://opolis.co/",
+    icon: OpolisLogo,
+    name: "Opolis",
+  },
+  oracle: {
+    path: "https://oracle.com/",
+    icon: OracleLogo,
+    name: "oracle",
+  },
+  microsoft: {
+    path: "https://microsoft.com/",
+    icon: MicrosoftLogo,
+    name: "Microsoft",
+  },
+  kleiner: {
+    path: "https://www.kleinerperkins.com/",
+    icon: KleinerLogo,
+    name: "Kleiner Perkins",
   },
 };
