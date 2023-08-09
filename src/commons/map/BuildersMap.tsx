@@ -20,6 +20,8 @@ import UnitedStatesMap from "./countries/UnitedStatesMap";
 import VenezuelaMap from "./countries/VenezuelaMap";
 import TooltipMap from "./TooltipMap";
 import { Box } from "@mui/material";
+import SingaporeMap from "./countries/SingaporeMap";
+import SwitzerlandMap from "./countries/SwitzerlandMap";
 
 export enum Countries {
   India = "India",
@@ -40,6 +42,8 @@ export enum Countries {
   Mexico = "Mexico",
   Canada = "Canada",
   UnitedStates = "United States",
+  Singapore = "Singapore",
+  Switzerland = "Switzerland",
 }
 
 interface Props {
@@ -116,6 +120,8 @@ const BuildersMap: React.FC<React.PropsWithChildren<Props>> = (props) => {
         <MexicoMap onHover={getCountry} />
         <UnitedStatesMap onHover={getCountry} />
         <CanadaMap onHover={getCountry} />
+        <SingaporeMap onHover={getCountry} />
+        <SwitzerlandMap onHover={getCountry} />
         <defs>
           <linearGradient
             id='paint0_linear_3616_2988'

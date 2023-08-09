@@ -451,6 +451,11 @@ export const hotSeatIconLinks: HotSeatGuestIconLinks = {
 };
 
 export const previousBuildersCompanies: BuildersCompaniesIconLinks = {
+  whatsapp: {
+    path: "https://whatsapp.com/",
+    icon: WhatsappLogo,
+    name: "Whatsapp",
+  },
   rappi: {
     path: "https://rappi.com/",
     icon: RappiLogo,
@@ -495,11 +500,6 @@ export const previousBuildersCompanies: BuildersCompaniesIconLinks = {
     path: "https://aws.com/",
     icon: AWSLogo,
     name: "Amazon Web Services",
-  },
-  whatsapp: {
-    path: "https://whatsapp.com/",
-    icon: WhatsappLogo,
-    name: "Whatsapp",
   },
   messari: {
     path: "https://messari.io/",

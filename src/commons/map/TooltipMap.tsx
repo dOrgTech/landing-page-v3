@@ -10,7 +10,9 @@ interface TooltipProps {
 
 enum Colors {
   India = "#4494F8",
+  Singapore = "#4494F8",
   Ghana = "#EFEE02",
+  Switzerland = "#73F25F",
   Romania = "#73F25F",
   Norway = "#73F25F",
   Finland = "#73F25F",
@@ -31,6 +33,8 @@ enum Colors {
 
 enum Builders {
   India = 6,
+  Switzerland = 1,
+  Singapore = 1,
   Ghana = 1,
   Romania = 2,
   Norway = 1,
@@ -79,7 +83,11 @@ const TooltipMap: React.FC<TooltipProps> = ({ mouseX, mouseY, country }) => {
               </Typography>
             </Grid>
             <Grid item>
-              <Typography sx={{  fontSize: { xs: 12, sm: 16, md: 16 }, fontWeight: "400" }}>
+              <Typography
+                sx={{
+                  fontSize: { xs: 12, sm: 16, md: 16 },
+                  fontWeight: "400",
+                }}>
                 {Builders[country]} builders
               </Typography>
             </Grid>
