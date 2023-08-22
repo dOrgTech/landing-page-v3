@@ -4,6 +4,7 @@ import YoutubeLogo from "../assets/imgs/youtube.svg";
 import TwitterLogo from "../assets/imgs/twitter.svg";
 import EmailLogo from "../assets/imgs/mail.svg";
 import LinkedIn from "../assets/imgs/linkedIn.svg";
+import Shopify from "../assets/imgs/shopify.png";
 
 import AcredaosLogo from "../assets/imgs/clients/acredaos.svg";
 // import AmnestyLogo from "../assets/imgs/clients/amnesty.svg";
@@ -63,7 +64,6 @@ import IBMLogo from "../assets/imgs/companies/ibm.svg";
 import KiaLogo from "../assets/imgs/companies/kia.svg";
 import MetaLogo from "../assets/imgs/companies/meta.svg";
 import MorganLogo from "../assets/imgs/companies/morgan.svg";
-import OscarLogo from "../assets/imgs/companies/oscar.svg";
 import PlumroseLogo from "../assets/imgs/companies/plumrose.svg";
 import PNCLogo from "../assets/imgs/companies/pnc.svg";
 import RappiLogo from "../assets/imgs/companies/rappi.svg";
@@ -101,6 +101,7 @@ export interface SocialIconLinks {
   github: Readonly<IconLink>;
   email: Readonly<IconLink>;
   linkedIn: Readonly<IconLink>;
+  shopify: Readonly<IconLink>;
 }
 
 export interface ClientIconLinks {
@@ -160,7 +161,7 @@ export interface HotSeatGuestIconLinks {
 
 export const socialIconLinks: SocialIconLinks = {
   discord: {
-    path: "https://discord.com/invite/bA9ZM7WXZU",
+    path: "https://discord.com/invite/TEMzbPNkqf",
     icon: DiscordLogo,
     name: "Discord",
   },
@@ -188,6 +189,11 @@ export const socialIconLinks: SocialIconLinks = {
     path: "https://www.linkedin.com/company/dorg-tech/",
     icon: LinkedIn,
     name: "LinkedIn",
+  },
+  shopify: {
+    path: "https://dorgtech.myshopify.com/",
+    icon: Shopify,
+    name: "Shopify",
   },
 };
 
