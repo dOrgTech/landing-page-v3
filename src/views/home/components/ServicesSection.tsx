@@ -46,7 +46,7 @@ const services = [
   },
   {
     id: "scoping",
-    color: colors.orange,
+    color: colors.grays[600],
     title: "Scoping sprints",
     description:
       "If you are not sure about how to execute your idea, or exactly which are the services that you need. Let's collaborate on a scoping sprint to determine what’s the best way to work together.",
@@ -101,6 +101,7 @@ export const ServicesSection: React.FC = () => {
             gap: 4,
             mb: activeServiceId ? 0 : -4,
             mt: 12,
+            alignItems: "center",
             [theme.breakpoints.up("md")]: {
               gridTemplateColumns: `repeat(3, 1fr)`,
               gridTemplateRows: activeServiceId ? `repeat(2, auto)` : null,
@@ -138,8 +139,8 @@ export const ServicesSection: React.FC = () => {
                   transition: "background 0.25s ease-in-out",
                   transformOrigin: "bottom right",
                   [theme.breakpoints.up("md")]: {
-                    gridColumn: isActive ? "1 / span 2" : null,
-                    gridRow: isActive ? "1 / span 2" : null,
+                    gridColumn: index === 3 ? "2 / span 1" : (isActive ? "1 / span 2" : null),
+                    gridRow: index === 3 ? "2 / span 1" : (isActive ? "1 / span 2" : null),
                   },
                   "&:hover": {
                     background: colors.grays[800],
