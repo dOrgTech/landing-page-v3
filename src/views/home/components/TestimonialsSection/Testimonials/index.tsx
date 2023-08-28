@@ -24,12 +24,6 @@ export const testimonials: TwitterCardProps[] = [
     externalLink: "https://twitter.com/fhomoney/status/1476228453980585984",
     text: testimonialContent.fhomoney,
   },
-  // {
-  //   account: twitterAccounts.auryn,
-  //   externalLink:
-  //     "https://mobile.twitter.com/auryn_macmillan/status/1437803822215274498",
-  //   text: testimonialContent.zodiac,
-  // },
   {
     account: twitterAccounts.cent,
     externalLink: "https://twitter.com/Cent/status/1530209860876394496",
@@ -46,5 +40,21 @@ export const testimonials: TwitterCardProps[] = [
     externalLink:
       "https://mobile.twitter.com/ACREinvest/status/1511125211889950722",
     text: testimonialContent.acreInvest,
+  },
+  {
+    account: twitterAccounts.aragon,
+    externalLink:
+      "https://twitter.com/AragonProject/status/1676291403494866944",
+    text: testimonialContent.aragon,
+  },
+  {
+    account: twitterAccounts.gnosis_guild,
+    externalLink: "https://twitter.com/GnosisGuild/status/1661036169285582848",
+    text: testimonialContent.gnosis_guild,
+  },
+  {
+    account: twitterAccounts.the_real_stone,
+    externalLink: "https://twitter.com/TheRealStone/status/1689013057861844992",
+    text: testimonialContent.the_real_stone,
   },
 ];

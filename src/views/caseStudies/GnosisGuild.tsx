@@ -104,7 +104,7 @@ export const GnosisGuild = ({ ...props }: CaseStudyLinkProps) => {
         <Stack spacing={2}>
           <CaseStudyHeading type="alignment" color={color} />
           <Typography sx={{ fontSize: 20 }}>
-            We still work with Safe’s Gnosis Guild to this day maintaining and
+            We still work with Gnosis Guild to this day maintaining and
             building out cutting-edge web3 projects for the Safe ecosystem!
           </Typography>
         </Stack>

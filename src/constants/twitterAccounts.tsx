@@ -11,6 +11,9 @@ import LinusAvatar from "../assets/imgs/avatars/linus.png";
 import MrsBadgerFaceAvatar from "../assets/imgs/avatars/mrsbadgerface.png";
 import ManBoyAvatar from "../assets/imgs/avatars/asgeir.png";
 import CentAvatar from "../assets/imgs/avatars/cent.png";
+import AragonAvatar from "../assets/imgs/avatars/aragon.png";
+import GGAvatar from "../assets/imgs/avatars/gg.png";
+import RealStoneAvatar from "../assets/imgs/avatars/realstone.png";
 
 export interface TwitterAccountProps {
   avatar: string;
@@ -31,6 +34,9 @@ export interface TwitterAccounts {
   mrsBadgerFace: TwitterAccountProps;
   manboy: TwitterAccountProps;
   cent: TwitterAccountProps;
+  aragon: TwitterAccountProps;
+  gnosis_guild: TwitterAccountProps;
+  the_real_stone: TwitterAccountProps;
 }
 
 export const twitterAccounts: TwitterAccounts = {
@@ -43,7 +49,7 @@ export const twitterAccounts: TwitterAccounts = {
     name: (
       <>
         kianga.eth{" "}
-        <span role="img" aria-label="earth">
+        <span role='img' aria-label='earth'>
           🌍
         </span>{" "}
         1000 ACRE DAOs in 1000 Days
@@ -81,7 +87,7 @@ export const twitterAccounts: TwitterAccounts = {
     name: (
       <>
         philh{" "}
-        <span role="img" aria-label="rainbow">
+        <span role='img' aria-label='rainbow'>
           🌈
         </span>
       </>
@@ -103,7 +109,7 @@ export const twitterAccounts: TwitterAccounts = {
     name: (
       <>
         manboy.ethᵍᵐ
-        <span role="img" aria-label="coffee">
+        <span role='img' aria-label='coffee'>
           ☕️
         </span>
       </>
@@ -115,5 +121,21 @@ export const twitterAccounts: TwitterAccounts = {
     name: "Cent",
     username: "@cent",
     avatar: CentAvatar,
+  },
+  aragon: {
+    name: "Aragon 🦅",
+    username: "@AragonProject",
+    avatar: AragonAvatar,
+  },
+  gnosis_guild: {
+    name: "gnosis guild 𒆙",
+    username: "@GnosisGuild",
+    avatar: GGAvatar,
+  },
+
+  the_real_stone: {
+    name: "Anna Stone ✨therealstone.eth",
+    username: "@TheRealStone",
+    avatar: RealStoneAvatar,
   },
 };

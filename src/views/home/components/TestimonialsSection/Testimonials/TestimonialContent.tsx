@@ -10,16 +10,15 @@ const ContentTypography = {
 const DoinGudText = () => {
   return (
     <Typography
-      component="h3"
-      variant="subtitle2"
-      sx={{ ...ContentTypography }}
-    >
+      component='h3'
+      variant='subtitle2'
+      sx={{ ...ContentTypography }}>
       We are glad to announce our partnership with{" "}
       <PostLink>@dorg_tech</PostLink> and its DAO strong of 60+ devs!
       <br />
       They will help us build our dream NFT Marketplace where every transaction
       does good{" "}
-      <span role="img" aria-label="sparkles">
+      <span role='img' aria-label='sparkles'>
         ✨
       </span>
       <PostLink>$AMOR</PostLink> <PostLink>#Partnership</PostLink>{" "}
@@ -31,10 +30,9 @@ const DoinGudText = () => {
 const FhomoneyText = () => {
   return (
     <Typography
-      component="h3"
-      variant="subtitle2"
-      sx={{ ...ContentTypography }}
-    >
+      component='h3'
+      variant='subtitle2'
+      sx={{ ...ContentTypography }}>
       Where would We be without <PostLink>@dorg_tech</PostLink>?t
     </Typography>
   );
@@ -43,10 +41,9 @@ const FhomoneyText = () => {
 const TabulaText = () => {
   return (
     <Typography
-      component="h3"
-      variant="subtitle2"
-      sx={{ ...ContentTypography }}
-    >
+      component='h3'
+      variant='subtitle2'
+      sx={{ ...ContentTypography }}>
       The Tabula publication is live!
       <br />
       <br />
@@ -63,10 +60,9 @@ const TabulaText = () => {
 const StarkWareText = () => {
   return (
     <Typography
-      component="h3"
-      variant="subtitle2"
-      sx={{ ...ContentTypography }}
-    >
+      component='h3'
+      variant='subtitle2'
+      sx={{ ...ContentTypography }}>
       StarkNet is being built not only by the StarkWare team, but also by a
       variety of leading teams from the blockchain sphere:
       <br />
@@ -92,10 +88,9 @@ const StarkWareText = () => {
 const TezosText = () => {
   return (
     <Typography
-      component="h3"
-      variant="subtitle2"
-      sx={{ ...ContentTypography }}
-    >
+      component='h3'
+      variant='subtitle2'
+      sx={{ ...ContentTypography }}>
       In collaboration with <PostLink>@dOrg_tech</PostLink>, we are excited to
       announce that Homebase is live on Tezos mainnet!
       <br />
@@ -112,13 +107,12 @@ const TezosText = () => {
 const AcreInvestText = () => {
   return (
     <Typography
-      component="h3"
-      variant="subtitle2"
-      sx={{ ...ContentTypography }}
-    >
+      component='h3'
+      variant='subtitle2'
+      sx={{ ...ContentTypography }}>
       So proud of our work with <PostLink>@dOrg_tech</PostLink>
       to make Web3 governance beautiful{" "}
-      <span role="img" aria-label="smiling face with heart-eyes">
+      <span role='img' aria-label='smiling face with heart-eyes'>
         😍
       </span>
       . Check out our custom <PostLink>@discourse</PostLink> integration
@@ -144,16 +138,70 @@ const AcreInvestText = () => {
 const CentText = () => {
   return (
     <Typography
-      component="h3"
-      variant="subtitle2"
-      sx={{ ...ContentTypography }}
-    >
+      component='h3'
+      variant='subtitle2'
+      sx={{ ...ContentTypography }}>
       We’ve partnered with
-      <PostLink>@dOrg_tech</PostLink>
+      <PostLink>@dOrg_tech </PostLink>
       to launch Hive (<PostLink>http://hive.cent.co</PostLink>). Hive is a new
       way to explore relationships on the Ethereum blockchain. It shows you a
       ranked list of people that share the same NFT collections as you—your
       Hive.
+    </Typography>
+  );
+};
+
+const AragonText = () => {
+  return (
+    <Typography
+      component='h3'
+      variant='subtitle2'
+      sx={{ ...ContentTypography }}>
+      dOrg: Development services for projects seeking to make real-world impact.
+      💥
+      <br />
+      Delivering cutting-edge solutions for DAOs, DeFi, and public goods
+      projects.
+      <br />
+      Check out <PostLink>@dOrg_tech </PostLink> ⬇️
+      <br />
+      <PostLink> https://aragon.org/experts/dorg </PostLink>
+    </Typography>
+  );
+};
+const GnosisGuildText = () => {
+  return (
+    <Typography
+      component='h3'
+      variant='subtitle2'
+      sx={{ ...ContentTypography }}>
+      gnosis guild has been collaborating with <PostLink>@dOrg_tech </PostLink>{" "}
+      since 2021
+      <br />
+      <br />
+      incredible DAO with some of the best web3 devs and specialists out there
+      <br />
+      <br />
+      hire them if you&apos;re looking for web3 dev services!
+      <br />
+      <br />
+      💫 thank you dOrg 💫
+      <br />
+      <PostLink> dorg.tech/#/case-studies... </PostLink>
+    </Typography>
+  );
+};
+
+const TheRealStoneText = () => {
+  return (
+    <Typography
+      component='h3'
+      variant='subtitle2'
+      sx={{ ...ContentTypography }}>
+      The amazing team behind <PostLink>@dOrg_tech </PostLink> are some of the
+      best builders in the game, and we couldn&apos;t be more thrilled to
+      partner with them to build out our segmented UBI capabilities{" "}
+      <PostLink>@HadarRot @PatriciaPedrosa @serota </PostLink>
     </Typography>
   );
 };
@@ -166,4 +214,7 @@ export const testimonialContent = {
   tezos: <TezosText />,
   acreInvest: <AcreInvestText />,
   cent: <CentText />,
+  aragon: <AragonText />,
+  gnosis_guild: <GnosisGuildText />,
+  the_real_stone: <TheRealStoneText />,
 };
