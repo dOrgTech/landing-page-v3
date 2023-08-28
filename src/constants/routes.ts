@@ -63,7 +63,7 @@ import IBMLogo from "../assets/imgs/companies/ibm.svg";
 import KiaLogo from "../assets/imgs/companies/kia.svg";
 import MetaLogo from "../assets/imgs/companies/meta.svg";
 import MorganLogo from "../assets/imgs/companies/morgan.svg";
-import OscarLogo from "../assets/imgs/companies/oscar.svg";
+// import OscarLogo from "../assets/imgs/companies/oscar.svg";
 import PlumroseLogo from "../assets/imgs/companies/plumrose.svg";
 import PNCLogo from "../assets/imgs/companies/pnc.svg";
 import RappiLogo from "../assets/imgs/companies/rappi.svg";

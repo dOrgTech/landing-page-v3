@@ -35,14 +35,21 @@ const services = [
     color: colors.magenta,
     title: "Team Extension",
     description:
-      "We embed engineers with your core team to augment and accelerate their web3 development capabilities. We’ll help transition the project to your team when the time is right.",
+      "We embed engineers with your core team to augment and accelerate their web3 development capabilities. We'll help transition the project to your team when the time is right.",
   },
   {
     id: "partnership",
     color: colors.green,
     title: "Protocol Partnership",
     description:
-      "Ready to start scaling your developer ecosystem? We’ll assemble a specialized team that works autonomously to advance roadmap items, battle-test your developer tools, and support 3rd parties looking to integrate your tech.",
+      "Ready to start scaling your developer ecosystem? We'll assemble a specialized team that works autonomously to advance roadmap items, battle-test your developer tools, and support 3rd parties looking to integrate your tech.",
+  },
+  {
+    id: "scoping",
+    color: colors.orange,
+    title: "Scoping sprints",
+    description:
+      "If you are not sure about how to execute your idea, or exactly which are the services that you need. Let's collaborate on a scoping sprint to determine what’s the best way to work together.",
   },
 ];
 
@@ -69,23 +76,22 @@ export const ServicesSection: React.FC = () => {
   }, [activeServiceId, isDesktop]);
 
   return (
-    <Box mt={[24, 32]} position="relative">
+    <Box mt={[24, 32]} position='relative'>
       <GameOfLifeAnimation
         fadeFromBlack
         opacity={0.1}
         resolution={40}
-        className="services"
+        className='services'
       />
-      <Container maxWidth="lg" sx={{ position: "relative" }}>
+      <Container maxWidth='lg' sx={{ position: "relative" }}>
         <Typography
-          variant="h6"
-          component="h2"
-          textTransform="uppercase"
-          textAlign="center"
-          letterSpacing={5}
-        >
+          variant='h6'
+          component='h2'
+          textTransform='uppercase'
+          textAlign='center'
+          letterSpacing={5}>
           Development Services{" "}
-          <span role="img" aria-label="hammer and wrench">
+          <span role='img' aria-label='hammer and wrench'>
             🛠
           </span>
         </Typography>
@@ -99,8 +105,7 @@ export const ServicesSection: React.FC = () => {
               gridTemplateColumns: `repeat(3, 1fr)`,
               gridTemplateRows: activeServiceId ? `repeat(2, auto)` : null,
             },
-          }}
-        >
+          }}>
           {currentServices.map((service: ServiceProps, index) => {
             const isActive = activeServiceId === service.id;
             const fadeIn = keyframes`
@@ -116,7 +121,7 @@ export const ServicesSection: React.FC = () => {
             return (
               <Stack
                 key={index}
-                direction="row"
+                direction='row'
                 spacing={2}
                 p={2}
                 sx={{
@@ -140,9 +145,10 @@ export const ServicesSection: React.FC = () => {
                     background: colors.grays[800],
                   },
                 }}
-                onClick={() => setActiveServiceId(isActive ? null : service.id)}
-              >
-                <script type="application/ld+json">
+                onClick={() =>
+                  setActiveServiceId(isActive ? null : service.id)
+                }>
+                <script type='application/ld+json'>
                   {JSON.stringify({
                     "@context": "https://schema.org/",
                     "@type": "Service",
@@ -174,17 +180,16 @@ export const ServicesSection: React.FC = () => {
                 </script>
                 <Box>
                   <Typography
-                    variant="subtitle2"
-                    component="h3"
+                    variant='subtitle2'
+                    component='h3'
                     sx={{
                       textDecoration: isActive ? "underline" : "unset",
                       textUnderlineOffset: 2,
-                    }}
-                  >
+                    }}>
                     {service.title}
                   </Typography>
                   {isActive && (
-                    <Typography variant="body1" component="h3" mt={2}>
+                    <Typography variant='body1' component='h3' mt={2}>
                       {service.description}
                     </Typography>
                   )}
@@ -203,27 +208,24 @@ export const ServicesSection: React.FC = () => {
             );
           })}
         </Box>
-        <Container maxWidth="md" disableGutters sx={{ mt: isDesktop ? 6 : 8 }}>
+        {/* <Container maxWidth='md' disableGutters sx={{ mt: isDesktop ? 6 : 8 }}>
           <Grid
             container
-            alignItems="center"
-            justifyContent="center"
-            spacing={isDesktop ? 4 : 2}
-          >
+            alignItems='center'
+            justifyContent='center'
+            spacing={isDesktop ? 4 : 2}>
             <Grid item xs={12} md={3}>
               <Stack
                 spacing={2}
-                direction="row"
-                alignItems="center"
-                justifyContent={isDesktop ? "flex-end" : "center"}
-              >
+                direction='row'
+                alignItems='center'
+                justifyContent={isDesktop ? "flex-end" : "center"}>
                 <AddIcon sx={{ width: 12 }} />
                 <Typography
-                  variant="body1"
+                  variant='body1'
                   fontWeight={800}
-                  textTransform="uppercase"
-                  letterSpacing="4px"
-                >
+                  textTransform='uppercase'
+                  letterSpacing='4px'>
                   Packages
                 </Typography>
               </Stack>
@@ -236,9 +238,8 @@ export const ServicesSection: React.FC = () => {
                   id={item.toLowerCase()}
                   xs={12}
                   sm={4}
-                  md={3}
-                >
-                  <script type="application/ld+json">
+                  md={3}>
+                  <script type='application/ld+json'>
                     {JSON.stringify({
                       "@context": "https://schema.org/",
                       "@type": "Service",
@@ -276,18 +277,17 @@ export const ServicesSection: React.FC = () => {
                       px: 1,
                       py: 2,
                       textAlign: "center",
-                    }}
-                  >
+                    }}>
                     {item}
                   </Box>
                 </Grid>
               )
             )}
           </Grid>
-        </Container>
-        <Grid container justifyContent="center" mt={12}>
+        </Container> */}
+        <Grid container justifyContent='center' mt={12}>
           <Grid item>
-            <Button href="/#/hire" variant="outlined">
+            <Button href='/#/hire' variant='outlined'>
               Get a Quote
             </Button>
           </Grid>
