@@ -1,9 +1,10 @@
-import deployErc20UsingFoundryArticle from "../views/articles/deployErc20UsingFoundryArticle.md"
-import smartContractDeveloper2023 from "../views/articles/smartContractDeveloper2023.md"
-import daoToolingVsDaoCulture from "../views/articles/daoToolingVsDaoCulture.md"
-import foundryVsHardhat from "../views/articles/foundryVsHardhat.md"
-import comparingSmartContractLanguages from "../views/articles/comparingSmartContractLanguages.md"
-import howToGetStuffDoneInADao from "../views/articles/howToGetStuffDoneInADao.md"
+import deployErc20UsingFoundryArticle from "../views/articles/deployErc20UsingFoundryArticle.md";
+import smartContractDeveloper2023 from "../views/articles/smartContractDeveloper2023.md";
+import daoToolingVsDaoCulture from "../views/articles/daoToolingVsDaoCulture.md";
+import foundryVsHardhat from "../views/articles/foundryVsHardhat.md";
+import comparingSmartContractLanguages from "../views/articles/comparingSmartContractLanguages.md";
+import howToGetStuffDoneInADao from "../views/articles/howToGetStuffDoneInADao.md";
+import dorgPassport from "../views/articles/dorgPassport.md";
 
 interface Author {
   name: string;
@@ -34,36 +35,34 @@ export interface ArticleProps {
 export const articles = [
   {
     slug: "deploy-erc20-using-foundry",
-    title: "How to create and deploy an ERC20 token in simple steps using Foundry",
+    title:
+      "How to create and deploy an ERC20 token in simple steps using Foundry",
     deck: "Are you a web3 developer interested in creating your own token on the Ethereum Blockchain? If you are, then this article’s what you’ve been looking for.",
-    description: "Learn how to create your own ERC20 token on the Ethereum Blockchain with Foundry. Our step-by-step guide simplifies the process for Smart Contract development. Find the best DAO app development services in the USA with our expert DAO development company. Contact us today for Smart Contracts development services.",
+    description:
+      "Learn how to create your own ERC20 token on the Ethereum Blockchain with Foundry. Our step-by-step guide simplifies the process for Smart Contract development. Find the best DAO app development services in the USA with our expert DAO development company. Contact us today for Smart Contracts development services.",
     date: "Jun 13, 2022",
     authors: [
       {
         name: "Anita Caldera",
-      }
+      },
     ],
     coders: [
       {
         name: "Cesar Brazon",
-        link: "https://github.com/cbrzn"
+        link: "https://github.com/cbrzn",
       },
       {
         name: "Leonhard Horstmeyer",
-        link: "https://github.com/leomarlo"
+        link: "https://github.com/leomarlo",
       },
       {
         name: "Fernando Torres",
-        link: "https://github.com/thenerdcat"
+        link: "https://github.com/thenerdcat",
       },
     ],
     coding: true,
     content: deployErc20UsingFoundryArticle,
-    tags: [
-      "coding",
-      "tutorial",
-      "smart-contracts",
-    ],
+    tags: ["coding", "tutorial", "smart-contracts"],
     resources: [
       {
         title: "Creating an NFT with Solmate",
@@ -80,12 +79,14 @@ export const articles = [
         author: "Pari Tomar",
         publication: "Medium",
       },
-    ]
+    ],
   },
   {
     slug: "smart-contract-developer-2023",
-    title: "Do you want to become a Smart Contract Developer in 2023? Here's what you should do.",
-    description: "Learn how to become a Smart Contract developer in 2023! Discover the technical steps, including Ethereum, Solidity, and Blockchain technology, and improve your skills with resources from dOrg.",
+    title:
+      "Do you want to become a Smart Contract Developer in 2023? Here's what you should do.",
+    description:
+      "Learn how to become a Smart Contract developer in 2023! Discover the technical steps, including Ethereum, Solidity, and Blockchain technology, and improve your skills with resources from dOrg.",
     date: "January 3, 2023",
     authors: [
       {
@@ -94,14 +95,13 @@ export const articles = [
     ],
     coding: false,
     content: smartContractDeveloper2023,
-    tags: [
-      "smart-contracts",
-    ],
+    tags: ["smart-contracts"],
   },
   {
     slug: "dao-tooling-vs-dao-culture",
     title: "DAO Tooling vs DAO Culture",
-    description: "DAO tooling and culture are crucial for a successful DAO. Prioritize both to foster collaboration and efficiency. Contact us to learn more.",
+    description:
+      "DAO tooling and culture are crucial for a successful DAO. Prioritize both to foster collaboration and efficiency. Contact us to learn more.",
     date: "Apr 11, 2023",
     authors: [
       {
@@ -113,14 +113,13 @@ export const articles = [
     ],
     coding: false,
     content: daoToolingVsDaoCulture,
-    tags: [
-      "daos",
-    ],
+    tags: ["daos"],
   },
   {
     slug: "foundry-vs-hardhat",
     title: "Foundry vs HardHat",
-    description: "Hardhat or Foundry? Which one is the better development toolkit for Ethereum Smart Contracts? In this article, we compare their features, pros, and cons to help you decide.",
+    description:
+      "Hardhat or Foundry? Which one is the better development toolkit for Ethereum Smart Contracts? In this article, we compare their features, pros, and cons to help you decide.",
     date: "Mar 23, 2023",
     authors: [
       {
@@ -129,12 +128,11 @@ export const articles = [
     ],
     coding: false,
     content: foundryVsHardhat,
-    tags: [
-      "smart-contracts",
-    ],
+    tags: ["smart-contracts"],
     resources: [
       {
-        title: "Smart contract Frameworks – Foundry vs Hardhat: Differences in performance and developer experience",
+        title:
+          "Smart contract Frameworks – Foundry vs Hardhat: Differences in performance and developer experience",
         link: "https://chainstack.com/foundry-hardhat-differences-performance/",
         date: "Mar 19, 2021",
         author: "Antonio Ufano",
@@ -160,32 +158,31 @@ export const articles = [
         author: "Franco Zeoli",
         publication: "Medium",
       },
-    ]
+    ],
   },
   {
     slug: "comparing-smart-contract-languages",
     title: "Comparing Ethereum’s Smart Contract development languages",
-    description: "Learn about popular languages for Smart Contract development, including Solidity for Ethereum and other EVM-compatible chains, with code examples.",
+    description:
+      "Learn about popular languages for Smart Contract development, including Solidity for Ethereum and other EVM-compatible chains, with code examples.",
     date: "May 25, 2023",
     authors: [
       {
         name: "Elio Briceño",
-        link: "https://github.com/eliobricenov"
+        link: "https://github.com/eliobricenov",
       },
       {
         name: "Asgeir Sognefest",
-        link: "https://github.com/manboy-eth"
+        link: "https://github.com/manboy-eth",
       },
     ],
     content: comparingSmartContractLanguages,
-    tags: [
-      "smart-contracts",
-    ],
+    tags: ["smart-contracts"],
     resources: [
       {
         title: "Developing with Rust",
         link: "https://docs.solana.com/developing/on-chain-programs/developing-rust",
-        publication: "Solana Documentation"
+        publication: "Solana Documentation",
       },
       {
         title: "Vyperlang",
@@ -208,12 +205,13 @@ export const articles = [
         title: "ChatGPT",
         link: "https://chat.openai.com/chat",
       },
-    ]
+    ],
   },
   {
     slug: "how-to-get-stuff-done-in-a-dao",
     title: "How to Get Stuff Done in a DAO",
-    description: "Learn how to get things done in a Decentralized Autonomous Organization (DAO) without managerial roles. Follow these 4 steps to initiate, design, implement and embed solutions.",
+    description:
+      "Learn how to get things done in a Decentralized Autonomous Organization (DAO) without managerial roles. Follow these 4 steps to initiate, design, implement and embed solutions.",
     date: "Jul 27, 2022",
     authors: [
       {
@@ -227,10 +225,23 @@ export const articles = [
       },
     ],
     content: howToGetStuffDoneInADao,
-    tags: [
-      "daos",
-      "governance",
-      "operations"
-    ],
+    tags: ["daos", "governance", "operations"],
   },
-]
+  {
+    slug: "dorg-passport",
+    title: "dOrg Passport",
+    description: "",
+    date: "Jul 11, 2023",
+    authors: [
+      {
+        name: "Anita Caldera",
+      },
+      {
+        name: "Asgeir Sognefest",
+        link: "https://github.com/manboy-eth",
+      },
+    ],
+    content: dorgPassport,
+    tags: ["daos", "ERC-721", "nft", "ID"],
+  },
+];

@@ -8,13 +8,13 @@ import { colors } from "../../theme";
 import { Close } from "@material-ui/icons";
 
 export default function ArticlesView() {
-  const [searchParams, setSeachParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
   const [tag, setTag] = useState<string | null>(searchParams.get("tag"));
 
   let filteredArticles = tag
     ? articles.filter((article) => {
-        return article.tags.includes(tag);
-      })
+      return article.tags.includes(tag);
+    })
     : articles;
 
   filteredArticles = filteredArticles.sort((a, b) => {
@@ -38,13 +38,13 @@ export default function ArticlesView() {
       <ArticlePresentationSection />
       <Container sx={{ mb: 16, position: "relative" }}>
         {tag && (
-          <Stack direction="row" spacing={1} sx={{ alignItems: "center" }}>
+          <Stack direction='row' spacing={1} sx={{ alignItems: "center" }}>
             <Typography sx={{ color: colors.grays[200], fontSize: 14 }}>
               Results for:
             </Typography>
             <Stack
               onClick={handleTagClick}
-              direction="row"
+              direction='row'
               spacing={0.5}
               sx={{
                 alignItems: "center",
@@ -53,8 +53,7 @@ export default function ArticlesView() {
                 "&:hover": {
                   opacity: 0.7,
                 },
-              }}
-            >
+              }}>
               <Typography sx={{ fontWeight: 700 }}>{tag}</Typography>
               <Box
                 sx={{
@@ -66,8 +65,7 @@ export default function ArticlesView() {
                   justifyContent: "center",
                   height: 12,
                   width: 12,
-                }}
-              >
+                }}>
                 <Close
                   style={{ color: "currentColor", width: 10, height: 10 }}
                 />
