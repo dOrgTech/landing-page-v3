@@ -37,8 +37,8 @@ import SovrynLogo from "../assets/imgs/clients/sovryn.svg";
 import StakedusLogo from "../assets/imgs/clients/stakedus.svg";
 import StarkWareLogo from "../assets/imgs/clients/starkware.svg";
 import TezosLogo from "../assets/imgs/clients/tezos.svg";
-import HomeBaseLogo from "../assets/imgs/projects/homebase.svg";
-import ZodiacLogo from "../assets/imgs/projects/zodiac.svg";
+// import HomeBaseLogo from "../assets/imgs/projects/homebase.svg";
+// import ZodiacLogo from "../assets/imgs/projects/zodiac.svg";
 import DaoDropsLogo from "../assets/imgs/projects/daoDrops.svg";
 import TheGraphLogo from "../assets/imgs/clients/thegraph.svg";
 
@@ -378,7 +378,7 @@ export const projectClientIconLinks: ProjectClientIconLinks = {
   },
   homebase: {
     path: "/#/case-studies/tezos",
-    icon: HomeBaseLogo,
+    icon: TezosLogo,
     name: "Tezos",
   },
   starkware: {
@@ -388,7 +388,7 @@ export const projectClientIconLinks: ProjectClientIconLinks = {
   },
   zodiac: {
     path: "/#/case-studies/gnosis-guild",
-    icon: ZodiacLogo,
+    icon: GnosisLogo,
     name: "Zodiac",
   },
 };

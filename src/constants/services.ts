@@ -14,7 +14,7 @@ export const ENGINEERING_SERVICE: CardProps[] = [
   {
     color: colors.purple,
     icon: SmartContractIcon,
-    title: "smart contract",
+    title: "smart contracts",
     description:
       "Securing blockchain transactions with precision built on Solidity and Rust.",
   },
@@ -72,7 +72,7 @@ export const MECHANISM_SERVICE: CardProps[] = [
   {
     color: colors.yellow,
     icon: DaoIcon,
-    title: "Dao tooling",
+    title: "DAO set up & tooling",
     description:
       "Software aiding DAO setup, governance, decision-making, and collaboration.",
   },
