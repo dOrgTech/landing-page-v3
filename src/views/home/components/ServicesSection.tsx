@@ -122,10 +122,6 @@ export const ServicesSection: React.FC = () => {
           spacing={5}
           justifyContent={"center"}
           alignItems={"center"}>
-          <Typography variant='h5'>
-            Our services cover a vast array of areas to meet your dApps and
-            blockchain projects unique needs, including:
-          </Typography>
           <Stack>
             <Stack spacing={10} direction={isDesktop ? "row" : "column"}>
               <Stack>
