@@ -16,35 +16,35 @@ export const ENGINEERING_SERVICE: CardProps[] = [
     icon: SmartContractIcon,
     title: "smart contracts",
     description:
-      "Securing blockchain transactions with precision built on Solidity and Rust.",
+      "We develop secure, robust and optimized smart contracts for different networks. Our devs are experts in Solidity, Rust and Golang.",
   },
   {
     color: colors.yellow,
     icon: Web3Icon,
     title: "Web3 Integrations",
     description:
-      "JavaScript leverages Web3, enabling seamless interaction with blockchain networks.",
+      "We leverage our mastery on JavaScript skills to enable seamless integrations with blockchain networks to deliver great UX.",
   },
   {
     color: colors.green,
     icon: FullStackIcon,
     title: "Full Stack Engineering",
     description:
-      "Using HTML, Sass, JavaScript, Python, and other languages to build complete web systems.",
+      "Our proficiency in HTML, Sass, JavaScript, Python, and beyond, will help you build complete web systems.",
   },
   {
     color: colors.orange,
     icon: DevopsIcon,
     title: "Devops",
     description:
-      "Orchestrate seamless software delivery, uniting development and operations workflows.",
+      "We seamlessly orchestrate infrastructure and deployment pipelines for streamlined, efficient web2 operations",
   },
   {
     color: colors.magenta,
     icon: DesignIcon,
     title: "UX/UI Design",
     description:
-      "Designing intuitive digital experiences with collaborative, user-centered interfaces.",
+      "We craft collaborative, user-centered interfaces ensuring intuitive digital experiences on web3.",
   },
 ];
 export const MECHANISM_SERVICE: CardProps[] = [
@@ -53,27 +53,27 @@ export const MECHANISM_SERVICE: CardProps[] = [
     icon: TokenomicsIcon,
     title: "Tokenomics",
     description:
-      "Economic design shaping cryptocurrency: supply, demand, distribution, and utility incentives.",
+      "Unlock your project economic framework, from supply dynamics, incentives to distribution strategies.",
   },
   {
     color: colors.blue,
     icon: GovernanceIcon,
     title: "Governance Mechanisms",
     description:
-      "Establishing voting power strategies and decision making processes for decentralized governance.",
-  },
-  {
-    color: colors.magenta,
-    icon: GameIcon,
-    title: "Game Theory Design",
-    description:
-      "Strategic interactions, incentives, and rational behavior analysis.",
+      "Defining robust voting power strategies and decentralized decision-making processes to empower your project's future.",
   },
   {
     color: colors.yellow,
     icon: DaoIcon,
     title: "DAO set up & tooling",
     description:
-      "Software aiding DAO setup, governance, decision-making, and collaboration.",
+      "Pioneering DAOs with end-to-end set-up and cutting-edge DAO tooling development to craft your DAO.",
+  },
+  {
+    color: colors.magenta,
+    icon: GameIcon,
+    title: "Game Theory Design",
+    description:
+      "We design strategic interactions, incentives and rational behavior analysis for your project.",
   },
 ];

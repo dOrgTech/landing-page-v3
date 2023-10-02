@@ -119,6 +119,7 @@ export const ServicesSection: React.FC = () => {
 
         <Stack
           direction={"column"}
+          sx={{ mt: 12 }}
           spacing={5}
           justifyContent={"center"}
           alignItems={"center"}>
@@ -131,8 +132,8 @@ export const ServicesSection: React.FC = () => {
                 <Typography variant='h6' fontWeight={500}>
                   Unlock your project&apos;s potential with dOrg&apos;s
                   expertise in DevOps, cross-chain integrations, SDKs, oracles,
-                  AMMs, protocol development, blockchain network development,
-                  token/NFTs launches, API integrations, among others.
+                  AMMs, Protocol development, blockchain network development,
+                  token/NFTs launches, API integrations, etc.
                 </Typography>
                 <Stack spacing={5} mt={10}>
                   {ENGINEERING_SERVICE.map((service) => (
@@ -158,10 +159,10 @@ export const ServicesSection: React.FC = () => {
                   Mechanism Design Services
                 </Typography>
                 <Typography variant='h6' fontWeight={500}>
-                  From tokenomics to governance models, our expertise ensures
-                  aligning incentives, security, and thriving ecosystems whether
-                  you&apos;re launching a new token, building a governance
-                  system, or optimizing network participation.
+                  From tokenomics to governance models our expertise ensures
+                  aligning incentives, security, and thriving ecosystems.
+                  Whether you&apos;re launching a new token, building a
+                  governance system, or optimizing network participation.
                 </Typography>
                 <Stack spacing={5} mt={10}>
                   {MECHANISM_SERVICE.map((service) => (
@@ -188,7 +189,7 @@ export const ServicesSection: React.FC = () => {
         <Stack mt={9}>
           <Stack spacing={4} direction='column'>
             <Typography variant='h5' m={0}>
-              Some Projects we&apos;ve built
+              Case studies
             </Typography>
           </Stack>
           <Stack
