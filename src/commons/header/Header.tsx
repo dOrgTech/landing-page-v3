@@ -12,7 +12,7 @@ export type MenuItem = {
 
 export const MENU_ITEMS: MenuItem[] = [
   {
-    name: "Development Services",
+    name: "Case Studies",
     path: "/#/case-studies",
     desktop: true,
   },
