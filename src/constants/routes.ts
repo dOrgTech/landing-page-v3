@@ -37,6 +37,9 @@ import SovrynLogo from "../assets/imgs/clients/sovryn.svg";
 import StakedusLogo from "../assets/imgs/clients/stakedus.svg";
 import StarkWareLogo from "../assets/imgs/clients/starkware.svg";
 import TezosLogo from "../assets/imgs/clients/tezos.svg";
+// import HomeBaseLogo from "../assets/imgs/projects/homebase.svg";
+// import ZodiacLogo from "../assets/imgs/projects/zodiac.svg";
+import DaoDropsLogo from "../assets/imgs/projects/daoDrops.svg";
 import TheGraphLogo from "../assets/imgs/clients/thegraph.svg";
 
 import InchLogo from "../assets/imgs/clients/1inch.svg";
@@ -138,6 +141,12 @@ export interface ClientIconLinks {
   starkware: Readonly<IconLink>;
   tezos: Readonly<IconLink>;
   theGraph: Readonly<IconLink>;
+}
+export interface ProjectClientIconLinks {
+  zodiac: Readonly<IconLink>;
+  starkware: Readonly<IconLink>;
+  homebase: Readonly<IconLink>;
+  daoDrops: Readonly<IconLink>;
 }
 export interface HotSeatGuestIconLinks {
   polywrap: Readonly<IconLink>;
@@ -358,6 +367,29 @@ export const clientIconLinks: ClientIconLinks = {
     path: "https://opera.com/",
     icon: OperaLogo,
     name: "Opera",
+  },
+};
+
+export const projectClientIconLinks: ProjectClientIconLinks = {
+  daoDrops: {
+    path: "/#/case-studies/dao-drops",
+    icon: DaoDropsLogo,
+    name: "Dao Drops",
+  },
+  homebase: {
+    path: "/#/case-studies/tezos",
+    icon: TezosLogo,
+    name: "Tezos",
+  },
+  starkware: {
+    path: "/#/case-studies/starkware",
+    icon: StarkWareLogo,
+    name: "StarkWare",
+  },
+  zodiac: {
+    path: "/#/case-studies/gnosis-guild",
+    icon: GnosisLogo,
+    name: "Zodiac",
   },
 };
 
