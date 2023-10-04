@@ -14,8 +14,12 @@ import TagManager, { TagManagerArgs } from "react-gtm-module";
 import { articles } from "./constants/articles";
 import { ArticleLayout } from "./views/articles/ArticleLayout";
 import ArticlesView from "./views/articles/ArticlesView";
-import { FaqsView } from "./views/faqs/Faqs";
+
 import { DaoDrops } from "./views/caseStudies/DaoDrops";
+import { Arcx } from "./views/caseStudies/Arcx";
+import { RKL } from "./views/caseStudies/RKL";
+import { Fayre } from "./views/caseStudies/Fayre";
+import { FaqsView } from "./views/faqs/Faqs";
 
 const App: React.FC = () => {
   const location = useLocation();
@@ -34,10 +38,10 @@ const App: React.FC = () => {
     <>
       <Navbar>
         <Routes>
-          <Route path="/" element={<HomeView />} />
-          <Route path="/hot-seat" element={<HotSeatView />} />
-          <Route path="/case-studies" element={<CaseStudiesView />} />
-          <Route path="/articles" element={<ArticlesView />} />
+          <Route path='/' element={<HomeView />} />
+          <Route path='/hot-seat' element={<HotSeatView />} />
+          <Route path='/case-studies' element={<CaseStudiesView />} />
+          <Route path='/articles' element={<ArticlesView />} />
           {articles.map((article, i) => (
             <Route
               key={article.slug}
@@ -46,29 +50,41 @@ const App: React.FC = () => {
             />
           ))}
           <Route
-            path="/case-studies/tezos"
+            path='/case-studies/tezos'
             element={<Tezos {...caseStudies["tezos"]} />}
           />
           <Route
-            path="/case-studies/gnosis-guild"
+            path='/case-studies/gnosis-guild'
             element={<GnosisGuild {...caseStudies["gnosis-guild"]} />}
           />
           <Route
-            path="/case-studies/starkware"
+            path='/case-studies/starkware'
             element={<Starkware {...caseStudies["starkware"]} />}
           />
           <Route
-            path="/case-studies/doingud"
+            path='/case-studies/doingud'
             element={<DoinGud {...caseStudies["doingud"]} />}
           />
           <Route
-            path="/case-studies/dao-drops"
+            path='/case-studies/dao-drops'
             element={<DaoDrops {...caseStudies["dao-drops"]} />}
           />
-          <Route path="/join" element={<JoinView />} />
-          <Route path="/hire" element={<HireView />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/faqs" element={<FaqsView />} />
+          <Route
+            path='/case-studies/arcx'
+            element={<Arcx {...caseStudies["arcx"]} />}
+          />
+          <Route
+            path='/case-studies/rkl'
+            element={<RKL {...caseStudies["rkl"]} />}
+          />
+          <Route
+            path='/case-studies/fayre'
+            element={<Fayre {...caseStudies["fayre"]} />}
+          />
+          <Route path='/join' element={<JoinView />} />
+          <Route path='/hire' element={<HireView />} />
+          <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+          <Route path='/faqs' element={<FaqsView />} />
         </Routes>
       </Navbar>
       <Footer />

@@ -1,25 +1,12 @@
 import React, { useEffect, useState } from "react";
-import {
-  Box,
-  BoxProps,
-  Container,
-  Grid,
-  Link,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Box, Container, Grid, Link, Stack, Typography } from "@mui/material";
 import GameOfLifeAnimation from "../../commons/gameOfLifeAnimation/GameOfLifeAnimation";
 import { colors } from "../../theme";
 import { ArticleProps, articles } from "../../constants/articles";
 import { Markdown } from "../../commons/markdown/Markdown";
-import { alpha } from "@material-ui/core";
 import { ArrowBack } from "@material-ui/icons";
 import ArticleResource from "./ArticleResource";
 import { Helmet } from "react-helmet-async";
-
-interface ArticleLayoutProps extends BoxProps {
-  tags?: string[];
-}
 
 export function ArticleLayout({
   slug,
@@ -52,8 +39,8 @@ ArticleProps) {
     <>
       <Helmet>
         <title>{`dOrg | ${title}`}</title>
-        <meta property="title" content={title} />
-        {description && <meta name="description" content={description} />}
+        <meta property='title' content={title} />
+        {description && <meta name='description' content={description} />}
       </Helmet>
       <Box sx={{ minHeight: "80vh", position: "relative", width: "100%" }}>
         <Box
@@ -64,46 +51,41 @@ ArticleProps) {
             position: "absolute",
             top: 0,
             filter: "blur(8px)",
-          }}
-        >
+          }}>
           <GameOfLifeAnimation
             resolution={128}
             animate={false}
             opacity={0.08}
-            className="case-study"
+            className='case-study'
           />
         </Box>
-        <Container maxWidth="lg" sx={{ position: "relative" }}>
+        <Container maxWidth='lg' sx={{ position: "relative" }}>
           <Box
             sx={{
               alignItems: "center",
               display: "flex",
               mt: [16, 10, 0],
               minHeight: "90vh",
-            }}
-          >
+            }}>
             <Stack spacing={3}>
               <Link
-                href="/#/articles"
+                href='/#/articles'
                 sx={{
                   color: "white",
                   transition: "color 0.25s ease-in-out",
                   "&:hover": { color: colors.green },
-                }}
-              >
+                }}>
                 <Stack
-                  direction="row"
+                  direction='row'
                   spacing={1}
-                  sx={{ alignItems: "center" }}
-                >
+                  sx={{ alignItems: "center" }}>
                   <ArrowBack width={12} height={12} />
                   <Typography>Back to Articles</Typography>
                 </Stack>
               </Link>
               <Typography
-                variant="h1"
-                sx={{ fontSize: ["2.5rem", "3rem"], mt: 0 }}
-              >
+                variant='h1'
+                sx={{ fontSize: ["2.5rem", "3rem"], mt: 0 }}>
                 {title}
               </Typography>
               {deck && (
@@ -112,33 +94,29 @@ ArticleProps) {
                 </Typography>
               )}
               <Stack
-                direction="row"
+                direction='row'
                 spacing={3}
-                sx={{ alignItems: "center", pb: 4 }}
-              >
+                sx={{ alignItems: "center", pb: 4 }}>
                 <Stack
-                  direction="row"
+                  direction='row'
                   spacing={2}
-                  sx={{ alignItems: "center" }}
-                >
+                  sx={{ alignItems: "center" }}>
                   <Typography
                     sx={{
                       color: colors.magenta,
                       textTransform: "uppercase",
                       letterSpacing: 5,
                       lineHeight: 1,
-                    }}
-                  >
+                    }}>
                     {date}
                   </Typography>
                 </Stack>
               </Stack>
               {authors && authors.length > 0 && (
                 <Stack
-                  direction="row"
+                  direction='row'
                   spacing={2}
-                  sx={{ alignItems: "center" }}
-                >
+                  sx={{ alignItems: "center" }}>
                   <Typography
                     sx={{
                       color: "white",
@@ -147,8 +125,7 @@ ArticleProps) {
                       fontSize: 12,
                       fontWeight: 800,
                       textTransform: "uppercase",
-                    }}
-                  >
+                    }}>
                     Authors:
                   </Typography>
                   {authors.map((author, i) => (
@@ -156,8 +133,8 @@ ArticleProps) {
                       <Link
                         key={i}
                         href={author.link ? author.link : undefined}
-                        target="_blank"
-                        rel="noredirect"
+                        target='_blank'
+                        rel='noredirect'
                         underline={author.link ? "always" : "none"}
                         sx={{
                           color: "white",
@@ -172,14 +149,15 @@ ArticleProps) {
                           "&:hover": {
                             color: author.link ? colors.green : null,
                           },
-                        }}
-                      >
+                        }}>
                         {author.name}
                       </Link>
                       {i < authors.length - 1 && (
                         <Typography
-                          sx={{ color: colors.grays[500], fontSize: 16 }}
-                        >{` / `}</Typography>
+                          sx={{
+                            color: colors.grays[500],
+                            fontSize: 16,
+                          }}>{` / `}</Typography>
                       )}
                     </>
                   ))}
@@ -187,10 +165,9 @@ ArticleProps) {
               )}
               {coders && coders.length > 0 && (
                 <Stack
-                  direction="row"
+                  direction='row'
                   spacing={2}
-                  sx={{ alignItems: "center" }}
-                >
+                  sx={{ alignItems: "center" }}>
                   <Typography
                     sx={{
                       color: "white",
@@ -199,8 +176,7 @@ ArticleProps) {
                       fontSize: 12,
                       fontWeight: 800,
                       textTransform: "uppercase",
-                    }}
-                  >
+                    }}>
                     Coders:
                   </Typography>
                   {coders.map((coder, i) => (
@@ -208,8 +184,8 @@ ArticleProps) {
                       <Link
                         key={i}
                         href={coder.link ? coder.link : undefined}
-                        target="_blank"
-                        rel="noredirect"
+                        target='_blank'
+                        rel='noredirect'
                         underline={coder.link ? "always" : "none"}
                         sx={{
                           color: "white",
@@ -224,14 +200,15 @@ ArticleProps) {
                           "&:hover": {
                             color: coder.link ? colors.green : null,
                           },
-                        }}
-                      >
+                        }}>
                         {coder.name}
                       </Link>
                       {i < coders.length - 1 && (
                         <Typography
-                          sx={{ color: colors.grays[500], fontSize: 16 }}
-                        >{` / `}</Typography>
+                          sx={{
+                            color: colors.grays[500],
+                            fontSize: 16,
+                          }}>{` / `}</Typography>
                       )}
                     </>
                   ))}
@@ -239,26 +216,24 @@ ArticleProps) {
               )}
             </Stack>
           </Box>
-          <Box component="section" sx={{ pb: 12, pt: [20, 20, 20, 0] }}>
+          <Box component='section' sx={{ pb: 12, pt: [20, 20, 20, 0] }}>
             <Grid container spacing={8}>
               <Grid
                 item
                 xs={12}
                 lg={8}
-                sx={{ fontSize: "1.125rem", "& *:first-child": { mt: 0 } }}
-              >
+                sx={{ fontSize: "1.125rem", "& *:first-child": { mt: 0 } }}>
                 <Markdown>{markdown}</Markdown>
                 {resources && resources.length > 0 && (
                   <>
                     <Typography
-                      variant="h3"
-                      component="h2"
+                      variant='h3'
+                      component='h2'
                       sx={{
                         mt: 8,
                         pt: 8,
                         borderTop: `2px solid ${colors.grays[500]}`,
-                      }}
-                    >
+                      }}>
                       Resources
                     </Typography>
                     <Stack spacing={2} sx={{ mt: 3 }}>
@@ -273,21 +248,18 @@ ArticleProps) {
                     mt: 8,
                     pt: 8,
                     borderTop: `2px solid ${colors.grays[500]}`,
-                  }}
-                >
+                  }}>
                   <Link
-                    href="/#/articles"
+                    href='/#/articles'
                     sx={{
                       color: "white",
                       transition: "color 0.25s ease-in-out",
                       "&:hover": { color: colors.green },
-                    }}
-                  >
+                    }}>
                     <Stack
-                      direction="row"
+                      direction='row'
                       spacing={1}
-                      sx={{ alignItems: "center" }}
-                    >
+                      sx={{ alignItems: "center" }}>
                       <ArrowBack width={12} height={12} />
                       <Typography sx={{ mt: 4 }}>Back to Articles</Typography>
                     </Stack>
@@ -300,10 +272,9 @@ ArticleProps) {
                     <Stack spacing={3}>
                       <Typography
                         fontWeight={800}
-                        textTransform="uppercase"
+                        textTransform='uppercase'
                         letterSpacing={5}
-                        lineHeight={1}
-                      >
+                        lineHeight={1}>
                         Posts
                       </Typography>
                       <Stack spacing={3} sx={{ mt: 3 }}>
@@ -311,20 +282,18 @@ ArticleProps) {
                           <Link
                             key={i}
                             href={`/#/articles/${article.slug}`}
-                            underline="none"
+                            underline='none'
                             sx={{
                               color: "white",
                               "&:hover .post-title": { color: colors.green },
-                            }}
-                          >
+                            }}>
                             <Typography
-                              className="post-title"
+                              className='post-title'
                               sx={{
                                 fontSize: 18,
                                 fontWeight: 800,
                                 lineHeight: 1.1,
-                              }}
-                            >
+                              }}>
                               {article.title}
                             </Typography>
                             <Typography
@@ -333,8 +302,7 @@ ArticleProps) {
                                 fontSize: 12,
                                 lineHeight: 1.1,
                                 mt: 0.5,
-                              }}
-                            >
+                              }}>
                               {article.date}
                             </Typography>
                           </Link>
@@ -346,10 +314,9 @@ ArticleProps) {
                     <Stack spacing={3}>
                       <Typography
                         fontWeight={800}
-                        textTransform="uppercase"
+                        textTransform='uppercase'
                         letterSpacing={5}
-                        lineHeight={1}
-                      >
+                        lineHeight={1}>
                         Tags
                       </Typography>
                       <Stack spacing={1} sx={{ mt: 3 }}>
@@ -363,8 +330,7 @@ ArticleProps) {
                                 "&:hover": {
                                   color: colors.green,
                                 },
-                              }}
-                            >
+                              }}>
                               {tag}
                             </Link>
                           </Box>
