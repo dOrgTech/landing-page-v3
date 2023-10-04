@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { Box, Container, Grid, Link, Stack, Typography } from "@mui/material";
 import GameOfLifeAnimation from "../../commons/gameOfLifeAnimation/GameOfLifeAnimation";
