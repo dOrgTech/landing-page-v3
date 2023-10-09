@@ -1,46 +1,81 @@
-# Getting Started with Create React App
+<img src="https://github.com/dOrgTech/landing-page-v3/assets/19823989/c22493eb-5c2f-415d-a6a5-1a1d219131d9" alt="Demostración del proyecto" width="100%">
+# Landing Page v3
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+`landing-page-v3` is a React-based project created and maintained by [dOrgTech](https://github.com/dOrgTech). This project serves as a template for building landing pages with a focus on simplicity and ease of use.
 
-In the project directory, you can run:
+## Installation
 
-### `yarn start`
+Before you begin, ensure you have [Node.js](https://nodejs.org/) and [Yarn](https://yarnpkg.com/) installed on your system.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Then, clone the repository:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+git clone https://github.com/dOrgTech/landing-page-v3.git
+cd landing-page-v3
+```
 
-### `yarn test`
+Install the project dependencies:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+yarn install
+```
 
-### `yarn build`
+## Usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To start the development server:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+yarn dev
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To build the project for production:
 
-### `yarn eject`
+```bash
+yarn build
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Then, you can serve the project:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+yarn start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Testing
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Run the tests using the following command:
 
-## Learn More
+```bash
+yarn test
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Linting
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Check for linting errors with:
+
+```bash
+yarn lint:check
+```
+
+Automatically fix linting errors with:
+
+```bash
+yarn lint:fix
+```
+
+## Dependencies
+
+This project uses various dependencies, including React, Material-UI, Emotion, and others. For a full list of dependencies, refer to the `package.json` file.
+
+## Contributing
+
+Contributions are welcome! Please read the [contributing guidelines](CONTRIBUTING.md) before getting started.
+
+## Support
+
+For support, issues, or queries, please reach out to [dOrgTech](https://github.com/dOrgTech).
+
+## License
+
+This project is licensed under the MIT License.
