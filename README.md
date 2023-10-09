@@ -1,4 +1,5 @@
 <img src="https://github.com/dOrgTech/landing-page-v3/assets/19823989/c22493eb-5c2f-415d-a6a5-1a1d219131d9" alt="Demostración del proyecto" width="100%">
+
 # Landing Page v3
 
 ## Overview
