@@ -35,11 +35,11 @@ export const Fayre = ({ ...props }: CaseStudyLinkProps) => {
               sx={{ color: color, fontWeight: 600 }}>
               Outlier Ventures/Filecoin
             </Link>{" "}
-            and it&pos;s part of the{" "}
+            and it’s part of the{" "}
             <Link
               href='https://outlierventures.io/base-camp/filecoin-base-camp/'
               sx={{ color: color, fontWeight: 600 }}>
-              Filecoin Basecamp
+              Filecoin Basecamp.
             </Link>{" "}
           </Typography>
           <Typography sx={{ fontSize: 20 }}>

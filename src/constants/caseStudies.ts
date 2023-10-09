@@ -356,7 +356,7 @@ export const caseStudies: CaseStudyProps = {
     summary:
       "A case study on developing smart contracts and web3 integrations for RKL a  3v3 basketball NFT enabled game on the metaverse that generated $1,7M and made it to the top50 Opensea collections.",
     thumbnail: RKLThumbnail,
-    color: colors.grays[100],
+    color: colors.yellow,
     index: 5,
     category: ["Social & Entertainment"],
     roles: ["Web3 integrations", "Frontend", "Smart Contracts"],
