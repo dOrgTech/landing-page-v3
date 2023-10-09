@@ -4,6 +4,9 @@ import GnosisGuildThumbnail from "../assets/imgs/case-studies/gnosis_guild.webp"
 import StarkWareThumbnail from "../assets/imgs/case-studies/starkware.webp";
 import DoinGudThumbnail from "../assets/imgs/case-studies/doingud.webp";
 import DaoDropsThumbnail from "../assets/imgs/case-studies/dao_drops.webp";
+import ArcxThumbnail from "../assets/imgs/case-studies/arcx.png";
+import RKLThumbnail from "../assets/imgs/case-studies/rkl.svg";
+import FayreThumbnail from "../assets/imgs/case-studies/fayre.svg";
 
 export interface PressProps {
   title: string;
@@ -35,11 +38,14 @@ export interface CaseStudyLinkProps {
 
 export interface CaseStudyProps {
   [key: string]: Readonly<CaseStudyLinkProps>;
-  tezos: Readonly<CaseStudyLinkProps>;
-  "gnosis-guild": Readonly<CaseStudyLinkProps>;
   starkware: Readonly<CaseStudyLinkProps>;
-  doingud: Readonly<CaseStudyLinkProps>;
+  "gnosis-guild": Readonly<CaseStudyLinkProps>;
+  tezos: Readonly<CaseStudyLinkProps>;
   "dao-drops": Readonly<CaseStudyLinkProps>;
+  arcx: Readonly<CaseStudyLinkProps>;
+  rkl: Readonly<CaseStudyLinkProps>;
+  fayre: Readonly<CaseStudyLinkProps>;
+  doingud: Readonly<CaseStudyLinkProps>;
 }
 
 export const caseStudies: CaseStudyProps = {
@@ -234,28 +240,6 @@ export const caseStudies: CaseStudyProps = {
       },
     ],
   },
-  doingud: {
-    slug: "doingud",
-    title: "DoinGud",
-    summary:
-      "A case study by dOrg to lead the smart contract engineering and web3 integration engineering needs of DoinGud, an impact-focused NFT marketplace.",
-    thumbnail: DoinGudThumbnail,
-    color: colors.orange,
-    index: 3,
-    category: ["Public Goods", "Social & Entertainment"],
-    roles: [
-      "Frontend Engineering",
-      "Smart Contracts",
-      "Web 3 Integrations",
-      "Software Architecture",
-    ],
-    projects: [
-      {
-        name: "DoinGud NFT Marketplace",
-        link: "https://doingud.com/",
-      },
-    ],
-  },
   "dao-drops": {
     slug: "dao-drops",
     title: "DAO Drops",
@@ -263,7 +247,7 @@ export const caseStudies: CaseStudyProps = {
       "A case study by dOrg about the research, design, building process and results of the 1st round of DAO Drops – a Retroactive Public Goods Funding (retroPGF) mechanism supported by Ethereum Foundation.",
     thumbnail: DaoDropsThumbnail,
     color: colors.purple,
-    index: 4,
+    index: 3,
     category: ["Public Goods"],
     roles: [
       "Mechanism Design",
@@ -345,6 +329,148 @@ export const caseStudies: CaseStudyProps = {
         date: "February 7, 2023",
         link: "https://metagame.substack.com/p/metanews-4-january-2023?utm_source=substack&utm_campaign=post_embed&utm_medium=web",
         publication: "Metagame",
+      },
+    ],
+  },
+  arcx: {
+    slug: "arcx",
+    title: "ArcX",
+    summary:
+      "A case study by dOrg about the executing a back-end, front-end, architecture and web3 integrations of ArcX Reviews MVP called Frenreviews a public service for reviewing web3 dApps on ",
+    thumbnail: ArcxThumbnail,
+    color: colors.purple,
+    index: 4,
+    category: ["Public Goods"],
+    roles: ["Web3 integrations", "Frontend", "Backend"],
+
+    projects: [
+      {
+        name: "Frensreviews",
+        link: "http://frenreviews.com/",
+      },
+    ],
+  },
+  rkl: {
+    slug: "rkl",
+    title: "RKL Studios",
+    summary:
+      "A case study on developing smart contracts and web3 integrations for RKL a  3v3 basketball NFT enabled game on the metaverse that generated $1,7M and made it to the top50 Opensea collections.",
+    thumbnail: RKLThumbnail,
+    color: colors.yellow,
+    index: 5,
+    category: ["Social & Entertainment"],
+    roles: ["Web3 integrations", "Frontend", "Smart Contracts"],
+    projects: [
+      {
+        name: "Rumble Kong League",
+        link: "https://www.rumblekongleague.com/",
+      },
+    ],
+    press: [
+      {
+        title: "Rumble Kong League NFT and Round 21 and the physical prizes",
+        date: "August 17, 2023",
+        link: "https://en.cryptonomist.ch/2022/08/17/rumble-kong-league-nft-announces-partnership-with-round-21/",
+        publication: "The Cryptoconomist",
+      },
+      {
+        title:
+          "Basketball Title Rumble Kong League and Stance Launch In-Game and IRL HyperSocks",
+        date: "June 06, 2023",
+        link: "https://decrypt.co/154226/basketball-title-rumble-kong-league-and-stance-launch-in-game-and-irl-hypersocks",
+        publication: "Decrypt",
+      },
+      {
+        title:
+          "Rumble Kong League Slams Dunk with New Mini Game 'Rumble Legacy'",
+        date: "June 05, 2023",
+        link: "https://chainplay.gg/blog/rumble-kong-league-new-mini-game-rumble-legacy/",
+        publication: "Chainplay",
+      },
+      {
+        title:
+          "How NFT Gaming Platform RKL Picked Up Backers Like Paul George and CAA",
+        date: "January 09, 2022",
+        link: "https://www.sportsbusinessjournal.com/Daily/Issues/2022/09/01/Technology/rumble-kong-league-startup-nft-play-to-earn-video-game.aspx",
+        publication: "Sports Business Journal",
+      },
+      {
+        title:
+          "NBA Stars Steph Curry And Paul George Back The RKL In Latest NFT Venture",
+        date: "February 09, 2022",
+        link: "https://negosyante.org/nba-stars-steph-curry-and-paul-george-back-the-rumble-kong-league-in-latest-nft-venture/",
+        publication: "Negociante News",
+      },
+    ],
+  },
+  fayre: {
+    slug: "fayre",
+    title: "Fayre",
+    summary:
+      "A case study on developing smart contracts and web3 integrations for Fayre a NFT marketplace targeting entertainment, sports and luxury brands in Latin America that generated $3,8M.",
+    thumbnail: FayreThumbnail,
+    color: colors.magenta,
+    index: 6,
+    category: ["Social & Entertainment"],
+    roles: ["Web3 integrations", "Tokenomics", "Smart Contracts"],
+    projects: [
+      {
+        name: "Website",
+        link: "https://www.fayre.com/",
+      },
+      {
+        name: "Company launch",
+        link: "https://www.youtube.com/watch?v=tskZj20Oiw0",
+      },
+    ],
+    press: [
+      {
+        title:
+          "Fayre, the ground-breaking NFT marketplace that is already making waves",
+        date: "February 16, 2022",
+        link: "https://cointelegraph.com/press-releases/fayre-the-ground-breaking-nft-marketplace-that-is-already-making-waves",
+        publication: "Coinbase",
+      },
+      {
+        title:
+          "Spanish La Liga football club RCD Espanyol teams up with Fayre for Web3 adoption",
+        date: "February 10, 2022",
+        link: "https://medium.com/fayrelabs/spanish-la-liga-football-club-rcd-espanyol-teams-up-with-nft-marketplace-fayre-for-web3-adoption-ea0faca75f7e",
+        publication: "Medium",
+      },
+      {
+        title: "Limited edition collection of blue and white NFTs",
+        date: "April 22, 2022",
+        link: "https://www.rcdespanyol.com/en/new/limited-edition-collection-of-blue-and-white-nfts/14043",
+        publication: "RCD Español",
+      },
+      {
+        title: "Fayre x Espanyol - Giveway Game During Half-Time",
+        date: "March 09, 2022",
+        link: "https://www.youtube.com/watch?v=tskZj20Oiw0",
+        publication: "Youtube",
+      },
+    ],
+  },
+  doingud: {
+    slug: "doingud",
+    title: "DoinGud",
+    summary:
+      "A case study by dOrg to lead the smart contract engineering and web3 integration engineering needs of DoinGud, an impact-focused NFT marketplace.",
+    thumbnail: DoinGudThumbnail,
+    color: colors.orange,
+    index: 7,
+    category: ["Public Goods", "Social & Entertainment"],
+    roles: [
+      "Frontend Engineering",
+      "Smart Contracts",
+      "Web 3 Integrations",
+      "Software Architecture",
+    ],
+    projects: [
+      {
+        name: "DoinGud NFT Marketplace",
+        link: "https://doingud.com/",
       },
     ],
   },
