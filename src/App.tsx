@@ -69,14 +69,14 @@ const App: React.FC = () => {
             path='/case-studies/dao-drops'
             element={<DaoDrops {...caseStudies["dao-drops"]} />}
           />
-          <Route
+          {/* <Route
             path='/case-studies/arcx'
             element={<Arcx {...caseStudies["arcx"]} />}
           />
           <Route
             path='/case-studies/rkl'
             element={<RKL {...caseStudies["rkl"]} />}
-          />
+          /> */}
           <Route
             path='/case-studies/fayre'
             element={<Fayre {...caseStudies["fayre"]} />}

@@ -42,8 +42,8 @@ export interface CaseStudyProps {
   "gnosis-guild": Readonly<CaseStudyLinkProps>;
   tezos: Readonly<CaseStudyLinkProps>;
   "dao-drops": Readonly<CaseStudyLinkProps>;
-  arcx: Readonly<CaseStudyLinkProps>;
-  rkl: Readonly<CaseStudyLinkProps>;
+  // arcx: Readonly<CaseStudyLinkProps>;
+  // rkl: Readonly<CaseStudyLinkProps>;
   fayre: Readonly<CaseStudyLinkProps>;
   doingud: Readonly<CaseStudyLinkProps>;
 }
@@ -332,77 +332,77 @@ export const caseStudies: CaseStudyProps = {
       },
     ],
   },
-  arcx: {
-    slug: "arcx",
-    title: "ArcX",
-    summary:
-      "A case study by dOrg about the executing a back-end, front-end, architecture and web3 integrations of ArcX Reviews MVP called Frenreviews a public service for reviewing web3 dApps on ",
-    thumbnail: ArcxThumbnail,
-    color: colors.purple,
-    index: 4,
-    category: ["Public Goods"],
-    roles: ["Web3 integrations", "Frontend", "Backend"],
+  // arcx: {
+  //   slug: "arcx",
+  //   title: "ArcX",
+  //   summary:
+  //     "A case study by dOrg about the executing a back-end, front-end, architecture and web3 integrations of ArcX Reviews MVP called Frenreviews a public service for reviewing web3 dApps on ",
+  //   thumbnail: ArcxThumbnail,
+  //   color: colors.purple,
+  //   index: 4,
+  //   category: ["Public Goods"],
+  //   roles: ["Web3 integrations", "Frontend", "Backend"],
 
-    projects: [
-      {
-        name: "Frensreviews",
-        link: "http://frenreviews.com/",
-      },
-    ],
-  },
-  rkl: {
-    slug: "rkl",
-    title: "RKL Studios",
-    summary:
-      "A case study on developing smart contracts and web3 integrations for RKL a  3v3 basketball NFT enabled game on the metaverse that generated $1,7M and made it to the top50 Opensea collections.",
-    thumbnail: RKLThumbnail,
-    color: colors.yellow,
-    index: 5,
-    category: ["Social & Entertainment"],
-    roles: ["Web3 integrations", "Frontend", "Smart Contracts"],
-    projects: [
-      {
-        name: "Rumble Kong League",
-        link: "https://www.rumblekongleague.com/",
-      },
-    ],
-    press: [
-      {
-        title: "Rumble Kong League NFT and Round 21 and the physical prizes",
-        date: "August 17, 2023",
-        link: "https://en.cryptonomist.ch/2022/08/17/rumble-kong-league-nft-announces-partnership-with-round-21/",
-        publication: "The Cryptoconomist",
-      },
-      {
-        title:
-          "Basketball Title Rumble Kong League and Stance Launch In-Game and IRL HyperSocks",
-        date: "June 06, 2023",
-        link: "https://decrypt.co/154226/basketball-title-rumble-kong-league-and-stance-launch-in-game-and-irl-hypersocks",
-        publication: "Decrypt",
-      },
-      {
-        title:
-          "Rumble Kong League Slams Dunk with New Mini Game 'Rumble Legacy'",
-        date: "June 05, 2023",
-        link: "https://chainplay.gg/blog/rumble-kong-league-new-mini-game-rumble-legacy/",
-        publication: "Chainplay",
-      },
-      {
-        title:
-          "How NFT Gaming Platform RKL Picked Up Backers Like Paul George and CAA",
-        date: "January 09, 2022",
-        link: "https://www.sportsbusinessjournal.com/Daily/Issues/2022/09/01/Technology/rumble-kong-league-startup-nft-play-to-earn-video-game.aspx",
-        publication: "Sports Business Journal",
-      },
-      {
-        title:
-          "NBA Stars Steph Curry And Paul George Back The RKL In Latest NFT Venture",
-        date: "February 09, 2022",
-        link: "https://negosyante.org/nba-stars-steph-curry-and-paul-george-back-the-rumble-kong-league-in-latest-nft-venture/",
-        publication: "Negociante News",
-      },
-    ],
-  },
+  //   projects: [
+  //     {
+  //       name: "Frensreviews",
+  //       link: "http://frenreviews.com/",
+  //     },
+  //   ],
+  // },
+  // rkl: {
+  //   slug: "rkl",
+  //   title: "RKL Studios",
+  //   summary:
+  //     "A case study on developing smart contracts and web3 integrations for RKL a  3v3 basketball NFT enabled game on the metaverse that generated $1,7M and made it to the top50 Opensea collections.",
+  //   thumbnail: RKLThumbnail,
+  //   color: colors.yellow,
+  //   index: 5,
+  //   category: ["Social & Entertainment"],
+  //   roles: ["Web3 integrations", "Frontend", "Smart Contracts"],
+  //   projects: [
+  //     {
+  //       name: "Rumble Kong League",
+  //       link: "https://www.rumblekongleague.com/",
+  //     },
+  //   ],
+  //   press: [
+  //     {
+  //       title: "Rumble Kong League NFT and Round 21 and the physical prizes",
+  //       date: "August 17, 2023",
+  //       link: "https://en.cryptonomist.ch/2022/08/17/rumble-kong-league-nft-announces-partnership-with-round-21/",
+  //       publication: "The Cryptoconomist",
+  //     },
+  //     {
+  //       title:
+  //         "Basketball Title Rumble Kong League and Stance Launch In-Game and IRL HyperSocks",
+  //       date: "June 06, 2023",
+  //       link: "https://decrypt.co/154226/basketball-title-rumble-kong-league-and-stance-launch-in-game-and-irl-hypersocks",
+  //       publication: "Decrypt",
+  //     },
+  //     {
+  //       title:
+  //         "Rumble Kong League Slams Dunk with New Mini Game 'Rumble Legacy'",
+  //       date: "June 05, 2023",
+  //       link: "https://chainplay.gg/blog/rumble-kong-league-new-mini-game-rumble-legacy/",
+  //       publication: "Chainplay",
+  //     },
+  //     {
+  //       title:
+  //         "How NFT Gaming Platform RKL Picked Up Backers Like Paul George and CAA",
+  //       date: "January 09, 2022",
+  //       link: "https://www.sportsbusinessjournal.com/Daily/Issues/2022/09/01/Technology/rumble-kong-league-startup-nft-play-to-earn-video-game.aspx",
+  //       publication: "Sports Business Journal",
+  //     },
+  //     {
+  //       title:
+  //         "NBA Stars Steph Curry And Paul George Back The RKL In Latest NFT Venture",
+  //       date: "February 09, 2022",
+  //       link: "https://negosyante.org/nba-stars-steph-curry-and-paul-george-back-the-rumble-kong-league-in-latest-nft-venture/",
+  //       publication: "Negociante News",
+  //     },
+  //   ],
+  // },
   fayre: {
     slug: "fayre",
     title: "Fayre",
