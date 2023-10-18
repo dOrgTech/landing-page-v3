@@ -219,80 +219,84 @@ export const CaseStudyLayout = ({
           <Stack
             direction='row'
             sx={{ alignItems: "center", justifyContent: "space-between" }}>
-            <Link
-              href={`#/case-studies/${prevProject.slug}`}
-              underline='none'
-              sx={{ color: "white" }}>
-              <Stack
-                direction='row'
-                spacing={2}
-                sx={{
-                  alignItems: "center",
-                  "&:hover": {
-                    ".linkColor": { color: prevProject.color, opacity: 1 },
-                    ".arrowLink": { transform: "translateX(-50%)" },
-                  },
-                }}>
-                <Arrow
-                  direction='left'
+            {prevProject && (
+              <Link
+                href={`#/case-studies/${prevProject.slug}`}
+                underline='none'
+                sx={{ color: "white" }}>
+                <Stack
+                  direction='row'
+                  spacing={2}
                   sx={{
-                    display: "flex",
-                    height: "100%",
-                    width: [24, 32],
-                    transform: "translateX(0%)",
-                    transition:
-                      "opacity 0.25s ease-in-out, transform 0.25s ease-in-out",
-                  }}
-                  className={`linkColor arrowLink`}
-                />
-                <Typography
-                  sx={{
-                    fontSize: [16, 20, 24],
-                    fontWeight: 600,
-                    lineHeight: 1,
-                  }}
-                  className='linkColor'>
-                  {prevProject.title}
-                </Typography>
-              </Stack>
-            </Link>
+                    alignItems: "center",
+                    "&:hover": {
+                      ".linkColor": { color: prevProject.color, opacity: 1 },
+                      ".arrowLink": { transform: "translateX(-50%)" },
+                    },
+                  }}>
+                  <Arrow
+                    direction='left'
+                    sx={{
+                      display: "flex",
+                      height: "100%",
+                      width: [24, 32],
+                      transform: "translateX(0%)",
+                      transition:
+                        "opacity 0.25s ease-in-out, transform 0.25s ease-in-out",
+                    }}
+                    className={`linkColor arrowLink`}
+                  />
+                  <Typography
+                    sx={{
+                      fontSize: [16, 20, 24],
+                      fontWeight: 600,
+                      lineHeight: 1,
+                    }}
+                    className='linkColor'>
+                    {prevProject.title}
+                  </Typography>
+                </Stack>
+              </Link>
+            )}
 
-            <Link
-              href={`#/case-studies/${nextProject.slug}`}
-              underline='none'
-              sx={{ color: "white" }}>
-              <Stack
-                direction='row'
-                spacing={2}
-                sx={{
-                  alignItems: "center",
-                  "&:hover": {
-                    ".linkColor": { color: nextProject.color, opacity: 1 },
-                    ".arrowLink": { transform: "translateX(50%)" },
-                  },
-                }}>
-                <Typography
+            {nextProject && (
+              <Link
+                href={`#/case-studies/${nextProject.slug}`}
+                underline='none'
+                sx={{ color: "white" }}>
+                <Stack
+                  direction='row'
+                  spacing={2}
                   sx={{
-                    fontSize: [16, 20, 24],
-                    fontWeight: 600,
-                    lineHeight: 1,
-                  }}
-                  className='linkColor'>
-                  {nextProject.title}
-                </Typography>
-                <Arrow
-                  sx={{
-                    display: "flex",
-                    height: "100%",
-                    width: [24, 32],
-                    transform: "translateX(0%)",
-                    transition:
-                      "opacity 0.25s ease-in-out, transform 0.25s ease-in-out",
-                  }}
-                  className={`linkColor arrowLink`}
-                />
-              </Stack>
-            </Link>
+                    alignItems: "center",
+                    "&:hover": {
+                      ".linkColor": { color: nextProject.color, opacity: 1 },
+                      ".arrowLink": { transform: "translateX(50%)" },
+                    },
+                  }}>
+                  <Typography
+                    sx={{
+                      fontSize: [16, 20, 24],
+                      fontWeight: 600,
+                      lineHeight: 1,
+                    }}
+                    className='linkColor'>
+                    {nextProject.title}
+                  </Typography>
+                  <Arrow
+                    sx={{
+                      display: "flex",
+                      height: "100%",
+                      width: [24, 32],
+                      transform: "translateX(0%)",
+                      transition:
+                        "opacity 0.25s ease-in-out, transform 0.25s ease-in-out",
+                    }}
+                    className={`linkColor arrowLink`}
+                  />
+                </Stack>
+              </Link>
+            )}
           </Stack>
         </Box>
       </Container>

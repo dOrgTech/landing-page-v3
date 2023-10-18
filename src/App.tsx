@@ -16,8 +16,8 @@ import { ArticleLayout } from "./views/articles/ArticleLayout";
 import ArticlesView from "./views/articles/ArticlesView";
 
 import { DaoDrops } from "./views/caseStudies/DaoDrops";
-import { Arcx } from "./views/caseStudies/Arcx";
-import { RKL } from "./views/caseStudies/RKL";
+// import { Arcx } from "./views/caseStudies/Arcx";
+// import { RKL } from "./views/caseStudies/RKL";
 import { Fayre } from "./views/caseStudies/Fayre";
 import { FaqsView } from "./views/faqs/Faqs";
 
