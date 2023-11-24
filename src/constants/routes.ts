@@ -7,7 +7,7 @@ import LinkedIn from "../assets/imgs/linkedIn.svg";
 import Shopify from "../assets/imgs/shopify.png";
 
 import AcredaosLogo from "../assets/imgs/clients/acredaos.svg";
-// import AmnestyLogo from "../assets/imgs/clients/amnesty.svg";
+import AmnestyLogo from "../assets/imgs/clients/amnesty.svg";
 import AragonLogo from "../assets/imgs/clients/aragon.svg";
 import BadgerLogo from "../assets/imgs/clients/badger.svg";
 import BalancerLogo from "../assets/imgs/clients/balancer.svg";
@@ -72,6 +72,7 @@ import PlumroseLogo from "../assets/imgs/companies/plumrose.svg";
 import PNCLogo from "../assets/imgs/companies/pnc.svg";
 import RappiLogo from "../assets/imgs/companies/rappi.svg";
 import WhatsappLogo from "../assets/imgs/companies/whatsapp.svg";
+import FayreLogo from "../assets/imgs/case-studies/fayre.svg";
 
 export interface IconLink {
   path: string;
@@ -110,7 +111,8 @@ export interface SocialIconLinks {
 
 export interface ClientIconLinks {
   acredaos: Readonly<IconLink>;
-  // amnesty: Readonly<IconLink>;
+  amnesty: Readonly<IconLink>;
+  daoDrops: Readonly<IconLink>;
   aragon: Readonly<IconLink>;
   badger: Readonly<IconLink>;
   balancer: Readonly<IconLink>;
@@ -125,7 +127,7 @@ export interface ClientIconLinks {
   ethereumfoundation: Readonly<IconLink>;
   etoro: Readonly<IconLink>;
   gnosis: Readonly<IconLink>;
-  // gnosisguild: Readonly<IconLink>;
+  fayre: Readonly<IconLink>;
   messari: Readonly<IconLink>;
   minds: Readonly<IconLink>;
   near: Readonly<IconLink>;
@@ -213,6 +215,16 @@ export const clientIconLinks: ClientIconLinks = {
     icon: EthereumFoundationLogo,
     name: "Ethereum Foundation",
   },
+  fayre: {
+    path: "https://fayre.com/",
+    icon: FayreLogo,
+    name: "Fayre",
+  },
+  daoDrops: {
+    path: "https://daodrops.io/",
+    icon: DaoDropsLogo,
+    name: "Dao Drops",
+  },
   gnosis: {
     path: "https://gnosis.io/",
     icon: GnosisLogo,
@@ -243,11 +255,11 @@ export const clientIconLinks: ClientIconLinks = {
     icon: StarkWareLogo,
     name: "StarkWare",
   },
-  // amnesty: {
-  //   path: "https://amnesty.org/en/",
-  //   icon: AmnestyLogo,
-  //   name: "Amnesty",
-  // },
+  amnesty: {
+    path: "https://amnesty.org/en/",
+    icon: AmnestyLogo,
+    name: "Amnesty",
+  },
   safe: {
     path: "https://safe.global/",
     icon: SafeLogo,
