@@ -4,7 +4,7 @@ import YoutubeLogo from "../assets/imgs/youtube.svg";
 import TwitterLogo from "../assets/imgs/twitter.svg";
 import EmailLogo from "../assets/imgs/mail.svg";
 import LinkedIn from "../assets/imgs/linkedIn.svg";
-import Shopify from "../assets/imgs/shopify.png";
+import Shopify from "../assets/imgs/shopify.svg";
 
 import AcredaosLogo from "../assets/imgs/clients/acredaos.svg";
 import AmnestyLogo from "../assets/imgs/clients/amnesty.svg";
@@ -17,7 +17,7 @@ import CompoundLogo from "../assets/imgs/clients/compound.svg";
 import CoordinapeLogo from "../assets/imgs/clients/coordinape.svg";
 import DaostackLogo from "../assets/imgs/clients/daostack.svg";
 import RhinofiLogo from "../assets/imgs/clients/rhinofi.svg";
-import DoingudLogo from "../assets/imgs/clients/doingud.svg";
+// import DoingudLogo from "../assets/imgs/clients/doingud.svg";
 import DxdaoLogo from "../assets/imgs/clients/dxdao.svg";
 import EcoLogo from "../assets/imgs/clients/eco.svg";
 import EthereumFoundationLogo from "../assets/imgs/clients/ethereumfoundation.svg";
@@ -121,7 +121,7 @@ export interface ClientIconLinks {
   compound: Readonly<IconLink>;
   coordinape: Readonly<IconLink>;
   daostack: Readonly<IconLink>;
-  doingud: Readonly<IconLink>;
+  // doingud: Readonly<IconLink>;
   dxdao: Readonly<IconLink>;
   eco: Readonly<IconLink>;
   ethereumfoundation: Readonly<IconLink>;
@@ -290,11 +290,11 @@ export const clientIconLinks: ClientIconLinks = {
     icon: EtoroLogo,
     name: "Etoro",
   },
-  doingud: {
-    path: "https://doingud.com/",
-    icon: DoingudLogo,
-    name: "Doingud",
-  },
+  // doingud: {
+  //   path: "https://doingud.com/",
+  //   icon: DoingudLogo,
+  //   name: "Doingud",
+  // },
   rhinofi: {
     path: "https://rhino.fi/",
     icon: RhinofiLogo,

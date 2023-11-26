@@ -124,7 +124,6 @@ export const PresentationSection: React.FC = () => {
           sx={{
             display: 'flex',
             flexWrap: 'wrap',
-            justifyContent: 'space-around',
           }}
         >
           {clientIcons.map((iconLink: IconLink, index) => (
