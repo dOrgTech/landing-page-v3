@@ -8,7 +8,6 @@ import { CommunitySection } from "./components/CommunitySection";
 import { ServicesSection } from "./components/ServicesSection";
 import { Box } from "@mui/material";
 import { BuildersSection } from "./components/BuildersSection";
-import { ClientTestimonialsSection } from "./components/ClientTestimonialsSection";
 
 export const HomeView: React.FC = () => {
   return (
@@ -17,7 +16,6 @@ export const HomeView: React.FC = () => {
       <StatsSection />
       <ServicesSection />
       <TestimonialsSection />
-      <ClientTestimonialsSection/>
       <BenefitsSection />
       <BuildersSection />
       <CommunitySection />
