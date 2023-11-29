@@ -64,22 +64,18 @@ export const testimonials: TwitterCardProps[] = [
 
 export const customerTestimonials: CustomerCardProps[] = [
   {
-    customerName: "Auryn Macmillan",
-    customerRole: "Founder | Gnosis Guild",
-    externalLink: "/#/case-studies/gnosis-guild",
-    image: GnosisGuildLogo,
-    text: `“Since about 2020, my experience with dOrg has been nothing short of positive. As the Founder of Gnosis Guild, I've seen them seamlessly integrate as an extension of our team, treating each member as if they were our own. Their ability to quickly fill gaps during periods of team turnover has been particularly impressive.
-
-    The professionals at dOrg are top-notch, aligning perfectly with our culture at Gnosis. Initially, I had reservations about whether our cultural values would align and how we'd hedge against turnover. However, dOrg dispelled these concerns effectively.
-    
-    The only challenge we faced was that sometimes the knowledge transfer took a bit longer than expected, but overall, the process was very smooth. Working with dOrg has been an enjoyable and valuable experience and we look forward to continued collaboration.”`,
-  },
-  {
     customerName: "Corey Soreff",
     customerRole: "Executive Director, Tezos Commons Foundation",
     externalLink: "/#/case-studies/tezos",
     image: TezosLogo,
     text: `“Working with the dOrg team over the past few years has been a pleasure. They consistently deliver high-quality software on time and within budget, demonstrating exceptional technical expertise and a commitment to client success.”`,
+  },
+  {
+    customerName: "Auryn Macmillan",
+    customerRole: "Founder | Gnosis Guild",
+    externalLink: "/#/case-studies/gnosis-guild",
+    image: GnosisGuildLogo,
+    text: `“dOrg team seamlessly integrated as an extension of our team since 2020. dOrg professionals are top-notch, aligning perfectly with our culture. Impressive their ability to quickly fill gaps during periods of team turnover. It's been a valuable & enjoyable experience and we look forward to continued collaboration.”`,
   },
   {
     customerName: "Adi Shildan",

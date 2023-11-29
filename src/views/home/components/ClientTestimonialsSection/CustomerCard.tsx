@@ -13,9 +13,9 @@ export interface CustomerCardProps {
 
 const getImageStyle = (customerName: string) => {
   if (customerName === "Auryn Macmillan") {
-    return { height: 85, width: 85 };
+    return { height: 40, width: 40 };
   }
-  return { height: 30, width: 100 };
+  return { height: 70, width: 150 };
 };
 
 const CustomerCard: React.FC<CustomerCardProps> = ({

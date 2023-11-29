@@ -7,7 +7,7 @@ export const ClientTestimonialsSection: React.FC = () => {
   return (
     <Box
       sx={{
-        columnCount: [1, 2],
+        columnCount: [1, 2, null, 3],
         columnGap: 4,
         mt: 12,
       }}>
