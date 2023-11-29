@@ -31,7 +31,7 @@ export const TestimonialsSection: React.FC = () => {
           sx={{
             columnCount: [1, 2, null, 3],
             columnGap: 4,
-            mt: 12,
+            mt: 4,
           }}>
           {testimonials.map((testimonial: TwitterCardProps) => {
             return (
