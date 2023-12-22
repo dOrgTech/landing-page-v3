@@ -2,7 +2,7 @@ import React from "react";
 import ReactMarkdown, { MarkdownToJSX } from "markdown-to-jsx";
 import { Typography, List, ListItem, Link, Box } from "@mui/material";
 import { colors } from "../../theme";
-import { Highlight, themes } from "prism-react-renderer";
+import { Highlight } from "prism-react-renderer";
 import PrismTheme from "./PrismTheme";
 
 interface CodeBlockProps {
@@ -163,7 +163,7 @@ const options = {
               getTokenProps,
             }: PrismProps) => (
               <Box
-                component="pre"
+                component='pre'
                 className={className}
                 sx={{
                   ...style,
@@ -174,8 +174,7 @@ const options = {
                   overflowX: "auto",
                   padding: "0.25rem",
                   whiteSpace: "pre-wrap",
-                }}
-              >
+                }}>
                 {tokens.map((line, i) => (
                   <div key={i} {...getLineProps({ line, key: i })}>
                     {line.map((token, key) => (
