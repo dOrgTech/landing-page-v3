@@ -92,7 +92,7 @@ export const newsCards = [
     image: UDNIcon,
     slug: "University of Neuchâtel",
     path: "https://drive.google.com/file/d/1jM70Eb9dN0vWCX3vhIkB9OsWgTy4zpOT/view",
-    text: "dOrg report on “Decentralized Autonomous Organizations: a legal and empirical review” written by Stefanie Boss..",
+    text: "dOrg report on “Decentralized Autonomous Organizations: a legal and empirical review” written by Stefanie Boss.",
     type: "article",
     author: "https://www.linkedin.com/school/radboud-university-nijmegen/",
   },

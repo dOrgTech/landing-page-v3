@@ -126,7 +126,7 @@ export const NewsSection: React.FC = () => {
                         src={card.image}
                         alt={card.slug}
                         style={{
-                          height: '40px',
+                          height: '55px',
                           maxWidth: 200,
                           width: 'auto',
                         }}

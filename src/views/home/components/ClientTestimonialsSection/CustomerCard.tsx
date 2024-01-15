@@ -12,9 +12,6 @@ export interface CustomerCardProps {
 }
 
 const getImageStyle = (customerName: string) => {
-  if (customerName === "Auryn Macmillan") {
-    return { height: 40, width: 40 };
-  }
   return { height: 70, width: 150 };
 };
 
