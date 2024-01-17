@@ -4,7 +4,7 @@ import YoutubeLogo from "../assets/imgs/youtube.svg";
 import TwitterLogo from "../assets/imgs/twitter.svg";
 import EmailLogo from "../assets/imgs/mail.svg";
 import LinkedIn from "../assets/imgs/linkedIn.svg";
-import Shopify from "../assets/imgs/shopify.svg";
+import Tape from "../assets/imgs/tape.svg";
 
 import AcredaosLogo from "../assets/imgs/clients/acredaos.svg";
 import AmnestyLogo from "../assets/imgs/clients/amnesty.svg";
@@ -106,7 +106,7 @@ export interface SocialIconLinks {
   github: Readonly<IconLink>;
   email: Readonly<IconLink>;
   linkedIn: Readonly<IconLink>;
-  shopify: Readonly<IconLink>;
+  tape: Readonly<IconLink>;
 }
 
 export interface ClientIconLinks {
@@ -202,10 +202,10 @@ export const socialIconLinks: SocialIconLinks = {
     icon: LinkedIn,
     name: "LinkedIn",
   },
-  shopify: {
-    path: "https://dorgtech.myshopify.com/",
-    icon: Shopify,
-    name: "Shopify",
+  tape: {
+    path: "https://tape.xyz/u/dorg_tech",
+    icon: Tape,
+    name: "Tape",
   },
 };
 
