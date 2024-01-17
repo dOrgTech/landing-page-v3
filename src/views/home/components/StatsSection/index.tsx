@@ -43,7 +43,7 @@ export const StatsSection: React.FC = () => {
     {
       id: "on-chain_revenue",
       title: "On-Chain Revenue",
-      statNumber: "$8M",
+      statNumber: "$9M",
       color: colors.orange,
       activeColors: [colors.orange, colors.yellow],
     },
