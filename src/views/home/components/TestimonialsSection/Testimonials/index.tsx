@@ -3,7 +3,7 @@ import { twitterAccounts } from "../../../../../constants/twitterAccounts";
 import { TwitterCardProps } from "../../../../../commons/twitter/TwitterCard";
 import { CustomerCardProps } from "../../ClientTestimonialsSection/CustomerCard";
 import TezosLogo from "../../../../../assets/imgs/clients/tezos.svg";
-import StarkwareLogo from "../../../../../assets/imgs/clients/starkware.svg";
+// import StarkwareLogo from "../../../../../assets/imgs/clients/starkware.svg";
 import GnosisGuildLogo from "../../../../../assets/imgs/clients/gg.svg";
 export const testimonials: TwitterCardProps[] = [
   {
@@ -77,11 +77,11 @@ export const customerTestimonials: CustomerCardProps[] = [
     image: GnosisGuildLogo,
     text: `“dOrg team seamlessly integrated as an extension of our team since 2020. dOrg professionals are top-notch, aligning perfectly with our culture. Impressive their ability to quickly fill gaps during periods of team turnover. It's been a valuable & enjoyable experience and we look forward to continued collaboration.”`,
   },
-  {
-    customerName: "Adi Shildan",
-    customerRole: "Product Manager | Starkware Industries",
-    externalLink: "/#/case-studies/starkware",
-    image: StarkwareLogo,
-    text: `“I asked a few people who had more interaction with dOrg than myself, and the general feedback is that our requests were answered in a professional manner, though sometimes there are delays in delivering and it's not always clear why there are delays.”`,
-  },
+  // {
+  //   customerName: "Adi Shildan",
+  //   customerRole: "Product Manager | Starkware Industries",
+  //   externalLink: "/#/case-studies/starkware",
+  //   image: StarkwareLogo,
+  //   text: `“I asked a few people who had more interaction with dOrg than myself, and the general feedback is that our requests were answered in a professional manner, though sometimes there are delays in delivering and it's not always clear why there are delays.”`,
+  // },
 ];
