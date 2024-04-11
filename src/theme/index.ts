@@ -1,3 +1,5 @@
+/** @format */
+
 import { createTheme } from "@mui/material/styles";
 
 export const colors = {
@@ -7,6 +9,7 @@ export const colors = {
   orange: "#FF7B22",
   magenta: "#E65688",
   purple: "#5F6EEF",
+  violet: "#b20edb",
   grays: {
     100: "#E5E5E5",
     200: "#CBCBCB",

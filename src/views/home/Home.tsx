@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import { PresentationSection } from "./components/PresentationSection";
 import { StatsSection } from "./components/StatsSection";
@@ -8,6 +10,7 @@ import { CommunitySection } from "./components/CommunitySection";
 import { ServicesSection } from "./components/ServicesSection";
 import { Box } from "@mui/material";
 import { BuildersSection } from "./components/BuildersSection";
+import { AISection } from "./components/AISection/AISection";
 
 export const HomeView: React.FC = () => {
   return (
@@ -15,6 +18,7 @@ export const HomeView: React.FC = () => {
       <PresentationSection />
       <StatsSection />
       <ServicesSection />
+      <AISection />
       <TestimonialsSection />
       <BenefitsSection />
       <BuildersSection />
