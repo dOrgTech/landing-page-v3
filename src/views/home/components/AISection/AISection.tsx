@@ -1,6 +1,6 @@
 /** @format */
 
-import { Stack, Typography, Link, styled } from "@mui/material";
+import { Stack, Typography, Link, styled, Container } from "@mui/material";
 import React from "react";
 
 import {
@@ -38,39 +38,41 @@ export const AISection: React.FC = () => {
         <Typography variant='h5' m={0}></Typography>
       </Stack>
 
-      <Stack
-        columnGap={[4, 6, 7, 10]}
-        rowGap={[2, 3, 4]}
-        direction='row'
-        pt={5}
-        sx={{
-          flexWrap: "wrap",
-          justifyContent: "space-around",
-        }}>
-        {projectClientIcon.map((iconLink: IconLink, index) => (
-          <Link
-            key={index}
-            href={iconLink.path}
-            target='_blank'
-            className='--centered'>
-            <StyledLogo
-              sx={{
-                width: [120, 140, 160, 180],
-                height: 42,
-                opacity: 0.85,
-                transition: "all 0.25s ease-in-out",
-                "&:hover": {
-                  opacity: 1,
-                  transform: "scale(1.08)",
-                },
-              }}
-              loading='lazy'
-              alt={iconLink.name}
-              src={iconLink.icon}
-            />
-          </Link>
-        ))}
-      </Stack>
+      <Container maxWidth={"md"}>
+        <Stack
+          columnGap={[4, 6, 7, 10]}
+          rowGap={[2, 3, 4]}
+          direction='row'
+          pt={5}
+          sx={{
+            flexWrap: "wrap",
+            justifyContent: "space-around",
+          }}>
+          {projectClientIcon.map((iconLink: IconLink, index) => (
+            <Link
+              key={index}
+              href={iconLink.path}
+              target='_blank'
+              className='--centered'>
+              <StyledLogo
+                sx={{
+                  width: [120, 140, 160, 180],
+                  height: 42,
+                  opacity: 0.85,
+                  transition: "all 0.25s ease-in-out",
+                  "&:hover": {
+                    opacity: 1,
+                    transform: "scale(1.08)",
+                  },
+                }}
+                loading='lazy'
+                alt={iconLink.name}
+                src={iconLink.icon}
+              />
+            </Link>
+          ))}
+        </Stack>
+      </Container>
     </Stack>
   );
 };

@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import { Box, Container, Typography } from "@mui/material";
 import {
@@ -9,7 +11,7 @@ import { ClientTestimonialsSection } from "../ClientTestimonialsSection";
 
 export const TestimonialsSection: React.FC = () => {
   return (
-    <Box mt={[16, 24, 32]} position='relative'>
+    <Box mt={[8, 16, 24]} position='relative'>
       <Container
         maxWidth='lg'
         sx={{
