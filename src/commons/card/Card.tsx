@@ -1,3 +1,5 @@
+/** @format */
+
 import { Stack, Typography, Collapse, IconButton } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
@@ -33,11 +35,10 @@ const Card: React.FC<CardProps> = ({
       }}
       onClick={() => setOpen(!open)}>
       <Stack>{icon}</Stack>
-      <Stack spacing={1} justifyContent='center' direction='column'>
+      <Stack justifyContent='center' direction='column'>
         <Stack
           direction='row'
           alignItems='center'
-          spacing={1}
           justifyContent='space-between'>
           <Typography sx={{ fontWeight: "700", letterSpacing: "2px" }}>
             {title.toUpperCase()}

@@ -1,3 +1,5 @@
+/** @format */
+
 import DiscordLogo from "../assets/imgs/discord.svg";
 import GithubLogo from "../assets/imgs/github.svg";
 import YoutubeLogo from "../assets/imgs/youtube.svg";
@@ -23,7 +25,7 @@ import EcoLogo from "../assets/imgs/clients/eco.svg";
 import EthereumFoundationLogo from "../assets/imgs/clients/ethereumfoundation.svg";
 import EtoroLogo from "../assets/imgs/clients/etoro.svg";
 import GnosisLogo from "../assets/imgs/clients/gnosis.svg";
-// import GnosisguildLogo from "../assets/imgs/clients/gnosisguild.svg";
+import GnosisguildLogo from "../assets/imgs/clients/gg.svg";
 import MessariLogo from "../assets/imgs/clients/messari.svg";
 import MindsLogo from "../assets/imgs/clients/minds.svg";
 import NearLogo from "../assets/imgs/clients/near.svg";
@@ -37,7 +39,8 @@ import SovrynLogo from "../assets/imgs/clients/sovryn.svg";
 import StakedusLogo from "../assets/imgs/clients/stakedus.svg";
 import StarkWareLogo from "../assets/imgs/clients/starkware.svg";
 import TezosLogo from "../assets/imgs/clients/tezos.svg";
-// import HomeBaseLogo from "../assets/imgs/projects/homebase.svg";
+import GoodDollarLogo from "../assets/imgs/clients/goodDollar.svg";
+import SaturnSeriesLogo from "../assets/imgs/clients/saturnSeries.svg";
 // import ZodiacLogo from "../assets/imgs/projects/zodiac.svg";
 import DaoDropsLogo from "../assets/imgs/projects/daoDrops.svg";
 import TheGraphLogo from "../assets/imgs/clients/thegraph.svg";
@@ -56,6 +59,7 @@ import SuperfluidLogo from "../assets/imgs/clients/superfluid.svg";
 import SnapshotLogo from "../assets/imgs/clients/snapshot.svg";
 import UtopiaLogo from "../assets/imgs/clients/utopia.svg";
 import VocdoniLogo from "../assets/imgs/clients/vocdoni.svg";
+import BrianLogo from "../assets/imgs/projects/briania.svg";
 
 import FigmentLogo from "../assets/imgs/companies/figment.svg";
 import OracleLogo from "../assets/imgs/companies/oracle.svg";
@@ -121,7 +125,7 @@ export interface ClientIconLinks {
   compound: Readonly<IconLink>;
   coordinape: Readonly<IconLink>;
   daostack: Readonly<IconLink>;
-  // doingud: Readonly<IconLink>;
+  gnosisGuild: Readonly<IconLink>;
   dxdao: Readonly<IconLink>;
   eco: Readonly<IconLink>;
   ethereumfoundation: Readonly<IconLink>;
@@ -143,12 +147,19 @@ export interface ClientIconLinks {
   starkware: Readonly<IconLink>;
   tezos: Readonly<IconLink>;
   theGraph: Readonly<IconLink>;
+  goodDollar: Readonly<IconLink>;
+  saturnSeries: Readonly<IconLink>;
 }
 export interface ProjectClientIconLinks {
   zodiac: Readonly<IconLink>;
   starkware: Readonly<IconLink>;
   homebase: Readonly<IconLink>;
   daoDrops: Readonly<IconLink>;
+}
+export interface ProjectAiIconLinks {
+  polywrap: Readonly<IconLink>;
+  brian: Readonly<IconLink>;
+  saturnSeries: Readonly<IconLink>;
 }
 export interface HotSeatGuestIconLinks {
   polywrap: Readonly<IconLink>;
@@ -265,11 +276,21 @@ export const clientIconLinks: ClientIconLinks = {
     icon: SafeLogo,
     name: "Safe",
   },
-  // gnosisguild: {
-  //   path: "https://gnosisguild.org/",
-  //   icon: GnosisguildLogo,
-  //   name: "Gnosis Guild",
-  // },
+  gnosisGuild: {
+    path: "https://gnosisguild.org/",
+    icon: GnosisguildLogo,
+    name: "Gnosis Guild",
+  },
+  goodDollar: {
+    path: "https://www.gooddollar.org/",
+    icon: GoodDollarLogo,
+    name: "Good Dollar",
+  },
+  saturnSeries: {
+    path: "https://www.saturnseries.com/",
+    icon: SaturnSeriesLogo,
+    name: "Saturn Series",
+  },
   opolis: {
     path: "https://opolis.co/",
     icon: OpolisLogo,
@@ -402,6 +423,23 @@ export const projectClientIconLinks: ProjectClientIconLinks = {
     path: "/#/case-studies/gnosis-guild",
     icon: GnosisLogo,
     name: "Zodiac",
+  },
+};
+export const projectAiIconLinks: ProjectAiIconLinks = {
+  polywrap: {
+    path: "https://www.polywrap.io/",
+    icon: PolywrapLogo,
+    name: "Polywrap",
+  },
+  brian: {
+    path: "https://www.brianknows.org/",
+    icon: BrianLogo,
+    name: "Brian",
+  },
+  saturnSeries: {
+    path: "https://www.saturnseries.com/",
+    icon: SaturnSeriesLogo,
+    name: "Saturn Series",
   },
 };
 

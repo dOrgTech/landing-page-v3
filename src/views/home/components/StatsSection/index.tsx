@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import StatCard from "./StatCard";
 import {
@@ -36,14 +38,14 @@ export const StatsSection: React.FC = () => {
     {
       id: "clients_served",
       title: "Clients Served",
-      statNumber: "85+",
+      statNumber: "100+",
       color: colors.green,
       activeColors: [colors.blue, colors.green],
     },
     {
       id: "on-chain_revenue",
       title: "On-Chain Revenue",
-      statNumber: "$9M",
+      statNumber: "$10,5M",
       color: colors.orange,
       activeColors: [colors.orange, colors.yellow],
     },
@@ -57,16 +59,15 @@ export const StatsSection: React.FC = () => {
 
   return (
     <Box mt={[16, 24, 32]}>
-      <Container maxWidth="lg">
+      <Container maxWidth='lg'>
         <Grid
           container
           spacing={useMediaQuery(theme.breakpoints.up("lg")) ? 4 : 8}
-          alignItems="center"
-        >
+          alignItems='center'>
           <Grid item xs={12} sm={8} lg={6}>
             <Typography
-              component="h2"
-              variant="h2"
+              component='h2'
+              variant='h2'
               sx={{
                 color: "#888888",
                 fontSize: "2rem",
@@ -81,8 +82,7 @@ export const StatsSection: React.FC = () => {
                   color: "#E5E5E5",
                   fontWeight: 800,
                 },
-              }}
-            >
+              }}>
               <strong>dOrg</strong> provides <strong>web3 development</strong>{" "}
               services to projects seeking <strong>real-world impact</strong>.
               We’ve been operating as a DAO <strong>since 2019</strong>.

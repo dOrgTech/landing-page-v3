@@ -1,3 +1,5 @@
+/** @format */
+
 import { CardProps } from "../commons/card/Card";
 import { colors } from "../theme";
 import SmartContractIcon from "../assets/imgs/services/smart-contract.svg";
@@ -9,6 +11,7 @@ import TokenomicsIcon from "../assets/imgs/services/tokenomics.svg";
 import GovernanceIcon from "../assets/imgs/services/governance.svg";
 import GameIcon from "../assets/imgs/services/game.svg";
 import DaoIcon from "../assets/imgs/services/dao.svg";
+import AIIcon from "../assets/imgs/services/ai.svg";
 
 export const ENGINEERING_SERVICE: CardProps[] = [
   {
@@ -24,6 +27,13 @@ export const ENGINEERING_SERVICE: CardProps[] = [
     title: "Web3 Integrations",
     description:
       "We leverage our mastery on JavaScript skills to enable seamless integrations with blockchain networks to deliver great UX.",
+  },
+  {
+    color: colors.violet,
+    icon: AIIcon,
+    title: "AI Development",
+    description:
+      "Merge AI with decentralized web tech. Leverage machine learning, smart contracts, and blockchain integrations for groundbreaking applications.",
   },
   {
     color: colors.green,

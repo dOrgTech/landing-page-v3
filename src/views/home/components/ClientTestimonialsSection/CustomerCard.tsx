@@ -1,17 +1,19 @@
+/** @format */
+
 import { Link, Stack, Typography } from "@mui/material";
 import React from "react";
 import { colors } from "../../../../theme";
 
 export interface CustomerCardProps {
-  customerName: string;
-  customerRole: string;
+  customerName?: string;
+  customerRole?: string;
   externalLink?: string;
   text: React.ReactNode;
   image?: string;
   clickable?: boolean;
 }
 
-const getImageStyle = (customerName: string) => {
+const getImageStyle = () => {
   return { height: 70, width: 150 };
 };
 
@@ -45,12 +47,7 @@ const CustomerCard: React.FC<CustomerCardProps> = ({
           },
         }}>
         <Stack justifyItems='flex-start'>
-          <img
-            loading='lazy'
-            src={image}
-            alt=''
-            style={getImageStyle(customerName)}
-          />
+          <img loading='lazy' src={image} alt='' style={getImageStyle()} />
         </Stack>
         <Stack>{text}</Stack>
         <Stack spacing={0}>

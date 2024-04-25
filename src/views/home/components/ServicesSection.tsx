@@ -1,28 +1,23 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from "react";
+/** @format */
+
+import React from "react";
 import {
   Box,
   Container,
-  Link,
   Stack,
   Typography,
-  styled,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
 import { Button } from "../../../commons/button/Button";
-import { colors } from "../../../theme";
 import GameOfLifeAnimation from "../../../commons/gameOfLifeAnimation/GameOfLifeAnimation";
 import Card from "../../../commons/card/Card";
 import {
   ENGINEERING_SERVICE,
   MECHANISM_SERVICE,
 } from "../../../constants/services";
-import {
-  IconLink,
-  projectClientIconLinks,
-  ProjectClientIconLinks,
-} from "../../../constants/routes";
+import CustomerCard from "./ClientTestimonialsSection/CustomerCard";
+import { caseStudiesDescriptions } from "../../caseStudies/utils/texts";
 
 export interface ServiceProps {
   id: string;
@@ -31,70 +26,9 @@ export interface ServiceProps {
   description: string;
 }
 
-const StyledLogo = styled("img")({
-  height: "auto",
-  objectFit: "contain",
-  cursor: "pointer",
-});
-
-const services = [
-  {
-    id: "milestone",
-    color: colors.purple,
-    title: "Milestone Based",
-    description:
-      "Whether your organization is crypto-native or just exploring the space, our experts can help flesh out your project requirements and deliver a production-ready solution. You own the code and we train your team to maintain it. ",
-  },
-  {
-    id: "extension",
-    color: colors.magenta,
-    title: "Team Extension",
-    description:
-      "We embed engineers with your core team to augment and accelerate their web3 development capabilities. We'll help transition the project to your team when the time is right.",
-  },
-  {
-    id: "partnership",
-    color: colors.green,
-    title: "Protocol Partnership",
-    description:
-      "Ready to start scaling your developer ecosystem? We'll assemble a specialized team that works autonomously to advance roadmap items, battle-test your developer tools, and support 3rd parties looking to integrate your tech.",
-  },
-  {
-    id: "scoping",
-    color: colors.grays[600],
-    title: "Scoping sprints",
-    description:
-      "If you are not sure about how to execute your idea, or exactly which are the services that you need. Let's collaborate on a scoping sprint to determine what’s the best way to work together.",
-  },
-];
-
 export const ServicesSection: React.FC = () => {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
-  const [activeServiceId, setActiveServiceId] = useState<string | null>(null);
-  const [currentServices, updateServices] = useState<ServiceProps[]>(services);
-  const sortObjectByKeys = (object: ProjectClientIconLinks) =>
-    Object.fromEntries(
-      Object.entries(object).sort(([k1], [k2]) => (k1 < k2 ? -1 : 1))
-    );
-  const projectClientIcon = Object.values(
-    sortObjectByKeys(projectClientIconLinks)
-  );
-
-  useEffect(() => {
-    const activeService = currentServices?.find(
-      (service) => service.id === activeServiceId
-    );
-    if (activeService && isDesktop) {
-      const _currentServices = currentServices.filter(
-        (service) => service.id !== activeService.id
-      );
-      _currentServices.unshift(activeService);
-      updateServices(_currentServices);
-    } else {
-      updateServices(services);
-    }
-  }, [activeServiceId, isDesktop]);
 
   return (
     <Box mt={[24, 32]} position='relative'>
@@ -146,7 +80,7 @@ export const ServicesSection: React.FC = () => {
                         <img
                           src={service.icon as string}
                           alt={service.title}
-                          style={{ width: "72px", height: "72px" }}
+                          style={{ width: "72px", height: "72px", padding: 8 }}
                         />
                       }
                     />
@@ -175,7 +109,7 @@ export const ServicesSection: React.FC = () => {
                         <img
                           src={service.icon as string}
                           alt={service.title}
-                          style={{ width: "72px", height: "72px" }}
+                          style={{ width: "72px", height: "72px", padding: 8 }}
                         />
                       }
                     />
@@ -186,45 +120,40 @@ export const ServicesSection: React.FC = () => {
           </Stack>
         </Stack>
 
-        <Stack mt={9}>
+        <Stack mt={12}>
           <Stack spacing={4} direction='column'>
-            <Typography variant='h5' m={0}>
-              Case studies
+            <Typography
+              variant='h6'
+              component='h2'
+              textTransform='uppercase'
+              textAlign='center'
+              letterSpacing={5}>
+              Case studies{" "}
+              <span role='img' aria-label='hammer and wrench'>
+                🔍
+              </span>
             </Typography>
+            <Typography variant='h5' m={0}></Typography>
           </Stack>
-          <Stack
-            columnGap={[4, 6, 7, 10]}
-            rowGap={[2, 3, 4]}
-            direction='row'
-            pt={5}
+
+          <Box
             sx={{
-              flexWrap: "wrap",
-              justifyContent: "space-around",
+              columnCount: [1, 2, null, 3],
+              columnGap: 4,
+              mt: 12,
             }}>
-            {projectClientIcon.map((iconLink: IconLink, index) => (
-              <Link
-                key={index}
-                href={iconLink.path}
-                target='_blank'
-                className='--centered'>
-                <StyledLogo
-                  sx={{
-                    width: [120, 140, 160, 180],
-                    height: 42,
-                    opacity: 0.85,
-                    transition: "all 0.25s ease-in-out",
-                    "&:hover": {
-                      opacity: 1,
-                      transform: "scale(1.08)",
-                    },
-                  }}
-                  loading='lazy'
-                  alt={iconLink.name}
-                  src={iconLink.icon}
-                />
-              </Link>
+            {caseStudiesDescriptions.map((caseStudy) => (
+              <Box
+                key={caseStudy.customerName}
+                sx={{
+                  breakInside: "avoid",
+                  pageBreakInside: "avoid",
+                  mb: 4,
+                }}>
+                <CustomerCard {...caseStudy} />
+              </Box>
             ))}
-          </Stack>
+          </Box>
         </Stack>
 
         <Stack mt={9} justifyContent='center' alignItems='center'>
