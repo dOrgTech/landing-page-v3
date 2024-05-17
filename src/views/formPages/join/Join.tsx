@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useEffect, useState } from "react";
 import { Controller, FieldErrors, useForm } from "react-hook-form";
 import { FormPage } from "../FormPage";
@@ -12,6 +14,7 @@ import { JoinFormInputs } from "../../../utils/network";
 import useCreateJoinRecord from "../../../api/airTable/hooks/useCreateJoinRecord";
 import useGetTechnologies from "../../../api/airTable/hooks/useGetTechnologies";
 import useGetSkills from "../../../api/airTable/hooks/useGetSkills";
+import { safeSanitize } from "../../../utils/method";
 
 export const JoinView: React.FC = () => {
   const { createRecord, loading } = useCreateJoinRecord();
@@ -33,7 +36,8 @@ export const JoinView: React.FC = () => {
 
   const onSubmit = async (data: JoinFormInputs) => {
     const submittedData: JoinFormInputs = { ...data };
-    await createRecord(submittedData);
+    const sanitizedData = safeSanitize(submittedData);
+    await createRecord(sanitizedData);
     setSubmitted(true);
   };
 
