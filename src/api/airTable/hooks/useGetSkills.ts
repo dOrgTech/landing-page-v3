@@ -10,7 +10,7 @@ const useGetSkills = () => {
       {
         method: "GET",
         headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_PERSONAL_ACCESS_TOKEN_AIRTABLE}`,
+          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_READ_TOKEN}`,
         },
       }
     )

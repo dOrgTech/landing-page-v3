@@ -4,7 +4,7 @@ import ReactGA from "react-ga";
 import React, { useState } from "react";
 import { Controller, FieldErrors, useForm } from "react-hook-form";
 import { FormPage } from "../FormPage";
-import { FormControl, Stack, Typography } from "@mui/material";
+import { Alert, Box, FormControl, Stack, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { CreatableSelect as Select } from "../../../commons/form/CreatableSelect";
@@ -17,11 +17,19 @@ import { HireFormInputs } from "../../../utils/network";
 import useCreateHireRecord from "../../../api/airTable/hooks/useCreateHireRecord";
 import TagManager from "react-gtm-module";
 import { safeSanitize } from "../../../utils/method";
+import Snackbar from "@mui/material/Snackbar";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export const HireView: React.FC = () => {
   const { loading, createRecord } = useCreateHireRecord();
   const [showOptional, setShowOptional] = useState<boolean>(false);
   const [submitted, setSubmitted] = useState<boolean>(false);
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+  const [toast, setToast] = useState({
+    open: false,
+    vertical: "top",
+    horizontal: "right",
+  });
   const {
     handleSubmit,
     control,
@@ -34,7 +42,16 @@ export const HireView: React.FC = () => {
     console.error("errors", errors);
   }
 
+  const handleClose = () => {
+    setToast({ ...toast, open: false });
+  };
+
   const onSubmit = async (data: HireFormInputs) => {
+    if (!recaptchaToken) {
+      setToast({ ...toast, open: true });
+
+      return;
+    }
     const submittedData: HireFormInputs = { ...data };
     const sanitizedData = safeSanitize(submittedData);
     await createRecord(sanitizedData);
@@ -57,10 +74,31 @@ export const HireView: React.FC = () => {
     });
   };
 
+  const handleRecaptchaChange = (token: string | null) => {
+    setRecaptchaToken(token);
+  };
+
   return (
     <FormPage
       title='Hire Us'
       description='Tell us about your project and how we can help.'>
+      <Snackbar
+        anchorOrigin={{
+          vertical: toast.vertical as "top",
+          horizontal: toast.horizontal as "right",
+        }}
+        open={toast.open}
+        onClose={handleClose}
+        message=''
+        key={toast.vertical + toast.horizontal}>
+        <Alert
+          onClose={handleClose}
+          severity='error'
+          variant='filled'
+          sx={{ width: "100%" }}>
+          Please verify you are not a robot.
+        </Alert>
+      </Snackbar>
       {submitted ? (
         <>
           <Stack
@@ -399,7 +437,12 @@ export const HireView: React.FC = () => {
               </Stack>
             </Stack>
           )}
-
+          <Box sx={{ my: 2 }}>
+            <ReCAPTCHA
+              sitekey={process.env.REACT_APP_CAPTCHA ?? ""}
+              onChange={handleRecaptchaChange}
+            />
+          </Box>
           <Button
             id='hire_us'
             className='hire_us'

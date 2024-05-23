@@ -1,3 +1,5 @@
+/** @format */
+
 import { useState } from "react";
 import { HireFormInputs } from "../../../utils/network";
 
@@ -20,7 +22,7 @@ const useCreateHireRecord = () => {
             "When would you like to get started?": fields.start_date,
             "How did you hear about us?": fields.source,
             Stage: "Website Lead",
-          }
+          },
         },
       ],
     };
@@ -29,17 +31,14 @@ const useCreateHireRecord = () => {
   const createRecord = async (fields: HireFormInputs): Promise<void> => {
     setLoading(true);
     const body = generateBody(fields);
-    await fetch(
-      `${process.env.REACT_APP_AIRTABLE_URL}/${process.env.REACT_APP_AIRTABLE_BASE}/${process.env.REACT_APP_AIRTABLE_HIRE_TABLE}`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${process.env.REACT_APP_PERSONAL_ACCESS_TOKEN_AIRTABLE}`,
-        },
-        body: JSON.stringify(body),
-      }
-    )
+    await fetch(`${process.env.REACT_APP_CLOUDFLARE_HIRE_API}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Record-Type": "hire",
+      },
+      body: JSON.stringify(body),
+    })
       .then((res) => {
         setLoading(false);
         if (res.status === 200) {

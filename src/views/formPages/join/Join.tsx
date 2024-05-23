@@ -3,7 +3,14 @@
 import React, { useEffect, useState } from "react";
 import { Controller, FieldErrors, useForm } from "react-hook-form";
 import { FormPage } from "../FormPage";
-import { Divider, FormControl, Stack, Typography } from "@mui/material";
+import {
+  Alert,
+  Box,
+  Divider,
+  FormControl,
+  Stack,
+  Typography,
+} from "@mui/material";
 import { colors } from "../../../theme";
 import { Button } from "../../../commons/button/Button";
 import { Label } from "../../../commons/form/Label";
@@ -15,13 +22,21 @@ import useCreateJoinRecord from "../../../api/airTable/hooks/useCreateJoinRecord
 import useGetTechnologies from "../../../api/airTable/hooks/useGetTechnologies";
 import useGetSkills from "../../../api/airTable/hooks/useGetSkills";
 import { safeSanitize } from "../../../utils/method";
+import Snackbar from "@mui/material/Snackbar";
+
+import ReCAPTCHA from "react-google-recaptcha";
 
 export const JoinView: React.FC = () => {
   const { createRecord, loading } = useCreateJoinRecord();
   const { fetchTechnologies, data: technologies } = useGetTechnologies();
   const { fetchSkills, data: skills } = useGetSkills();
   const [submitted, setSubmitted] = useState<boolean>(false);
-
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+  const [toast, setToast] = useState({
+    open: false,
+    vertical: "top",
+    horizontal: "right",
+  });
   const {
     handleSubmit,
     control,
@@ -34,11 +49,24 @@ export const JoinView: React.FC = () => {
     console.error(errors);
   }
 
+  const handleClose = () => {
+    setToast({ ...toast, open: false });
+  };
+
   const onSubmit = async (data: JoinFormInputs) => {
+    if (!recaptchaToken) {
+      setToast({ ...toast, open: true });
+
+      return;
+    }
     const submittedData: JoinFormInputs = { ...data };
     const sanitizedData = safeSanitize(submittedData);
     await createRecord(sanitizedData);
     setSubmitted(true);
+  };
+
+  const handleRecaptchaChange = (token: string | null) => {
+    setRecaptchaToken(token);
   };
 
   useEffect(() => {
@@ -54,6 +82,23 @@ export const JoinView: React.FC = () => {
     <FormPage
       title='Join Us'
       description='Fill out the form if you want to join us!'>
+      <Snackbar
+        anchorOrigin={{
+          vertical: toast.vertical as "top",
+          horizontal: toast.horizontal as "right",
+        }}
+        open={toast.open}
+        onClose={handleClose}
+        message=''
+        key={toast.vertical + toast.horizontal}>
+        <Alert
+          onClose={handleClose}
+          severity='error'
+          variant='filled'
+          sx={{ width: "100%" }}>
+          Please verify you are not a robot.
+        </Alert>
+      </Snackbar>
       {submitted ? (
         <>
           <Stack spacing={2}>
@@ -447,6 +492,12 @@ export const JoinView: React.FC = () => {
               </Stack>
             </Stack>
           </Stack>
+          <Box sx={{ my: 2 }}>
+            <ReCAPTCHA
+              sitekey={process.env.REACT_APP_CAPTCHA ?? ""}
+              onChange={handleRecaptchaChange}
+            />
+          </Box>
           <Button
             variant='outlined'
             type='submit'
