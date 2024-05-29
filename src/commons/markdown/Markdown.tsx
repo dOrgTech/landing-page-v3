@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import ReactMarkdown, { MarkdownToJSX } from "markdown-to-jsx";
 import { Typography, List, ListItem, Link, Box } from "@mui/material";
@@ -132,6 +134,16 @@ const options = {
     },
     li: {
       component: ListItem,
+      props: {
+        sx: {
+          display: "list-item",
+          paddingLeft: 0,
+          "& p": {
+            margin: 0,
+            display: "inline",
+          },
+        },
+      },
     },
     blockquote: {
       component: Box,

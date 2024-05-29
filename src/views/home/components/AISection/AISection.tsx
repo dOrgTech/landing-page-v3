@@ -30,7 +30,7 @@ export const AISection: React.FC = () => {
           textTransform='uppercase'
           textAlign='center'
           letterSpacing={5}>
-          Collaborative AI Projects{" "}
+          dOrg&apos;s Members AI Projects{" "}
           <span role='img' aria-label='hammer and wrench'>
             🧠
           </span>
