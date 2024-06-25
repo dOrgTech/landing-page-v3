@@ -47,7 +47,6 @@ export const HireView: React.FC = () => {
   };
 
   const onSubmit = async (data: HireFormInputs) => {
-    await recaptchaRef.current.executeAsync();
     if (!recaptchaToken) {
       setToast({ ...toast, open: true });
       return;
