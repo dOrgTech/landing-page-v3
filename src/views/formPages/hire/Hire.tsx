@@ -25,6 +25,7 @@ export const HireView: React.FC = () => {
   const [showOptional, setShowOptional] = useState<boolean>(false);
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+  const recaptchaRef = React.createRef<any>();
   const [toast, setToast] = useState({
     open: false,
     vertical: "top",
@@ -47,9 +48,9 @@ export const HireView: React.FC = () => {
   };
 
   const onSubmit = async (data: HireFormInputs) => {
+    await recaptchaRef.current.executeAsync();
     if (!recaptchaToken) {
       setToast({ ...toast, open: true });
-
       return;
     }
     const submittedData: HireFormInputs = { ...data };
@@ -439,7 +440,9 @@ export const HireView: React.FC = () => {
           )}
           <Box sx={{ my: 2 }}>
             <ReCAPTCHA
-              sitekey={process.env.REACT_APP_CAPTCHA ?? ""}
+              ref={recaptchaRef}
+              size='invisible'
+              sitekey={"6LdMbeYpAAAAAOV-K_RXw9tr2soArbM9dSx-cB4L"}
               onChange={handleRecaptchaChange}
             />
           </Box>

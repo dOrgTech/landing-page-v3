@@ -1,3 +1,5 @@
+/** @format */
+
 import deployErc20UsingFoundryArticle from "../views/articles/deployErc20UsingFoundryArticle.md";
 import smartContractDeveloper2023 from "../views/articles/smartContractDeveloper2023.md";
 import daoToolingVsDaoCulture from "../views/articles/daoToolingVsDaoCulture.md";
@@ -5,6 +7,7 @@ import foundryVsHardhat from "../views/articles/foundryVsHardhat.md";
 import comparingSmartContractLanguages from "../views/articles/comparingSmartContractLanguages.md";
 import howToGetStuffDoneInADao from "../views/articles/howToGetStuffDoneInADao.md";
 import dorgPassport from "../views/articles/dorgPassport.md";
+import AiProjectArticle from "../views/articles/aiProjectArticle.md";
 
 interface Author {
   name: string;
@@ -33,6 +36,41 @@ export interface ArticleProps {
 }
 
 export const articles = [
+  {
+    slug: "ai-innovation",
+    title: "AI Innovations: Exploring dOrg's Members AI Projects",
+    date: "May 13, 2024",
+    authors: [
+      {
+        name: "Anita Caldera",
+      },
+    ],
+    content: AiProjectArticle,
+    tags: ["AI", "Web3", "Protocol", "AI-agents", "NFTs"],
+    resources: [
+      {
+        title: "Brain AI",
+        link: "https://www.brianknows.org/",
+      },
+      {
+        title: "Evo Ninja",
+        link: "https://evo.ninja/",
+      },
+      {
+        title: "Evo Ninja",
+        link: "https://evo.ninja/",
+      },
+      {
+        title: "Perplexity",
+        link: "https://www.perplexity.ai/",
+      },
+      {
+        title: "Saturn Series",
+        link: "https://www.saturnseries.com/",
+      },
+    ],
+  },
+
   {
     slug: "deploy-erc20-using-foundry",
     title:

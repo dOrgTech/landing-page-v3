@@ -41,6 +41,7 @@ import StarkWareLogo from "../assets/imgs/clients/starkware.svg";
 import TezosLogo from "../assets/imgs/clients/tezos.svg";
 import GoodDollarLogo from "../assets/imgs/clients/goodDollar.svg";
 import SaturnSeriesLogo from "../assets/imgs/clients/saturnSeries.svg";
+import PerplexityLogo from "../assets/imgs/clients/perplexity.svg";
 // import ZodiacLogo from "../assets/imgs/projects/zodiac.svg";
 import DaoDropsLogo from "../assets/imgs/projects/daoDrops.svg";
 import TheGraphLogo from "../assets/imgs/clients/thegraph.svg";
@@ -158,6 +159,7 @@ export interface ProjectClientIconLinks {
 }
 export interface ProjectAiIconLinks {
   polywrap: Readonly<IconLink>;
+  perplexity: Readonly<IconLink>;
   brian: Readonly<IconLink>;
   saturnSeries: Readonly<IconLink>;
 }
@@ -430,6 +432,11 @@ export const projectAiIconLinks: ProjectAiIconLinks = {
     path: "https://www.polywrap.io/",
     icon: PolywrapLogo,
     name: "Polywrap",
+  },
+  perplexity: {
+    path: "https://www.perplexity.ai/",
+    icon: PerplexityLogo,
+    name: "Perplexity",
   },
   brian: {
     path: "https://www.brianknows.org/",
