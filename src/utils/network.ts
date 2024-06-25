@@ -8,6 +8,7 @@ export interface HireFormInputs {
   website: string;
   project_categories: HireSelectForms["categories"][];
   approach: HireSelectForms["approaches"][];
+  raise_funds: HireSelectForms["raise_funds"][];
   project_description: string;
   budget: string;
   start_date: string;

@@ -39,8 +39,12 @@ export const joinSelectOptions: JoinSelectForms = {
       label: "0-2 years of professional experience",
     },
     {
-      value: "2+ years of professional experience",
-      label: "2+ years of professional experience",
+      value: "2-4 years of professional experience",
+      label: "2-4 years of professional experience",
+    },
+    {
+      value: "+4 years of professional experience ",
+      label: "+4 years of professional experience ",
     },
   ],
   availability: [

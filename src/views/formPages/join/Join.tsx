@@ -21,7 +21,6 @@ import { JoinFormInputs } from "../../../utils/network";
 import useCreateJoinRecord from "../../../api/airTable/hooks/useCreateJoinRecord";
 import useGetTechnologies from "../../../api/airTable/hooks/useGetTechnologies";
 import useGetSkills from "../../../api/airTable/hooks/useGetSkills";
-import { safeSanitize } from "../../../utils/method";
 import Snackbar from "@mui/material/Snackbar";
 
 import ReCAPTCHA from "react-google-recaptcha";
@@ -60,8 +59,7 @@ export const JoinView: React.FC = () => {
       return;
     }
     const submittedData: JoinFormInputs = { ...data };
-    const sanitizedData = safeSanitize(submittedData);
-    await createRecord(sanitizedData);
+    await createRecord(submittedData);
     setSubmitted(true);
   };
 

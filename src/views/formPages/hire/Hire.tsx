@@ -16,7 +16,6 @@ import { hireSelectOptions } from "../../../constants/hire";
 import { HireFormInputs } from "../../../utils/network";
 import useCreateHireRecord from "../../../api/airTable/hooks/useCreateHireRecord";
 import TagManager from "react-gtm-module";
-import { safeSanitize } from "../../../utils/method";
 import Snackbar from "@mui/material/Snackbar";
 import ReCAPTCHA from "react-google-recaptcha";
 
@@ -54,8 +53,7 @@ export const HireView: React.FC = () => {
       return;
     }
     const submittedData: HireFormInputs = { ...data };
-    const sanitizedData = safeSanitize(submittedData);
-    await createRecord(sanitizedData);
+    await createRecord(submittedData);
     setSubmitted(true);
 
     const args = {
@@ -384,6 +382,35 @@ export const HireView: React.FC = () => {
                     )}
                   />
                 </FormControl>
+
+                <FormControl variant='standard'>
+                  <Label
+                    component='label'
+                    htmlFor='budget'
+                    sx={{ color: "currentColor" }}>
+                    Do you need to raise funds?
+                  </Label>
+                  <Controller
+                    control={control}
+                    name='raise_funds'
+                    render={({ field: { onChange, name } }) => (
+                      <Select
+                        name={name}
+                        options={hireSelectOptions.raise_funds}
+                        onChange={(val) => {
+                          if (!Array.isArray(val)) {
+                            onChange(val.value);
+                          }
+                        }}
+                        errorMsg={
+                          errors.raise_funds &&
+                          (errors.raise_funds as FieldErrors).message
+                        }
+                      />
+                    )}
+                  />
+                </FormControl>
+
                 <FormControl variant='standard'>
                   <Label
                     component='label'
@@ -440,9 +467,7 @@ export const HireView: React.FC = () => {
           )}
           <Box sx={{ my: 2 }}>
             <ReCAPTCHA
-              ref={recaptchaRef}
-              size='invisible'
-              sitekey={"6LdMbeYpAAAAAOV-K_RXw9tr2soArbM9dSx-cB4L"}
+              sitekey={process.env.REACT_APP_CAPTCHA ?? ""}
               onChange={handleRecaptchaChange}
             />
           </Box>

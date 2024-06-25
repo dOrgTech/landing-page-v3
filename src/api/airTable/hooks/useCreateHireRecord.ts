@@ -18,6 +18,7 @@ const useCreateHireRecord = () => {
             Description: fields.project_description,
             Category: fields.project_categories,
             "What is your budget": fields.budget,
+            "Do you need to raise funds?": fields.raise_funds,
             "How would you like to work together?": fields.approach,
             "When would you like to get started?": fields.start_date,
             "How did you hear about us?": fields.source,
