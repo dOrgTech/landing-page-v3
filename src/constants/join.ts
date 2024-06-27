@@ -52,6 +52,6 @@ export const joinSelectOptions: JoinSelectForms = {
     { value: "Part-time (6-15)", label: "Part-time (6-15)" },
     { value: "Half-time (16-25)", label: "Half-time (16-25)" },
     { value: "Almost full-time (26-35)", label: "Almost full-time (26-35)" },
-    { value: "Full-time (35+)", label: "Full-time (35+)" },
+    { value: "Full-time (36+)", label: "Full-time (36+)" },
   ],
 };
