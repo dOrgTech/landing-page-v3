@@ -8,6 +8,7 @@ import comparingSmartContractLanguages from "../views/articles/comparingSmartCon
 import howToGetStuffDoneInADao from "../views/articles/howToGetStuffDoneInADao.md";
 import dorgPassport from "../views/articles/dorgPassport.md";
 import AiProjectArticle from "../views/articles/aiProjectArticle.md";
+import DAOInnovationArticle from "../views/articles/daoInnovation.md";
 
 interface Author {
   name: string;
@@ -36,6 +37,33 @@ export interface ArticleProps {
 }
 
 export const articles = [
+  {
+    slug: "dao-innovation",
+    title:
+      "Decentralized and Recognized: How Vermont is Pioneering DAO Innovation",
+    date: "July 08, 2024",
+    authors: [
+      {
+        name: "Anita Caldera",
+      },
+      {
+        name: "Nicholas White",
+      },
+    ],
+    content: DAOInnovationArticle,
+    tags: ["Decentralization", "Blockchain", "DAOs", "LLCs", "Vermont", "Web3"],
+    resources: [
+      {
+        title:
+          "The rise of decentralized autonomous organizations (DAOs): a first empirical glimpse",
+        link: "https://www.researchgate.net/publication/363155263_The_rise_of_decentralized_autonomous_organizations_DAOs_a_first_empirical_glimpse",
+      },
+      {
+        title: "DAO Structure",
+        link: "https://docs.dorg.tech/structure",
+      },
+    ],
+  },
   {
     slug: "ai-innovation",
     title: "AI Innovations: Exploring dOrg's Members AI Projects",

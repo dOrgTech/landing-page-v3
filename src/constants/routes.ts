@@ -32,7 +32,7 @@ import NearLogo from "../assets/imgs/clients/near.svg";
 import OperaLogo from "../assets/imgs/clients/opera.svg";
 import OpolisLogo from "../assets/imgs/clients/opolis.svg";
 import ParaswapLogo from "../assets/imgs/clients/paraswap.svg";
-import PolywrapLogo from "../assets/imgs/clients/polywrap.svg";
+import AgentCoinLogo from "../assets/imgs/clients/agent-coin.png";
 import RaribleLogo from "../assets/imgs/clients/rarible.svg";
 import SafeLogo from "../assets/imgs/clients/safe.svg";
 import SovrynLogo from "../assets/imgs/clients/sovryn.svg";
@@ -139,7 +139,7 @@ export interface ClientIconLinks {
   opera: Readonly<IconLink>;
   opolis: Readonly<IconLink>;
   paraswap: Readonly<IconLink>;
-  polywrap: Readonly<IconLink>;
+  agentcoin: Readonly<IconLink>;
   rarible: Readonly<IconLink>;
   rhinofi: Readonly<IconLink>;
   safe: Readonly<IconLink>;
@@ -158,13 +158,13 @@ export interface ProjectClientIconLinks {
   daoDrops: Readonly<IconLink>;
 }
 export interface ProjectAiIconLinks {
-  polywrap: Readonly<IconLink>;
+  agentcoin: Readonly<IconLink>;
   perplexity: Readonly<IconLink>;
   brian: Readonly<IconLink>;
   saturnSeries: Readonly<IconLink>;
 }
 export interface HotSeatGuestIconLinks {
-  polywrap: Readonly<IconLink>;
+  agentcoin: Readonly<IconLink>;
   utopia: Readonly<IconLink>;
   superfluid: Readonly<IconLink>;
   kleros: Readonly<IconLink>;
@@ -393,10 +393,10 @@ export const clientIconLinks: ClientIconLinks = {
     icon: TezosLogo,
     name: "Tezos",
   },
-  polywrap: {
-    path: "https://polywrap.io/",
-    icon: PolywrapLogo,
-    name: "Polywrap",
+  agentcoin: {
+    path: "https://www.agentcoin.org/",
+    icon: AgentCoinLogo,
+    name: "Agentcoin",
   },
   opera: {
     path: "https://opera.com/",
@@ -428,10 +428,10 @@ export const projectClientIconLinks: ProjectClientIconLinks = {
   },
 };
 export const projectAiIconLinks: ProjectAiIconLinks = {
-  polywrap: {
-    path: "https://www.polywrap.io/",
-    icon: PolywrapLogo,
-    name: "Polywrap",
+  agentcoin: {
+    path: "https://www.agentcoin.org/",
+    icon: AgentCoinLogo,
+    name: "Agentcoin",
   },
   perplexity: {
     path: "https://www.perplexity.ai/",
@@ -451,10 +451,10 @@ export const projectAiIconLinks: ProjectAiIconLinks = {
 };
 
 export const hotSeatIconLinks: HotSeatGuestIconLinks = {
-  polywrap: {
-    path: "https://polywrap.io/",
-    icon: PolywrapLogo,
-    name: "Polywrap",
+  agentcoin: {
+    path: "https://www.agentcoin.org/",
+    icon: AgentCoinLogo,
+    name: "Agentcoin",
   },
   utopia: {
     path: "https://www.utopialabs.com/",
