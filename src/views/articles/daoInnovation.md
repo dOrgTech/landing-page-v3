@@ -76,31 +76,38 @@ dOrg provides web3 development services to projects seeking real-world impact. W
 
 ![](https://lh7-us.googleusercontent.com/docsz/AD_4nXcMXZqqjAFN0WyqOd7cox7ekiLTfWX8jE2wVf1a0bInArTDqVF7iuF4-Aae1YLN3FQECjL6oyCYK3dFmGupOtxoGEQo5c1NHQrhX3tmh9tZwGSIoAWqPCLt7Doc-fghxqoeXsVgqpX_8F6yJpgn2dvWrjvh?key=1yTRdR6kLqWInqdkwn_TKw)Learn more about dOrg [here](https://docs.dorg.tech/structure)
 
-Now that we went through the basics, it’s also important to find the coherence between the blockchain economy and Vermont.\
+Now that we went through the basics, it’s also important to find the coherence between the blockchain economy and Vermont.
+
 The connection between the blockchain economy and Vermont, along with the advantages of incorporating blockchain into politics in Vermont, is a multifaceted topic that highlights how technology and governance can intersect beneficially. Here are some clear links and benefits:
 
-**Blockchain Economy and Vermont**\
+**Blockchain Economy and Vermont**
+
 Vermont was one of the first states in the U.S. to recognize the potential of blockchain technology, enacting laws that directly cater to blockchain initiatives. 
 
-Also, Official Institutions like the University of Vermont have engaged in blockchain research and education, which helps foster a knowledgeable community that can support and grow the blockchain ecosystem within the state.\
-\
+Also, Official Institutions like the University of Vermont have engaged in blockchain research and education, which helps foster a knowledgeable community that can support and grow the blockchain ecosystem within the state.
+
 By embracing blockchain technology, Vermont can attract investments from tech companies and startups looking to benefit from its friendly regulations. This could lead to more jobs and economic growth, making Vermont the right place for innovation in technology.
 
 As Vermont becomes more welcoming to blockchain, it becomes a more appealing place for companies in this field. They like the clear rules and support they find here, which encourages them to set up or expand their operations in the state. This growth means more job opportunities in different areas related to blockchain technology.
 
 As these companies come to Vermont, they bring expertise, talent, and resources that boost innovation. This not only helps the economy grow but also encourages collaboration between industry, universities, and government. Vermont could become known for its work in blockchain research and development.
 
-**Blockchain and Politics in Vermont: Future looks more transparent and more decentralized**\
-Vermont's current blockchain regulation is poised to benefit the local economy, and looking ahead, blockchain holds potential for future improvements. It could offer citizens a better experience in public affairs down the road. Here are some speculative ideas for how this might unfold in the future:\
+**Blockchain and Politics in Vermont: Future looks more transparent and more decentralized**
+
+Vermont's current blockchain regulation is poised to benefit the local economy, and looking ahead, blockchain holds potential for future improvements. It could offer citizens a better experience in public affairs down the road. Here are some speculative ideas for how this might unfold in the future:
+
 Starting with the transparency and accountability of the state government, blockchain's immutable ledger can be used to record government decisions and transactions, ensuring they are accessible and unalterable once entered, which reduces corruption and increases trust.
 
-Blockchain can also streamline governmental processes by reducing the need for intermediaries and decreasing paperwork and bureaucracy. For example, smart contracts could automate routine tasks and compliance checks, leading to more efficient government operations, but we could discuss this later in another chapter of this series. \
-Implementing blockchain in voting systems can address security concerns while maintaining voter privacy and ensuring the integrity of elections. This advantage can be seen as something very far away from real life, but it’s something totally possible and that can potentially improve citizen’s experience while voting and their involvement in public affairs. \
+Blockchain can also streamline governmental processes by reducing the need for intermediaries and decreasing paperwork and bureaucracy. For example, smart contracts could automate routine tasks and compliance checks, leading to more efficient government operations, but we could discuss this later in another chapter of this series. 
+
+Implementing blockchain in voting systems can address security concerns while maintaining voter privacy and ensuring the integrity of elections. This advantage can be seen as something very far away from real life, but it’s something totally possible and that can potentially improve citizen’s experience while voting and their involvement in public affairs. 
+
 Thanks to other voting systems that exist within the ecosystem, it is proven that blockchain-based voting allows for secure, transparent, and tamper-proof recording of votes, potentially increasing voter turnout due to its convenience and reliability.
 
 Another idea is related to public records management, blockchain technology can revolutionize how public records like land registrations, birth certificates, and other legal documents are managed. Using blockchain can make these records tamper-resistant and easily verifiable, which reduces fraud and improves service delivery to citizens.
 
 The incorporation of blockchain into politics can foster a more participatory approach to policy development. With tools like DAOs, citizens could potentially have more direct input into certain legislative processes, leading to policies that better reflect the populace’s desires.
 
-These connections and advantages show how Vermont's embrace of blockchain technology could transform not just its economy but also its political landscape, enhancing both efficiency and democratic engagement.\
+These connections and advantages show how Vermont's embrace of blockchain technology could transform not just its economy but also its political landscape, enhancing both efficiency and democratic engagement.
+
 Vermont is not just playing by new rules; it is setting them. By offering a legal haven for DAOs and embracing blockchain technology, Vermont positions itself at the forefront of digital and decentralized innovation. This commitment not only enhances its economic landscape but also paves the way for a future where technology and governance evolve hand in hand. As other states observe and learn, Vermont's blueprint for a blockchain-friendly environment could inspire a nationwide or even global adaptation, fostering a new era of decentralized and democratic governance.
