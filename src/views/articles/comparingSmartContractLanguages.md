@@ -2,7 +2,7 @@ There are different languages used to build **Smart Contracts**, so here we will
 
 ## Solidity
 
-According to Solidity documentation, "Solidity is an object-oriented, high-level language for implementing **Smart Contracts.** _"(...) Solidity is a curly-bracket language designed to target the Ethereum Virtual Machine (EVM). It is influenced by C++, Python and JavaScript"_
+According to Solidity documentation, "Solidity is an object-oriented, high-level language for implementing **Smart Contracts.** *"(...) Solidity is a curly-bracket language designed to target the Ethereum Virtual Machine (EVM). It is influenced by C++, Python and JavaScript"*
 
 Solidity is mainly used to build **Smart Contracts on Ethereum** and EVM compatible chains such as Quorum, Polygon, Cromos, Binance Smart Chain and more.
 
@@ -83,7 +83,7 @@ contract WETH {
 
 In solidity the main object is a contract, which is defined using the contract reserved keyword. Inside the body of the contract one may define state variables, functions, modifiers, events and recently also errors. In this simple example we focus on state variables, functions and events.
 
-Other contracts may only call functions, which could return information about the state variables of the contract if needed.^[[n]](#cmnt14)^ The most important state variable comes next, namely balanceOf, which is used to store the balances of WETH for any given address. This particular variable is of type "mapping" from an address type to a uint type, which means that each address points to or maps to a uint. This is also accessible by the public. You may try it out by yourself on etherscan. Another important thing to notice is that solidity uses semicolons at the end of statements.
+Other contracts may only call functions, which could return information about the state variables of the contract if needed.^[\[n\]](#cmnt14)^ The most important state variable comes next, namely balanceOf, which is used to store the balances of WETH for any given address. This particular variable is of type "mapping" from an address type to a uint type, which means that each address points to or maps to a uint. This is also accessible by the public. You may try it out by yourself on etherscan. Another important thing to notice is that solidity uses semicolons at the end of statements.
 
 Typically the declaration of state variables and events happens at the beginning of a contract, although there is nothing in the compiler that enforces this. After these declarations come a set of functions, which we discuss next.
 
@@ -95,7 +95,7 @@ Everything else falls under non-payale. Finally the syntax for function definiti
 
 The totalSupply function on the other hand has a return declaration, namely return(uint), which declares that the function expects a return of type uint (i.e. uint256). Inside the function body one also uses the return keyword to tell the compiler that the following value is to be returned. The function is also of visibility type view, which means that it does not write into storage.
 
-The body of the withdraw function has another interesting aspect of the solidity language. The keyword _require_ starts an assertion statement. Its first argument is a boolean expression that holds the condition of the assertion. If the assertion is true the rest of the function body is executed, else the function execution gets reverted. There is an optional second argument of the require statement that can carry a string with the revert message. In this function a certain amount, called wad, gets subtracted from the balance of the caller.
+The body of the withdraw function has another interesting aspect of the solidity language. The keyword *require* starts an assertion statement. Its first argument is a boolean expression that holds the condition of the assertion. If the assertion is true the rest of the function body is executed, else the function execution gets reverted. There is an optional second argument of the require statement that can carry a string with the revert message. In this function a certain amount, called wad, gets subtracted from the balance of the caller.
 
 Finally we can see a transfer function that is also guarded by a similar requirement as the withdraw function.
 
@@ -113,9 +113,7 @@ Vyper was built to solve the security issues Solidity has, and because of it, it
 
 We will now look at an implementation of the simplified wrapped ether contract from a vyper point of view:
 
-![Vyper code example](./assets/articles/comparingSmartContractLanguages/vyper-example.png)
-
-First we notice that the code is roughly of the same length. Nevertheless vyper has a few design choices that tend to make contracts a little shorter. For instance, any public state variable automatically has an associated getter function. This way we do not need to code explicitly any totalSupply view function, because it's built in.
+![Vyper code example](./assets/articles/comparingSmartContractLanguages/vyper-example.png)First we notice that the code is roughly of the same length. Nevertheless vyper has a few design choices that tend to make contracts a little shorter. For instance, any public state variable automatically has an associated getter function. This way we do not need to code explicitly any totalSupply view function, because it's built in.
 
 Regarding the length in terms of compiled bytecode, vyper definitely has an advantage. It flexes its muscles with a bare 435 bytes compared to 1849 bytes on the default compiler settings for the solidity compilation.
 
@@ -151,4 +149,5 @@ Secure, simple contracts = **Vyper**.
 
 Versatile, complex contracts = **Solidity**.
 
+If you want to know more about Smart Contract development, subscribe to our [Newsletter](https://blog.dorg.tech/) and check out our [website](https://dorg.tech)  to learn more about dOrg and or services.
 If you want to know more about Smart Contract development, subscribe to our [Newsletter](https://blog.dorg.tech/) and check out our [website](https://dorg.tech)  to learn more about dOrg and or services.
