@@ -9,6 +9,7 @@ import howToGetStuffDoneInADao from "../views/articles/howToGetStuffDoneInADao.m
 import dorgPassport from "../views/articles/dorgPassport.md";
 import AiProjectArticle from "../views/articles/aiProjectArticle.md";
 import DAOInnovationArticle from "../views/articles/daoInnovation.md";
+import ReasonsToWorkWithDorgArticle from "../views/articles/reasonToWork.md";
 
 interface Author {
   name: string;
@@ -37,6 +38,29 @@ export interface ArticleProps {
 }
 
 export const articles = [
+  {
+    slug: "reasons-to-work-with-dorg",
+    title: "10 Reasons to Work with dOrg vs Hiring",
+    date: "August 20, 2024",
+    authors: [
+      {
+        name: "Anita Caldera",
+      },
+      {
+        name: "Clara G",
+      },
+    ],
+    content: ReasonsToWorkWithDorgArticle,
+    tags: [
+      "Web 3",
+      "smart-contracts",
+      "daos",
+      "DAOs",
+      "Web3 Applications",
+      "Collaborative Tools",
+      "Protocol Development",
+    ],
+  },
   {
     slug: "dao-innovation",
     title:
