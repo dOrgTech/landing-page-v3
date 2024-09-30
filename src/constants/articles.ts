@@ -40,7 +40,7 @@ export interface ArticleProps {
 export const articles = [
   {
     slug: "reasons-to-work-with-dorg",
-    title: "10 Reasons to Work with dOrg vs Hiring",
+    title: "10 Reasons to Work with dOrg vs Hiring.",
     date: "August 20, 2024",
     authors: [
       {
@@ -51,14 +51,25 @@ export const articles = [
       },
     ],
     content: ReasonsToWorkWithDorgArticle,
-    tags: [
-      "Web 3",
-      "smart-contracts",
-      "daos",
-      "DAOs",
-      "Web3 Applications",
-      "Collaborative Tools",
-      "Protocol Development",
+    tags: ["Web3 developers", "Development agency", "DAOs", "dOrg"],
+    resources: [
+      {
+        title:
+          "Decentralized and Recognized: How Vermont is Pioneering DAO Innovation",
+        link: "https://www.dorg.tech/#/articles/dao-innovation",
+      },
+      {
+        title: "dOrg website",
+        link: "https://www.dorg.tech/",
+      },
+      {
+        title: "dOrg documentation",
+        link: "https://docs.dorg.tech/",
+      },
+      {
+        title: "dOrg blog",
+        link: "https://blog.dorg.tech/",
+      },
     ],
   },
   {
