@@ -1,5 +1,7 @@
+/** @format */
+
 import React from "react";
-import { Link, Typography } from "@mui/material";
+import { Box, Link, Typography } from "@mui/material";
 import { colors } from "../../../theme";
 import { CaseStudyLinkProps } from "../../../constants/caseStudies";
 import { Arrow } from "./Arrow";
@@ -8,11 +10,12 @@ export default function CaseStudiesLink({
   slug,
   title,
   color,
+  category,
 }: CaseStudyLinkProps) {
   return (
     <Link
       href={`/#/case-studies/${slug}`}
-      underline="none"
+      underline='none'
       sx={{
         alignItems: "center",
         borderWidth: "2px",
@@ -28,8 +31,8 @@ export default function CaseStudiesLink({
           ".linkColor": { color: color, opacity: 1 },
           ".arrowLink": { transform: "translateX(0%)" },
         },
-      }}
-    >
+      }}>
+      {console.log("category", category)}
       <Arrow
         sx={{
           display: ["none", "flex"],
@@ -42,14 +45,36 @@ export default function CaseStudiesLink({
         }}
         className={`linkColor arrowLink`}
       />
-      <Typography
-        component="h2"
-        variant="h1"
-        className="linkColor"
-        sx={{ fontSize: ["3rem", "4rem", "5rem", "6rem"], mt: 0 }}
-      >
-        {title}
-      </Typography>
+      <Box
+        display='flex'
+        alignItems='center'
+        justifyContent='space-between'
+        width='100%'>
+        <Typography
+          component='h2'
+          variant='h1'
+          className='linkColor'
+          sx={{ fontSize: ["3rem", "4rem", "5rem", "6rem"], mt: 0 }}>
+          {title}
+        </Typography>
+        <Box
+          sx={{
+            display: "flex",
+            gap: 2,
+            alignItems: "center",
+          }}>
+          {category.map((item, index) => (
+            <Typography
+              key={index}
+              component='p'
+              variant='body1'
+              className='linkColor'
+              sx={{ fontSize: ["20px"], mt: 0 }}>
+              {item}
+            </Typography>
+          ))}
+        </Box>
+      </Box>
     </Link>
   );
 }

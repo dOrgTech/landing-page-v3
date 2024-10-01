@@ -1,34 +1,35 @@
+/** @format */
 
 @font-face {
   font-family: "Space Grotesk";
-  src: url('/public/font/Space_Grotesk/SpaceGrotesk-Light.ttf');
-  font-display: 'swap'
+  src: url("/public/font/Space_Grotesk/SpaceGrotesk-Light.ttf");
+  font-display: "swap";
 }
 @font-face {
   font-family: "Space Grotesk";
-  src: url('/public/font/Space_Grotesk/SpaceGrotesk-Medium.ttf');
-  font-display: 'swap'
+  src: url("/public/font/Space_Grotesk/SpaceGrotesk-Medium.ttf");
+  font-display: "swap";
 }
 @font-face {
   font-family: "Space Grotesk";
-  src: url('/public/font/Space_Grotesk/SpaceGrotesk-Regular.ttf');
-  font-display: 'swap'
+  src: url("/public/font/Space_Grotesk/SpaceGrotesk-Regular.ttf");
+  font-display: "swap";
 }
 @font-face {
   font-family: "Space Grotesk";
-  src: url('/public/font/Space_Grotesk/SpaceGrotesk-SemiBold.ttf');
-  font-display: 'swap'
+  src: url("/public/font/Space_Grotesk/SpaceGrotesk-SemiBold.ttf");
+  font-display: "swap";
 }
 @font-face {
   font-family: "Space Grotesk";
-  src: url('/public/font/Space_Grotesk/SpaceGrotesk-Bold.ttf');
-  font-display: 'swap'
+  src: url("/public/font/Space_Grotesk/SpaceGrotesk-Bold.ttf");
+  font-display: "swap";
 }
 
 @font-face {
   font-family: "Space Grotesk";
-  src: url('/public/font/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf');
-  font-display: 'swap'
+  src: url("/public/font/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf");
+  font-display: "swap";
 }
 
 html {
@@ -43,7 +44,9 @@ body {
   position: relative;
   background-color: #000;
 }
-
+em {
+  font-size: 12px;
+}
 .carousel--presentation {
   height: 10%;
 }

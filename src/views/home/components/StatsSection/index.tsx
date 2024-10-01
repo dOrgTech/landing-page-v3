@@ -45,7 +45,7 @@ export const StatsSection: React.FC = () => {
     {
       id: "on-chain_revenue",
       title: "On-Chain Revenue",
-      statNumber: "$10,5M",
+      statNumber: "$11M",
       color: colors.orange,
       activeColors: [colors.orange, colors.yellow],
     },
@@ -85,7 +85,7 @@ export const StatsSection: React.FC = () => {
               }}>
               <strong>dOrg</strong> provides <strong>web3 development</strong>{" "}
               services to projects seeking <strong>real-world impact</strong>.
-              We’ve been operating as a DAO <strong>since 2019</strong>.
+              We&apos;ve been operating as a DAO/Builders co-op <strong>since 2019</strong>.
             </Typography>
           </Grid>
           <Grid item xs={12} lg={6}>

@@ -9,6 +9,7 @@ import howToGetStuffDoneInADao from "../views/articles/howToGetStuffDoneInADao.m
 import dorgPassport from "../views/articles/dorgPassport.md";
 import AiProjectArticle from "../views/articles/aiProjectArticle.md";
 import DAOInnovationArticle from "../views/articles/daoInnovation.md";
+import ReasonsToWorkWithDorgArticle from "../views/articles/reasonToWork.md";
 
 interface Author {
   name: string;
@@ -37,6 +38,40 @@ export interface ArticleProps {
 }
 
 export const articles = [
+  {
+    slug: "reasons-to-work-with-dorg",
+    title: "10 Reasons to Work with dOrg vs Hiring.",
+    date: "August 20, 2024",
+    authors: [
+      {
+        name: "Anita Caldera",
+      },
+      {
+        name: "Clara G",
+      },
+    ],
+    content: ReasonsToWorkWithDorgArticle,
+    tags: ["Web3 developers", "Development agency", "DAOs", "dOrg"],
+    resources: [
+      {
+        title:
+          "Decentralized and Recognized: How Vermont is Pioneering DAO Innovation",
+        link: "https://www.dorg.tech/#/articles/dao-innovation",
+      },
+      {
+        title: "dOrg website",
+        link: "https://www.dorg.tech/",
+      },
+      {
+        title: "dOrg documentation",
+        link: "https://docs.dorg.tech/",
+      },
+      {
+        title: "dOrg blog",
+        link: "https://blog.dorg.tech/",
+      },
+    ],
+  },
   {
     slug: "dao-innovation",
     title:

@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState } from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import { Button } from "../../../../commons/button/Button";
@@ -47,7 +49,12 @@ export const CommunitySection: React.FC = () => {
           beforeChange={() => setMoving(true)}
           afterChange={() => setMoving(false)}>
           {communityTweets.map((tweet: TwitterCardProps, i) => (
-            <Box key={tweet.externalLink} px={2}>
+            <Box
+              key={tweet.externalLink}
+              px={2}
+              display='flex'
+              sx={{ height: "100%" }}
+              flexDirection='column'>
               <TwitterCard
                 {...tweet}
                 clickable={!isMoving}
